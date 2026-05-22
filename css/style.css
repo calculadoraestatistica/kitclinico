@@ -562,6 +562,11 @@ table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
   color: var(--c-ink); text-align: left;
 }
 
+/* Lista de referências bibliográficas */
+.ref-list { font-size: .9rem; color: var(--c-muted); padding-left: 1.25rem; margin: .6rem 0 0; }
+.ref-list li { margin-bottom: .5rem; line-height: 1.5; }
+.ref-list cite { font-style: italic; }
+
 /* Utilitários de espaçamento e alinhamento */
 .u-mt-sm { margin-top: .6rem; }
 .u-mt-md { margin-top: 1.4rem; }
