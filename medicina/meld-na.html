@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escore MELD-Na — Doença Hepática | Kit Clínico</title>
+<meta name="description" content="Calculadora do escore MELD-Na online e gratuita. Estime a gravidade da doença hepática crônica a partir de bilirrubina, INR, creatinina e sódio.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/meld-na.html">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kit Clínico">
+<meta property="og:title" content="Escore MELD-Na">
+<meta property="og:description" content="Calcule o escore MELD-Na e estime a gravidade da doença hepática crônica.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/meld-na.html">
+<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Escore MELD-Na",
+  "url": "https://kitclinico.com.br/medicina/meld-na.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+  "description": "Calculadora do escore MELD-Na para gravidade da doença hepática crônica."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
+    {"@type":"ListItem","position":3,"name":"Escore MELD-Na","item":"https://kitclinico.com.br/medicina/meld-na.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Kit Clínico — página inicial">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d9488"/>
+        <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+        <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+      </svg>
+      <span class="brand__name">Kit <span>Clínico</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="/medicina.html">Calculadoras médicas</a></li>
+        <li><a href="/nutricao.html">Nutrição</a></li>
+        <li><a href="/veterinaria.html">Veterinária</a></li>
+        <li><a href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar">
+  <strong>Uso educacional.</strong> As calculadoras não substituem o julgamento clínico profissional.
+</div>
+
+<main id="conteudo">
+
+  <div class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li>Escore MELD-Na</li>
+        </ol>
+      </nav>
+      <h1>Escore MELD-Na</h1>
+      <p class="lead">Estima a gravidade da doença hepática crônica a partir de bilirrubina, INR, creatinina e sódio, e orienta a priorização para transplante.</p>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <form class="calculator" id="calc-form" novalidate>
+      <h2 class="calculator__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Calcular o MELD-Na
+      </h2>
+      <p class="calculator__hint">Informe os exames laboratoriais do paciente.</p>
+
+      <fieldset class="field-group">
+        <legend>Exames laboratoriais</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="bilirrubina">Bilirrubina total</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="bilirrubina" placeholder="Ex.: 2,5" autocomplete="off">
+              <span class="input-affix__unit">mg/dL</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="inr">INR</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="inr" placeholder="Ex.: 1,8" autocomplete="off">
+              <span class="input-affix__unit"></span>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="creatinina">Creatinina</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="creatinina" placeholder="Ex.: 1,4" autocomplete="off">
+              <span class="input-affix__unit">mg/dL</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="sodio">Sódio</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="sodio" placeholder="Ex.: 132" autocomplete="off">
+              <span class="input-affix__unit">mEq/L</span>
+            </div>
+          </div>
+        </div>
+      <ul class="criteria-list">
+        <li><label class="criteria"><input type="checkbox" id="dialise"><span>Diálise 2 vezes ou mais na última semana (a creatinina é fixada em 4,0)</span></label></li>
+      </ul>
+      </fieldset>
+
+      <p class="field-error" id="calc-error" role="alert"></p>
+
+      <div class="calculator__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Calcular escore</button>
+        <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
+      </div>
+
+      <section class="result" id="calc-result" hidden aria-live="polite"></section>
+    </form>
+
+    <div class="ad-slot" data-ad-slot=""></div>
+
+    <article class="prose">
+
+      <h2>Para que serve</h2>
+      <p>O <strong>MELD-Na</strong> (Model for End-Stage Liver Disease com sódio) estima a gravidade da <strong>doença hepática crônica</strong> e a mortalidade de curto prazo. É usado em vários países, incluindo no sistema de alocação de fígados para transplante.</p>
+
+      <h2>Como interpretar o resultado</h2>
+      <p>O escore combina bilirrubina, INR e creatinina (MELD básico) e, em seguida, ajusta o resultado pela hiponatremia. O valor final varia, na prática, de <strong>6 a 40</strong> pontos: quanto maior, pior o prognóstico e maior a prioridade na fila de transplante.</p>
+      <div class="formula">MELD-Na = MELD + 1,32 × (137 − Na) − [0,033 × MELD × (137 − Na)]</div>
+
+      <h2>Exemplo</h2>
+      <p>Um paciente com bilirrubina 2,5 mg/dL, INR 1,8, creatinina 1,4 mg/dL e sódio 132 mEq/L tem MELD básico em torno de 17 e MELD-Na próximo de 20 pontos.</p>
+
+      <div class="callout callout--warning">
+        <div class="callout__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Limites e arredondamentos
+        </div>
+        <p>Por convenção do modelo, valores laboratoriais abaixo de 1,0 são elevados a 1,0, a creatinina é limitada a 4,0 mg/dL (ou fixada em 4,0 com diálise) e o sódio é considerado entre 125 e 137 mEq/L. O resultado é arredondado e tem teto de 40 pontos.</p>
+      </div>
+
+      <h2>Referências</h2>
+      <ol class="ref-list">
+        <li>Kim WR, Biggins SW, Kremers WK, et al. Hyponatremia and mortality among patients on the liver-transplant waiting list. <cite>New England Journal of Medicine</cite>. 2008;359(10):1018-1026.</li>
+        <li>Kamath PS, Wiesner RH, Malinchoc M, et al. A model to predict survival in patients with end-stage liver disease. <cite>Hepatology</cite>. 2001;33(2):464-470.</li>
+      </ol>
+
+      <div class="related">
+        <h2>Calculadoras relacionadas</h2>
+        <div class="calc-grid">
+          <a class="calc-card" href="/medicina/child-pugh.html"><h3>Child-Pugh</h3><p>Classificação da gravidade da cirrose.</p></a>
+          <a class="calc-card" href="/medicina/tfg-ckd-epi.html"><h3>TFG (CKD-EPI)</h3><p>Taxa de filtração glomerular.</p></a>
+          <a class="calc-card" href="/medicina/anion-gap.html"><h3>Ânion gap</h3><p>Avaliação da acidose metabólica.</p></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0d9488"/>
+            <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+            <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+          </svg>
+          <span class="brand__name">Kit Clínico</span>
+        </a>
+        <p>Calculadoras clínicas online e gratuitas para médicos, nutricionistas e veterinários.</p>
+      </div>
+      <div>
+        <h3>Áreas</h3>
+        <ul>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/contato.html">Contato</a></li>
+          <li><a href="/privacidade.html">Privacidade</a></li>
+          <li><a href="/termos.html">Termos de uso</a></li>
+          <li><a href="/apoiar.html">Apoiar o projeto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:calculadoraestatistica@gmail.com">Dúvidas e sugestões</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>As calculadoras têm finalidade educacional e informativa e não substituem o julgamento clínico de um profissional de saúde habilitado.</p>
+      <p>© <span data-year>2026</span> Kit Clínico · Feito no Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/clinical.js"></script>
+<script src="/js/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add('is-visible');
+    result.hidden = true;
+  }
+  function clearError() {
+    errBox.textContent = '';
+    errBox.classList.remove('is-visible');
+  }
+
+  $('calc-example').addEventListener('click', function () {
+    $('bilirrubina').value = '2,5';
+    $('inr').value = '1,8';
+    $('creatinina').value = '1,4';
+    $('sodio').value = '132';
+    compute();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+
+  function readForm() {
+      var o = {};
+      o.bilirrubina = parseNum($('bilirrubina').value);
+      o.inr = parseNum($('inr').value);
+      o.creatinina = parseNum($('creatinina').value);
+      o.sodio = parseNum($('sodio').value);
+      o.dialise = $('dialise').checked;
+      return o;
+  }
+
+  function compute() {
+    clearError();
+    var r = Clinical.meldNa(readForm());
+    if (r.error) { showError(r.error); return; }
+    render(r);
+  }
+
+  var ICONS = {
+    ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>',
+    neutral: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+  };
+
+  function render(r) {
+    var cls = { ok: 'result--ok', warn: 'result--warn', alert: 'result--alert' }[r.cls] || 'result--neutral';
+    var ico = ICONS[r.cls] || ICONS.neutral;
+    result.className = 'result ' + cls;
+    var html = '<div class="result__banner">' + ico +
+      '<div><div class="result__headline">Escore MELD-Na</div>' +
+      '<div class="result__sub">Gravidade da doença hepática crônica</div></div></div>';
+    html += '<div class="result__body">';
+    html += '<div class="result__main">' + (Fmt.int(r.meldNa) + ' <small>pontos</small>') + '</div>';
+      html += '<div class="result__metrics">' + '<div class="metric"><div class="metric__label">MELD básico (sem sódio)</div>' + '<div class="metric__value">' + (Fmt.int(r.meld) + ' pontos') + '</div>'  + '</div>' + '<div class="metric"><div class="metric__label">Mortalidade estimada em 90 dias</div>' + '<div class="metric__value">' + (r.mortalidade90d) + '</div>'  + '</div>' + '</div>';
+    html += '<div class="result__interpretation"><p>' + ('O MELD-Na estimado é de <strong>' + Fmt.int(r.meldNa) + ' pontos</strong>. Quanto maior o valor, maior a gravidade da doença hepática e a prioridade na fila de transplante. A mortalidade em 90 dias cresce de forma acentuada acima de 20 a 30 pontos.') + '</p></div>';
+    html += '</div>';
+    result.innerHTML = html;
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+})();
+</script>
+</body>
+</html>

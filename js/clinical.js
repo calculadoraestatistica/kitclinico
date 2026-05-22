@@ -399,6 +399,215 @@
     return { idadeHumana: humana };
   }
 
+  /* ======================================================================
+     ESCORES E ÍNDICES CLÍNICOS
+     ====================================================================== */
+
+  // Escala de Coma de Glasgow — ocular (1-4), verbal (1-5), motora (1-6)
+  function glasgow(o) {
+    var oc = o.ocular, ve = o.verbal, mo = o.motor;
+    if (!num(oc) || !num(ve) || !num(mo))
+      return { error: 'Selecione a resposta ocular, verbal e motora.' };
+    var t = oc + ve + mo;
+    var grav, cls;
+    if (t <= 8) { grav = 'Rebaixamento grave do nível de consciência'; cls = 'alert'; }
+    else if (t <= 12) { grav = 'Rebaixamento moderado'; cls = 'warn'; }
+    else { grav = 'Rebaixamento leve ou ausente'; cls = 'ok'; }
+    return { total: t, gravidade: grav, cls: cls };
+  }
+
+  // CHA2DS2-VASc — risco de AVC na fibrilação atrial não valvar
+  // Risco anual de AVC/tromboembolismo (%) por pontuação (Friberg et al., 2012)
+  var CHADSVASC_RISK = {
+    0: 0.2, 1: 0.6, 2: 2.2, 3: 3.2, 4: 4.8, 5: 7.2, 6: 9.7, 7: 11.2, 8: 10.8, 9: 12.2
+  };
+  function cha2ds2vasc(o) {
+    if (!num(o.idade) || o.idade < 0) return { error: 'Informe a idade do paciente.' };
+    var p = 0;
+    if (o.icc) p += 1;
+    if (o.hipertensao) p += 1;
+    if (o.idade >= 75) p += 2; else if (o.idade >= 65) p += 1;
+    if (o.diabetes) p += 1;
+    if (o.avc) p += 2;
+    if (o.vascular) p += 1;
+    if (o.sexo === 'F') p += 1;
+    var cls = p >= 2 ? 'alert' : (p === 1 ? 'warn' : 'ok');
+    return { total: p, riscoAnual: CHADSVASC_RISK[p], cls: cls };
+  }
+
+  // HAS-BLED — risco de sangramento maior em anticoagulação
+  function hasbled(o) {
+    var p = 0;
+    ['hipertensao', 'renal', 'hepatica', 'avc', 'sangramento',
+     'inrLabil', 'idoso', 'drogas', 'alcool'].forEach(function (k) {
+      if (o[k]) p += 1;
+    });
+    var risco, cls;
+    if (p >= 3) { risco = 'Risco alto de sangramento — cautela e reavaliação'; cls = 'alert'; }
+    else { risco = 'Risco baixo a moderado de sangramento'; cls = 'ok'; }
+    return { total: p, risco: risco, cls: cls };
+  }
+
+  // Escore de Wells — probabilidade de Trombose Venosa Profunda
+  function wellsDvt(o) {
+    var p = 0;
+    ['cancer', 'paralisia', 'acamado', 'dorTrajeto', 'edemaPerna',
+     'panturrilha', 'cacifo', 'colaterais', 'tvpPrevia'].forEach(function (k) {
+      if (o[k]) p += 1;
+    });
+    if (o.diagAlternativo) p -= 2;
+    var prob, cls;
+    if (p >= 3) { prob = 'Probabilidade alta de TVP'; cls = 'alert'; }
+    else if (p >= 1) { prob = 'Probabilidade moderada de TVP'; cls = 'warn'; }
+    else { prob = 'Probabilidade baixa de TVP'; cls = 'ok'; }
+    return { total: p, probabilidade: prob, cls: cls };
+  }
+
+  // Escore de Wells — probabilidade de Tromboembolismo Pulmonar
+  function wellsPe(o) {
+    var p = 0;
+    if (o.sinaisTvp) p += 3;
+    if (o.tepProvavel) p += 3;
+    if (o.taquicardia) p += 1.5;
+    if (o.imobilizacao) p += 1.5;
+    if (o.tevPrevio) p += 1.5;
+    if (o.hemoptise) p += 1;
+    if (o.cancer) p += 1;
+    var prob, cls;
+    if (p > 4) { prob = 'TEP provável (escore > 4)'; cls = 'alert'; }
+    else { prob = 'TEP improvável (escore ≤ 4)'; cls = 'ok'; }
+    return { total: p, probabilidade: prob, cls: cls };
+  }
+
+  // CURB-65 — gravidade da pneumonia adquirida na comunidade
+  function curb65(o) {
+    var p = 0;
+    ['confusao', 'ureia', 'fr', 'pressao', 'idade'].forEach(function (k) {
+      if (o[k]) p += 1;
+    });
+    var conduta, cls;
+    if (p <= 1) { conduta = 'Baixa gravidade — tratamento ambulatorial costuma ser possível'; cls = 'ok'; }
+    else if (p === 2) { conduta = 'Gravidade intermediária — considerar internação hospitalar'; cls = 'warn'; }
+    else { conduta = 'Alta gravidade — internação; avaliar UTI quando 4 a 5 pontos'; cls = 'alert'; }
+    return { total: p, conduta: conduta, cls: cls };
+  }
+
+  // Índice de Apgar do recém-nascido — 5 itens de 0 a 2
+  function apgar(o) {
+    var a = o.aparencia, p = o.pulso, g = o.gesticulacao,
+        at = o.atividade, r = o.respiracao;
+    if (!num(a) || !num(p) || !num(g) || !num(at) || !num(r))
+      return { error: 'Selecione os cinco itens do índice.' };
+    var t = a + p + g + at + r;
+    var interp, cls;
+    if (t <= 3) { interp = 'Vitalidade gravemente deprimida'; cls = 'alert'; }
+    else if (t <= 6) { interp = 'Vitalidade moderadamente deprimida'; cls = 'warn'; }
+    else { interp = 'Boa vitalidade'; cls = 'ok'; }
+    return { total: t, interpretacao: interp, cls: cls };
+  }
+
+  // MELD-Na — gravidade da doença hepática crônica (modelo OPTN, 2016)
+  function meldNa(o) {
+    var bili = o.bilirrubina, inr = o.inr, cr = o.creatinina, na = o.sodio;
+    if (!num(bili) || !num(inr) || !num(cr) || !num(na))
+      return { error: 'Informe bilirrubina, INR, creatinina e sódio.' };
+    if (bili <= 0 || inr <= 0 || cr <= 0 || na <= 0)
+      return { error: 'Os valores laboratoriais devem ser maiores que zero.' };
+    var b = Math.max(bili, 1), i = Math.max(inr, 1), c = Math.max(cr, 1);
+    if (o.dialise) c = 4.0;             // diálise ≥ 2× na última semana
+    c = Math.min(c, 4.0);
+    var meld = Math.round(3.78 * Math.log(b) + 11.2 * Math.log(i) +
+                          9.57 * Math.log(c) + 6.43);
+    if (meld < 6) meld = 6;
+    var meldna = meld;
+    if (meld > 11) {
+      var naB = Math.min(Math.max(na, 125), 137);
+      meldna = meld + 1.32 * (137 - naB) - (0.033 * meld * (137 - naB));
+    }
+    meldna = Math.round(meldna);
+    if (meldna > 40) meldna = 40;
+    if (meldna < 6) meldna = 6;
+    var mort = meldna >= 30 ? '≈ 50% ou mais'
+             : (meldna >= 20 ? '≈ 20%' : (meldna >= 10 ? '≈ 6%' : '≈ 2%'));
+    return { meld: meld, meldNa: meldna, mortalidade90d: mort };
+  }
+
+  // Classificação de Child-Pugh da cirrose hepática
+  function childPugh(o) {
+    var bili = o.bilirrubina, alb = o.albumina, inr = o.inr;
+    if (!num(bili) || !num(alb) || !num(inr))
+      return { error: 'Informe bilirrubina, albumina e INR.' };
+    if (bili <= 0 || alb <= 0 || inr <= 0)
+      return { error: 'Os valores laboratoriais devem ser maiores que zero.' };
+    if (o.ascite !== 'ausente' && o.ascite !== 'leve' && o.ascite !== 'moderada')
+      return { error: 'Selecione o grau de ascite.' };
+    if (o.encefalopatia !== 'ausente' && o.encefalopatia !== 'leve' &&
+        o.encefalopatia !== 'avancada')
+      return { error: 'Selecione o grau de encefalopatia.' };
+    var p = 0;
+    p += bili < 2 ? 1 : (bili <= 3 ? 2 : 3);
+    p += alb > 3.5 ? 1 : (alb >= 2.8 ? 2 : 3);
+    p += inr < 1.7 ? 1 : (inr <= 2.3 ? 2 : 3);
+    p += o.ascite === 'moderada' ? 3 : (o.ascite === 'leve' ? 2 : 1);
+    p += o.encefalopatia === 'avancada' ? 3 : (o.encefalopatia === 'leve' ? 2 : 1);
+    var classe, cls;
+    if (p <= 6) { classe = 'Classe A — cirrose bem compensada'; cls = 'ok'; }
+    else if (p <= 9) { classe = 'Classe B — comprometimento funcional significativo'; cls = 'warn'; }
+    else { classe = 'Classe C — cirrose descompensada'; cls = 'alert'; }
+    return { total: p, classe: classe, cls: cls };
+  }
+
+  // Fórmula de Parkland — reposição volêmica nas primeiras 24 h da queimadura
+  function parkland(o) {
+    var w = o.peso, scq = o.scq;
+    if (!num(w) || !num(scq) || w <= 0 || scq <= 0)
+      return { error: 'Informe o peso e a superfície corporal queimada (%).' };
+    if (scq > 100) return { error: 'A superfície queimada não pode passar de 100%.' };
+    var total = 4 * w * scq;
+    return {
+      total24h: total,
+      primeiras8h: total / 2,
+      restantes16h: total / 2,
+      mlh8: total / 2 / 8,
+      mlh16: total / 2 / 16
+    };
+  }
+
+  // Fração de excreção de ureia — FeUreia (%)
+  function feUrea(o) {
+    var sU = o.ureiaSerica, uU = o.ureiaUrinaria;
+    var sCr = o.crSerica, uCr = o.crUrinaria;
+    if (!num(sU) || !num(uU) || !num(sCr) || !num(uCr) ||
+        sU <= 0 || sCr <= 0 || uCr <= 0 || uU < 0)
+      return { error: 'Preencha os quatro valores com números válidos. Ureia sérica, creatinina sérica e creatinina urinária devem ser maiores que zero.' };
+    var v = (uU * sCr) / (sU * uCr) * 100;
+    var interp, cls;
+    if (v < 35) { interp = 'Padrão pré-renal (FeUreia < 35%)'; cls = 'warn'; }
+    else if (v > 50) { interp = 'Padrão de necrose tubular aguda (FeUreia > 50%)'; cls = 'alert'; }
+    else { interp = 'Faixa intermediária (FeUreia 35–50%)'; cls = 'warn'; }
+    return { feurea: v, interpretacao: interp, cls: cls };
+  }
+
+  // Suplementação de potássio na fluidoterapia (cão/gato) — escala deslizante
+  function vetPotassium(o) {
+    var k = o.potassio;
+    if (!num(k) || k <= 0) return { error: 'Informe o potássio sérico do animal.' };
+    if (k > 5.0)
+      return { mEqPorLitro: 0, alerta: true,
+               mensagem: 'Potássio normal ou elevado — a suplementação não está indicada.' };
+    var add;
+    if (k >= 3.5) add = 20;
+    else if (k >= 3.0) add = 30;
+    else if (k >= 2.5) add = 40;
+    else if (k >= 2.0) add = 60;
+    else add = 80;
+    var out = { mEqPorLitro: add };
+    // Taxa de infusão de potássio não deve ultrapassar 0,5 mEq/kg/h
+    if (num(o.peso) && o.peso > 0)
+      out.taxaMaxMlh = (0.5 * o.peso / add) * 1000;
+    return out;
+  }
+
   /* ----------------------------------------------------------------------
      Exportação
      ---------------------------------------------------------------------- */
@@ -414,7 +623,11 @@
     hollidaySegar: hollidaySegar,
     bmrMifflin: bmrMifflin, bmrHarris: bmrHarris, tdee: tdee, macros: macros,
     waterNeeds: waterNeeds, waistHip: waistHip, bodyFat: bodyFat,
-    vetRer: vetRer, vetMer: vetMer, vetFluids: vetFluids, petAge: petAge
+    vetRer: vetRer, vetMer: vetMer, vetFluids: vetFluids, petAge: petAge,
+    glasgow: glasgow, cha2ds2vasc: cha2ds2vasc, hasbled: hasbled,
+    wellsDvt: wellsDvt, wellsPe: wellsPe, curb65: curb65, apgar: apgar,
+    meldNa: meldNa, childPugh: childPugh, parkland: parkland,
+    feUrea: feUrea, vetPotassium: vetPotassium
   };
   global.Clinical = Clinical;
   if (typeof module !== 'undefined' && module.exports) module.exports = Clinical;

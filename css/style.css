@@ -562,6 +562,27 @@ table.data td.num { text-align: right; font-variant-numeric: tabular-nums; }
   color: var(--c-ink); text-align: left;
 }
 
+/* Lista de critérios — escores com itens sim/não */
+.criteria-list { list-style: none; padding: 0; margin: .8rem 0 0; display: grid; gap: .5rem; }
+.criteria {
+  display: flex; align-items: flex-start; gap: .65rem; cursor: pointer;
+  padding: .7rem .85rem; border: 1px solid var(--c-line);
+  border-radius: var(--radius-sm); background: var(--c-softer);
+  transition: border-color .15s ease, background .15s ease;
+}
+.criteria:hover { border-color: var(--c-primary); }
+.criteria input {
+  margin: .1rem 0 0; width: 1.15rem; height: 1.15rem;
+  accent-color: var(--c-primary); flex-shrink: 0;
+}
+.criteria > span:first-of-type { flex: 1; color: var(--c-ink); font-size: .96rem; }
+.criteria input:checked ~ span:first-of-type { font-weight: 600; }
+.criteria__pts {
+  flex-shrink: 0; font-family: var(--font-mono); font-size: .82rem;
+  font-weight: 700; color: var(--c-primary-darker);
+  background: var(--c-primary-soft); padding: .12rem .45rem; border-radius: 6px;
+}
+
 /* Lista de referências bibliográficas */
 .ref-list { font-size: .9rem; color: var(--c-muted); padding-left: 1.25rem; margin: .6rem 0 0; }
 .ref-list li { margin-bottom: .5rem; line-height: 1.5; }
