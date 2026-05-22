@@ -88,7 +88,7 @@
         </ol>
       </nav>
       <h1>Calculadora de Sódio Corrigido (Hiperglicemia)</h1>
-      <p class="lead">Na hiperglicemia, o sódio sérico medido subestima o sódio real. Esta calculadora estima o sódio corrigido pelo fator de Katz.</p>
+      <p class="lead">Na hiperglicemia, o sódio sérico medido subestima o sódio real. Esta calculadora estima o sódio corrigido pelos fatores de Katz (1,6) ou de Hillier (2,4).</p>
     </div>
   </div>
 
@@ -119,6 +119,14 @@
             </div>
           </div>
         </div>
+        <div class="field">
+          <label for="fator">Fator de correção</label>
+          <select class="input" id="fator">
+            <option value="1.6">Katz — 1,6 (clássico, mais usado)</option>
+            <option value="2.4">Hillier — 2,4 (glicemias muito altas)</option>
+          </select>
+          <p class="help">O fator de Hillier (2,4) é considerado mais preciso quando a glicemia ultrapassa cerca de 400 mg/dL.</p>
+        </div>
       </fieldset>
 
       <p class="field-error" id="calc-error" role="alert"></p>
@@ -140,7 +148,8 @@
 
       <h2>Como interpretar o resultado</h2>
       <p>O sódio corrigido revela o estado real do sódio depois de descontar o efeito diluidor da hiperglicemia. Um sódio medido baixo pode, na verdade, corresponder a um sódio corrigido normal ou até elevado. Use a referência habitual do sódio (cerca de 135 a 145 mEq/L) sobre o valor corrigido.</p>
-      <div class="formula">Sódio corrigido = sódio medido + 1,6 × [(glicemia − 100) ÷ 100]</div>
+      <div class="formula">Sódio corrigido = sódio medido + fator × [(glicemia − 100) ÷ 100]</div>
+      <p>O <strong>fator</strong> é 1,6 na correção clássica de Katz e 2,4 na de Hillier — esta última considerada mais precisa quando a glicemia ultrapassa cerca de 400 mg/dL. Você pode escolher o fator no campo acima.</p>
 
       <h2>Exemplo</h2>
       <p>Um paciente com <strong>sódio medido de 130 mEq/L</strong> e <strong>glicemia de 600 mg/dL</strong> tem sódio corrigido = 130 + 1,6 × [(600 − 100) ÷ 100] = 130 + 1,6 × 5 = <strong>138,0 mEq/L</strong> — ou seja, uma hiponatremia aparente que, corrigida, está na faixa normal.</p>
@@ -247,7 +256,8 @@
       showError('Preencha o sódio medido e a glicemia com números válidos.');
       return;
     }
-    var r = Clinical.correctedSodium({ sodio: sodio, glicemia: glicemia });
+    var fator = parseFloat($('fator').value) || 1.6;
+    var r = Clinical.correctedSodium({ sodio: sodio, glicemia: glicemia, fator: fator });
     if (r.error) { showError(r.error); return; }
     render(r);
   }
@@ -267,7 +277,8 @@
       '<div class="result__body">' +
         '<div class="result__main">' + Fmt.num(r.sodioCorrigido, 1) + ' <small>mEq/L</small></div>' +
         '<div class="result__interpretation"><p>O sódio corrigido estimado é de <strong>' +
-        Fmt.num(r.sodioCorrigido, 1) + ' mEq/L</strong>. ' +
+        Fmt.num(r.sodioCorrigido, 1) + ' mEq/L</strong> (fator de correção ' +
+        Fmt.num(r.fator, 1).replace('.', ',') + '). ' +
         'Interprete esse valor com a faixa habitual do sódio (cerca de 135 a 145 mEq/L) e sempre junto da avaliação clínica.</p></div>' +
       '</div>';
     result.hidden = false;

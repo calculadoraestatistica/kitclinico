@@ -122,8 +122,8 @@
     var sNa = o.naSerico, uNa = o.naUrinario;
     var sCr = o.crSerica, uCr = o.crUrinaria;
     if (!num(sNa) || !num(uNa) || !num(sCr) || !num(uCr) ||
-        sNa <= 0 || sCr <= 0)
-      return { error: 'Preencha os quatro valores (sódio e creatinina, séricos e urinários).' };
+        sNa <= 0 || sCr <= 0 || uCr <= 0 || uNa < 0)
+      return { error: 'Preencha os quatro valores com números válidos. Sódio sérico, creatinina sérica e creatinina urinária devem ser maiores que zero.' };
     var v = (uNa * sCr) / (sNa * uCr) * 100;
     var interp = v < 1 ? 'Padrão pré-renal (FeNa < 1%)'
                : (v > 2 ? 'Padrão de necrose tubular aguda (FeNa > 2%)'
@@ -131,11 +131,13 @@
     return { fena: v, interpretacao: interp };
   }
 
-  // Sódio corrigido pela hiperglicemia (fator de Katz, 1,6)
+  // Sódio corrigido pela hiperglicemia.
+  // fator 1,6 = Katz (clássico); fator 2,4 = Hillier (recomendado p/ glicemias altas)
   function correctedSodium(o) {
     var na = o.sodio, gli = o.glicemia;
     if (!num(na) || !num(gli)) return { error: 'Informe sódio e glicemia.' };
-    return { sodioCorrigido: na + 1.6 * ((gli - 100) / 100) };
+    var fator = num(o.fator) && o.fator > 0 ? o.fator : 1.6;
+    return { sodioCorrigido: na + fator * ((gli - 100) / 100), fator: fator };
   }
 
   // Cálcio corrigido pela albumina (mg/dL)
@@ -215,7 +217,12 @@
   }
 
   // Conversão de opioides — equivalência em mg de morfina oral
-  // Fatores: mg equianalgésicos a 30 mg de morfina oral.
+  // Fatores de conversão para MME (morphine milligram equivalents) baseados
+  // no CDC Clinical Practice Guideline for Prescribing Opioids (2022).
+  // NOTA: metadona e fentanil transdérmico foram deliberadamente OMITIDOS.
+  // A metadona tem razão de conversão não linear (varia de ~4:1 a >12:1
+  // conforme a dose) e o fentanil adesivo é dosado em mcg/h, não em mg —
+  // converter qualquer um deles com fator fixo é inseguro.
   var OPIOID_ORAL_MME = {     // 1 mg do fármaco = X mg de morfina oral
     morfina_oral: 1,
     morfina_iv: 3,
@@ -223,9 +230,7 @@
     tramadol: 0.1,
     oxicodona: 1.5,
     hidromorfona_oral: 4,
-    hidromorfona_iv: 12,
-    metadona: 4,            // aproximação (a metadona tem razão variável)
-    fentanil_tdmcgh: 2.4    // adesivo: mcg/h × 2,4 ≈ MME/dia
+    hidromorfona_iv: 12
   };
   function opioidConversion(o) {
     var from = o.de, to = o.para, dose = o.dose;
@@ -306,6 +311,9 @@
   function macros(o) {
     var cal = o.calorias, pP = o.pctProteina, pC = o.pctCarbo, pG = o.pctGordura;
     if (!num(cal) || cal <= 0) return { error: 'Informe as calorias-alvo.' };
+    if (!num(pP) || !num(pC) || !num(pG) ||
+        pP < 0 || pC < 0 || pG < 0 || pP > 100 || pC > 100 || pG > 100)
+      return { error: 'Cada porcentagem deve estar entre 0% e 100%.' };
     if (Math.abs((pP + pC + pG) - 100) > 0.5)
       return { error: 'As porcentagens de proteína, carboidrato e gordura devem somar 100%.' };
     return {
@@ -362,8 +370,11 @@
 
   // Fluidoterapia — manutenção + reposição de desidratação (cão/gato)
   function vetFluids(o) {
-    var w = o.peso, des = o.desidratacao || 0; // % de desidratação
+    var w = o.peso;
+    var des = num(o.desidratacao) ? o.desidratacao : 0; // % de desidratação
     if (!num(w) || w <= 0) return { error: 'Informe o peso do animal.' };
+    if (des < 0 || des > 15)
+      return { error: 'O grau de desidratação deve estar entre 0% e 15%.' };
     var manut = w * (o.mlKgDia || 50);          // mL/dia
     var deficit = des / 100 * w * 1000;          // mL
     return {
