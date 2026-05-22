@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Índice de Choque — FC ÷ PAS | Kit Clínico</title>
+<meta name="description" content="Calculadora de Índice de Choque (FC ÷ PAS). Informe a frequência cardíaca e a pressão arterial sistólica e avalie o risco de instabilidade hemodinâmica.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/indice-choque.html">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kit Clínico">
+<meta property="og:title" content="Calculadora de Índice de Choque">
+<meta property="og:description" content="Calcule o índice de choque (FC ÷ PAS) e avalie o risco de instabilidade hemodinâmica. Grátis.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/indice-choque.html">
+<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Índice de Choque",
+  "url": "https://kitclinico.com.br/medicina/indice-choque.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+  "description": "Calculadora do índice de choque (frequência cardíaca dividida pela pressão arterial sistólica)."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
+    {"@type":"ListItem","position":3,"name":"Calculadora de Índice de Choque","item":"https://kitclinico.com.br/medicina/indice-choque.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Kit Clínico — página inicial">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d9488"/>
+        <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+        <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+      </svg>
+      <span class="brand__name">Kit <span>Clínico</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="/medicina.html">Calculadoras médicas</a></li>
+        <li><a href="/nutricao.html">Nutrição</a></li>
+        <li><a href="/veterinaria.html">Veterinária</a></li>
+        <li><a href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar">
+  <strong>Uso educacional.</strong> As calculadoras não substituem o julgamento clínico profissional.
+</div>
+
+<main id="conteudo">
+
+  <div class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li>Calculadora de Índice de Choque</li>
+        </ol>
+      </nav>
+      <h1>Calculadora de Índice de Choque</h1>
+      <p class="lead">O índice de choque relaciona a frequência cardíaca e a pressão arterial sistólica para sinalizar instabilidade hemodinâmica.</p>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <form class="calculator" id="calc-form" novalidate>
+      <h2 class="calculator__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Calcular o índice de choque
+      </h2>
+      <p class="calculator__hint">Informe a frequência cardíaca e a pressão arterial sistólica do paciente.</p>
+
+      <fieldset class="field-group">
+        <legend>Sinais vitais</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="fc">Frequência cardíaca</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="fc" placeholder="Ex.: 110" autocomplete="off">
+              <span class="input-affix__unit">bpm</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="pas">Pressão arterial sistólica</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="pas" placeholder="Ex.: 100" autocomplete="off">
+              <span class="input-affix__unit">mmHg</span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <p class="field-error" id="calc-error" role="alert"></p>
+
+      <div class="calculator__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Calcular índice</button>
+        <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
+      </div>
+
+      <section class="result" id="calc-result" hidden aria-live="polite"></section>
+    </form>
+
+    <div class="ad-slot" data-ad-slot=""></div>
+
+    <article class="prose">
+
+      <h2>Para que serve</h2>
+      <p>O <strong>índice de choque</strong> é um marcador simples e rápido de gravidade, obtido dividindo-se a frequência cardíaca pela pressão arterial sistólica. É usado na sala de emergência e no trauma para identificar precocemente pacientes com <strong>instabilidade hemodinâmica</strong> e risco aumentado, mesmo quando a pressão arterial isolada ainda parece normal.</p>
+
+      <h2>Como interpretar o resultado</h2>
+      <p>O valor normal fica em torno de 0,5 a 0,7. Valores mais altos indicam maior risco:</p>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Índice de choque</th><th>Interpretação</th></tr></thead>
+          <tbody>
+            <tr><td>0,5 a 0,7</td><td>Faixa normal</td></tr>
+            <tr><td>0,7 a 0,9</td><td>Limítrofe — vigilância</td></tr>
+            <tr><td>0,9 ou mais</td><td>Alterado — risco aumentado</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula">Índice de choque = frequência cardíaca (bpm) ÷ PAS (mmHg)</div>
+
+      <h2>Exemplo</h2>
+      <p>Um paciente com <strong>FC de 110 bpm</strong> e <strong>PAS de 100 mmHg</strong> tem índice de choque = 110 ÷ 100 = <strong>1,10</strong> — um valor <strong>≥ 0,9</strong>, que sugere instabilidade hemodinâmica e exige reavaliação imediata.</p>
+
+      <div class="callout callout--warning">
+        <div class="callout__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Limitações
+        </div>
+        <p>O índice de choque é uma ferramenta de triagem e pode ser distorcido por medicamentos (betabloqueadores, vasopressores), arritmias, dor, febre e marca-passo. Ele não substitui a avaliação clínica completa nem a monitorização contínua do paciente grave.</p>
+      </div>
+
+      <div class="related">
+        <h2>Calculadoras relacionadas</h2>
+        <div class="calc-grid">
+          <a class="calc-card" href="/medicina/tfg-ckd-epi.html"><h3>TFG (CKD-EPI 2021)</h3><p>Taxa de filtração glomerular.</p></a>
+          <a class="calc-card" href="/medicina/fena.html"><h3>FeNa</h3><p>Fração de excreção de sódio.</p></a>
+          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal.</p></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0d9488"/>
+            <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+            <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+          </svg>
+          <span class="brand__name">Kit Clínico</span>
+        </a>
+        <p>Calculadoras clínicas online e gratuitas para médicos, nutricionistas e veterinários.</p>
+      </div>
+      <div>
+        <h3>Áreas</h3>
+        <ul>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:calculadoraestatistica@gmail.com">Dúvidas e sugestões</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>As calculadoras têm finalidade educacional e informativa e não substituem o julgamento clínico de um profissional de saúde habilitado.</p>
+      <p>© <span data-year>2026</span> Kit Clínico · Feito no Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/clinical.js"></script>
+<script src="/js/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add('is-visible');
+    result.hidden = true;
+  }
+  function clearError() {
+    errBox.textContent = '';
+    errBox.classList.remove('is-visible');
+  }
+
+  $('calc-example').addEventListener('click', function () {
+    $('fc').value = '110';
+    $('pas').value = '100';
+    compute();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+
+  function compute() {
+    clearError();
+    var fc = parseNum($('fc').value), pas = parseNum($('pas').value);
+    if (isNaN(fc) || isNaN(pas)) {
+      showError('Preencha a frequência cardíaca e a PAS com números válidos.');
+      return;
+    }
+    var r = Clinical.shockIndex({ fc: fc, pas: pas });
+    if (r.error) { showError(r.error); return; }
+    render(r);
+  }
+
+  var ICONS = {
+    ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+  };
+
+  function render(r) {
+    var cls = r.alterado ? 'warn' : 'ok';
+    var headline = r.alterado ? 'Índice de choque alterado' : 'Índice de choque normal';
+    result.className = 'result result--' + cls;
+    result.innerHTML =
+      '<div class="result__banner">' + ICONS[cls] +
+        '<div><div class="result__headline">' + headline + '</div>' +
+        '<div class="result__sub">Triagem de instabilidade hemodinâmica.</div></div></div>' +
+      '<div class="result__body">' +
+        '<div class="result__main">' + Fmt.num(r.indice, 2) + '</div>' +
+        '<div class="result__interpretation"><p>O índice de choque é de <strong>' + Fmt.num(r.indice, 2) +
+        '</strong>. ' + (r.alterado
+          ? 'Um valor <strong>≥ 0,9</strong> sugere instabilidade hemodinâmica e risco aumentado — reavalie o paciente imediatamente.'
+          : 'O valor está abaixo de 0,9, dentro da faixa esperada. Mantenha a vigilância clínica.') +
+        '</p></div>' +
+      '</div>';
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+})();
+</script>
+</body>
+</html>

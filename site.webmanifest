@@ -1,0 +1,14 @@
+{
+  "name": "Kit Clínico — Calculadoras Clínicas",
+  "short_name": "Kit Clínico",
+  "description": "Calculadoras clínicas online para médicos, nutricionistas e veterinários.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d9488",
+  "lang": "pt-BR",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Fluidoterapia (Veterinária) | Kit Clínico</title>
+<meta name="description" content="Calculadora de fluidoterapia veterinária online e gratuita. Informe o peso, o grau de desidratação e a taxa de manutenção e veja o volume total em 24 horas.">
+<link rel="canonical" href="https://kitclinico.com.br/veterinaria/fluidoterapia.html">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kit Clínico">
+<meta property="og:title" content="Calculadora de Fluidoterapia (Veterinária)">
+<meta property="og:description" content="Calcule o volume de fluidos em 24 horas somando manutenção e reposição da desidratação. Grátis.">
+<meta property="og:url" content="https://kitclinico.com.br/veterinaria/fluidoterapia.html">
+<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Fluidoterapia (Veterinária)",
+  "url": "https://kitclinico.com.br/veterinaria/fluidoterapia.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+  "description": "Calculadora de fluidoterapia veterinária: manutenção e reposição da desidratação em 24 horas."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Veterinária","item":"https://kitclinico.com.br/veterinaria.html"},
+    {"@type":"ListItem","position":3,"name":"Calculadora de Fluidoterapia (Veterinária)","item":"https://kitclinico.com.br/veterinaria/fluidoterapia.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Kit Clínico — página inicial">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d9488"/>
+        <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+        <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+      </svg>
+      <span class="brand__name">Kit <span>Clínico</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="/medicina.html">Calculadoras médicas</a></li>
+        <li><a href="/nutricao.html">Nutrição</a></li>
+        <li><a href="/veterinaria.html">Veterinária</a></li>
+        <li><a href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar">
+  <strong>Uso educacional.</strong> As calculadoras não substituem o julgamento clínico profissional.
+</div>
+
+<main id="conteudo">
+
+  <div class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+          <li>Calculadora de Fluidoterapia (Veterinária)</li>
+        </ol>
+      </nav>
+      <h1>Calculadora de Fluidoterapia (Veterinária)</h1>
+      <p class="lead">Calcule o volume de fluidos para 24 horas somando a fluidoterapia de manutenção com a reposição do déficit de desidratação do paciente.</p>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <form class="calculator" id="calc-form" novalidate>
+      <h2 class="calculator__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        Calcular a fluidoterapia
+      </h2>
+      <p class="calculator__hint">Informe o peso do animal, o grau de desidratação e a taxa de manutenção.</p>
+
+      <fieldset class="field-group">
+        <legend>Dados do animal</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="peso">Peso do animal</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 10" autocomplete="off">
+              <span class="input-affix__unit">kg</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="desidratacao">Grau de desidratação</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="desidratacao" placeholder="Ex.: 5" autocomplete="off">
+              <span class="input-affix__unit">%</span>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label for="mlKgDia">Taxa de manutenção</label>
+          <div class="input-affix">
+            <input class="input" type="text" inputmode="decimal" id="mlKgDia" value="50" autocomplete="off">
+            <span class="input-affix__unit">mL/kg/dia</span>
+          </div>
+          <p class="field-help">Geralmente 40–60 mL/kg/dia.</p>
+        </div>
+      </fieldset>
+
+      <p class="field-error" id="calc-error" role="alert"></p>
+
+      <div class="calculator__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Calcular fluidoterapia</button>
+        <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
+      </div>
+
+      <section class="result" id="calc-result" hidden aria-live="polite"></section>
+    </form>
+
+    <div class="ad-slot" data-ad-slot=""></div>
+
+    <article class="prose">
+
+      <h2>Para que serve</h2>
+      <p>A <strong>calculadora de fluidoterapia veterinária</strong> estima o volume de fluidos que um cão ou gato deve receber em 24 horas. O cálculo soma a <strong>fluidoterapia de manutenção</strong> — necessária para repor as perdas fisiológicas normais — com a <strong>reposição do déficit de desidratação</strong> já instalado no paciente.</p>
+
+      <h2>Como interpretar o resultado</h2>
+      <p>O resultado apresenta o volume total de 24 horas e o detalhamento entre manutenção e déficit:</p>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Componente</th><th>Cálculo</th></tr></thead>
+          <tbody>
+            <tr><td>Manutenção/dia</td><td>peso (kg) × taxa de manutenção (mL/kg/dia)</td></tr>
+            <tr><td>Déficit de desidratação</td><td>desidratação (%) ÷ 100 × peso (kg) × 1000</td></tr>
+            <tr><td>Total em 24h</td><td>manutenção + déficit</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula">Total 24h = (peso × mL/kg/dia) + (% desidratação ÷ 100 × peso × 1000)</div>
+
+      <h2>Exemplo</h2>
+      <p>Um animal de <strong>10 kg</strong>, com <strong>5% de desidratação</strong> e taxa de manutenção de <strong>50 mL/kg/dia</strong>: manutenção = 10 × 50 = 500 mL; déficit = 0,05 × 10 × 1000 = 500 mL; total em 24h = 500 + 500 = <strong>1000 mL</strong>, o que corresponde a cerca de <strong>42 mL/hora</strong>.</p>
+
+      <div class="callout callout--warning">
+        <div class="callout__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Reavalie o paciente
+        </div>
+        <p>Reavalie continuamente o paciente: peso, hidratação, débito urinário e estado cardiovascular orientam ajustes na velocidade da infusão. As perdas contínuas (vômitos, diarreia, poliúria) devem ser estimadas e somadas à parte do volume calculado.</p>
+      </div>
+
+      <div class="related">
+        <h2>Calculadoras relacionadas</h2>
+        <div class="calc-grid">
+          <a class="calc-card" href="/veterinaria/gotejamento-vet.html"><h3>Gotejamento veterinário</h3><p>Taxa de infusão em gotas por minuto.</p></a>
+          <a class="calc-card" href="/veterinaria/agua-pet.html"><h3>Água do pet</h3><p>Necessidade hídrica diária do animal.</p></a>
+          <a class="calc-card" href="/veterinaria/idade-pet.html"><h3>Idade do pet</h3><p>Idade do animal em anos humanos.</p></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0d9488"/>
+            <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+            <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+          </svg>
+          <span class="brand__name">Kit Clínico</span>
+        </a>
+        <p>Calculadoras clínicas online e gratuitas para médicos, nutricionistas e veterinários.</p>
+      </div>
+      <div>
+        <h3>Áreas</h3>
+        <ul>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:calculadoraestatistica@gmail.com">Dúvidas e sugestões</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>As calculadoras têm finalidade educacional e informativa e não substituem o julgamento clínico de um profissional de saúde habilitado.</p>
+      <p>© <span data-year>2026</span> Kit Clínico · Feito no Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/clinical.js"></script>
+<script src="/js/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add('is-visible');
+    result.hidden = true;
+  }
+  function clearError() {
+    errBox.textContent = '';
+    errBox.classList.remove('is-visible');
+  }
+
+  $('calc-example').addEventListener('click', function () {
+    $('peso').value = '10';
+    $('desidratacao').value = '5';
+    $('mlKgDia').value = '50';
+    compute();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+
+  function compute() {
+    clearError();
+    var peso = parseNum($('peso').value),
+        desidratacao = parseNum($('desidratacao').value),
+        mlKgDia = parseNum($('mlKgDia').value);
+    if (isNaN(peso) || isNaN(desidratacao) || isNaN(mlKgDia)) {
+      showError('Preencha o peso, a desidratação e a taxa de manutenção com números válidos.');
+      return;
+    }
+    var r = Clinical.vetFluids({ peso: peso, desidratacao: desidratacao, mlKgDia: mlKgDia });
+    if (r.error) { showError(r.error); return; }
+    render(r);
+  }
+
+  var ICONS = {
+    ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    neutral: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+  };
+
+  function render(r) {
+    result.className = 'result result--neutral';
+    result.innerHTML =
+      '<div class="result__banner">' + ICONS.neutral +
+        '<div><div class="result__headline">Volume de fluidos em 24 horas</div>' +
+        '<div class="result__sub">Manutenção somada à reposição da desidratação.</div></div></div>' +
+      '<div class="result__body">' +
+        '<div class="result__main">' + Fmt.int(r.total24h) + ' <small>mL/24h</small></div>' +
+        '<div class="result__metrics">' +
+          '<div class="metric"><span class="metric__label">Manutenção/dia</span>' +
+          '<span class="metric__value">' + Fmt.int(r.manutencaoDia) + ' mL</span></div>' +
+          '<div class="metric"><span class="metric__label">Déficit de desidratação</span>' +
+          '<span class="metric__value">' + Fmt.int(r.deficit) + ' mL</span></div>' +
+          '<div class="metric"><span class="metric__label">Velocidade</span>' +
+          '<span class="metric__value">' + Fmt.num(r.mlPorHora, 1) + ' mL/h</span></div>' +
+        '</div>' +
+        '<div class="result__interpretation"><p>O animal deve receber cerca de <strong>' +
+        Fmt.int(r.total24h) + ' mL</strong> em 24 horas, o que corresponde a aproximadamente <strong>' +
+        Fmt.num(r.mlPorHora, 1) + ' mL/hora</strong>. Reavalie o paciente continuamente e some as perdas contínuas à parte.</p></div>' +
+      '</div>';
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+})();
+</script>
+</body>
+</html>

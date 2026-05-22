@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Gasto Energético Total (GET) | Kit Clínico</title>
+<meta name="description" content="Calculadora de Gasto Energético Total (GET) online e gratuita. Informe peso, altura, idade, sexo e nível de atividade para estimar suas calorias diárias.">
+<link rel="canonical" href="https://kitclinico.com.br/nutricao/gasto-energetico.html">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kit Clínico">
+<meta property="og:title" content="Calculadora de Gasto Energético Total (GET)">
+<meta property="og:description" content="Estime o Gasto Energético Total (GET) a partir da TMB e do nível de atividade. Grátis.">
+<meta property="og:url" content="https://kitclinico.com.br/nutricao/gasto-energetico.html">
+<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Gasto Energético Total (GET)",
+  "url": "https://kitclinico.com.br/nutricao/gasto-energetico.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+  "description": "Calculadora do Gasto Energético Total (GET) a partir da taxa metabólica basal e do fator de atividade."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Nutrição","item":"https://kitclinico.com.br/nutricao.html"},
+    {"@type":"ListItem","position":3,"name":"Calculadora de Gasto Energético Total (GET)","item":"https://kitclinico.com.br/nutricao/gasto-energetico.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Kit Clínico — página inicial">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d9488"/>
+        <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+        <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+      </svg>
+      <span class="brand__name">Kit <span>Clínico</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="/medicina.html">Calculadoras médicas</a></li>
+        <li><a href="/nutricao.html">Nutrição</a></li>
+        <li><a href="/veterinaria.html">Veterinária</a></li>
+        <li><a href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar">
+  <strong>Uso educacional.</strong> As calculadoras não substituem o julgamento clínico profissional.
+</div>
+
+<main id="conteudo">
+
+  <div class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li>Calculadora de Gasto Energético Total (GET)</li>
+        </ol>
+      </nav>
+      <h1>Calculadora de Gasto Energético Total (GET)</h1>
+      <p class="lead">Estime o total de calorias que o corpo gasta por dia combinando a taxa metabólica basal com o nível de atividade física.</p>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <form class="calculator" id="calc-form" novalidate>
+      <h2 class="calculator__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+        Calcular o GET
+      </h2>
+      <p class="calculator__hint">Informe os dados antropométricos e o nível de atividade física.</p>
+
+      <fieldset class="field-group">
+        <legend>Dados da pessoa</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="peso">Peso</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 70" autocomplete="off">
+              <span class="input-affix__unit">kg</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="altura">Altura</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="altura" placeholder="Ex.: 175" autocomplete="off">
+              <span class="input-affix__unit">cm</span>
+            </div>
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="idade">Idade</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="idade" placeholder="Ex.: 30" autocomplete="off">
+              <span class="input-affix__unit">anos</span>
+            </div>
+          </div>
+          <div class="field">
+            <label>Sexo</label>
+            <div class="segmented">
+              <label><input type="radio" name="sexo" value="M" checked> Masculino</label>
+              <label><input type="radio" name="sexo" value="F"> Feminino</label>
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <span class="field-label">Nível de atividade</span>
+          <div class="segmented">
+            <label><input type="radio" name="atividade" value="1.2"> Sedentário</label>
+            <label><input type="radio" name="atividade" value="1.375"> Levemente ativo</label>
+            <label><input type="radio" name="atividade" value="1.55" checked> Moderadamente ativo</label>
+            <label><input type="radio" name="atividade" value="1.725"> Muito ativo</label>
+            <label><input type="radio" name="atividade" value="1.9"> Extremamente ativo</label>
+          </div>
+        </div>
+      </fieldset>
+
+      <p class="field-error" id="calc-error" role="alert"></p>
+
+      <div class="calculator__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Calcular GET</button>
+        <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
+      </div>
+
+      <section class="result" id="calc-result" hidden aria-live="polite"></section>
+    </form>
+
+    <div class="ad-slot" data-ad-slot=""></div>
+
+    <article class="prose">
+
+      <h2>Para que serve</h2>
+      <p>O <strong>Gasto Energético Total (GET)</strong> é a estimativa de quantas calorias o corpo consome ao longo de um dia, considerando o metabolismo de repouso e as atividades realizadas. É a base para planejar a alimentação: a quantidade de calorias necessária para <strong>manter o peso atual</strong>.</p>
+
+      <h2>Como interpretar o resultado</h2>
+      <p>O cálculo é feito em dois passos. Primeiro estima-se a <strong>Taxa Metabólica Basal (TMB)</strong> pela equação de Mifflin-St Jeor; depois multiplica-se a TMB por um <strong>fator de atividade</strong> que reflete a rotina de exercícios. As faixas de fator usadas são:</p>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Nível de atividade</th><th>Fator</th></tr></thead>
+          <tbody>
+            <tr><td>Sedentário</td><td>1,2</td></tr>
+            <tr><td>Levemente ativo</td><td>1,375</td></tr>
+            <tr><td>Moderadamente ativo</td><td>1,55</td></tr>
+            <tr><td>Muito ativo</td><td>1,725</td></tr>
+            <tr><td>Extremamente ativo</td><td>1,9</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula">GET = TMB × fator de atividade</div>
+      <p>O GET representa as calorias para <strong>manter o peso</strong>. Para perder peso, planeja-se um valor abaixo do GET; para ganhar, acima dele.</p>
+
+      <h2>Exemplo</h2>
+      <p>Uma pessoa <strong>masculina</strong>, com <strong>70 kg</strong>, <strong>175 cm</strong>, <strong>30 anos</strong> e <strong>moderadamente ativa</strong>, tem TMB de aproximadamente 1.649 kcal/dia. Multiplicando pelo fator 1,55, o GET estimado é de cerca de <strong>2.556 kcal/dia</strong>.</p>
+
+      <div class="callout callout--warning">
+        <div class="callout__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Limitações
+        </div>
+        <p>O GET é uma estimativa populacional e pode variar conforme composição corporal, genética, condições de saúde e a real intensidade da rotina. Use-o como ponto de partida e ajuste conforme a evolução do peso, de preferência com acompanhamento de um nutricionista.</p>
+      </div>
+
+      <div class="related">
+        <h2>Calculadoras relacionadas</h2>
+        <div class="calc-grid">
+          <a class="calc-card" href="/nutricao/macros.html"><h3>Macronutrientes</h3><p>Distribuição de proteína, carboidrato e gordura.</p></a>
+          <a class="calc-card" href="/nutricao/agua-diaria.html"><h3>Água diária</h3><p>Necessidade hídrica diária estimada.</p></a>
+          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal.</p></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0d9488"/>
+            <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+            <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+          </svg>
+          <span class="brand__name">Kit Clínico</span>
+        </a>
+        <p>Calculadoras clínicas online e gratuitas para médicos, nutricionistas e veterinários.</p>
+      </div>
+      <div>
+        <h3>Áreas</h3>
+        <ul>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:calculadoraestatistica@gmail.com">Dúvidas e sugestões</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>As calculadoras têm finalidade educacional e informativa e não substituem o julgamento clínico de um profissional de saúde habilitado.</p>
+      <p>© <span data-year>2026</span> Kit Clínico · Feito no Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/clinical.js"></script>
+<script src="/js/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add('is-visible');
+    result.hidden = true;
+  }
+  function clearError() {
+    errBox.textContent = '';
+    errBox.classList.remove('is-visible');
+  }
+  function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
+  }
+
+  $('calc-example').addEventListener('click', function () {
+    $('peso').value = '70';
+    $('altura').value = '175';
+    $('idade').value = '30';
+    setRadio('sexo', 'M');
+    setRadio('atividade', '1.55');
+    compute();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+
+  function compute() {
+    clearError();
+    var peso = parseNum($('peso').value), altura = parseNum($('altura').value);
+    var idade = parseNum($('idade').value);
+    var sexo = Fmt.radio('sexo');
+    var fator = parseNum(Fmt.radio('atividade'));
+    if (isNaN(peso) || isNaN(altura) || isNaN(idade)) {
+      showError('Preencha o peso, a altura e a idade com números válidos.');
+      return;
+    }
+    var bmr = Clinical.bmrMifflin({ peso: peso, altura: altura, idade: idade, sexo: sexo });
+    if (bmr.error) { showError(bmr.error); return; }
+    var r = Clinical.tdee({ tmb: bmr.tmb, fator: fator });
+    if (r.error) { showError(r.error); return; }
+    render(r, bmr.tmb);
+  }
+
+  var ICONS = {
+    neutral: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+  };
+
+  function render(r, tmb) {
+    result.className = 'result result--neutral';
+    result.innerHTML =
+      '<div class="result__banner">' + ICONS.neutral +
+        '<div><div class="result__headline">Gasto Energético Total</div>' +
+        '<div class="result__sub">Estimativa de calorias diárias para manter o peso.</div></div></div>' +
+      '<div class="result__body">' +
+        '<div class="result__main">' + Fmt.int(r.get) + ' <small>kcal/dia</small></div>' +
+        '<div class="result__metrics">' +
+          '<div class="metric"><span class="metric__label">Taxa metabólica basal (TMB)</span>' +
+          '<span class="metric__value">' + Fmt.int(tmb) + ' kcal/dia</span></div>' +
+        '</div>' +
+        '<div class="result__interpretation"><p>O Gasto Energético Total estimado é de <strong>' +
+        Fmt.int(r.get) + ' kcal por dia</strong>, calculado a partir de uma TMB de <strong>' +
+        Fmt.int(tmb) + ' kcal/dia</strong>. Esse é o valor aproximado de calorias para manter o peso atual; ' +
+        'ajuste para mais ou para menos conforme o objetivo.</p></div>' +
+      '</div>';
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+})();
+</script>
+</body>
+</html>

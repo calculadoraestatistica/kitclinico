@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de Hidratação de Manutenção (Holliday-Segar) | Kit Clínico</title>
+<meta name="description" content="Calculadora de hidratação de manutenção pediátrica pelo método de Holliday-Segar. Informe o peso da criança e veja a necessidade hídrica em mL/dia e mL/hora.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/holliday-segar.html">
+<meta name="theme-color" content="#0d9488">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Kit Clínico">
+<meta property="og:title" content="Calculadora de Hidratação de Manutenção (Holliday-Segar)">
+<meta property="og:description" content="Calcule a necessidade hídrica de manutenção em pediatria pelo método de Holliday-Segar. Grátis.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/holliday-segar.html">
+<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/favicon.svg">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="stylesheet" href="/css/style.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "Calculadora de Hidratação de Manutenção (Holliday-Segar)",
+  "url": "https://kitclinico.com.br/medicina/holliday-segar.html",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Web",
+  "inLanguage": "pt-BR",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
+  "description": "Calculadora da necessidade hídrica de manutenção pediátrica pelo método de Holliday-Segar."
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
+    {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
+    {"@type":"ListItem","position":3,"name":"Calculadora de Hidratação de Manutenção (Holliday-Segar)","item":"https://kitclinico.com.br/medicina/holliday-segar.html"}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Kit Clínico — página inicial">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#0d9488"/>
+        <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+        <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+      </svg>
+      <span class="brand__name">Kit <span>Clínico</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg class="nav-toggle__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="nav-toggle__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
+    <nav class="main-nav" id="menu" aria-label="Menu principal">
+      <ul>
+        <li><a href="/medicina.html">Calculadoras médicas</a></li>
+        <li><a href="/nutricao.html">Nutrição</a></li>
+        <li><a href="/veterinaria.html">Veterinária</a></li>
+        <li><a href="/sobre.html">Sobre</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="disclaimer-bar">
+  <strong>Uso educacional.</strong> As calculadoras não substituem o julgamento clínico profissional.
+</div>
+
+<main id="conteudo">
+
+  <div class="page-head">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Trilha de navegação">
+        <ol>
+          <li><a href="/">Início</a></li>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li>Calculadora de Hidratação de Manutenção (Holliday-Segar)</li>
+        </ol>
+      </nav>
+      <h1>Calculadora de Hidratação de Manutenção (Holliday-Segar)</h1>
+      <p class="lead">O método de Holliday-Segar estima a necessidade hídrica de manutenção de crianças a partir do peso corporal.</p>
+    </div>
+  </div>
+
+  <div class="container narrow">
+
+    <form class="calculator" id="calc-form" novalidate>
+      <h2 class="calculator__title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+        Calcular a hidratação de manutenção
+      </h2>
+      <p class="calculator__hint">Informe o peso da criança.</p>
+
+      <fieldset class="field-group">
+        <legend>Dados da criança</legend>
+        <div class="field">
+          <label for="peso">Peso da criança</label>
+          <div class="input-affix">
+            <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 26" autocomplete="off">
+            <span class="input-affix__unit">kg</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <p class="field-error" id="calc-error" role="alert"></p>
+
+      <div class="calculator__actions">
+        <button class="btn btn--primary btn--lg" type="submit">Calcular hidratação</button>
+        <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
+      </div>
+
+      <section class="result" id="calc-result" hidden aria-live="polite"></section>
+    </form>
+
+    <div class="ad-slot" data-ad-slot=""></div>
+
+    <article class="prose">
+
+      <h2>Para que serve</h2>
+      <p>O <strong>método de Holliday-Segar</strong> é o cálculo mais usado para estimar a <strong>necessidade hídrica de manutenção</strong> de crianças, ou seja, o volume de líquidos necessário para repor as perdas diárias normais (urina, fezes, perdas insensíveis). É a base do volume de fluidos de manutenção na pediatria hospitalar.</p>
+
+      <h2>Como interpretar o resultado</h2>
+      <p>O cálculo soma a necessidade hídrica por faixas de peso, conhecida como regra dos <strong>100/50/20 mL/kg</strong>:</p>
+      <div class="table-wrap">
+        <table class="data">
+          <thead><tr><th>Faixa de peso</th><th>Necessidade hídrica</th></tr></thead>
+          <tbody>
+            <tr><td>Primeiros 10 kg</td><td>100 mL/kg por dia</td></tr>
+            <tr><td>De 10 a 20 kg</td><td>+ 50 mL/kg por dia</td></tr>
+            <tr><td>Acima de 20 kg</td><td>+ 20 mL/kg por dia</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="formula">Manutenção = 100 mL/kg (≤10 kg) + 50 mL/kg (10–20 kg) + 20 mL/kg (&gt;20 kg)</div>
+
+      <h2>Exemplo</h2>
+      <p>Para uma criança de <strong>26 kg</strong>: 100 × 10 + 50 × 10 + 20 × 6 = 1000 + 500 + 120 = <strong>1620 mL por dia</strong>, o que equivale a aproximadamente <strong>67,5 mL/hora</strong>.</p>
+
+      <div class="callout callout--warning">
+        <div class="callout__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Apenas manutenção
+        </div>
+        <p>Este cálculo estima somente o volume de manutenção. Ele não inclui a reposição de déficits prévios (desidratação) nem de perdas contínuas anormais (vômitos, diarreia, febre). Ajuste o volume conforme o estado clínico, o balanço hídrico e os eletrólitos da criança.</p>
+      </div>
+
+      <div class="related">
+        <h2>Calculadoras relacionadas</h2>
+        <div class="calc-grid">
+          <a class="calc-card" href="/medicina/dose-pediatrica.html"><h3>Dose pediátrica</h3><p>Dose total de medicamento por peso.</p></a>
+          <a class="calc-card" href="/medicina/gotejamento.html"><h3>Gotejamento IV</h3><p>Velocidade de infusão em gotas por minuto.</p></a>
+          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
+        </div>
+      </div>
+
+    </article>
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="/">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#0d9488"/>
+            <rect x="27" y="14" width="10" height="36" rx="3" fill="#fff"/>
+            <rect x="14" y="27" width="36" height="10" rx="3" fill="#fff"/>
+          </svg>
+          <span class="brand__name">Kit Clínico</span>
+        </a>
+        <p>Calculadoras clínicas online e gratuitas para médicos, nutricionistas e veterinários.</p>
+      </div>
+      <div>
+        <h3>Áreas</h3>
+        <ul>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li><a href="/nutricao.html">Nutrição</a></li>
+          <li><a href="/veterinaria.html">Veterinária</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Site</h3>
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre.html">Sobre</a></li>
+          <li><a href="/privacidade.html">Privacidade</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contato</h3>
+        <ul>
+          <li><a href="mailto:calculadoraestatistica@gmail.com">Dúvidas e sugestões</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>As calculadoras têm finalidade educacional e informativa e não substituem o julgamento clínico de um profissional de saúde habilitado.</p>
+      <p>© <span data-year>2026</span> Kit Clínico · Feito no Brasil.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/config.js"></script>
+<script src="/js/clinical.js"></script>
+<script src="/js/app.js"></script>
+<script>
+(function () {
+  'use strict';
+  var $ = function (id) { return document.getElementById(id); };
+  var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
+
+  function showError(msg) {
+    errBox.textContent = msg;
+    errBox.classList.add('is-visible');
+    result.hidden = true;
+  }
+  function clearError() {
+    errBox.textContent = '';
+    errBox.classList.remove('is-visible');
+  }
+
+  $('calc-example').addEventListener('click', function () {
+    $('peso').value = '26';
+    compute();
+  });
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+
+  function compute() {
+    clearError();
+    var peso = parseNum($('peso').value);
+    if (isNaN(peso)) {
+      showError('Preencha o peso da criança com um número válido.');
+      return;
+    }
+    var r = Clinical.hollidaySegar({ peso: peso });
+    if (r.error) { showError(r.error); return; }
+    render(r);
+  }
+
+  var ICONS = {
+    ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+    neutral: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>'
+  };
+
+  function render(r) {
+    result.className = 'result result--neutral';
+    result.innerHTML =
+      '<div class="result__banner">' + ICONS.neutral +
+        '<div><div class="result__headline">Necessidade hídrica de manutenção</div>' +
+        '<div class="result__sub">Método de Holliday-Segar (100/50/20 mL/kg).</div></div></div>' +
+      '<div class="result__body">' +
+        '<div class="result__main">' + Fmt.int(r.mlPorDia) + ' <small>mL/dia</small></div>' +
+        '<div class="result__metrics">' +
+          '<div class="metric"><span class="metric__label">Volume por hora</span>' +
+          '<span class="metric__value">' + Fmt.num(r.mlPorHora, 1) + ' mL/h</span></div>' +
+        '</div>' +
+        '<div class="result__interpretation"><p>A necessidade hídrica de manutenção é de <strong>' +
+        Fmt.int(r.mlPorDia) + ' mL por dia</strong>, ou aproximadamente <strong>' +
+        Fmt.num(r.mlPorHora, 1) + ' mL/hora</strong>. Este valor não inclui déficits prévios nem perdas anormais.</p></div>' +
+      '</div>';
+    result.hidden = false;
+    result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+})();
+</script>
+</body>
+</html>

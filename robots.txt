@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kitclinico.com.br/sitemap.xml

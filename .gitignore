@@ -1,0 +1,10 @@
+# Arquivos internos — não publicar
+introdução
+introducao
+introducao.txt
+*.local
+
+# Sistema
+Thumbs.db
+.DS_Store
+desktop.ini
