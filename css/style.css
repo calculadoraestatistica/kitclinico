@@ -305,11 +305,116 @@ a.card:hover {
 }
 .disclaimer svg { width: 20px; height: 20px; flex: none; color: var(--c-warning); margin-top: .1rem; }
 .disclaimer strong { color: #7c4a06; }
-.disclaimer-bar {
-  background: var(--c-ink); color: #cbd5e1; font-size: .85rem;
-  text-align: center; padding: .5rem 1rem;
+/* --- Cadastro row (homepage) -------------------------------------------- */
+.cadastro-row {
+  margin-top: 1.6rem; background: var(--c-primary-soft);
+  border: 1px solid var(--c-primary-soft2); border-radius: var(--radius-lg);
+  padding: 1rem 1.2rem; display: flex; flex-direction: column; gap: .7rem;
 }
-.disclaimer-bar strong { color: #fff; }
+.cadastro-row__title {
+  display: flex; align-items: center; gap: .55rem;
+  color: var(--c-primary-darker); font-weight: 700; font-size: 1rem;
+}
+.cadastro-row__title svg { width: 22px; height: 22px; flex: none; color: var(--c-primary-dark); }
+.cadastro-row__links {
+  display: flex; flex-wrap: wrap; gap: .55rem 1.2rem; font-weight: 600;
+}
+.cadastro-row__links a { color: var(--c-primary-dark); }
+
+/* --- Cadastro clínico (páginas de cadastro) ------------------------------ */
+.privacy-notice {
+  background: var(--c-success-bg); border: 1px solid var(--c-success-border);
+  border-left: 4px solid var(--c-success); border-radius: var(--radius-sm);
+  padding: .9rem 1.1rem; margin-block: 1.2rem;
+  font-size: .94rem; color: #14532d;
+  display: flex; gap: .6rem; align-items: flex-start;
+}
+.privacy-notice svg { width: 22px; height: 22px; flex: none; color: var(--c-success); margin-top: .1rem; }
+.privacy-notice strong { color: #14532d; }
+
+.cad-section { margin-bottom: 1.2rem; }
+.cad-section > h2 {
+  font-size: 1.1rem; padding-bottom: .4rem; margin-bottom: .9rem;
+  border-bottom: 2px solid var(--c-primary-soft2);
+  display: flex; align-items: center; gap: .5rem; color: var(--c-primary-darker);
+}
+.cad-section > h2 svg { width: 20px; height: 20px; color: var(--c-primary); }
+
+.cad-actions {
+  display: flex; flex-wrap: wrap; gap: .6rem; margin-block: 1.4rem;
+  padding: 1rem; background: var(--c-soft); border-radius: var(--radius);
+}
+.cad-actions .btn { flex: 1 1 auto; min-width: 160px; }
+
+.cad-export-row {
+  display: flex; flex-wrap: wrap; gap: .6rem; margin-top: .5rem;
+}
+
+.report-preview {
+  background: #fff; border: 2px solid var(--c-primary-soft2);
+  border-radius: var(--radius); padding: 1.4rem; margin-block: 1.4rem;
+}
+.report-preview__head {
+  display: flex; align-items: center; gap: .8rem;
+  border-bottom: 2px solid var(--c-primary); padding-bottom: .8rem; margin-bottom: 1rem;
+}
+.report-preview__brand {
+  width: 44px; height: 44px; border-radius: 10px; flex: none;
+}
+.report-preview__title { font-size: 1.15rem; font-weight: 800; color: var(--c-ink); }
+.report-preview__sub { font-size: .85rem; color: var(--c-muted); }
+.report-section { margin-bottom: 1rem; }
+.report-section h3 {
+  font-size: 1rem; color: var(--c-primary-darker);
+  border-bottom: 1px dashed var(--c-line); padding-bottom: .3rem; margin-bottom: .5rem;
+}
+.report-section dl {
+  display: grid; grid-template-columns: minmax(140px, 1fr) 2fr; gap: .3rem .8rem;
+  font-size: .94rem;
+}
+.report-section dt { color: var(--c-muted); font-weight: 600; }
+.report-section dd { margin: 0; color: var(--c-ink); }
+.report-calc {
+  background: var(--c-primary-soft); border: 1px solid var(--c-primary-soft2);
+  border-radius: var(--radius-sm); padding: .7rem .9rem; margin-bottom: .5rem;
+}
+.report-calc__name { font-weight: 700; color: var(--c-primary-darker); margin-bottom: .25rem; }
+.report-calc__result { color: var(--c-ink); }
+.report-footer {
+  margin-top: 1.2rem; padding-top: .8rem; border-top: 1px solid var(--c-line);
+  font-size: .8rem; color: var(--c-muted); text-align: center;
+}
+.report-footer a { color: var(--c-primary-dark); }
+
+.calc-add-row {
+  display: flex; gap: .55rem; align-items: end; flex-wrap: wrap;
+  background: var(--c-soft); padding: .9rem; border-radius: var(--radius);
+  margin-bottom: 1rem;
+}
+.calc-add-row > .field { flex: 1; min-width: 220px; margin: 0; }
+
+.cad-calc-card {
+  background: #fff; border: 1px solid var(--c-line); border-radius: var(--radius);
+  padding: 1rem; margin-bottom: .7rem;
+}
+.cad-calc-card__head {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: .5rem; margin-bottom: .7rem;
+}
+.cad-calc-card__name { font-weight: 700; color: var(--c-primary-darker); }
+.cad-calc-card__result {
+  background: var(--c-primary-soft); border-radius: var(--radius-sm);
+  padding: .6rem .8rem; margin-top: .5rem; font-size: .94rem; color: var(--c-ink);
+}
+.cad-calc-card__result.is-error {
+  background: var(--c-danger-bg); color: var(--c-danger);
+}
+.btn--icon-only {
+  padding: .35rem .55rem; min-height: 0; line-height: 1;
+}
+@media (min-width: 720px) {
+  .cadastro-row { flex-direction: row; align-items: center; justify-content: space-between; }
+}
 
 /* --- Widget de calculadora ---------------------------------------------- */
 .calculator {
