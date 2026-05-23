@@ -746,11 +746,12 @@
       if (y + needed > 285) { doc.addPage(); y = M; }
     }
     function sectionTitle(t) {
-      checkPage(10);
+      checkPage(14);
       doc.setFontSize(12); doc.setTextColor(15, 94, 89); doc.setFont(undefined, 'bold');
-      doc.text(t, M, y); y += 6;
+      doc.text(t, M, y); y += 3;
       doc.setDrawColor(204, 251, 241); doc.setLineWidth(0.3);
-      doc.line(M, y - 3, W - M, y - 3);
+      doc.line(M, y, W - M, y);
+      y += 6;
     }
     function row(label, val) {
       doc.setFont(undefined, 'normal'); doc.setFontSize(10); doc.setTextColor(100, 116, 139);
