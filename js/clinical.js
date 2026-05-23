@@ -96,7 +96,7 @@
     var egfr = 142 * Math.pow(Math.min(r, 1), a) *
                Math.pow(Math.max(r, 1), -1.200) *
                Math.pow(0.9938, age) * (f ? 1.012 : 1);
-    return { tfg: egfr, estagio: ckdStage(egfr) };
+    return { tfg: egfr, estagio: ckdStage(egfr), categoriaG: ckdGCategory(egfr) };
   }
   function ckdStage(g) {
     if (g >= 90) return 'G1 — normal ou alta';
@@ -105,6 +105,74 @@
     if (g >= 30) return 'G3b — moderada a grave';
     if (g >= 15) return 'G4 — gravemente reduzida';
     return 'G5 — falência renal';
+  }
+  function ckdGCategory(g) {
+    if (g >= 90) return 'G1';
+    if (g >= 60) return 'G2';
+    if (g >= 45) return 'G3a';
+    if (g >= 30) return 'G3b';
+    if (g >= 15) return 'G4';
+    return 'G5';
+  }
+
+  // Relação albumina/creatinina urinária — UACR (mg/g)
+  // albumina em mg, creatinina em g (ou ambas no mesmo amostra de spot)
+  // Aceita tambem mg/mmol (multiplica por 8.84 para converter para mg/g)
+  function uacr(o) {
+    var alb = o.albumina, cr = o.creatinina, unidade = o.unidade || 'mg-g';
+    if (!num(alb) || !num(cr) || alb < 0 || cr <= 0)
+      return { error: 'Informe albumina e creatinina urinárias válidas.' };
+    var razao;
+    if (unidade === 'mg-mmol') {
+      // entrada ja vem como mg/mmol
+      razao = alb;
+      // converte para mg/g para classificar (1 mmol creatinina = 113,12 mg => 1 mg/mmol ≈ 8.84 mg/g)
+      var razaoMgG = razao * 8.84;
+      return { razao: razao, razaoMgG: razaoMgG, categoriaA: uacrCategory(razaoMgG), descricao: uacrDescription(razaoMgG) };
+    }
+    if (unidade === 'mg-L_g-L') {
+      // albumina mg/L e creatinina g/L (concentracoes no mesmo spot)
+      razao = alb / cr;
+    } else {
+      // padrao: albumina mg, creatinina g
+      razao = alb / cr;
+    }
+    return { razao: razao, categoriaA: uacrCategory(razao), descricao: uacrDescription(razao) };
+  }
+  function uacrCategory(mgPerG) {
+    if (mgPerG < 30) return 'A1';
+    if (mgPerG <= 300) return 'A2';
+    return 'A3';
+  }
+  function uacrDescription(mgPerG) {
+    if (mgPerG < 30) return 'A1 — normal a levemente aumentada';
+    if (mgPerG <= 300) return 'A2 — moderadamente aumentada (microalbuminúria)';
+    return 'A3 — gravemente aumentada (macroalbuminúria)';
+  }
+
+  // Estratificacao de risco da doenca renal cronica — matriz KDIGO 2012
+  // categoriaG: 'G1'..'G5' | categoriaA: 'A1'..'A3'
+  // Retorna nivel de risco e conduta sugerida.
+  function kdigoRisk(o) {
+    var g = o.categoriaG, a = o.categoriaA;
+    var risks = {
+      G1:  { A1: 'baixo',     A2: 'moderado',  A3: 'alto' },
+      G2:  { A1: 'baixo',     A2: 'moderado',  A3: 'alto' },
+      G3a: { A1: 'moderado',  A2: 'alto',      A3: 'muito_alto' },
+      G3b: { A1: 'alto',      A2: 'muito_alto', A3: 'muito_alto' },
+      G4:  { A1: 'muito_alto', A2: 'muito_alto', A3: 'muito_alto' },
+      G5:  { A1: 'muito_alto', A2: 'muito_alto', A3: 'muito_alto' }
+    };
+    var labels = {
+      baixo:      { label: 'Risco baixo',      cls: 'ok',     conduta: 'Monitoramento de rotina (anual), controle de fatores de risco cardiovascular.' },
+      moderado:   { label: 'Risco moderado',   cls: 'warn',   conduta: 'Reavaliação a cada 6 meses; investigar e tratar a causa; controle rigoroso da pressão e da glicemia.' },
+      alto:       { label: 'Risco alto',       cls: 'alert',  conduta: 'Reavaliação trimestral; encaminhamento ao nefrologista; revisar doses de medicamentos pela TFG.' },
+      muito_alto: { label: 'Risco muito alto', cls: 'alert',  conduta: 'Encaminhamento urgente ao nefrologista; planejar terapia renal substitutiva quando indicada; ajustar todos os medicamentos.' }
+    };
+    if (!risks[g] || !risks[g][a])
+      return { error: 'Informe as categorias G (G1–G5) e A (A1–A3).' };
+    var nivel = risks[g][a];
+    return Object.assign({ categoriaG: g, categoriaA: a, nivel: nivel }, labels[nivel]);
   }
 
   // Clearance de creatinina — Cockcroft-Gault
@@ -608,13 +676,210 @@
     return out;
   }
 
+  /* ======================================================================
+     PAINEIS CLINICOS INTEGRADOS — funcoes que combinam resultados
+     ====================================================================== */
+
+  // Anticoagulacao em FA — balanço entre risco de AVC (CHA2DS2-VASc) e
+  // risco de sangramento (HAS-BLED). Indica decisao de anticoagulacao.
+  function afibAnticoagPanel(o) {
+    var c = o.chadsvasc, h = o.hasbled;
+    if (!num(c) || !num(h) || c < 0 || h < 0)
+      return { error: 'Informe os escores CHA2DS2-VASc e HAS-BLED.' };
+    var sexoF = !!o.sexoF;
+    var recomenda, cls, justificativa;
+    // CHA2DS2-VASc cutoffs: >=2 (homem) ou >=3 (mulher) tipicamente indicam anticoagulacao
+    var limiteAVC = sexoF ? 3 : 2;
+    if (c < limiteAVC) {
+      recomenda = 'Anticoagulação geralmente NÃO indicada';
+      cls = 'ok';
+      justificativa = 'Risco de AVC baixo (CHA2DS2-VASc abaixo do limiar). Reavaliar anualmente.';
+    } else if (h >= 3 && c < limiteAVC + 2) {
+      recomenda = 'Avaliar individualmente — risco de sangramento alto';
+      cls = 'warn';
+      justificativa = 'Anticoagulação indicada pelo CHA2DS2-VASc, mas HAS-BLED ≥ 3 sugere cautela. Corrigir fatores reversíveis (hipertensão, INR lábil, álcool, drogas) e reavaliar.';
+    } else if (h >= 3) {
+      recomenda = 'Anticoagular com vigilância — HAS-BLED elevado não contraindica';
+      cls = 'warn';
+      justificativa = 'Risco de AVC supera o de sangramento; o HAS-BLED alto serve para acompanhar de perto, não para suspender a anticoagulação.';
+    } else {
+      recomenda = 'Anticoagulação INDICADA';
+      cls = 'alert';
+      justificativa = 'Benefício claro: risco de AVC justifica anticoagulação e o risco de sangramento é aceitável.';
+    }
+    return { recomenda: recomenda, cls: cls, justificativa: justificativa,
+             chadsvasc: c, hasbled: h, limiteAVC: limiteAVC };
+  }
+
+  // Padrao de LRA pre-renal vs NTA — combina FeNa e FeUreia (util quando
+  // o paciente usa diuretico, em que FeNa pode estar falsamente elevada)
+  function akiPattern(o) {
+    var fena = o.fena, feUreia = o.feUreia;
+    if (!num(fena) || !num(feUreia))
+      return { error: 'Informe FeNa e FeUreia (%).' };
+    var fenaBaixa = fena < 1;
+    var fenaAlta  = fena > 2;
+    var feuBaixa  = feUreia < 35;
+    var feuAlta   = feUreia > 50;
+    var padrao, cls, comentario;
+    if (fenaBaixa && feuBaixa) {
+      padrao = 'Padrão pré-renal';
+      cls = 'ok';
+      comentario = 'Ambos os marcadores indicam hipoperfusão renal. Investigar volemia (hidratar com cautela), hemorragia, sepse e ICC.';
+    } else if (fenaAlta && feuAlta) {
+      padrao = 'Padrão de necrose tubular aguda (NTA)';
+      cls = 'alert';
+      comentario = 'Ambos os marcadores indicam disfunção tubular intrínseca. Investigar causa (isquêmica, nefrotóxica) e suporte clínico.';
+    } else if (fenaAlta && feuBaixa) {
+      padrao = 'Padrão pré-renal mascarado por diurético';
+      cls = 'warn';
+      comentario = 'A FeUreia sugere pré-renal, mas a FeNa está falsamente alta pelo uso de diurético. Em pacientes em uso de furosemida, a FeUreia é o marcador mais confiável.';
+    } else if (fenaBaixa && feuAlta) {
+      padrao = 'Padrão discordante — investigar';
+      cls = 'warn';
+      comentario = 'FeNa baixa com FeUreia alta é incomum. Considerar contraste recente, nefrite intersticial, glomerulonefrite ou erro pré-analítico.';
+    } else {
+      padrao = 'Padrão intermediário / indeterminado';
+      cls = 'warn';
+      comentario = 'Os valores estão em zonas intermediárias. Avaliar evolução clínica, sedimento urinário e biomarcadores adicionais.';
+    }
+    return { padrao: padrao, cls: cls, comentario: comentario, fena: fena, feUreia: feUreia };
+  }
+
+  // Cirrose: combina Child-Pugh e MELD-Na em uma leitura unica de gravidade
+  function cirrhosisPanel(o) {
+    var meld = o.meldNa, child = o.childClasse;
+    if (!num(meld) || !child) return { error: 'Informe MELD-Na e a classe Child-Pugh.' };
+    var conduta, cls;
+    if (meld >= 15 || child === 'C') {
+      conduta = 'Avaliar lista de transplante hepático e cuidados especializados.';
+      cls = 'alert';
+    } else if (meld >= 10 || child === 'B') {
+      conduta = 'Acompanhamento por hepatologia, prevenção de descompensações (varizes, encefalopatia, ascite) e vacinação.';
+      cls = 'warn';
+    } else {
+      conduta = 'Cirrose compensada — monitoramento semestral, rastreio de CHC e varizes, controle de fatores agravantes.';
+      cls = 'ok';
+    }
+    return { meld: meld, child: child, conduta: conduta, cls: cls };
+  }
+
+  // Distúrbios acido-base — combina anion gap, sodio corrigido e osmolaridade
+  // para sugerir um tipo de acidose ou de disturbio osmolar.
+  function acidBasePanel(o) {
+    var ag = o.anionGap, naCorr = o.sodioCorrigido, osm = o.osmolaridade, osmMedida = o.osmMedida;
+    if (!num(ag)) return { error: 'Informe ao menos o ânion gap.' };
+    var notas = [];
+    if (ag > 12) notas.push('**Acidose metabólica com ânion gap elevado** — investigar causas (MUDPILES: metanol, uremia, cetoacidose diabética, paraldeído, INH/ferro, ácido láctico, etilenoglicol, salicilatos).');
+    else if (ag < 8) notas.push('Ânion gap baixo — hipoalbuminemia, mieloma, intoxicação por lítio/brometo.');
+    else notas.push('Ânion gap normal.');
+    if (num(naCorr)) {
+      if (naCorr > 145) notas.push('**Hipernatremia corrigida** — déficit hídrico ou ganho de sódio.');
+      else if (naCorr < 135) notas.push('**Hiponatremia corrigida** — avaliar volemia e osmolaridade.');
+    }
+    if (num(osm) && num(osmMedida)) {
+      var gap = osmMedida - osm;
+      notas.push('Gap osmolar: **' + gap.toFixed(0) + ' mOsm/kg**' +
+        (gap > 10 ? ' — elevado: pensar em metanol, etilenoglicol, manitol.' : ' — dentro da faixa esperada.'));
+    } else if (num(osm)) {
+      notas.push('Osmolaridade calculada: ' + osm.toFixed(0) + ' mOsm/kg.');
+    }
+    return { notas: notas, anionGap: ag, sodioCorrigido: naCorr, osmolaridade: osm };
+  }
+
+  // Ajuste de dose por funcao renal — combina TFG com dose por peso
+  // Aplica fator de reducao conforme faixas tipicas (esquema generico
+  // KDIGO/Bennett — confirmar na bula de cada medicamento).
+  function doseByTfgPanel(o) {
+    var dose = o.doseTotal, tfg = o.tfg;
+    if (!num(dose) || !num(tfg) || dose <= 0 || tfg <= 0)
+      return { error: 'Informe a dose habitual e a TFG.' };
+    var fator, faixa, observacao;
+    if (tfg >= 60) { fator = 1.0;  faixa = 'TFG ≥ 60';     observacao = 'Função renal normal ou levemente reduzida — dose habitual.'; }
+    else if (tfg >= 30) { fator = 0.75; faixa = 'TFG 30–59'; observacao = 'Redução moderada — considerar 50–75% da dose ou ampliar intervalo (consultar bula).'; }
+    else if (tfg >= 15) { fator = 0.5;  faixa = 'TFG 15–29'; observacao = 'Redução grave — geralmente 25–50% da dose ou intervalos prolongados.'; }
+    else { fator = 0.25; faixa = 'TFG < 15'; observacao = 'Falência renal — muitos fármacos contraindicados; avaliar substituição e/ou diálise.'; }
+    return {
+      doseHabitual: dose, doseAjustada: dose * fator,
+      tfg: tfg, faixa: faixa, fator: fator, observacao: observacao
+    };
+  }
+
+  // Perfil metabolico — IMC + RCQ + % gordura corporal
+  function metabolicProfile(o) {
+    var imc = o.imc, rcq = o.rcq, gord = o.percentualGordura, sexoF = !!o.sexoF;
+    var pontos = 0, notas = [];
+    if (num(imc)) {
+      if (imc >= 30) { pontos++; notas.push('IMC ' + imc.toFixed(1) + ' — obesidade.'); }
+      else if (imc >= 25) { notas.push('IMC ' + imc.toFixed(1) + ' — sobrepeso.'); }
+      else { notas.push('IMC ' + imc.toFixed(1) + ' — eutrofia/baixo peso.'); }
+    }
+    if (num(rcq)) {
+      var limite = sexoF ? 0.85 : 0.90;
+      if (rcq > limite) { pontos++; notas.push('RCQ ' + rcq.toFixed(2) + ' — distribuição central (acima de ' + limite + ').'); }
+      else { notas.push('RCQ ' + rcq.toFixed(2) + ' — distribuição não-central.'); }
+    }
+    if (num(gord)) {
+      var alta = sexoF ? 32 : 25;
+      if (gord >= alta) { pontos++; notas.push('% gordura ' + gord.toFixed(1) + '% — elevada.'); }
+      else { notas.push('% gordura ' + gord.toFixed(1) + '%.'); }
+    }
+    var perfil, cls;
+    if (pontos === 0) { perfil = 'Perfil metabólico de baixo risco aparente'; cls = 'ok'; }
+    else if (pontos === 1) { perfil = 'Perfil metabólico com um marcador alterado'; cls = 'warn'; }
+    else { perfil = 'Perfil metabólico de risco elevado (≥ 2 marcadores alterados)'; cls = 'alert'; }
+    return { perfil: perfil, cls: cls, pontos: pontos, notas: notas };
+  }
+
+  // Triagem em pneumonia — CURB-65 + sinais vitais
+  function pneumoniaTriage(o) {
+    var curb = o.curb, pas = o.pas, fr = o.fr, sat = o.satO2;
+    if (!num(curb)) return { error: 'Informe o escore CURB-65.' };
+    var local, cls, motivos = [];
+    if (curb >= 3) { local = 'UTI'; cls = 'alert'; motivos.push('CURB-65 ≥ 3.'); }
+    else if (curb === 2) { local = 'Enfermaria'; cls = 'warn'; motivos.push('CURB-65 = 2 sugere internação.'); }
+    else { local = 'Tratamento ambulatorial'; cls = 'ok'; motivos.push('CURB-65 ≤ 1.'); }
+    if (num(pas) && pas < 90) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Hipotensão (PAS < 90 mmHg).'); }
+    if (num(fr) && fr >= 30) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Taquipneia (FR ≥ 30 irpm).'); }
+    if (num(sat) && sat < 90) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Hipoxemia (SatO₂ < 90%).'); }
+    return { local: local, cls: cls, motivos: motivos, curb: curb };
+  }
+
+  // Decisao de imagem em TVP/TEP — Wells + sinais
+  function tevImagingDecision(o) {
+    var wells = o.wells, tipo = o.tipo, dDimero = o.dDimero;
+    if (!num(wells) || !tipo) return { error: 'Informe o escore de Wells e o tipo (TVP ou TEP).' };
+    var provavel;
+    if (tipo === 'tvp') provavel = wells >= 2;
+    else provavel = wells > 4;
+    var decisao, cls, comentario;
+    if (provavel) {
+      decisao = 'Exame de imagem indicado';
+      cls = 'alert';
+      comentario = (tipo === 'tvp' ? 'US Doppler de membro inferior.' : 'Angio-TC de tórax (ou cintilografia V/Q se contraindicada).');
+    } else if (num(dDimero) && dDimero <= 500) {
+      decisao = 'Imagem dispensável — d-dímero negativo';
+      cls = 'ok';
+      comentario = 'Wells baixo + d-dímero ≤ 500 ng/mL exclui razoavelmente o evento tromboembólico.';
+    } else if (num(dDimero) && dDimero > 500) {
+      decisao = 'Imagem indicada — d-dímero positivo';
+      cls = 'warn';
+      comentario = 'Apesar de Wells baixo, d-dímero positivo exige confirmação por imagem.';
+    } else {
+      decisao = 'Solicitar d-dímero';
+      cls = 'warn';
+      comentario = 'Wells baixo: o d-dímero é o próximo passo. Se ≤ 500 ng/mL, exclui o evento; se elevado, faz imagem.';
+    }
+    return { decisao: decisao, cls: cls, comentario: comentario, wells: wells, tipo: tipo, provavel: provavel };
+  }
+
   /* ----------------------------------------------------------------------
      Exportação
      ---------------------------------------------------------------------- */
   var Clinical = {
     bmi: bmi, bsa: bsa, idealWeight: idealWeight, adjustedWeight: adjustedWeight,
     map: map, shockIndex: shockIndex,
-    ckdEpi: ckdEpi, cockcroftGault: cockcroftGault, fena: fena,
+    ckdEpi: ckdEpi, cockcroftGault: cockcroftGault, fena: fena, uacr: uacr, kdigoRisk: kdigoRisk,
     correctedSodium: correctedSodium, correctedCalcium: correctedCalcium,
     anionGap: anionGap, osmolality: osmolality,
     qtc: qtc, sumScore: sumScore,
@@ -627,7 +892,12 @@
     glasgow: glasgow, cha2ds2vasc: cha2ds2vasc, hasbled: hasbled,
     wellsDvt: wellsDvt, wellsPe: wellsPe, curb65: curb65, apgar: apgar,
     meldNa: meldNa, childPugh: childPugh, parkland: parkland,
-    feUrea: feUrea, vetPotassium: vetPotassium
+    feUrea: feUrea, vetPotassium: vetPotassium,
+    // paineis integrados
+    afibAnticoagPanel: afibAnticoagPanel, akiPattern: akiPattern,
+    cirrhosisPanel: cirrhosisPanel, acidBasePanel: acidBasePanel,
+    doseByTfgPanel: doseByTfgPanel, metabolicProfile: metabolicProfile,
+    pneumoniaTriage: pneumoniaTriage, tevImagingDecision: tevImagingDecision
   };
   global.Clinical = Clinical;
   if (typeof module !== 'undefined' && module.exports) module.exports = Clinical;

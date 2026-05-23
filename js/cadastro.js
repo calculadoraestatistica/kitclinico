@@ -173,6 +173,12 @@
       { id: 'crcl',         name: 'Clearance de creatinina (Cockcroft-Gault)', fn: 'cockcroftGault',
         from: ['idade', 'peso', 'creatinina', 'sexo'], extras: [],
         format: function(r){ return r.clearance.toFixed(1) + ' mL/min'; } },
+      { id: 'uacr',         name: 'UACR (albuminúria)',              fn: 'uacr',
+        from: [], extras: [
+          { id: 'albumina',   label: 'Albumina urinária', unit: 'mg/L' },
+          { id: 'creatinina', label: 'Creatinina urinária', unit: 'g/L' }
+        ],
+        format: function(r){ return r.razao.toFixed(1) + ' mg/g — ' + r.descricao; } },
       { id: 'fena',         name: 'FeNa',                            fn: 'fena',
         from: [], extras: [
           { id: 'naSerico',   label: 'Sódio sérico',     unit: 'mEq/L' },
@@ -611,6 +617,22 @@
       preview.appendChild(calcSec);
     }
 
+    // Painel KDIGO automatico se TFG e UACR foram calculados
+    var tfgCalc = state.calcs.find(function (c) { return c.id === 'tfg' && c.result && !c.result.error; });
+    var uacrCalc = state.calcs.find(function (c) { return c.id === 'uacr' && c.result && !c.result.error; });
+    if (tfgCalc && uacrCalc && window.Clinical && Clinical.kdigoRisk) {
+      var k = Clinical.kdigoRisk({ categoriaG: tfgCalc.result.categoriaG, categoriaA: uacrCalc.result.categoriaA });
+      if (!k.error) {
+        var panel = el('section', { className: 'report-section' });
+        panel.appendChild(el('h3', null, ['Painel integrado — Risco de DRC (KDIGO)']));
+        panel.appendChild(el('div', { className: 'report-calc' }, [
+          el('div', { className: 'report-calc__name' }, [k.label + ' — ' + k.categoriaG + ' / ' + k.categoriaA]),
+          el('div', { className: 'report-calc__result' }, [k.conduta])
+        ]));
+        preview.appendChild(panel);
+      }
+    }
+
     preview.appendChild(el('div', { className: 'report-footer' }, [
       'Relatório gerado pelo ',
       el('a', { href: 'https://kitclinico.com.br/', target: '_blank' }, ['Kit Clínico']),
@@ -637,13 +659,35 @@
     return 'kitclinico_' + state.area + '_' + patientFileSlug() + '_' + isoStamp();
   }
 
+  // Detecta combos clinicos que valem ser exibidos como painel integrado no relatorio.
+  // Hoje suporta apenas TFG + UACR (matriz KDIGO). Pode crescer.
+  function detectPanels() {
+    var out = [];
+    var tfg = state.calcs.find(function (c) { return c.id === 'tfg' && c.result && !c.result.error; });
+    var uacr = state.calcs.find(function (c) { return c.id === 'uacr' && c.result && !c.result.error; });
+    if (tfg && uacr && window.Clinical && Clinical.kdigoRisk) {
+      var k = Clinical.kdigoRisk({ categoriaG: tfg.result.categoriaG, categoriaA: uacr.result.categoriaA });
+      if (!k.error) {
+        out.push({
+          id: 'kdigo',
+          nome: 'Painel integrado — Risco de DRC (KDIGO)',
+          resultado_formatado: k.label + ' — ' + k.categoriaG + ' / ' + k.categoriaA,
+          conduta: k.conduta,
+          dados: k
+        });
+      }
+    }
+    return out;
+  }
+
   function buildJSON() {
     var payload = {
       gerado_por: 'Kit Clínico (kitclinico.com.br)',
       gerado_em: new Date().toISOString(),
       area: state.area,
       paciente: {},
-      calculos: []
+      calculos: [],
+      paineis_integrados: []
     };
     state.schema.forEach(function (f) {
       var v = state.patient[f.id];
@@ -659,6 +703,7 @@
         resultado_bruto: cc.result, resultado_formatado: resultText
       });
     });
+    payload.paineis_integrados = detectPanels();
     return payload;
   }
 
@@ -705,6 +750,17 @@
       });
       var ws2 = XLSX.utils.aoa_to_sheet(crows);
       XLSX.utils.book_append_sheet(wb, ws2, 'Calculos');
+    }
+
+    // Aba opcional: paineis integrados (combos clinicos)
+    var panels = detectPanels();
+    if (panels.length) {
+      var prows = [['Painel', 'Resultado', 'Conduta sugerida']];
+      panels.forEach(function (p) {
+        prows.push([p.nome, p.resultado_formatado, p.conduta || '']);
+      });
+      var wsP = XLSX.utils.aoa_to_sheet(prows);
+      XLSX.utils.book_append_sheet(wb, wsP, 'Paineis');
     }
 
     // Aba 3: metadados
@@ -795,6 +851,15 @@
         try { resultText = (cc.result && cc.result.error) ? cc.result.error : cc.format(cc.result); }
         catch (e) { resultText = '—'; }
         row(cc.name, resultText);
+      });
+    }
+
+    var panels = detectPanels();
+    if (panels.length) {
+      sectionTitle('Painéis integrados');
+      panels.forEach(function (p) {
+        row(p.nome, p.resultado_formatado);
+        if (p.conduta) row('  Conduta', p.conduta);
       });
     }
 

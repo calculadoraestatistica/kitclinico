@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>TFG (CKD-EPI 2021) — Taxa de Filtração Glomerular | Kit Clínico</title>
-<meta name="description" content="Calculadora de TFG (taxa de filtração glomerular) pela equação CKD-EPI 2021, sem variável de raça. Informe creatinina, idade e sexo e veja o estágio da doença renal.">
-<link rel="canonical" href="https://kitclinico.com.br/medicina/tfg-ckd-epi.html">
+<title>Risco de DRC (KDIGO) — TFG × Albuminúria | Kit Clínico</title>
+<meta name="description" content="Painel integrado de risco da doença renal crônica pela matriz KDIGO 2012: combine TFG (CKD-EPI) e UACR para ver a categoria de risco e a conduta sugerida.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/risco-drc.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de TFG (CKD-EPI 2021)">
-<meta property="og:description" content="Estime a taxa de filtração glomerular pela CKD-EPI 2021 e veja o estágio da doença renal. Grátis.">
-<meta property="og:url" content="https://kitclinico.com.br/medicina/tfg-ckd-epi.html">
+<meta property="og:title" content="Painel Risco de DRC (KDIGO)">
+<meta property="og:description" content="Risco da DRC pela matriz KDIGO: TFG (CKD-EPI 2021) × albuminúria (UACR).">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/risco-drc.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,13 +25,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de TFG (CKD-EPI 2021)",
-  "url": "https://kitclinico.com.br/medicina/tfg-ckd-epi.html",
+  "name": "Painel Risco de DRC (KDIGO)",
+  "url": "https://kitclinico.com.br/medicina/risco-drc.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora da taxa de filtração glomerular estimada pela equação CKD-EPI Creatinina 2021."
+  "description": "Painel integrado de risco de DRC combinando TFG (CKD-EPI 2021) e UACR pela matriz KDIGO 2012."
 }
 </script>
 <script type="application/ld+json">
@@ -41,7 +41,7 @@
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
     {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de TFG (CKD-EPI 2021)","item":"https://kitclinico.com.br/medicina/tfg-ckd-epi.html"}
+    {"@type":"ListItem","position":3,"name":"Painel Risco de DRC","item":"https://kitclinico.com.br/medicina/risco-drc.html"}
   ]
 }
 </script>
@@ -83,11 +83,11 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Calculadora de TFG (CKD-EPI 2021)</li>
+          <li>Painel Risco de DRC (KDIGO)</li>
         </ol>
       </nav>
-      <h1>Calculadora de TFG (CKD-EPI 2021)</h1>
-      <p class="lead">Estime a taxa de filtração glomerular pela equação CKD-EPI Creatinina 2021 e identifique o estágio da doença renal crônica.</p>
+      <h1>Risco de DRC — Painel KDIGO</h1>
+      <p class="lead">Combine TFG (CKD-EPI 2021) e albuminúria (UACR) para ver a <strong>categoria de risco real</strong> pela matriz KDIGO 2012 e a conduta sugerida.</p>
     </div>
   </div>
 
@@ -95,13 +95,13 @@
 
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Calcular a TFG
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dados do paciente
       </h2>
-      <p class="calculator__hint">Informe a creatinina sérica, a idade e o sexo do paciente adulto.</p>
+      <p class="calculator__hint">Preencha os dados da TFG e do UACR; o painel calcula a categoria G × A e o risco correspondente.</p>
 
       <fieldset class="field-group">
-        <legend>Dados do paciente</legend>
+        <legend>TFG — CKD-EPI 2021</legend>
         <div class="field-row">
           <div class="field">
             <label for="creatinina">Creatinina sérica</label>
@@ -127,79 +127,72 @@
         </div>
       </fieldset>
 
+      <fieldset class="field-group">
+        <legend>UACR — albuminúria</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="albumina">Albumina urinária</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="albumina" placeholder="Ex.: 50" autocomplete="off">
+              <span class="input-affix__unit">mg/L</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="cr-urinaria">Creatinina urinária</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="cr-urinaria" placeholder="Ex.: 1,2" autocomplete="off">
+              <span class="input-affix__unit">g/L</span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Calcular TFG</button>
+        <button class="btn btn--primary btn--lg" type="submit">Calcular risco KDIGO</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
       <section class="result" id="calc-result" hidden aria-live="polite"></section>
     </form>
 
-    <div class="callout callout--tip">
-      <div class="callout__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — combine com a albuminúria
-      </div>
-      <p>O estágio G da TFG só conta metade da história — o <strong>risco real de progressão da DRC</strong> (KDIGO) vem do cruzamento de G com a categoria de albuminúria. Calcule também o <a href="/medicina/uacr.html"><strong>UACR</strong></a> e abra o <a href="/medicina/risco-drc.html"><strong>painel Risco de DRC</strong></a> para ver a matriz colorida do paciente.</p>
-    </div>
-
     <div class="ad-slot" data-ad-slot=""></div>
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>A <strong>taxa de filtração glomerular (TFG)</strong> é a melhor medida global da função renal. Esta calculadora a estima pela <strong>equação CKD-EPI Creatinina 2021</strong>, que é a versão recomendada atualmente. A TFG estimada é usada para detectar e <strong>estadiar a doença renal crônica</strong>, acompanhar a evolução da função renal e orientar condutas como o ajuste de medicamentos.</p>
+      <h2>Como ler o painel</h2>
+      <p>A matriz KDIGO cruza dois eixos: o estágio da <strong>TFG</strong> (G1 a G5, das linhas) com a categoria de <strong>albuminúria</strong> (A1 a A3, das colunas). A cor da célula resume o <strong>risco de progressão da doença renal crônica</strong> e de desfechos cardiovasculares:</p>
+      <ul>
+        <li><strong>Verde:</strong> risco baixo — monitoramento anual.</li>
+        <li><strong>Amarelo:</strong> risco moderado — reavaliar a cada 6 meses, controle de fatores de risco.</li>
+        <li><strong>Laranja:</strong> risco alto — reavaliação trimestral e encaminhamento ao nefrologista.</li>
+        <li><strong>Vermelho:</strong> risco muito alto — encaminhamento urgente; planejar terapia substitutiva quando indicada.</li>
+      </ul>
 
-      <div class="callout">
-        <div class="callout__title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-          Por que não há seleção de raça
-        </div>
-        <p>A equação anterior (CKD-EPI 2009) aplicava um coeficiente de ×1,159 quando o paciente era classificado como de raça negra, o que superestimava a TFG e podia <strong>atrasar o encaminhamento ao nefrologista, a entrada em lista de transplante e o ajuste de doses</strong>. A <strong>CKD-EPI 2021</strong> foi desenvolvida justamente para eliminar esse coeficiente, mantendo precisão equivalente em todos os grupos. A recomendação da força-tarefa NKF-ASN (2021) e da KDIGO (2024) é usar a versão sem raça — por isso esta calculadora não oferece essa opção. Quando a creatinina é pouco confiável (massa muscular atípica, lesão renal aguda), a alternativa atual é a <strong>CKD-EPI Creatinina-Cistatina C 2021</strong>, que também é livre de raça e exige a dosagem de cistatina C.</p>
-      </div>
-
-      <h2>Como interpretar o resultado</h2>
-      <p>O resultado é expresso em mL/min/1,73 m² e classificado nos estágios KDIGO da função renal:</p>
-      <div class="table-wrap">
-        <table class="data">
-          <thead><tr><th>TFG (mL/min/1,73 m²)</th><th>Estágio</th></tr></thead>
-          <tbody>
-            <tr><td>90 ou mais</td><td>G1 — normal ou alta</td></tr>
-            <tr><td>60 a 89</td><td>G2 — levemente reduzida</td></tr>
-            <tr><td>45 a 59</td><td>G3a — leve a moderada</td></tr>
-            <tr><td>30 a 44</td><td>G3b — moderada a grave</td></tr>
-            <tr><td>15 a 29</td><td>G4 — gravemente reduzida</td></tr>
-            <tr><td>Abaixo de 15</td><td>G5 — falência renal</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="formula">TFG = 142 × min(Scr/κ, 1)^α × max(Scr/κ, 1)^−1,200 × 0,9938^idade × (1,012 se mulher)</div>
-
-      <h2>Exemplo</h2>
-      <p>Um paciente <strong>masculino</strong>, com <strong>60 anos</strong> e creatinina sérica de <strong>1,1 mg/dL</strong>, tem TFG estimada de aproximadamente <strong>76 mL/min/1,73 m²</strong> — correspondente ao estágio <strong>G2 (levemente reduzida)</strong>.</p>
+      <h2>Por que combinar TFG e UACR</h2>
+      <p>Um paciente com TFG normal (G1) mas albuminúria grave (A3) já é <strong>alto risco</strong> — algo que a TFG sozinha não revelaria. Da mesma forma, um paciente com TFG levemente reduzida (G2) e sem albuminúria (A1) permanece em <strong>risco baixo</strong>. É a combinação que define o prognóstico, a frequência de reavaliação e a hora de encaminhar ao nefrologista.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
+          Confirmação diagnóstica
         </div>
-        <p>A TFG estimada pela creatinina é menos confiável em situações de massa muscular atípica (idosos, amputados, atletas), em lesão renal aguda e em variações abruptas da creatinina. O estadiamento da doença renal crônica exige confirmação após pelo menos três meses.</p>
+        <p>O diagnóstico de DRC exige que as alterações da TFG ou da albuminúria persistam por <strong>pelo menos 3 meses</strong>. Um único exame anormal indica investigação, mas não fecha diagnóstico.</p>
       </div>
 
       <h2>Referências</h2>
       <ol class="ref-list">
-        <li>Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. <cite>New England Journal of Medicine</cite>. 2021;385(19):1737-1749. <a href="https://doi.org/10.1056/NEJMoa2102953" target="_blank" rel="noopener">doi:10.1056/NEJMoa2102953</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/34554658/" target="_blank" rel="noopener">PMID&nbsp;34554658</a>.</li>
-        <li>Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International</cite>. 2024;105(4S):S117-S314. <a href="https://doi.org/10.1016/j.kint.2023.10.018" target="_blank" rel="noopener">doi:10.1016/j.kint.2023.10.018</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/38490803/" target="_blank" rel="noopener">PMID&nbsp;38490803</a>.</li>
+        <li>Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2012 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International Supplements</cite>. 2013;3:1-150.</li>
+        <li>KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International</cite>. 2024;105(4S):S117-S314. <a href="https://doi.org/10.1016/j.kint.2023.10.018" target="_blank" rel="noopener">doi:10.1016/j.kint.2023.10.018</a>.</li>
       </ol>
 
       <div class="related">
-        <h2>Calculadoras relacionadas</h2>
+        <h2>Calculadoras envolvidas</h2>
         <div class="calc-grid">
+          <a class="calc-card" href="/medicina/tfg-ckd-epi.html"><h3>TFG (CKD-EPI 2021)</h3><p>Taxa de filtração glomerular estimada.</p></a>
+          <a class="calc-card" href="/medicina/uacr.html"><h3>UACR</h3><p>Relação albumina/creatinina urinária.</p></a>
           <a class="calc-card" href="/medicina/clearance-creatinina.html"><h3>Clearance de creatinina</h3><p>Estimativa por Cockcroft-Gault.</p></a>
-          <a class="calc-card" href="/medicina/fena.html"><h3>FeNa</h3><p>Fração de excreção de sódio.</p></a>
-          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal.</p></a>
         </div>
       </div>
 
@@ -238,7 +231,8 @@
           <li><a href="/cadastro-veterinaria.html">Cadastro veterinário</a></li>
         </ul>
       </div>
-<div>
+      <div>
+        <h3>Site</h3>
         <ul>
           <li><a href="/">Início</a></li>
           <li><a href="/sobre.html">Sobre</a></li>
@@ -286,24 +280,61 @@
   }
 
   $('calc-example').addEventListener('click', function () {
-    $('creatinina').value = '1,1';
-    $('idade').value = '60';
-    setRadio('sexo', 'M');
+    $('creatinina').value = '1,8'; $('idade').value = '65';
+    setRadio('sexo', 'F');
+    $('albumina').value = '120'; $('cr-urinaria').value = '0,8';
     compute();
   });
   form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
 
-  function compute() {
-    clearError();
-    var creatinina = parseNum($('creatinina').value), idade = parseNum($('idade').value);
-    var sexo = Fmt.radio('sexo');
-    if (isNaN(creatinina) || isNaN(idade)) {
-      showError('Preencha a creatinina e a idade com números válidos.');
-      return;
+  // Matriz KDIGO 2012 — ordem das linhas e colunas
+  var GS = ['G1','G2','G3a','G3b','G4','G5'];
+  var GS_LABEL = {
+    G1:  '≥ 90',
+    G2:  '60–89',
+    G3a: '45–59',
+    G3b: '30–44',
+    G4:  '15–29',
+    G5:  '< 15'
+  };
+  var AS = ['A1','A2','A3'];
+  var AS_LABEL = {
+    A1: '< 30 mg/g',
+    A2: '30–300 mg/g',
+    A3: '> 300 mg/g'
+  };
+
+  function buildMatrix(activeG, activeA) {
+    var html = '';
+    html += '<div class="kdigo__head">Categorias de albuminúria</div>';
+    html += '<div class="kdigo__wrap">';
+    // Linha 1: cabeçalho (vazio, vazio, A1, A2, A3)
+    html += '<div></div><div></div>';
+    for (var j = 0; j < AS.length; j++) {
+      html += '<div class="kdigo__th">' + AS[j] + '<br><small>' + AS_LABEL[AS[j]] + '</small></div>';
     }
-    var r = Clinical.ckdEpi({ creatinina: creatinina, idade: idade, sexo: sexo });
-    if (r.error) { showError(r.error); return; }
-    render(r);
+    // Eixo Y (rótulo vertical "TFG" ocupa todas as linhas de dados)
+    html += '<div class="kdigo__axis-y">Categorias de TFG (mL/min/1,73m²)</div>';
+    for (var i = 0; i < GS.length; i++) {
+      var g = GS[i];
+      // primeira coluna eh o eixo Y (apenas na primeira linha de dados)
+      if (i > 0) html += '<div></div>';
+      html += '<div class="kdigo__rh">' + g + '<br><small>' + GS_LABEL[g] + '</small></div>';
+      for (var k = 0; k < AS.length; k++) {
+        var a = AS[k];
+        var r = Clinical.kdigoRisk({ categoriaG: g, categoriaA: a });
+        var active = (g === activeG && a === activeA) ? ' is-active' : '';
+        html += '<div class="kdigo__cell kdigo__cell--' + r.nivel + active + '" title="' + r.label + '"></div>';
+      }
+    }
+    html += '</div>';
+    html += '<div class="kdigo__legend">' +
+      '<span><i style="background:var(--c-baixo)"></i> Risco baixo</span>' +
+      '<span><i style="background:var(--c-moderado)"></i> Moderado</span>' +
+      '<span><i style="background:var(--c-alto)"></i> Alto</span>' +
+      '<span><i style="background:var(--c-muitoalto)"></i> Muito alto</span>' +
+      '</div>';
+    return '<div class="kdigo">' + html + '</div>';
   }
 
   var ICONS = {
@@ -312,18 +343,35 @@
     alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
   };
 
-  function render(r) {
-    var cls = r.tfg >= 60 ? 'ok' : (r.tfg >= 30 ? 'warn' : 'alert');
-    result.className = 'result result--' + cls;
+  function compute() {
+    clearError();
+    var cr = parseNum($('creatinina').value), idade = parseNum($('idade').value);
+    var sexo = Fmt.radio('sexo');
+    var alb = parseNum($('albumina').value), crU = parseNum($('cr-urinaria').value);
+    if (isNaN(cr) || isNaN(idade)) { showError('Preencha a creatinina sérica e a idade.'); return; }
+    if (isNaN(alb) || isNaN(crU)) { showError('Preencha a albumina e a creatinina urinárias.'); return; }
+    var tfg = Clinical.ckdEpi({ creatinina: cr, idade: idade, sexo: sexo });
+    if (tfg.error) { showError(tfg.error); return; }
+    var u = Clinical.uacr({ albumina: alb, creatinina: crU });
+    if (u.error) { showError(u.error); return; }
+    var r = Clinical.kdigoRisk({ categoriaG: tfg.categoriaG, categoriaA: u.categoriaA });
+    if (r.error) { showError(r.error); return; }
+    render(tfg, u, r);
+  }
+
+  function render(tfg, u, r) {
+    result.className = 'result result--' + r.cls;
     result.innerHTML =
-      '<div class="result__banner">' + ICONS[cls] +
-        '<div><div class="result__headline">' + r.estagio + '</div>' +
-        '<div class="result__sub">Estágio da função renal (KDIGO).</div></div></div>' +
+      '<div class="result__banner">' + ICONS[r.cls] +
+        '<div><div class="result__headline">' + r.label + ' — ' + r.categoriaG + ' / ' + r.categoriaA + '</div>' +
+        '<div class="result__sub">Estratificação KDIGO 2012.</div></div></div>' +
       '<div class="result__body">' +
-        '<div class="result__main">' + Fmt.num(r.tfg, 1) + ' <small>mL/min/1,73m²</small></div>' +
-        '<div class="result__interpretation"><p>A TFG estimada de <strong>' + Fmt.num(r.tfg, 1) +
-        ' mL/min/1,73 m²</strong> corresponde ao estágio <strong>' + r.estagio + '</strong>. ' +
-        'Confirme o diagnóstico de doença renal crônica com avaliação clínica e dosagens repetidas.</p></div>' +
+        '<div class="result__interpretation"><p>' +
+          '<strong>TFG estimada:</strong> ' + Fmt.num(tfg.tfg, 1) + ' mL/min/1,73m² — ' + tfg.estagio + '.<br>' +
+          '<strong>UACR:</strong> ' + Fmt.num(u.razao, 1) + ' mg/g — ' + u.descricao + '.<br>' +
+          '<strong>Conduta sugerida:</strong> ' + r.conduta +
+        '</p></div>' +
+        buildMatrix(tfg.categoriaG, u.categoriaA) +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
