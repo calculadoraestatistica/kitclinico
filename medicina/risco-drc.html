@@ -306,44 +306,41 @@
 
   function buildMatrix(activeG, activeA) {
     var html = '<div class="kdigo">';
-    html += '<div class="kdigo__head">Categorias de albuminúria</div>';
-    html += '<table class="kdigo__table">';
-    // Cabeçalho: dois cantos vazios + 3 categorias A
-    html += '<thead><tr>';
-    html += '<th class="kdigo__corner"></th><th class="kdigo__corner"></th>';
+    html += '<div class="kdigo__title">Categorias de albuminúria</div>';
+    html += '<div class="kdigo__body">';
+    // Eixo-Y vertical à esquerda
+    html += '<div class="kdigo__axis-y"><span>Categorias de TFG (mL/min/1,73m²)</span></div>';
+    // Grid: header row + 6 G rows
+    html += '<div class="kdigo__grid">';
+    // Header row (A1, A2, A3)
+    html += '<div class="kdigo__row">';
+    html += '<div class="kdigo__rh kdigo__corner"></div>';
     for (var j = 0; j < AS.length; j++) {
-      html += '<th>' + AS[j] + '<small>' + AS_LABEL[AS[j]] + '</small></th>';
+      html += '<div class="kdigo__th">' + AS[j] + '<small>' + AS_LABEL[AS[j]] + '</small></div>';
     }
-    html += '</tr></thead>';
-    // Corpo
-    html += '<tbody>';
+    html += '</div>';
+    // 6 data rows
     for (var i = 0; i < GS.length; i++) {
       var g = GS[i];
-      html += '<tr>';
-      // primeira coluna: eixo-Y vertical (apenas na primeira linha, rowspan)
-      if (i === 0) {
-        html += '<th class="kdigo__axis-y" rowspan="' + GS.length + '">' +
-                '<span>Categorias de TFG (mL/min/1,73m²)</span></th>';
-      }
-      // rotulo da linha G
-      html += '<th class="kdigo__rh">' + g + '<small>' + GS_LABEL[g] + '</small></th>';
-      // celulas A1, A2, A3
+      html += '<div class="kdigo__row">';
+      html += '<div class="kdigo__rh">' + g + '<small>' + GS_LABEL[g] + '</small></div>';
       for (var k = 0; k < AS.length; k++) {
         var a = AS[k];
         var r = Clinical.kdigoRisk({ categoriaG: g, categoriaA: a });
         var active = (g === activeG && a === activeA) ? ' is-active' : '';
-        html += '<td class="kdigo__cell kdigo__cell--' + r.nivel + active + '" title="' + r.label + '"></td>';
+        html += '<div class="kdigo__cell kdigo__cell--' + r.nivel + active + '" title="' + r.label + '"></div>';
       }
-      html += '</tr>';
+      html += '</div>';
     }
-    html += '</tbody></table>';
+    html += '</div>'; // grid
+    html += '</div>'; // body
     html += '<div class="kdigo__legend">' +
       '<span><i style="background:var(--c-baixo)"></i> Risco baixo</span>' +
       '<span><i style="background:var(--c-moderado)"></i> Moderado</span>' +
       '<span><i style="background:var(--c-alto)"></i> Alto</span>' +
       '<span><i style="background:var(--c-muitoalto)"></i> Muito alto</span>' +
       '</div>';
-    html += '</div>';
+    html += '</div>'; // kdigo
     return html;
   }
 

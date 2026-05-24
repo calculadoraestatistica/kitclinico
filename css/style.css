@@ -305,7 +305,7 @@ a.card:hover {
 }
 .disclaimer svg { width: 20px; height: 20px; flex: none; color: var(--c-warning); margin-top: .1rem; }
 .disclaimer strong { color: #7c4a06; }
-/* --- Painel clínico: matriz KDIGO ------------------------------------- */
+/* --- Painel clínico: matriz KDIGO (layout flex) ------------------------ */
 .kdigo {
   --c-baixo:      #16a34a;
   --c-moderado:   #eab308;
@@ -314,44 +314,46 @@ a.card:hover {
   border: 1px solid var(--c-line); border-radius: var(--radius);
   padding: 1rem; background: #fff; margin-block: 1.2rem;
 }
-.kdigo__head { font-weight: 700; color: var(--c-ink); margin-bottom: .8rem; text-align: center; }
-.kdigo__sub  { font-size: .85rem; color: var(--c-muted); text-align: center; margin-bottom: .8rem; }
-.kdigo__table {
-  width: 100%; border-collapse: separate; border-spacing: 2px; table-layout: fixed;
-}
-.kdigo__table th, .kdigo__table td {
-  text-align: center; vertical-align: middle; padding: .5rem .35rem;
-  font-size: .82rem;
-}
-.kdigo__table th {
-  font-weight: 700; color: var(--c-text); background: var(--c-soft);
-}
-.kdigo__table thead th { font-size: .8rem; }
-.kdigo__table thead th small { display: block; font-weight: 500; color: var(--c-muted); margin-top: .15rem; }
-.kdigo__rh small { display: block; font-weight: 500; color: var(--c-muted); margin-top: .15rem; }
-.kdigo__corner { background: transparent !important; }
+.kdigo__title { font-weight: 700; color: var(--c-ink); text-align: center; margin-bottom: .7rem; }
+.kdigo__body { display: flex; gap: .4rem; align-items: stretch; }
 .kdigo__axis-y {
-  width: 28px; background: transparent !important; padding: 0 !important;
+  display: flex; align-items: center; justify-content: center;
+  width: 22px; flex: none;
 }
 .kdigo__axis-y span {
-  display: inline-block; transform: rotate(-90deg); white-space: nowrap;
-  font-size: .7rem; color: var(--c-muted); text-transform: uppercase; letter-spacing: .04em;
-  font-weight: 600;
+  writing-mode: vertical-rl; transform: rotate(180deg);
+  font-size: .7rem; color: var(--c-muted); text-transform: uppercase;
+  letter-spacing: .04em; font-weight: 700; white-space: nowrap;
 }
+.kdigo__grid { flex: 1; display: flex; flex-direction: column; gap: 2px; }
+.kdigo__row { display: flex; gap: 2px; }
+.kdigo__rh, .kdigo__th {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  background: var(--c-soft); color: var(--c-text); font-weight: 700;
+  font-size: .8rem; padding: .35rem .25rem; text-align: center;
+  line-height: 1.15;
+}
+.kdigo__rh { width: 76px; flex: none; min-height: 44px; }
+.kdigo__th { flex: 1; min-height: 40px; }
+.kdigo__rh small, .kdigo__th small {
+  display: block; font-weight: 500; color: var(--c-muted); margin-top: .15rem; font-size: .72rem;
+}
+.kdigo__corner { background: transparent; }
 .kdigo__cell {
-  font-weight: 600; color: #fff; min-height: 44px; height: 44px;
+  flex: 1; min-height: 44px; position: relative;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #fff;
 }
 .kdigo__cell--baixo      { background: var(--c-baixo); }
 .kdigo__cell--moderado   { background: var(--c-moderado); color: #1a1a1a; }
 .kdigo__cell--alto       { background: var(--c-alto); }
 .kdigo__cell--muito_alto { background: var(--c-muitoalto); }
 .kdigo__cell.is-active {
-  outline: 3px solid var(--c-ink); outline-offset: -3px;
-  position: relative;
+  outline: 3px solid var(--c-ink); outline-offset: -3px; z-index: 1;
 }
 .kdigo__cell.is-active::after {
-  content: '☆'; font-size: 1.05rem; color: #fff;
-  text-shadow: 0 0 3px rgba(0,0,0,.4);
+  content: '★'; font-size: 1.1rem; color: #fff;
+  text-shadow: 0 0 3px rgba(0,0,0,.5);
 }
 .kdigo__cell--moderado.is-active::after { color: #1a1a1a; text-shadow: none; }
 .kdigo__legend {
@@ -360,6 +362,10 @@ a.card:hover {
 }
 .kdigo__legend span { display: inline-flex; align-items: center; gap: .35rem; }
 .kdigo__legend i { width: 14px; height: 14px; border-radius: 3px; display: inline-block; }
+@media (max-width: 520px) {
+  .kdigo__rh { width: 60px; font-size: .72rem; }
+  .kdigo__th { font-size: .72rem; }
+}
 
 /* --- Cadastro row (homepage) -------------------------------------------- */
 .cadastro-row {
