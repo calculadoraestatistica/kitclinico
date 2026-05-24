@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Calculadora de Relação Cintura-Quadril (RCQ) | Kit Clínico</title>
-<meta name="description" content="Calculadora de Relação Cintura-Quadril (RCQ) online e gratuita. Informe a cintura, o quadril e o sexo e veja o resultado com a interpretação do risco.">
-<link rel="canonical" href="https://kitclinico.com.br/nutricao/cintura-quadril.html">
+<title>Ajuste de dose pela TFG | Kit Clínico</title>
+<meta name="description" content="Painel que ajusta a dose calculada pela função renal estimada (TFG), oferecendo um fator de redução de referência.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/ajuste-dose-tfg.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de Relação Cintura-Quadril (RCQ)">
-<meta property="og:description" content="Calcule a relação cintura-quadril e avalie o risco cardiometabólico. Grátis.">
-<meta property="og:url" content="https://kitclinico.com.br/nutricao/cintura-quadril.html">
+<meta property="og:title" content="Ajuste de dose pela TFG">
+<meta property="og:description" content="Painel que ajusta a dose calculada pela função renal estimada (TFG), oferecendo um fator de redução de referência.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/ajuste-dose-tfg.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,24 +25,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de Relação Cintura-Quadril (RCQ)",
-  "url": "https://kitclinico.com.br/nutricao/cintura-quadril.html",
+  "name": "Ajuste de dose pela TFG",
+  "url": "https://kitclinico.com.br/medicina/ajuste-dose-tfg.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora da relação cintura-quadril (RCQ)."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
-    {"@type":"ListItem","position":2,"name":"Nutrição","item":"https://kitclinico.com.br/nutricao.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de Relação Cintura-Quadril (RCQ)","item":"https://kitclinico.com.br/nutricao/cintura-quadril.html"}
-  ]
+  "description": "Painel que ajusta a dose calculada pela função renal estimada (TFG), oferecendo um fator de redução de referência."
 }
 </script>
 </head>
@@ -74,7 +63,6 @@
   </div>
 </header>
 
-
 <main id="conteudo">
 
   <div class="page-head">
@@ -82,12 +70,12 @@
       <nav class="breadcrumb" aria-label="Trilha de navegação">
         <ol>
           <li><a href="/">Início</a></li>
-          <li><a href="/nutricao.html">Nutrição</a></li>
-          <li>Calculadora de Relação Cintura-Quadril (RCQ)</li>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li>Ajuste de dose pela TFG</li>
         </ol>
       </nav>
-      <h1>Calculadora de Relação Cintura-Quadril (RCQ)</h1>
-      <p class="lead">A relação cintura-quadril avalia a distribuição de gordura corporal e ajuda a estimar o risco cardiometabólico.</p>
+      <h1>Ajuste de dose pela função renal</h1>
+      <p class="lead">Combine a <strong>dose por peso</strong> com a <strong>TFG (CKD-EPI 2021)</strong> para obter uma dose orientada à função renal. Use como ponto de partida — sempre confirmar na bula do medicamento.</p>
     </div>
   </div>
 
@@ -95,34 +83,60 @@
 
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Calcular a RCQ
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dados do paciente
       </h2>
-      <p class="calculator__hint">Informe as circunferências da cintura e do quadril e o sexo.</p>
+      <p class="calculator__hint">O painel calcula a TFG, multiplica a dose habitual pelo fator de ajuste sugerido para a faixa renal e retorna a dose final.</p>
 
       <fieldset class="field-group">
-        <legend>Medidas</legend>
+        <legend>TFG — CKD-EPI 2021</legend>
         <div class="field-row">
           <div class="field">
-            <label for="cintura">Circunferência da cintura</label>
+            <label for="creatinina">Creatinina sérica</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="cintura" placeholder="Ex.: 95" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
+              <input class="input" type="text" inputmode="decimal" id="creatinina" placeholder="Ex.: 1,8" autocomplete="off">
+              <span class="input-affix__unit">mg/dL</span>
             </div>
           </div>
           <div class="field">
-            <label for="quadril">Circunferência do quadril</label>
+            <label for="idade">Idade</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="quadril" placeholder="Ex.: 100" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
+              <input class="input" type="text" inputmode="decimal" id="idade" placeholder="Ex.: 70" autocomplete="off">
+              <span class="input-affix__unit">anos</span>
             </div>
           </div>
         </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>Sexo</legend>
+        <div class="">
         <div class="field">
-          <span class="field-label">Sexo</span>
-          <div class="segmented" role="radiogroup" aria-label="Sexo">
+          <label>Sexo do paciente</label>
+          <div class="segmented">
             <label><input type="radio" name="sexo" value="M" checked><span>Masculino</span></label>
             <label><input type="radio" name="sexo" value="F"><span>Feminino</span></label>
+          </div>
+        </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>Dose habitual (sem ajuste renal)</legend>
+        <div class="field-row">
+          <div class="field">
+            <label for="peso">Peso</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 70" autocomplete="off">
+              <span class="input-affix__unit">kg</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="dosePorKg">Dose por kg</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="dosePorKg" placeholder="Ex.: 15" autocomplete="off">
+              <span class="input-affix__unit">mg/kg</span>
+            </div>
           </div>
         </div>
       </fieldset>
@@ -130,64 +144,32 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Calcular RCQ</button>
+        <button class="btn btn--primary btn--lg" type="submit">Ajustar dose</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
       <section class="result" id="calc-result" hidden aria-live="polite"></section>
     </form>
 
-    
-    <div class="callout callout--tip">
-      <div class="callout__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — Perfil metabólico
-      </div>
-      <p>Combine com IMC e % de gordura no <a href="/medicina/perfil-metabolico.html"><strong>painel Perfil metabólico integrado</strong></a>.</p>
-    </div>
-
     <div class="ad-slot" data-ad-slot=""></div>
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>A <strong>relação cintura-quadril (RCQ)</strong> é uma medida antropométrica que compara a circunferência da cintura com a do quadril. Ela avalia a <strong>distribuição da gordura corporal</strong> e é um indicador do <strong>risco cardiometabólico</strong> — pessoas com acúmulo de gordura na região abdominal têm maior risco de doenças cardiovasculares e metabólicas.</p>
-
-      <h2>Como interpretar o resultado</h2>
-      <p>Quanto maior a RCQ, maior a proporção de gordura abdominal. O risco é considerado elevado quando a relação ultrapassa os seguintes limites:</p>
-      <div class="table-wrap">
-        <table class="data">
-          <thead><tr><th>Sexo</th><th>RCQ de risco elevado</th></tr></thead>
-          <tbody>
-            <tr><td>Homens</td><td>Acima de 0,90</td></tr>
-            <tr><td>Mulheres</td><td>Acima de 0,85</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="formula">RCQ = circunferência da cintura (cm) ÷ circunferência do quadril (cm)</div>
-
-      <h2>Exemplo</h2>
-      <p>Um homem com cintura de <strong>95 cm</strong> e quadril de <strong>100 cm</strong> tem RCQ = 95 ÷ 100 = <strong>0,95</strong> — acima do limite de 0,90 para homens, indicando <strong>risco cardiometabólico elevado</strong>.</p>
-
+      <h2>Como ler o painel</h2>
+      <p>Muitos medicamentos têm sua eliminação reduzida quando a função renal cai. O ajuste deste painel usa <strong>faixas KDIGO de TFG</strong> aplicadas a um fator de redução genérico (1,0 para TFG ≥ 60; 0,75 para 30–59; 0,5 para 15–29; 0,25 para &lt; 15). O resultado é uma <strong>dose orientadora</strong> — útil para conferência rápida à beira do leito, mas <strong>cada fármaco tem regra própria</strong> que precisa ser confirmada na bula ou em referência como UpToDate/Sanford.</p>
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
+          Não substitui a bula
         </div>
-        <p>A RCQ é uma triagem e depende da técnica de medição correta da cintura e do quadril. Interprete-a sempre junto da avaliação clínica e de outras medidas, como a circunferência abdominal e o IMC.</p>
+        <p>Antibióticos (aminoglicosídeos, vancomicina), antifúngicos (fluconazol), antivirais (aciclovir) e inúmeros outros têm regras de ajuste específicas — confirme antes de prescrever.</p>
       </div>
 
-      <h2>Referências</h2>
-      <ol class="ref-list">
-        <li>World Health Organization. Waist Circumference and Waist–Hip Ratio: Report of a WHO Expert Consultation. Genebra: OMS; 2008. <a href="https://www.who.int/publications/i/item/9789241501491" target="_blank" rel="noopener">who.int</a>.</li>
-      </ol>
-
       <div class="related">
-        <h2>Calculadoras relacionadas</h2>
+        <h2>Calculadoras envolvidas</h2>
         <div class="calc-grid">
-          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
-          <a class="calc-card" href="/nutricao/gordura-corporal.html"><h3>Gordura corporal</h3><p>Percentual estimado de gordura corporal.</p></a>
-          <a class="calc-card" href="/medicina/peso-ideal.html"><h3>Peso ideal</h3><p>Estimativa do peso ideal pela altura.</p></a>
+          <a class="calc-card" href="/medicina/tfg-ckd-epi.html"><h3>TFG (CKD-EPI 2021)</h3><p>Taxa de filtração glomerular.</p></a>
+          <a class="calc-card" href="/medicina/dose-pediatrica.html"><h3>Dose por peso</h3><p>Dose total a partir de mg/kg.</p></a>
         </div>
       </div>
 
@@ -226,7 +208,8 @@
           <li><a href="/cadastro-veterinaria.html">Cadastro veterinário</a></li>
         </ul>
       </div>
-<div>
+      <div>
+        <h3>Site</h3>
         <ul>
           <li><a href="/">Início</a></li>
           <li><a href="/sobre.html">Sobre</a></li>
@@ -253,43 +236,19 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
+
 <script>
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
-
-  function showError(msg) {
-    errBox.textContent = msg;
-    errBox.classList.add('is-visible');
-    result.hidden = true;
+  function showError(m){ errBox.textContent=m; errBox.classList.add('is-visible'); result.hidden=true; }
+  function clearError(){ errBox.textContent=''; errBox.classList.remove('is-visible'); }
+  function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
   }
-  function clearError() {
-    errBox.textContent = '';
-    errBox.classList.remove('is-visible');
-  }
-
-  $('calc-example').addEventListener('click', function () {
-    $('cintura').value = '95';
-    $('quadril').value = '100';
-    var m = document.querySelector('input[name="sexo"][value="M"]');
-    if (m) m.checked = true;
-    compute();
-  });
-  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
-
-  function compute() {
-    clearError();
-    var cintura = parseNum($('cintura').value), quadril = parseNum($('quadril').value);
-    var sexo = Fmt.radio('sexo');
-    if (isNaN(cintura) || isNaN(quadril)) {
-      showError('Preencha a cintura e o quadril com números válidos.');
-      return;
-    }
-    var r = Clinical.waistHip({ cintura: cintura, quadril: quadril, sexo: sexo });
-    if (r.error) { showError(r.error); return; }
-    render(r);
-  }
+  function getRadio(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:null; }
 
   var ICONS = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
@@ -297,25 +256,37 @@
     alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
   };
 
-  function render(r) {
-    var cls = r.riscoElevado ? 'warn' : 'ok';
-    var faixa = r.riscoElevado ? 'Risco cardiometabólico elevado' : 'Risco cardiometabólico baixo';
+
+  
+  function compute() {
+    clearError();
+    var cr = parseNum($('creatinina').value), idade = parseNum($('idade').value),
+        peso = parseNum($('peso').value), dpk = parseNum($('dosePorKg').value);
+    var sexo = getRadio('sexo');
+    if (isNaN(cr) || isNaN(idade) || isNaN(peso) || isNaN(dpk)) {
+      showError('Preencha todos os campos.'); return;
+    }
+    var tfg = Clinical.ckdEpi({ creatinina: cr, idade: idade, sexo: sexo });
+    if (tfg.error) { showError(tfg.error); return; }
+    var dose = Clinical.doseByWeight({ peso: peso, dosePorKg: dpk });
+    if (dose.error) { showError(dose.error); return; }
+    var p = Clinical.doseByTfgPanel({ doseTotal: dose.doseTotal, tfg: tfg.tfg });
+    if (p.error) { showError(p.error); return; }
+    var cls = p.fator === 1 ? 'ok' : (p.fator >= 0.5 ? 'warn' : 'alert');
     result.className = 'result result--' + cls;
     result.innerHTML =
       '<div class="result__banner">' + ICONS[cls] +
-        '<div><div class="result__headline">' + faixa + '</div>' +
-        '<div class="result__sub">Avaliação da distribuição de gordura corporal.</div></div></div>' +
+        '<div><div class="result__headline">Dose ajustada: ' + p.doseAjustada.toFixed(1) + ' mg</div>' +
+        '<div class="result__sub">TFG ' + tfg.tfg.toFixed(0) + ' mL/min/1,73m² (' + p.faixa + ') · fator ' + p.fator + '× sobre dose habitual de ' + p.doseHabitual.toFixed(1) + ' mg</div></div></div>' +
       '<div class="result__body">' +
-        '<div class="result__main">' + Fmt.num(r.rcq, 2) + ' <small>RCQ</small></div>' +
-        '<div class="result__interpretation"><p>A relação cintura-quadril de <strong>' + Fmt.num(r.rcq, 2) +
-        '</strong> ' + (r.riscoElevado
-          ? 'está <strong>acima</strong> do limite de ' + Fmt.num(r.limite, 2) + ' para este sexo, indicando risco cardiometabólico elevado.'
-          : 'está <strong>dentro</strong> do limite de ' + Fmt.num(r.limite, 2) + ' para este sexo.') +
-        ' Interprete sempre junto da avaliação clínica e de outras medidas corporais.</p></div>' +
+        '<div class="result__interpretation"><p>' + p.observacao + '</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+  $('calc-example').addEventListener('click', function(){ $('creatinina').value='1,8'; $('idade').value='70'; setRadio('sexo','M'); $('peso').value='70'; $('dosePorKg').value='15'; compute(); });
 })();
 </script>
 </body>

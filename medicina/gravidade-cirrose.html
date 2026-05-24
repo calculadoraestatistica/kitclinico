@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Calculadora de IMC — Índice de Massa Corporal | Kit Clínico</title>
-<meta name="description" content="Calculadora de IMC (Índice de Massa Corporal) online e gratuita. Informe peso e altura e veja o resultado com a classificação e a interpretação.">
-<link rel="canonical" href="https://kitclinico.com.br/medicina/imc.html">
+<title>Gravidade da cirrose — MELD-Na × Child-Pugh | Kit Clínico</title>
+<meta name="description" content="Painel que combina MELD-Na e Child-Pugh para avaliar gravidade da cirrose e orientar encaminhamento para transplante.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/gravidade-cirrose.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de IMC — Índice de Massa Corporal">
-<meta property="og:description" content="Calcule o IMC e veja a classificação do estado nutricional. Grátis.">
-<meta property="og:url" content="https://kitclinico.com.br/medicina/imc.html">
+<meta property="og:title" content="Gravidade da cirrose — MELD-Na × Child-Pugh">
+<meta property="og:description" content="Painel que combina MELD-Na e Child-Pugh para avaliar gravidade da cirrose e orientar encaminhamento para transplante.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/gravidade-cirrose.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,24 +25,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de IMC",
-  "url": "https://kitclinico.com.br/medicina/imc.html",
+  "name": "Gravidade da cirrose — MELD-Na × Child-Pugh",
+  "url": "https://kitclinico.com.br/medicina/gravidade-cirrose.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora do Índice de Massa Corporal (IMC)."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
-    {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de IMC","item":"https://kitclinico.com.br/medicina/imc.html"}
-  ]
+  "description": "Painel que combina MELD-Na e Child-Pugh para avaliar gravidade da cirrose e orientar encaminhamento para transplante."
 }
 </script>
 </head>
@@ -74,7 +63,6 @@
   </div>
 </header>
 
-
 <main id="conteudo">
 
   <div class="page-head">
@@ -83,11 +71,11 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Calculadora de IMC</li>
+          <li>Gravidade da cirrose</li>
         </ol>
       </nav>
-      <h1>Calculadora de IMC</h1>
-      <p class="lead">O Índice de Massa Corporal relaciona o peso e a altura e classifica o estado nutricional do adulto.</p>
+      <h1>Gravidade da cirrose — Painel MELD-Na × Child-Pugh</h1>
+      <p class="lead">Um único olhar sobre o paciente cirrótico: <strong>MELD-Na</strong> projeta mortalidade em 90 dias e <strong>Child-Pugh</strong> resume a função hepática. Juntos orientam encaminhamento.</p>
     </div>
   </div>
 
@@ -95,27 +83,30 @@
 
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Calcular o IMC
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dados do paciente
       </h2>
-      <p class="calculator__hint">Informe o peso e a altura do paciente adulto.</p>
+      
 
       <fieldset class="field-group">
-        <legend>Dados do paciente</legend>
-        <div class="field-row">
+        <legend>Escores</legend>
+        <div class="">
           <div class="field">
-            <label for="peso">Peso</label>
+            <label for="meld">MELD-Na</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 72" autocomplete="off">
-              <span class="input-affix__unit">kg</span>
+              <input class="input" type="text" inputmode="decimal" id="meld" placeholder="Ex.: 18" autocomplete="off">
+              <span class="input-affix__unit">pontos</span>
             </div>
           </div>
+        </div>
+        <div class="">
           <div class="field">
-            <label for="altura">Altura</label>
-            <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="altura" placeholder="Ex.: 170" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
-            </div>
+            <label for="child">Classe Child-Pugh</label>
+            <select class="input" id="child">
+              <option value="A">A — cirrose compensada</option>
+              <option value="B">B — comprometimento significativo</option>
+              <option value="C">C — descompensada</option>
+            </select>
           </div>
         </div>
       </fieldset>
@@ -123,68 +114,30 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Calcular IMC</button>
+        <button class="btn btn--primary btn--lg" type="submit">Avaliar gravidade</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
       <section class="result" id="calc-result" hidden aria-live="polite"></section>
     </form>
 
-    
-    <div class="callout callout--tip">
-      <div class="callout__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — Perfil metabólico
-      </div>
-      <p>IMC sozinho não diferencia gordura de músculo. Combine com a relação cintura-quadril e o % de gordura no <a href="/medicina/perfil-metabolico.html"><strong>painel Perfil metabólico integrado</strong></a>.</p>
-    </div>
-
     <div class="ad-slot" data-ad-slot=""></div>
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>O <strong>IMC (Índice de Massa Corporal)</strong> é uma medida simples que relaciona o peso e a altura para classificar o estado nutricional de pessoas adultas. É usado como triagem rápida de baixo peso, sobrepeso e obesidade na prática clínica e em pesquisas populacionais.</p>
-
-      <h2>Como interpretar o resultado</h2>
-      <p>A Organização Mundial da Saúde classifica o IMC do adulto nas seguintes faixas:</p>
-      <div class="table-wrap">
-        <table class="data">
-          <thead><tr><th>IMC (kg/m²)</th><th>Classificação</th></tr></thead>
-          <tbody>
-            <tr><td>Abaixo de 18,5</td><td>Abaixo do peso</td></tr>
-            <tr><td>18,5 a 24,9</td><td>Peso normal</td></tr>
-            <tr><td>25,0 a 29,9</td><td>Sobrepeso</td></tr>
-            <tr><td>30,0 a 34,9</td><td>Obesidade grau I</td></tr>
-            <tr><td>35,0 a 39,9</td><td>Obesidade grau II</td></tr>
-            <tr><td>40,0 ou mais</td><td>Obesidade grau III</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="formula">IMC = peso (kg) ÷ altura² (m)</div>
-
-      <h2>Exemplo</h2>
-      <p>Um paciente com <strong>72 kg</strong> e <strong>1,70 m</strong> tem IMC = 72 ÷ (1,70 × 1,70) = 72 ÷ 2,89 ≈ <strong>24,9 kg/m²</strong> — classificado como <strong>peso normal</strong>.</p>
-
-      <div class="callout callout--warning">
-        <div class="callout__title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
-        </div>
-        <p>O IMC não distingue massa muscular de gordura e não se aplica da mesma forma a atletas, gestantes, idosos e crianças. Use-o como triagem, sempre junto da avaliação clínica e de outras medidas (circunferência abdominal, composição corporal).</p>
-      </div>
-
+      <h2>Como ler o painel</h2>
+      <p>O <strong>Child-Pugh</strong> resume função hepática (bilirrubina, albumina, INR, ascite, encefalopatia) em três classes — A, B e C — refletindo a capacidade funcional do fígado. O <strong>MELD-Na</strong> usa marcadores objetivos (bilirrubina, INR, creatinina, sódio) para projetar mortalidade em 90 dias e é o critério usado para priorização em fila de transplante.</p>
+      <p>A combinação ajuda quando os dois discordam: um paciente Child A com MELD-Na 20 (talvez por LRA superposta) precisa de atenção e investigação imediata; um Child C com MELD-Na 12 (frequente em estável crônico) também merece encaminhamento, mesmo sem urgência. Em geral, <strong>MELD-Na ≥ 15 ou Child C</strong> sugerem avaliação para transplante hepático.</p>
       <h2>Referências</h2>
       <ol class="ref-list">
-        <li>World Health Organization. Obesity: preventing and managing the global epidemic. <cite>WHO Technical Report Series 894</cite>. Genebra: OMS; 2000. <a href="https://iris.who.int/items/933e09aa-64f9-46e9-8dbb-78d8cddf1a3d" target="_blank" rel="noopener">iris.who.int</a>.</li>
+        <li>Kim WR, et al. MELD 3.0: The model for end-stage liver disease updated for the modern era. <cite>Gastroenterology</cite>. 2021;161(6):1887-1895. <a href="https://doi.org/10.1053/j.gastro.2021.08.050" target="_blank" rel="noopener">doi:10.1053/j.gastro.2021.08.050</a>.</li>
       </ol>
 
       <div class="related">
-        <h2>Calculadoras relacionadas</h2>
+        <h2>Calculadoras envolvidas</h2>
         <div class="calc-grid">
-          <a class="calc-card" href="/medicina/peso-ideal.html"><h3>Peso ideal</h3><p>Estimativa do peso ideal pela altura.</p></a>
-          <a class="calc-card" href="/nutricao/gordura-corporal.html"><h3>Gordura corporal</h3><p>Percentual estimado de gordura corporal.</p></a>
-          <a class="calc-card" href="/medicina/superficie-corporal.html"><h3>Superfície corporal</h3><p>Área de superfície corporal (BSA).</p></a>
+          <a class="calc-card" href="/medicina/meld-na.html"><h3>MELD-Na</h3><p>Gravidade da doença hepática crônica.</p></a>
+          <a class="calc-card" href="/medicina/child-pugh.html"><h3>Child-Pugh</h3><p>Classificação da gravidade da cirrose.</p></a>
         </div>
       </div>
 
@@ -223,7 +176,8 @@
           <li><a href="/cadastro-veterinaria.html">Cadastro veterinário</a></li>
         </ul>
       </div>
-<div>
+      <div>
+        <h3>Site</h3>
         <ul>
           <li><a href="/">Início</a></li>
           <li><a href="/sobre.html">Sobre</a></li>
@@ -250,40 +204,19 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
+
 <script>
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
-
-  function showError(msg) {
-    errBox.textContent = msg;
-    errBox.classList.add('is-visible');
-    result.hidden = true;
+  function showError(m){ errBox.textContent=m; errBox.classList.add('is-visible'); result.hidden=true; }
+  function clearError(){ errBox.textContent=''; errBox.classList.remove('is-visible'); }
+  function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
   }
-  function clearError() {
-    errBox.textContent = '';
-    errBox.classList.remove('is-visible');
-  }
-
-  $('calc-example').addEventListener('click', function () {
-    $('peso').value = '72';
-    $('altura').value = '170';
-    compute();
-  });
-  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
-
-  function compute() {
-    clearError();
-    var peso = parseNum($('peso').value), altura = parseNum($('altura').value);
-    if (isNaN(peso) || isNaN(altura)) {
-      showError('Preencha o peso e a altura com números válidos.');
-      return;
-    }
-    var r = Clinical.bmi({ peso: peso, altura: altura });
-    if (r.error) { showError(r.error); return; }
-    render(r);
-  }
+  function getRadio(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:null; }
 
   var ICONS = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
@@ -291,21 +224,29 @@
     alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
   };
 
-  function render(r) {
+
+  
+  function compute() {
+    clearError();
+    var meld = parseNum($('meld').value);
+    var child = $('child').value;
+    if (isNaN(meld)) { showError('Informe o MELD-Na.'); return; }
+    var r = Clinical.cirrhosisPanel({ meldNa: meld, childClasse: child });
+    if (r.error) { showError(r.error); return; }
     result.className = 'result result--' + r.cls;
     result.innerHTML =
       '<div class="result__banner">' + ICONS[r.cls] +
-        '<div><div class="result__headline">' + r.faixa + '</div>' +
-        '<div class="result__sub">Classificação do estado nutricional (OMS).</div></div></div>' +
+        '<div><div class="result__headline">Gravidade combinada — Child ' + r.child + ' / MELD-Na ' + r.meld + '</div>' +
+        '<div class="result__sub">Avaliação integrada da cirrose.</div></div></div>' +
       '<div class="result__body">' +
-        '<div class="result__main">' + Fmt.num(r.imc, 1) + ' <small>kg/m²</small></div>' +
-        '<div class="result__interpretation"><p>O IMC de <strong>' + Fmt.num(r.imc, 1) +
-        ' kg/m²</strong> corresponde à faixa <strong>' + r.faixa + '</strong>. ' +
-        'Interprete sempre junto da avaliação clínica e de outras medidas corporais.</p></div>' +
+        '<div class="result__interpretation"><p>' + r.conduta + '</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+  $('calc-example').addEventListener('click', function(){ $('meld').value='18'; $('child').value='B'; compute(); });
 })();
 </script>
 </body>

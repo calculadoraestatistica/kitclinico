@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Calculadora de Relação Cintura-Quadril (RCQ) | Kit Clínico</title>
-<meta name="description" content="Calculadora de Relação Cintura-Quadril (RCQ) online e gratuita. Informe a cintura, o quadril e o sexo e veja o resultado com a interpretação do risco.">
-<link rel="canonical" href="https://kitclinico.com.br/nutricao/cintura-quadril.html">
+<title>Decisão de imagem em TEV — Wells × d-dímero | Kit Clínico</title>
+<meta name="description" content="Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/imagem-tev.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de Relação Cintura-Quadril (RCQ)">
-<meta property="og:description" content="Calcule a relação cintura-quadril e avalie o risco cardiometabólico. Grátis.">
-<meta property="og:url" content="https://kitclinico.com.br/nutricao/cintura-quadril.html">
+<meta property="og:title" content="Decisão de imagem em TEV — Wells × d-dímero">
+<meta property="og:description" content="Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/imagem-tev.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,24 +25,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de Relação Cintura-Quadril (RCQ)",
-  "url": "https://kitclinico.com.br/nutricao/cintura-quadril.html",
+  "name": "Decisão de imagem em TEV — Wells × d-dímero",
+  "url": "https://kitclinico.com.br/medicina/imagem-tev.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora da relação cintura-quadril (RCQ)."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
-    {"@type":"ListItem","position":2,"name":"Nutrição","item":"https://kitclinico.com.br/nutricao.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de Relação Cintura-Quadril (RCQ)","item":"https://kitclinico.com.br/nutricao/cintura-quadril.html"}
-  ]
+  "description": "Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário."
 }
 </script>
 </head>
@@ -74,7 +63,6 @@
   </div>
 </header>
 
-
 <main id="conteudo">
 
   <div class="page-head">
@@ -82,12 +70,12 @@
       <nav class="breadcrumb" aria-label="Trilha de navegação">
         <ol>
           <li><a href="/">Início</a></li>
-          <li><a href="/nutricao.html">Nutrição</a></li>
-          <li>Calculadora de Relação Cintura-Quadril (RCQ)</li>
+          <li><a href="/medicina.html">Calculadoras médicas</a></li>
+          <li>Decisão de imagem em TEV</li>
         </ol>
       </nav>
-      <h1>Calculadora de Relação Cintura-Quadril (RCQ)</h1>
-      <p class="lead">A relação cintura-quadril avalia a distribuição de gordura corporal e ajuda a estimar o risco cardiometabólico.</p>
+      <h1>Decisão de imagem em TEV — Painel Wells × d-dímero</h1>
+      <p class="lead">O Wells estratifica em provável / improvável; o <strong>d-dímero</strong> ajuda a evitar imagem desnecessária quando o Wells é baixo.</p>
     </div>
   </div>
 
@@ -95,34 +83,42 @@
 
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Calcular a RCQ
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dados do paciente
       </h2>
-      <p class="calculator__hint">Informe as circunferências da cintura e do quadril e o sexo.</p>
+      
 
       <fieldset class="field-group">
-        <legend>Medidas</legend>
-        <div class="field-row">
+        <legend>Escore de Wells</legend>
+        <div class="">
           <div class="field">
-            <label for="cintura">Circunferência da cintura</label>
+            <label for="wells">Escore de Wells</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="cintura" placeholder="Ex.: 95" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
-            </div>
-          </div>
-          <div class="field">
-            <label for="quadril">Circunferência do quadril</label>
-            <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="quadril" placeholder="Ex.: 100" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
+              <input class="input" type="text" inputmode="decimal" id="wells" placeholder="Ex.: 2" autocomplete="off">
+              <span class="input-affix__unit">pontos</span>
             </div>
           </div>
         </div>
-        <div class="field">
-          <span class="field-label">Sexo</span>
-          <div class="segmented" role="radiogroup" aria-label="Sexo">
-            <label><input type="radio" name="sexo" value="M" checked><span>Masculino</span></label>
-            <label><input type="radio" name="sexo" value="F"><span>Feminino</span></label>
+        <div class="">
+          <div class="field">
+            <label for="tipo">Suspeita</label>
+            <select class="input" id="tipo">
+              <option value="tvp">TVP (limiar ≥ 2)</option>
+              <option value="tep">TEP (limiar > 4)</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>D-dímero (opcional)</legend>
+        <div class="">
+          <div class="field">
+            <label for="dDimero">D-dímero</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="dDimero" placeholder="Ex.: 450" autocomplete="off">
+              <span class="input-affix__unit">ng/mL FEU</span>
+            </div>
           </div>
         </div>
       </fieldset>
@@ -130,64 +126,36 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Calcular RCQ</button>
+        <button class="btn btn--primary btn--lg" type="submit">Decidir imagem</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
       <section class="result" id="calc-result" hidden aria-live="polite"></section>
     </form>
 
-    
-    <div class="callout callout--tip">
-      <div class="callout__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — Perfil metabólico
-      </div>
-      <p>Combine com IMC e % de gordura no <a href="/medicina/perfil-metabolico.html"><strong>painel Perfil metabólico integrado</strong></a>.</p>
-    </div>
-
     <div class="ad-slot" data-ad-slot=""></div>
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>A <strong>relação cintura-quadril (RCQ)</strong> é uma medida antropométrica que compara a circunferência da cintura com a do quadril. Ela avalia a <strong>distribuição da gordura corporal</strong> e é um indicador do <strong>risco cardiometabólico</strong> — pessoas com acúmulo de gordura na região abdominal têm maior risco de doenças cardiovasculares e metabólicas.</p>
-
-      <h2>Como interpretar o resultado</h2>
-      <p>Quanto maior a RCQ, maior a proporção de gordura abdominal. O risco é considerado elevado quando a relação ultrapassa os seguintes limites:</p>
-      <div class="table-wrap">
-        <table class="data">
-          <thead><tr><th>Sexo</th><th>RCQ de risco elevado</th></tr></thead>
-          <tbody>
-            <tr><td>Homens</td><td>Acima de 0,90</td></tr>
-            <tr><td>Mulheres</td><td>Acima de 0,85</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="formula">RCQ = circunferência da cintura (cm) ÷ circunferência do quadril (cm)</div>
-
-      <h2>Exemplo</h2>
-      <p>Um homem com cintura de <strong>95 cm</strong> e quadril de <strong>100 cm</strong> tem RCQ = 95 ÷ 100 = <strong>0,95</strong> — acima do limite de 0,90 para homens, indicando <strong>risco cardiometabólico elevado</strong>.</p>
-
+      <h2>Como ler o painel</h2>
+      <p>Quando o Wells é alto (TVP ≥ 2 ou TEP &gt; 4), <strong>imagem é indicada de saída</strong> — d-dímero não modifica a conduta. Quando o Wells é baixo, o d-dímero quantitativo tem alto valor preditivo negativo: um valor ≤ 500 ng/mL FEU (com ajuste por idade nos &gt; 50 anos: idade × 10) <strong>exclui razoavelmente</strong> o evento e dispensa o exame. Se elevado, faz-se a imagem para confirmar.</p>
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
+          D-dímero tem baixa especificidade
         </div>
-        <p>A RCQ é uma triagem e depende da técnica de medição correta da cintura e do quadril. Interprete-a sempre junto da avaliação clínica e de outras medidas, como a circunferência abdominal e o IMC.</p>
+        <p>O d-dímero é altamente sensível mas pouco específico — sobe em infecção, gestação, pós-operatório, neoplasia. Use-o como filtro de exclusão, não como confirmação.</p>
       </div>
-
       <h2>Referências</h2>
       <ol class="ref-list">
-        <li>World Health Organization. Waist Circumference and Waist–Hip Ratio: Report of a WHO Expert Consultation. Genebra: OMS; 2008. <a href="https://www.who.int/publications/i/item/9789241501491" target="_blank" rel="noopener">who.int</a>.</li>
+        <li>Konstantinides SV, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. <cite>Eur Heart J</cite>. 2020;41(4):543-603. <a href="https://doi.org/10.1093/eurheartj/ehz405" target="_blank" rel="noopener">doi:10.1093/eurheartj/ehz405</a>.</li>
       </ol>
 
       <div class="related">
-        <h2>Calculadoras relacionadas</h2>
+        <h2>Calculadoras envolvidas</h2>
         <div class="calc-grid">
-          <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
-          <a class="calc-card" href="/nutricao/gordura-corporal.html"><h3>Gordura corporal</h3><p>Percentual estimado de gordura corporal.</p></a>
-          <a class="calc-card" href="/medicina/peso-ideal.html"><h3>Peso ideal</h3><p>Estimativa do peso ideal pela altura.</p></a>
+          <a class="calc-card" href="/medicina/escore-wells-tvp.html"><h3>Wells (TVP)</h3><p>Probabilidade de TVP.</p></a>
+          <a class="calc-card" href="/medicina/escore-wells-tep.html"><h3>Wells (TEP)</h3><p>Probabilidade de TEP.</p></a>
         </div>
       </div>
 
@@ -226,7 +194,8 @@
           <li><a href="/cadastro-veterinaria.html">Cadastro veterinário</a></li>
         </ul>
       </div>
-<div>
+      <div>
+        <h3>Site</h3>
         <ul>
           <li><a href="/">Início</a></li>
           <li><a href="/sobre.html">Sobre</a></li>
@@ -253,43 +222,19 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
+
 <script>
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
-
-  function showError(msg) {
-    errBox.textContent = msg;
-    errBox.classList.add('is-visible');
-    result.hidden = true;
+  function showError(m){ errBox.textContent=m; errBox.classList.add('is-visible'); result.hidden=true; }
+  function clearError(){ errBox.textContent=''; errBox.classList.remove('is-visible'); }
+  function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
   }
-  function clearError() {
-    errBox.textContent = '';
-    errBox.classList.remove('is-visible');
-  }
-
-  $('calc-example').addEventListener('click', function () {
-    $('cintura').value = '95';
-    $('quadril').value = '100';
-    var m = document.querySelector('input[name="sexo"][value="M"]');
-    if (m) m.checked = true;
-    compute();
-  });
-  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
-
-  function compute() {
-    clearError();
-    var cintura = parseNum($('cintura').value), quadril = parseNum($('quadril').value);
-    var sexo = Fmt.radio('sexo');
-    if (isNaN(cintura) || isNaN(quadril)) {
-      showError('Preencha a cintura e o quadril com números válidos.');
-      return;
-    }
-    var r = Clinical.waistHip({ cintura: cintura, quadril: quadril, sexo: sexo });
-    if (r.error) { showError(r.error); return; }
-    render(r);
-  }
+  function getRadio(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:null; }
 
   var ICONS = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
@@ -297,25 +242,28 @@
     alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
   };
 
-  function render(r) {
-    var cls = r.riscoElevado ? 'warn' : 'ok';
-    var faixa = r.riscoElevado ? 'Risco cardiometabólico elevado' : 'Risco cardiometabólico baixo';
-    result.className = 'result result--' + cls;
+
+  
+  function compute() {
+    clearError();
+    var w = parseNum($('wells').value), tipo = $('tipo').value, d = parseNum($('dDimero').value);
+    if (isNaN(w)) { showError('Informe o escore de Wells.'); return; }
+    var p = Clinical.tevImagingDecision({ wells: w, tipo: tipo, dDimero: isNaN(d)?null:d });
+    if (p.error) { showError(p.error); return; }
+    result.className = 'result result--' + p.cls;
     result.innerHTML =
-      '<div class="result__banner">' + ICONS[cls] +
-        '<div><div class="result__headline">' + faixa + '</div>' +
-        '<div class="result__sub">Avaliação da distribuição de gordura corporal.</div></div></div>' +
+      '<div class="result__banner">' + ICONS[p.cls] +
+        '<div><div class="result__headline">' + p.decisao + '</div>' +
+        '<div class="result__sub">' + (p.tipo === 'tvp' ? 'TVP' : 'TEP') + ' · Wells ' + p.wells + ' (' + (p.provavel ? 'provável' : 'improvável') + ')</div></div></div>' +
       '<div class="result__body">' +
-        '<div class="result__main">' + Fmt.num(r.rcq, 2) + ' <small>RCQ</small></div>' +
-        '<div class="result__interpretation"><p>A relação cintura-quadril de <strong>' + Fmt.num(r.rcq, 2) +
-        '</strong> ' + (r.riscoElevado
-          ? 'está <strong>acima</strong> do limite de ' + Fmt.num(r.limite, 2) + ' para este sexo, indicando risco cardiometabólico elevado.'
-          : 'está <strong>dentro</strong> do limite de ' + Fmt.num(r.limite, 2) + ' para este sexo.') +
-        ' Interprete sempre junto da avaliação clínica e de outras medidas corporais.</p></div>' +
+        '<div class="result__interpretation"><p>' + p.comentario + '</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+  $('calc-example').addEventListener('click', function(){ $('wells').value='2'; $('tipo').value='tvp'; $('dDimero').value='450'; compute(); });
 })();
 </script>
 </body>

@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Calculadora de IMC — Índice de Massa Corporal | Kit Clínico</title>
-<meta name="description" content="Calculadora de IMC (Índice de Massa Corporal) online e gratuita. Informe peso e altura e veja o resultado com a classificação e a interpretação.">
-<link rel="canonical" href="https://kitclinico.com.br/medicina/imc.html">
+<title>Triagem em pneumonia — CURB-65 + sinais vitais | Kit Clínico</title>
+<meta name="description" content="Painel de triagem para pneumonia adquirida na comunidade: combina CURB-65 com sinais vitais para sugerir local de tratamento.">
+<link rel="canonical" href="https://kitclinico.com.br/medicina/triagem-pneumonia.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de IMC — Índice de Massa Corporal">
-<meta property="og:description" content="Calcule o IMC e veja a classificação do estado nutricional. Grátis.">
-<meta property="og:url" content="https://kitclinico.com.br/medicina/imc.html">
+<meta property="og:title" content="Triagem em pneumonia — CURB-65 + sinais vitais">
+<meta property="og:description" content="Painel de triagem para pneumonia adquirida na comunidade: combina CURB-65 com sinais vitais para sugerir local de tratamento.">
+<meta property="og:url" content="https://kitclinico.com.br/medicina/triagem-pneumonia.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -25,24 +25,13 @@
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de IMC",
-  "url": "https://kitclinico.com.br/medicina/imc.html",
+  "name": "Triagem em pneumonia — CURB-65 + sinais vitais",
+  "url": "https://kitclinico.com.br/medicina/triagem-pneumonia.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora do Índice de Massa Corporal (IMC)."
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
-    {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de IMC","item":"https://kitclinico.com.br/medicina/imc.html"}
-  ]
+  "description": "Painel de triagem para pneumonia adquirida na comunidade: combina CURB-65 com sinais vitais para sugerir local de tratamento."
 }
 </script>
 </head>
@@ -74,7 +63,6 @@
   </div>
 </header>
 
-
 <main id="conteudo">
 
   <div class="page-head">
@@ -83,11 +71,11 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Calculadora de IMC</li>
+          <li>Triagem em pneumonia</li>
         </ol>
       </nav>
-      <h1>Calculadora de IMC</h1>
-      <p class="lead">O Índice de Massa Corporal relaciona o peso e a altura e classifica o estado nutricional do adulto.</p>
+      <h1>Triagem em pneumonia — Painel CURB-65 + sinais</h1>
+      <p class="lead">O CURB-65 sugere internação por pontos, mas <strong>sinais vitais alterados</strong> (hipotensão, taquipneia, hipoxemia) podem elevar a gravidade — este painel integra os dois.</p>
     </div>
   </div>
 
@@ -95,26 +83,48 @@
 
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Calcular o IMC
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        Dados do paciente
       </h2>
-      <p class="calculator__hint">Informe o peso e a altura do paciente adulto.</p>
+      
 
       <fieldset class="field-group">
-        <legend>Dados do paciente</legend>
+        <legend>CURB-65 (já calculado)</legend>
+        <div class="">
+          <div class="field">
+            <label for="curb">CURB-65</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="curb" placeholder="Ex.: 2" autocomplete="off">
+              <span class="input-affix__unit">pontos</span>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+
+      <fieldset class="field-group">
+        <legend>Sinais vitais</legend>
         <div class="field-row">
           <div class="field">
-            <label for="peso">Peso</label>
+            <label for="pas">PAS</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="peso" placeholder="Ex.: 72" autocomplete="off">
-              <span class="input-affix__unit">kg</span>
+              <input class="input" type="text" inputmode="decimal" id="pas" placeholder="Ex.: 95" autocomplete="off">
+              <span class="input-affix__unit">mmHg</span>
             </div>
           </div>
           <div class="field">
-            <label for="altura">Altura</label>
+            <label for="fr">FR</label>
             <div class="input-affix">
-              <input class="input" type="text" inputmode="decimal" id="altura" placeholder="Ex.: 170" autocomplete="off">
-              <span class="input-affix__unit">cm</span>
+              <input class="input" type="text" inputmode="decimal" id="fr" placeholder="Ex.: 28" autocomplete="off">
+              <span class="input-affix__unit">irpm</span>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="field">
+            <label for="satO2">SatO₂</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="satO2" placeholder="Ex.: 92" autocomplete="off">
+              <span class="input-affix__unit">%</span>
             </div>
           </div>
         </div>
@@ -123,68 +133,29 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Calcular IMC</button>
+        <button class="btn btn--primary btn--lg" type="submit">Avaliar conduta</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
       <section class="result" id="calc-result" hidden aria-live="polite"></section>
     </form>
 
-    
-    <div class="callout callout--tip">
-      <div class="callout__title">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — Perfil metabólico
-      </div>
-      <p>IMC sozinho não diferencia gordura de músculo. Combine com a relação cintura-quadril e o % de gordura no <a href="/medicina/perfil-metabolico.html"><strong>painel Perfil metabólico integrado</strong></a>.</p>
-    </div>
-
     <div class="ad-slot" data-ad-slot=""></div>
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>O <strong>IMC (Índice de Massa Corporal)</strong> é uma medida simples que relaciona o peso e a altura para classificar o estado nutricional de pessoas adultas. É usado como triagem rápida de baixo peso, sobrepeso e obesidade na prática clínica e em pesquisas populacionais.</p>
-
-      <h2>Como interpretar o resultado</h2>
-      <p>A Organização Mundial da Saúde classifica o IMC do adulto nas seguintes faixas:</p>
-      <div class="table-wrap">
-        <table class="data">
-          <thead><tr><th>IMC (kg/m²)</th><th>Classificação</th></tr></thead>
-          <tbody>
-            <tr><td>Abaixo de 18,5</td><td>Abaixo do peso</td></tr>
-            <tr><td>18,5 a 24,9</td><td>Peso normal</td></tr>
-            <tr><td>25,0 a 29,9</td><td>Sobrepeso</td></tr>
-            <tr><td>30,0 a 34,9</td><td>Obesidade grau I</td></tr>
-            <tr><td>35,0 a 39,9</td><td>Obesidade grau II</td></tr>
-            <tr><td>40,0 ou mais</td><td>Obesidade grau III</td></tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="formula">IMC = peso (kg) ÷ altura² (m)</div>
-
-      <h2>Exemplo</h2>
-      <p>Um paciente com <strong>72 kg</strong> e <strong>1,70 m</strong> tem IMC = 72 ÷ (1,70 × 1,70) = 72 ÷ 2,89 ≈ <strong>24,9 kg/m²</strong> — classificado como <strong>peso normal</strong>.</p>
-
-      <div class="callout callout--warning">
-        <div class="callout__title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
-        </div>
-        <p>O IMC não distingue massa muscular de gordura e não se aplica da mesma forma a atletas, gestantes, idosos e crianças. Use-o como triagem, sempre junto da avaliação clínica e de outras medidas (circunferência abdominal, composição corporal).</p>
-      </div>
-
+      <h2>Como ler o painel</h2>
+      <p>O <strong>CURB-65</strong> orienta o local de tratamento com base em 5 variáveis (confusão, ureia, FR, PA, idade). Funciona bem para a maioria dos pacientes, mas <strong>sinais vitais agudamente alterados</strong> mudam a decisão: hipotensão (PAS &lt; 90), taquipneia franca (FR ≥ 30) e hipoxemia (SatO₂ &lt; 90%) sinalizam gravidade que o CURB sozinho pode subestimar. Este painel eleva automaticamente o local sugerido quando esses gatilhos aparecem.</p>
       <h2>Referências</h2>
       <ol class="ref-list">
-        <li>World Health Organization. Obesity: preventing and managing the global epidemic. <cite>WHO Technical Report Series 894</cite>. Genebra: OMS; 2000. <a href="https://iris.who.int/items/933e09aa-64f9-46e9-8dbb-78d8cddf1a3d" target="_blank" rel="noopener">iris.who.int</a>.</li>
+        <li>Lim WS, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. <cite>Thorax</cite>. 2003;58(5):377-82. <a href="https://doi.org/10.1136/thorax.58.5.377" target="_blank" rel="noopener">doi:10.1136/thorax.58.5.377</a>.</li>
       </ol>
 
       <div class="related">
-        <h2>Calculadoras relacionadas</h2>
+        <h2>Calculadoras envolvidas</h2>
         <div class="calc-grid">
-          <a class="calc-card" href="/medicina/peso-ideal.html"><h3>Peso ideal</h3><p>Estimativa do peso ideal pela altura.</p></a>
-          <a class="calc-card" href="/nutricao/gordura-corporal.html"><h3>Gordura corporal</h3><p>Percentual estimado de gordura corporal.</p></a>
-          <a class="calc-card" href="/medicina/superficie-corporal.html"><h3>Superfície corporal</h3><p>Área de superfície corporal (BSA).</p></a>
+          <a class="calc-card" href="/medicina/curb-65.html"><h3>CURB-65</h3><p>Gravidade da pneumonia.</p></a>
+          <a class="calc-card" href="/medicina/pressao-arterial-media.html"><h3>Pressão arterial média</h3><p>PAM via PAS e PAD.</p></a>
         </div>
       </div>
 
@@ -223,7 +194,8 @@
           <li><a href="/cadastro-veterinaria.html">Cadastro veterinário</a></li>
         </ul>
       </div>
-<div>
+      <div>
+        <h3>Site</h3>
         <ul>
           <li><a href="/">Início</a></li>
           <li><a href="/sobre.html">Sobre</a></li>
@@ -250,40 +222,19 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
+
 <script>
 (function () {
   'use strict';
   var $ = function (id) { return document.getElementById(id); };
   var form = $('calc-form'), result = $('calc-result'), errBox = $('calc-error');
-
-  function showError(msg) {
-    errBox.textContent = msg;
-    errBox.classList.add('is-visible');
-    result.hidden = true;
+  function showError(m){ errBox.textContent=m; errBox.classList.add('is-visible'); result.hidden=true; }
+  function clearError(){ errBox.textContent=''; errBox.classList.remove('is-visible'); }
+  function setRadio(name, value) {
+    var el = document.querySelector('input[name="' + name + '"][value="' + value + '"]');
+    if (el) el.checked = true;
   }
-  function clearError() {
-    errBox.textContent = '';
-    errBox.classList.remove('is-visible');
-  }
-
-  $('calc-example').addEventListener('click', function () {
-    $('peso').value = '72';
-    $('altura').value = '170';
-    compute();
-  });
-  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
-
-  function compute() {
-    clearError();
-    var peso = parseNum($('peso').value), altura = parseNum($('altura').value);
-    if (isNaN(peso) || isNaN(altura)) {
-      showError('Preencha o peso e a altura com números válidos.');
-      return;
-    }
-    var r = Clinical.bmi({ peso: peso, altura: altura });
-    if (r.error) { showError(r.error); return; }
-    render(r);
-  }
+  function getRadio(name){ var el=document.querySelector('input[name="'+name+'"]:checked'); return el?el.value:null; }
 
   var ICONS = {
     ok: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
@@ -291,21 +242,31 @@
     alert: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>'
   };
 
-  function render(r) {
-    result.className = 'result result--' + r.cls;
+
+  
+  function compute() {
+    clearError();
+    var curb = parseNum($('curb').value);
+    var pas = parseNum($('pas').value), fr = parseNum($('fr').value), sat = parseNum($('satO2').value);
+    if (isNaN(curb)) { showError('Informe o CURB-65.'); return; }
+    var p = Clinical.pneumoniaTriage({ curb: curb,
+      pas: isNaN(pas)?null:pas, fr: isNaN(fr)?null:fr, satO2: isNaN(sat)?null:sat });
+    if (p.error) { showError(p.error); return; }
+    var motivos = '<ul>' + p.motivos.map(function(m){ return '<li>' + m + '</li>'; }).join('') + '</ul>';
+    result.className = 'result result--' + p.cls;
     result.innerHTML =
-      '<div class="result__banner">' + ICONS[r.cls] +
-        '<div><div class="result__headline">' + r.faixa + '</div>' +
-        '<div class="result__sub">Classificação do estado nutricional (OMS).</div></div></div>' +
+      '<div class="result__banner">' + ICONS[p.cls] +
+        '<div><div class="result__headline">' + p.local + '</div>' +
+        '<div class="result__sub">Triagem integrada.</div></div></div>' +
       '<div class="result__body">' +
-        '<div class="result__main">' + Fmt.num(r.imc, 1) + ' <small>kg/m²</small></div>' +
-        '<div class="result__interpretation"><p>O IMC de <strong>' + Fmt.num(r.imc, 1) +
-        ' kg/m²</strong> corresponde à faixa <strong>' + r.faixa + '</strong>. ' +
-        'Interprete sempre junto da avaliação clínica e de outras medidas corporais.</p></div>' +
+        '<div class="result__interpretation">' + motivos + '</div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
+
+  form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
+  $('calc-example').addEventListener('click', function(){ $('curb').value='2'; $('pas').value='95'; $('fr').value='28'; $('satO2').value='92'; compute(); });
 })();
 </script>
 </body>
