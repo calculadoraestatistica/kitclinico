@@ -305,36 +305,46 @@
   };
 
   function buildMatrix(activeG, activeA) {
-    var html = '';
+    var html = '<div class="kdigo">';
     html += '<div class="kdigo__head">Categorias de albuminúria</div>';
-    html += '<div class="kdigo__wrap">';
-    // Linha 1: cabeçalho (vazio, vazio, A1, A2, A3)
-    html += '<div></div><div></div>';
+    html += '<table class="kdigo__table">';
+    // Cabeçalho: dois cantos vazios + 3 categorias A
+    html += '<thead><tr>';
+    html += '<th class="kdigo__corner"></th><th class="kdigo__corner"></th>';
     for (var j = 0; j < AS.length; j++) {
-      html += '<div class="kdigo__th">' + AS[j] + '<br><small>' + AS_LABEL[AS[j]] + '</small></div>';
+      html += '<th>' + AS[j] + '<small>' + AS_LABEL[AS[j]] + '</small></th>';
     }
-    // Eixo Y (rótulo vertical "TFG" ocupa todas as linhas de dados)
-    html += '<div class="kdigo__axis-y">Categorias de TFG (mL/min/1,73m²)</div>';
+    html += '</tr></thead>';
+    // Corpo
+    html += '<tbody>';
     for (var i = 0; i < GS.length; i++) {
       var g = GS[i];
-      // primeira coluna eh o eixo Y (apenas na primeira linha de dados)
-      if (i > 0) html += '<div></div>';
-      html += '<div class="kdigo__rh">' + g + '<br><small>' + GS_LABEL[g] + '</small></div>';
+      html += '<tr>';
+      // primeira coluna: eixo-Y vertical (apenas na primeira linha, rowspan)
+      if (i === 0) {
+        html += '<th class="kdigo__axis-y" rowspan="' + GS.length + '">' +
+                '<span>Categorias de TFG (mL/min/1,73m²)</span></th>';
+      }
+      // rotulo da linha G
+      html += '<th class="kdigo__rh">' + g + '<small>' + GS_LABEL[g] + '</small></th>';
+      // celulas A1, A2, A3
       for (var k = 0; k < AS.length; k++) {
         var a = AS[k];
         var r = Clinical.kdigoRisk({ categoriaG: g, categoriaA: a });
         var active = (g === activeG && a === activeA) ? ' is-active' : '';
-        html += '<div class="kdigo__cell kdigo__cell--' + r.nivel + active + '" title="' + r.label + '"></div>';
+        html += '<td class="kdigo__cell kdigo__cell--' + r.nivel + active + '" title="' + r.label + '"></td>';
       }
+      html += '</tr>';
     }
-    html += '</div>';
+    html += '</tbody></table>';
     html += '<div class="kdigo__legend">' +
       '<span><i style="background:var(--c-baixo)"></i> Risco baixo</span>' +
       '<span><i style="background:var(--c-moderado)"></i> Moderado</span>' +
       '<span><i style="background:var(--c-alto)"></i> Alto</span>' +
       '<span><i style="background:var(--c-muitoalto)"></i> Muito alto</span>' +
       '</div>';
-    return '<div class="kdigo">' + html + '</div>';
+    html += '</div>';
+    return html;
   }
 
   var ICONS = {
