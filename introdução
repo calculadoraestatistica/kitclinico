@@ -1,0 +1,53 @@
+Crie um site simples e profissional com com calculadoras para médicos de diversas especialidades, nutricionistas e e veterinários que será hospedado no site kitclinico.com.br (domínio já registrado por mim). O usuários deve conseguir acessar diferentes calculadoras e conter uma explicação didática simplificada da utilidade do teste com exemplos práticos, resultados destacado, design responsivo para celular e formato de monetização inteligente.
+
+Quero fazer algo simples e rápido e publicar utilizando minha a conta do GIT calculadoraestatistica@gmail.com (GitHub Pages). Já tenho uma api para a conta no git e você pode encontra-la em C:\Users\vinyn\Desktop\Vinícius\claude_infos\claude_github
+
+Utilize essas referências de sites:
+
+Panorama da concorrência
+Calculadoras médicas em português — concorrência média/forte
+Os principais sites brasileiros que você vai competir:
+
+calculadorasmedicas.com.br — versão em PT-BR do MDCalc, app iOS/Android, bem organizado por categoria. Tem calculadoras de pressão arterial média, gasometria arterial, intervalo QT, escores de mortalidade na UTI, DPOC Calculadorasmedicas
+enciclopedia.med.br/calculadoras — coleção em português com escores de risco, fórmulas farmacológicas, índices de gravidade e interpretação clínica Enciclopedia
+mdsaude.com/calculadoras-online — foco em público leigo, com calculadora de período fértil, janela imunológica de HIV, depressão (DSM-5), ansiedade GAD-7 MD.Saúde
+medicalsuite.einstein.br — calculadoras do Hospital Albert Einstein (autoridade altíssima)
+bibliomed.com.br/calculadoras — calculadoras clínicas variadas: climatério, vitamina D, cálcio, percentil fetal brasileiro, escore TIMI da Harvard Bibliomed
+hcor.com.br — Hospital do Coração
+
+Veredicto: Mercado mais concorrido do que parecia. Hospitais grandes (Einstein, HCor) têm autoridade de domínio enorme.
+Calculadoras veterinárias:
+
+vetsapiens.com/calculadoras — restrito a veterinários graduados e estudantes; tem cálculo de sedação, cetoacidose diabética, transfusão, potássio em fluidos, prognóstico de trauma crânio encefálico, protocolo Chill Vetsapiens
+casosvet.com.br/calculadora-veterinaria — dosagem de medicamentos, fluidoterapia, nutrição; algumas funções "Pro" pagas Casos Vet
+prontupet.com/calculadora — parâmetros vitais por espécie/peso, dosagem, volume de reidratação Prontupet
+calculoja.com/calculadora/dosagem-veterinaria — calculadora simples de dosagem
+
+Veredicto: Existe concorrência, mas os sites têm UX antiga ou são limitados a profissionais cadastrados. Tem espaço.
+Calculadoras nutricionais 
+
+calcularmacro.com.br — domínio bom, usa Mifflin-St Jeor, distribui macros por objetivo Calcularmacro
+hipertrofia.org/calculadora-de-macros — site de autoridade no nicho fitness
+alimentacaoetreino.com/calculadora-nutricional — calcula IMC, PI, Peso Ajustado, TMB, VET, distribuição de macros com fibras Alimentacaoetreino
+nathanaelbryan.com/calculadora — oferece 5 fórmulas de TMB (Mifflin-St Jeor, Harris-Benedict, FAO/OMS, Cunningham, Tinsley) Nathanael Bryan
+eusou.fit, dietabarata.com.br, myprotein.pt — todos competindo
+
+Referências internacionais (padrão ouro pra você se inspirar)
+
+MDCalc.com — fundado em 2005 por dois médicos de emergência, oferece mais de 500 calculadoras; em 2017, 65% dos médicos atendentes nos EUA usavam Wikipedia
+QxMD Calculate (qxmd.com/calculate) — tem centenas de ferramentas em cardiologia, medicina interna, nefrologia, hematologia, oncologia, ortopedia, neurologia, obstetrícia QxMD
+Medscape, MedCalX, ClinCalc.com — também referências
+
+É necessário disclaimer de "uso educacional, não substitui julgamento clínico". e dúvidas e sugestões para o emailcalculadoraestatistica@gmail.com
+
+Quero que o site inicie perguntando qual área do usuário, e abra a parte do site para as calculadoras da área (médica, nutricional e veterinária).
+
+Para o caso médico quero uma quebra das calculadoras mais comuns e também as muito especializadas. Como existem muitas, quero que seja possível um buscador de texto pelo usupario.
+
+Alguns Exemplos para o caso médico: cálculo de dose pediátrica, taxa de filtração glomerular, escore de Glasgow, CHA2DS2-VASc, escore APACHE, conversão de opioides. 
+Para o caso médico quero seguir muito do que existe no site https://calculadorasmedicas.com.br/ (incluíndo as referências que podem ser retiradas de lá, mas devem priorizar buscas na web e nos outros sites), mas com um modelo mais moderno. Quero ter todas as calculadoras médicas que existem aí.
+
+Para o caso do veterinário deve ter, além de outras: cálculo de dose por peso, conversão de medicamentos humano→animal, calculadora nutricional para pets
+
+Para o caso do nutricionista deve ter, além de outras:
+ferramentas de cálculo de TMB, distribuição de macros para necessidades específicas, conversão de medidas caseiras
