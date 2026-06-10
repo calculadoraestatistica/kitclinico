@@ -139,7 +139,7 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A <strong>superfície corporal (BSA, do inglês <em>body surface area</em>)</strong> estima a área externa do corpo em metros quadrados. É amplamente usada para <strong>dosar quimioterápicos</strong>, ajustar o débito cardíaco (índice cardíaco), calcular a taxa de filtração glomerular indexada e definir doses de alguns medicamentos.</p>
+      <p>A <strong>superfície corporal (BSA, do inglês <em>body surface area</em>)</strong> estima a área externa do corpo em metros quadrados. É uma fórmula antropométrica usada em pesquisas, tabelas e referências técnicas.</p>
 
       <h2>Como interpretar o resultado</h2>
       <p>O valor é expresso em <strong>m²</strong>. Em adultos, a BSA costuma ficar em torno de <strong>1,5 a 2,0 m²</strong>. A fórmula de <strong>Mosteller</strong> é a mais usada por ser simples; a de <strong>DuBois</strong> é a clássica e serve de comparação. Diferenças pequenas entre as duas são esperadas.</p>
@@ -153,7 +153,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>A BSA é uma estimativa e pode ser menos precisa em extremos de peso, em obesos e em crianças muito pequenas. Para dosagem de medicamentos, siga sempre os protocolos da instituição e confira a prescrição.</p>
+        <p>A BSA é uma estimativa e pode ser menos precisa em extremos de peso, em obesos e em crianças muito pequenas. Esta página apenas calcula a fórmula publicada e não define aplicação clínica individual.</p>
       </div>
 
       <h2>Referências</h2>
@@ -167,7 +167,7 @@
         <div class="calc-grid">
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
           <a class="calc-card" href="/medicina/peso-ideal.html"><h3>Peso ideal</h3><p>Estimativa do peso ideal pela altura.</p></a>
-          <a class="calc-card" href="/medicina/peso-ajustado.html"><h3>Peso ajustado</h3><p>Peso ajustado para dosagem em obesos.</p></a>
+          <a class="calc-card" href="/medicina/peso-ajustado.html"><h3>Peso ajustado</h3><p>Referência antropométrica complementar em obesidade.</p></a>
         </div>
       </div>
 
@@ -283,8 +283,8 @@
           ' m²</span><span class="result__metric-label">BSA por DuBois</span></div>' +
         '</div>' +
         '<div class="result__interpretation"><p>A superfície corporal estimada é de <strong>' +
-        Fmt.num(r.mosteller, 2) + ' m²</strong> pela fórmula de Mosteller. Use-a para dosagem ' +
-        'e indexação sempre conforme os protocolos da instituição.</p></div>' +
+        Fmt.num(r.mosteller, 2) + ' m²</strong> pela fórmula de Mosteller. O valor é uma referência corporal ' +
+        'para consulta e documentação quando aplicável.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

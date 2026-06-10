@@ -6,7 +6,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
 <title>Calculadora de Clearance de Creatinina (Cockcroft-Gault) | Kit Clínico</title>
-<meta name="description" content="Calculadora de clearance de creatinina pela fórmula de Cockcroft-Gault. Informe idade, peso, creatinina e sexo para estimar a função renal e ajustar doses.">
+<meta name="description" content="Calculadora educacional de clearance de creatinina pela fórmula de Cockcroft-Gault. Informe idade, peso, creatinina e sexo para estimar a função renal.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/clearance-creatinina.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
@@ -91,7 +91,7 @@
         </ol>
       </nav>
       <h1>Calculadora de Clearance de Creatinina (Cockcroft-Gault)</h1>
-      <p class="lead">Estime o clearance de creatinina pela fórmula de Cockcroft-Gault, muito usada para o ajuste de doses de medicamentos.</p>
+      <p class="lead">Estime o clearance de creatinina pela fórmula de Cockcroft-Gault. Resultado educacional; esta página não define aplicação farmacológica individual.</p>
     </div>
   </div>
 
@@ -155,10 +155,10 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A fórmula de <strong>Cockcroft-Gault</strong> estima o <strong>clearance de creatinina</strong>, uma aproximação da função renal a partir da idade, do peso, da creatinina sérica e do sexo. É a estimativa mais usada como referência para o <strong>ajuste de doses de medicamentos</strong>, já que muitas bulas e estudos farmacocinéticos foram baseados nela.</p>
+      <p>A fórmula de <strong>Cockcroft-Gault</strong> estima o <strong>clearance de creatinina</strong>, uma aproximação da função renal a partir da idade, do peso, da creatinina sérica e do sexo. Esta página apresenta apenas o resultado aritmético publicado.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>O resultado é expresso em mL/min. Valores mais baixos indicam menor função renal e, em geral, exigem redução de dose ou maior intervalo entre as doses de fármacos com eliminação renal. Faixas usadas como referência geral:</p>
+      <p>O resultado é expresso em mL/min. Valores mais baixos indicam menor função renal estimada. Faixas usadas como referência geral:</p>
       <div class="table-wrap">
         <table class="data">
           <thead><tr><th>Clearance (mL/min)</th><th>Interpretação geral</th></tr></thead>
@@ -181,7 +181,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>A fórmula de Cockcroft-Gault perde precisão em extremos de peso (obesidade, baixo peso), em idosos e em situações de creatinina instável. Considere usar o peso ideal ou ajustado nesses casos e confirmar a conduta com avaliação clínica.</p>
+        <p>A fórmula de Cockcroft-Gault perde precisão em extremos de peso (obesidade, baixo peso), em idosos e em situações de creatinina instável. A interpretação deve ser feita no contexto clínico por profissional habilitado.</p>
       </div>
 
       <h2>Referências</h2>
@@ -316,8 +316,7 @@
       '<div class="result__body">' +
         '<div class="result__main">' + Fmt.num(r.clearance, 1) + ' <small>mL/min</small></div>' +
         '<div class="result__interpretation"><p>O clearance de creatinina estimado é de <strong>' +
-        Fmt.num(r.clearance, 1) + ' mL/min</strong>. Use este valor como referência para o ajuste de doses de ' +
-        'medicamentos de eliminação renal, sempre confirmando com a avaliação clínica.</p></div>' +
+        Fmt.num(r.clearance, 1) + ' mL/min</strong>. Resultado educacional; esta página não define aplicação farmacológica individual.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

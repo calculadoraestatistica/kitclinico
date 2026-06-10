@@ -214,13 +214,6 @@
           { id: 'qt', label: 'Intervalo QT', unit: 'ms' }
         ],
         format: function(r){ return 'Bazett ' + r.bazett.toFixed(0) + ' ms · Fridericia ' + r.fridericia.toFixed(0) + ' ms' + (r.prolongado ? ' — prolongado' : ''); } },
-      { id: 'dose',         name: 'Dose por peso',                   fn: 'doseByWeight',
-        from: ['peso'], extras: [
-          { id: 'dosePorKg',    label: 'Dose por kg', unit: 'mg/kg' },
-          { id: 'concentracao', label: 'Concentração (opcional)', unit: 'mg/mL' },
-          { id: 'doseMaxima',   label: 'Dose máxima (opcional)', unit: 'mg' }
-        ],
-        format: function(r){ var s = r.doseTotal.toFixed(1) + ' mg'; if (r.volume != null) s += ' · ' + r.volume.toFixed(2) + ' mL'; if (r.excedeMax) s += ' — excede a dose máxima!'; return s; } },
       { id: 'gotej',        name: 'Gotejamento / infusão IV',        fn: 'ivDripRate',
         from: [], extras: [
           { id: 'volume',          label: 'Volume',        unit: 'mL' },
@@ -306,12 +299,6 @@
       { id: 'k_supl',       name: 'Suplementação de potássio',       fn: 'vetPotassium',
         from: ['potassio', 'peso'], extras: [],
         format: function(r){ if (r.mEqPorLitro === 0) return r.mensagem; var s = r.mEqPorLitro + ' mEq/L'; if (r.taxaMaxMlh != null) s += ' · taxa máx. ' + r.taxaMaxMlh.toFixed(0) + ' mL/h'; return s; } },
-      { id: 'dose_pet',     name: 'Dose por peso',                   fn: 'doseByWeight',
-        from: ['peso'], extras: [
-          { id: 'dosePorKg',    label: 'Dose por kg', unit: 'mg/kg' },
-          { id: 'concentracao', label: 'Concentração (opcional)', unit: 'mg/mL' }
-        ],
-        format: function(r){ var s = r.doseTotal.toFixed(2) + ' mg'; if (r.volume != null) s += ' · ' + r.volume.toFixed(2) + ' mL'; return s; } },
       { id: 'gotej_vet',    name: 'Gotejamento / infusão IV',        fn: 'ivDripRate',
         from: [], extras: [
           { id: 'volume',          label: 'Volume',        unit: 'mL' },
@@ -627,7 +614,7 @@
         panel.appendChild(el('h3', null, ['Painel integrado — Risco de DRC (KDIGO)']));
         panel.appendChild(el('div', { className: 'report-calc' }, [
           el('div', { className: 'report-calc__name' }, [k.label + ' — ' + k.categoriaG + ' / ' + k.categoriaA]),
-          el('div', { className: 'report-calc__result' }, [k.conduta])
+          el('div', { className: 'report-calc__result' }, [k.referencia])
         ]));
         preview.appendChild(panel);
       }
@@ -672,7 +659,7 @@
           id: 'kdigo',
           nome: 'Painel integrado — Risco de DRC (KDIGO)',
           resultado_formatado: k.label + ' — ' + k.categoriaG + ' / ' + k.categoriaA,
-          conduta: k.conduta,
+          observacao: k.referencia,
           dados: k
         });
       }
@@ -755,9 +742,9 @@
     // Aba opcional: paineis integrados (combos clinicos)
     var panels = detectPanels();
     if (panels.length) {
-      var prows = [['Painel', 'Resultado', 'Conduta sugerida']];
+      var prows = [['Painel', 'Resultado', 'Observação']];
       panels.forEach(function (p) {
-        prows.push([p.nome, p.resultado_formatado, p.conduta || '']);
+        prows.push([p.nome, p.resultado_formatado, p.observacao || '']);
       });
       var wsP = XLSX.utils.aoa_to_sheet(prows);
       XLSX.utils.book_append_sheet(wb, wsP, 'Paineis');
@@ -859,7 +846,7 @@
       sectionTitle('Painéis integrados');
       panels.forEach(function (p) {
         row(p.nome, p.resultado_formatado);
-        if (p.conduta) row('  Conduta', p.conduta);
+        if (p.observacao) row('  Observação', p.observacao);
       });
     }
 

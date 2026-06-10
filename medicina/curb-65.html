@@ -6,14 +6,14 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
 <title>CURB-65 — Gravidade da Pneumonia | Kit Clínico</title>
-<meta name="description" content="Calculadora do escore CURB-65 online e gratuita. Avalie a gravidade da pneumonia adquirida na comunidade e o local de tratamento.">
+<meta name="description" content="Calculadora educacional do escore CURB-65. Veja a pontuação publicada para pneumonia adquirida na comunidade.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/curb-65.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
 <meta property="og:title" content="Escore CURB-65">
-<meta property="og:description" content="Calcule o CURB-65 e avalie a gravidade da pneumonia adquirida na comunidade.">
+<meta property="og:description" content="Calcule o CURB-65 e veja a pontuação publicada para pneumonia adquirida na comunidade.">
 <meta property="og:url" content="https://kitclinico.com.br/medicina/curb-65.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -91,7 +91,7 @@
         </ol>
       </nav>
       <h1>Escore CURB-65</h1>
-      <p class="lead">Avalia a gravidade da pneumonia adquirida na comunidade e apoia a decisão entre tratamento ambulatorial, internação e UTI.</p>
+      <p class="lead">Apresenta a pontuação CURB-65 publicada para pneumonia adquirida na comunidade. Não indica local de cuidado ou tratamento.</p>
     </div>
   </div>
 
@@ -129,9 +129,9 @@
     <div class="callout callout--tip">
       <div class="callout__title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        Análise integrada — Triagem em pneumonia
+        Leitura complementar
       </div>
-      <p>Integre com sinais vitais no <a href="/medicina/triagem-pneumonia.html"><strong>painel Triagem em pneumonia</strong></a> — sinais agudamente alterados elevam o nível de cuidado.</p>
+      <p>Veja também a página de <a href="/medicina/triagem-pneumonia.html"><strong>faixas de mortalidade do CURB-65</strong></a>, que reproduz percentuais publicados sem indicar conduta.</p>
     </div>
 
     <div class="ad-slot" data-ad-slot=""></div>
@@ -139,13 +139,13 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>CURB-65</strong> avalia a gravidade da <strong>pneumonia adquirida na comunidade</strong> e ajuda a decidir o local de tratamento. O nome reúne as iniciais dos cinco critérios: <em>Confusion</em>, <em>Urea</em>, <em>Respiratory rate</em>, <em>Blood pressure</em> e idade <em>≥ 65</em>.</p>
+      <p>O <strong>CURB-65</strong> é um escore publicado para estratificar gravidade em <strong>pneumonia adquirida na comunidade</strong>. O nome reúne as iniciais dos cinco critérios: <em>Confusion</em>, <em>Urea</em>, <em>Respiratory rate</em>, <em>Blood pressure</em> e idade <em>≥ 65</em>.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>Cada critério vale 1 ponto, de 0 a 5. De forma geral, <strong>0 a 1</strong> indica baixa gravidade (tratamento ambulatorial costuma ser possível), <strong>2</strong> gravidade intermediária (considerar internação) e <strong>3 a 5</strong> alta gravidade (internação, avaliando UTI quando 4 a 5 pontos).</p>
+      <p>Cada critério vale 1 ponto, de 0 a 5. Nas publicações, <strong>0 a 1</strong> aparece como faixa baixa, <strong>2</strong> como faixa intermediária e <strong>3 a 5</strong> como faixa alta. A aplicação clínica depende de avaliação profissional.</p>
 
       <h2>Exemplo</h2>
-      <p>Um paciente de 70 anos (1) com confusão mental de início recente (1) soma <strong>2 pontos</strong> — gravidade intermediária; considerar internação.</p>
+      <p>Um paciente de 70 anos (1) com confusão mental de início recente (1) soma <strong>2 pontos</strong>, faixa intermediária nas tabelas publicadas.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -288,7 +288,7 @@
       '<div class="result__sub">Gravidade da pneumonia</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.int(r.total) + ' <small>de 5 pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.conduta + '.</strong> O escore apoia, mas não substitui, a avaliação clínica global, a saturação de oxigênio e a checagem de comorbidades.') + '</p></div>';
+    html += '<div class="result__interpretation"><p><strong>' + r.faixa + '.</strong> Resultado educacional conforme escore publicado; esta página não indica local de cuidado ou tratamento.</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

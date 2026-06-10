@@ -143,20 +143,20 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>HAS-BLED</strong> estima o risco de <strong>sangramento maior em um ano</strong> em pacientes anticoagulados por fibrilação atrial. Seu maior valor não é contraindicar a anticoagulação, e sim destacar os fatores de risco que podem ser corrigidos.</p>
+      <p>O <strong>HAS-BLED</strong> estima o risco de <strong>sangramento maior em um ano</strong> em pacientes anticoagulados por fibrilação atrial nas coortes publicadas. Esta página reproduz o escore em caráter educacional.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>Cada item vale 1 ponto, num total de 0 a 9. Pontuação de <strong>3 ou mais</strong> indica risco alto de sangramento e recomenda cautela e reavaliação mais frequente — mas, na maioria dos casos, o benefício da anticoagulação ainda supera o risco. Corrija o que for possível: controle da pressão, ajuste do INR, redução do álcool e revisão de fármacos.</p>
+      <p>Cada item vale 1 ponto, num total de 0 a 9. Pontuação de <strong>3 ou mais</strong> aparece como faixa de maior risco nas referências publicadas. O resultado não indica, contraindica ou modifica tratamento.</p>
 
       <h2>Exemplo</h2>
-      <p>Um paciente de 70 anos (1 ponto) com hipertensão não controlada (1) que usa anti-inflamatórios (1) soma <strong>3 pontos</strong> — risco alto, com vários fatores corrigíveis.</p>
+      <p>Um paciente de 70 anos (1 ponto) com hipertensão não controlada (1) que usa anti-inflamatórios (1) soma <strong>3 pontos</strong> — faixa mais alta na tabela publicada.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Não use o escore para negar anticoagulação
+          Resultado educacional
         </div>
-        <p>Um HAS-BLED elevado, isoladamente, não justifica suspender a anticoagulação. Compare-o com o risco de AVC (CHA₂DS₂-VASc) e foque na correção dos fatores modificáveis.</p>
+        <p>Esta página não recomenda iniciar, suspender ou alterar tratamento. A interpretação de qualquer escore depende do contexto clínico e do profissional responsável.</p>
       </div>
 
       <h2>Referências</h2>
@@ -296,7 +296,7 @@
       '<div class="result__sub">Risco de sangramento maior</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.int(r.total) + ' <small>de 9 pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.risco + '.</strong> ' + (r.total >= 3 ? 'Pontuação de 3 ou mais não contraindica anticoagular, mas pede atenção aos fatores corrigíveis (pressão, INR lábil, álcool, fármacos) e reavaliação mais frequente.' : 'Mantenha a atenção aos fatores de risco modificáveis ao longo do acompanhamento.')) + '</p></div>';
+    html += '<div class="result__interpretation"><p><strong>' + r.risco + '.</strong> Resultado educacional conforme tabela publicada; esta página não recomenda iniciar, suspender ou alterar tratamento.</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

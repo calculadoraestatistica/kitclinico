@@ -43,7 +43,7 @@ estiver vazio em `js/config.js`. Preencha o ID do AdSense quando aprovado.
 ## Núcleo de fórmulas
 
 `js/clinical.js` reúne as fórmulas e índices (IMC, BSA, CKD-EPI, Cockcroft-Gault,
-QTc, eletrólitos corrigidos, conversões de fármacos, TMB, RER/MER veterinário,
+QTc, eletrólitos corrigidos, TMB, RER/MER veterinário,
 entre outras), verificados contra valores de referência.
 
 ---

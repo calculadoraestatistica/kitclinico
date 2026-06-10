@@ -61,7 +61,7 @@
       + '  <div class="kc-gate__panel">'
       + '    <h2 id="kc-gate-title" class="kc-gate__title">Antes de usar esta calculadora</h2>'
       + '    <p class="kc-gate__lead">As ferramentas do <strong>Kit Clínico</strong> são <strong>educacionais</strong> e reproduzem fórmulas e escores publicados na literatura científica. Elas <strong>não substituem</strong> avaliação clínica, exame físico, julgamento profissional ou diretrizes institucionais.</p>'
-      + '    <p class="kc-gate__lead">Os resultados são estimativas estatísticas baseadas em populações e podem não refletir o caso individual. <strong>Conduta clínica é responsabilidade do ' + profession + ' assistente</strong>, em conformidade com a Lei 12.842/2013 (Ato Médico) e regulamentação dos conselhos profissionais.</p>'
+      + '    <p class="kc-gate__lead">Os resultados são estimativas estatísticas baseadas em populações e podem não refletir o caso individual. <strong>Decisões clínicas são responsabilidade do ' + profession + ' assistente</strong>, em conformidade com a Lei 12.842/2013 (Ato Médico) e regulamentação dos conselhos profissionais.</p>'
       + '    <label class="kc-gate__check">'
       + '      <input type="checkbox" id="kc-gate-pro"> ' + label
       + '    </label>'

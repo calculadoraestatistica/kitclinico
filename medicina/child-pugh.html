@@ -175,7 +175,7 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A <strong>classificação de Child-Pugh</strong> mede a gravidade da <strong>cirrose hepática</strong> a partir de cinco parâmetros: bilirrubina, albumina, INR, ascite e encefalopatia. É usada para estimar prognóstico e apoiar decisões como o risco cirúrgico e o ajuste de fármacos.</p>
+      <p>A <strong>classificação de Child-Pugh</strong> mede a gravidade da <strong>cirrose hepática</strong> a partir de cinco parâmetros: bilirrubina, albumina, INR, ascite e encefalopatia. Esta página apresenta a pontuação publicada em caráter educacional.</p>
 
       <h2>Como interpretar o resultado</h2>
       <p>Cada parâmetro recebe de 1 a 3 pontos, totalizando de 5 a 15. O total define a classe: <strong>A (5 a 6)</strong>, cirrose bem compensada; <strong>B (7 a 9)</strong>, comprometimento significativo; e <strong>C (10 a 15)</strong>, doença descompensada, com a pior sobrevida.</p>
@@ -326,7 +326,7 @@
       '<div class="result__sub">Gravidade da cirrose hepática</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.int(r.total) + ' <small>de 15 pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.classe + '.</strong> ' + (r.total <= 6 ? 'A classe A associa-se à melhor sobrevida.' : (r.total <= 9 ? 'A classe B indica doença avançada — avalie o encaminhamento a um serviço de hepatologia.' : 'A classe C indica doença descompensada e pior prognóstico.'))) + '</p></div>';
+    html += '<div class="result__interpretation"><p><strong>' + r.classe + '.</strong> Resultado educacional conforme classificação publicada; a aplicação clínica depende de avaliação profissional.</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

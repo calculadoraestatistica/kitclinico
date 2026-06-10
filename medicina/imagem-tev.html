@@ -155,7 +155,7 @@
 
       <h2>Como ler o painel</h2>
       <p>O painel apresenta o escore de Wells (TVP ou TEP) com a estratificação publicada em probabilidade clínica <strong>baixa / intermediária / alta</strong> (ou nos modelos dicotômicos, <em>provável</em> / <em>improvável</em>). Junto, apresenta a interpretação textual do d-dímero conforme o cutoff publicado (500 ng/mL FEU) e o cutoff ajustado por idade descrito nas diretrizes (idade × 10 para pacientes &gt; 50 anos).</p>
-      <p><strong>Conduta diagnóstica (necessidade de imagem por TC angio, USG Doppler ou outro) é decisão clínica do médico assistente.</strong> O painel apenas reproduz os critérios e a interpretação publicada — não recomenda exame, não substitui avaliação e não realiza triagem.</p>
+      <p><strong>A aplicação clínica dos critérios e a necessidade de exames são decisões do médico assistente.</strong> O painel apenas reproduz os critérios e a interpretação publicada — não recomenda exame, não substitui avaliação e não realiza triagem.</p>
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -310,7 +310,7 @@
     var cutoff = dDimerCutoff(idade);
     var ddi = dDimerInterpretation(d, cutoff);
 
-    // A classe geral do banner segue o nível Wells (apresentação, não conduta)
+    // A classe geral do banner segue o nível Wells (apresentação, sem recomendação clínica)
     var cls = strat.cls;
     result.className = 'result result--' + cls;
 
@@ -330,7 +330,7 @@
     } else {
       corpo += '<p><strong>D-dímero:</strong> não informado. Cutoff publicado de referência: ' + cutoff + ' ng/mL FEU' + ((!isNaN(idade) && idade > 50) ? ' (ajustado por idade)' : '') + '.</p>';
     }
-    corpo += '<p><em>Conduta diagnóstica (necessidade de imagem por TC angio, USG Doppler ou outro) é decisão clínica do médico assistente.</em></p>';
+    corpo += '<p><em>A decisão sobre investigação por imagem, quando aplicável, depende da avaliação do médico assistente.</em></p>';
     corpo += '</div>';
 
     result.innerHTML =

@@ -142,7 +142,7 @@
       <p>A <strong>pressão arterial média (PAM)</strong> representa a pressão média durante todo o ciclo cardíaco e é considerada o melhor indicador da <strong>perfusão dos órgãos</strong>. É muito utilizada em pacientes graves, em terapia intensiva e na condução de quadros de choque.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>A meta usual de perfusão é <strong>PAM ≥ 65 mmHg</strong>. Valores abaixo disso indicam risco de <strong>hipoperfusão tecidual</strong> e podem exigir reposição volêmica ou drogas vasoativas. Valores muito elevados também merecem atenção clínica.</p>
+      <p>Em muitos contextos críticos, a literatura usa <strong>PAM ≥ 65 mmHg</strong> como referência de perfusão. Valores abaixo dessa faixa são descritos como associados a maior risco de <strong>hipoperfusão tecidual</strong>, mas a interpretação depende do contexto clínico completo.</p>
       <div class="formula">PAM = (PAS + 2 × PAD) ÷ 3</div>
 
       <h2>Exemplo</h2>
@@ -278,7 +278,7 @@
     var headline = baixa ? 'PAM abaixo da meta' : 'PAM na meta de perfusão';
     var interp = baixa
       ? 'A PAM de <strong>' + Fmt.num(r.map, 0) + ' mmHg</strong> está <strong>abaixo de 65 mmHg</strong>, ' +
-        'o que indica risco de hipoperfusão tecidual. Reavalie o paciente com urgência.'
+        'faixa descrita na literatura como associada a hipoperfusão tecidual. Interprete junto do contexto clínico.'
       : 'A PAM de <strong>' + Fmt.num(r.map, 0) + ' mmHg</strong> está <strong>na meta usual de 65 mmHg ou mais</strong>, ' +
         'compatível com perfusão adequada dos órgãos.';
     result.className = 'result result--' + cls;

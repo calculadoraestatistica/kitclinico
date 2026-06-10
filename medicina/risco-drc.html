@@ -6,7 +6,7 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
 <title>Risco de DRC (KDIGO) — TFG × Albuminúria | Kit Clínico</title>
-<meta name="description" content="Painel integrado de risco da doença renal crônica pela matriz KDIGO 2012: combine TFG (CKD-EPI) e UACR para ver a categoria de risco e a conduta sugerida.">
+<meta name="description" content="Painel educacional da matriz KDIGO 2012: combine TFG (CKD-EPI) e UACR para ver a categoria publicada de risco da doença renal crônica.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/risco-drc.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
@@ -91,7 +91,7 @@
         </ol>
       </nav>
       <h1>Risco de DRC — Painel KDIGO</h1>
-      <p class="lead">Combine TFG (CKD-EPI 2021) e albuminúria (UACR) para ver a <strong>categoria de risco real</strong> pela matriz KDIGO 2012 e a conduta sugerida.</p>
+      <p class="lead">Combine TFG (CKD-EPI 2021) e albuminúria (UACR) para ver a <strong>categoria publicada</strong> pela matriz KDIGO 2012. A página é uma referência educacional e não fornece conduta clínica.</p>
     </div>
   </div>
 
@@ -168,14 +168,14 @@
       <h2>Como ler o painel</h2>
       <p>A matriz KDIGO cruza dois eixos: o estágio da <strong>TFG</strong> (G1 a G5, das linhas) com a categoria de <strong>albuminúria</strong> (A1 a A3, das colunas). A cor da célula resume o <strong>risco de progressão da doença renal crônica</strong> e de desfechos cardiovasculares:</p>
       <ul>
-        <li><strong>Verde:</strong> risco baixo — monitoramento anual.</li>
-        <li><strong>Amarelo:</strong> risco moderado — reavaliar a cada 6 meses, controle de fatores de risco.</li>
-        <li><strong>Laranja:</strong> risco alto — reavaliação trimestral e encaminhamento ao nefrologista.</li>
-        <li><strong>Vermelho:</strong> risco muito alto — encaminhamento urgente; planejar terapia substitutiva quando indicada.</li>
+        <li><strong>Verde:</strong> faixa de risco baixo na matriz publicada.</li>
+        <li><strong>Amarelo:</strong> faixa de risco moderado na matriz publicada.</li>
+        <li><strong>Laranja:</strong> faixa de risco alto na matriz publicada.</li>
+        <li><strong>Vermelho:</strong> faixa de risco muito alto na matriz publicada.</li>
       </ul>
 
       <h2>Por que combinar TFG e UACR</h2>
-      <p>Um paciente com TFG normal (G1) mas albuminúria grave (A3) já é <strong>alto risco</strong> — algo que a TFG sozinha não revelaria. Da mesma forma, um paciente com TFG levemente reduzida (G2) e sem albuminúria (A1) permanece em <strong>risco baixo</strong>. É a combinação que define o prognóstico, a frequência de reavaliação e a hora de encaminhar ao nefrologista.</p>
+      <p>Um paciente com TFG normal (G1) mas albuminúria grave (A3) aparece em faixa de maior risco na matriz — algo que a TFG sozinha não mostra. Da mesma forma, um paciente com TFG levemente reduzida (G2) e sem albuminúria (A1) aparece em faixa baixa. A interpretação clínica depende de história, exame físico, repetição dos exames e avaliação profissional.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -380,7 +380,7 @@
         '<div class="result__interpretation"><p>' +
           '<strong>TFG estimada:</strong> ' + Fmt.num(tfg.tfg, 1) + ' mL/min/1,73m² — ' + tfg.estagio + '.<br>' +
           '<strong>UACR:</strong> ' + Fmt.num(u.razao, 1) + ' mg/g — ' + u.descricao + '.<br>' +
-          '<strong>Conduta sugerida:</strong> ' + r.conduta +
+          '<strong>Nota:</strong> ' + r.referencia + ' Esta página não recomenda conduta, encaminhamento ou tratamento.' +
         '</p></div>' +
         buildMatrix(tfg.categoriaG, u.categoriaA) +
       '</div>';

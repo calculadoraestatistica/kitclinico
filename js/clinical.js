@@ -152,7 +152,7 @@
 
   // Estratificacao de risco da doenca renal cronica — matriz KDIGO 2012
   // categoriaG: 'G1'..'G5' | categoriaA: 'A1'..'A3'
-  // Retorna nivel de risco e conduta sugerida.
+  // Retorna nivel de risco e nota de referencia publicada, sem recomendacao clinica.
   function kdigoRisk(o) {
     var g = o.categoriaG, a = o.categoriaA;
     var risks = {
@@ -164,10 +164,10 @@
       G5:  { A1: 'muito_alto', A2: 'muito_alto', A3: 'muito_alto' }
     };
     var labels = {
-      baixo:      { label: 'Risco baixo',      cls: 'ok',     conduta: 'Monitoramento de rotina (anual), controle de fatores de risco cardiovascular.' },
-      moderado:   { label: 'Risco moderado',   cls: 'warn',   conduta: 'Reavaliação a cada 6 meses; investigar e tratar a causa; controle rigoroso da pressão e da glicemia.' },
-      alto:       { label: 'Risco alto',       cls: 'alert',  conduta: 'Reavaliação trimestral; encaminhamento ao nefrologista; revisar doses de medicamentos pela TFG.' },
-      muito_alto: { label: 'Risco muito alto', cls: 'alert',  conduta: 'Encaminhamento urgente ao nefrologista; planejar terapia renal substitutiva quando indicada; ajustar todos os medicamentos.' }
+      baixo:      { label: 'Risco baixo',      cls: 'ok',    referencia: 'Faixa de menor risco na matriz KDIGO publicada.' },
+      moderado:   { label: 'Risco moderado',   cls: 'warn',  referencia: 'Faixa intermediária na matriz KDIGO publicada.' },
+      alto:       { label: 'Risco alto',       cls: 'alert', referencia: 'Faixa elevada na matriz KDIGO publicada.' },
+      muito_alto: { label: 'Risco muito alto', cls: 'alert', referencia: 'Faixa mais elevada na matriz KDIGO publicada.' }
     };
     if (!risks[g] || !risks[g][a])
       return { error: 'Informe as categorias G (G1–G5) e A (A1–A3).' };
@@ -257,24 +257,6 @@
     return t;
   }
 
-  /* ======================================================================
-     FARMACOLOGIA
-     ====================================================================== */
-
-  // Dose por peso — devolve dose total a partir de mg/kg
-  function doseByWeight(o) {
-    var w = o.peso, d = o.dosePorKg;
-    if (!num(w) || !num(d) || w <= 0 || d <= 0)
-      return { error: 'Informe o peso e a dose por kg.' };
-    var total = w * d;
-    var out = { doseTotal: total };
-    if (num(o.concentracao) && o.concentracao > 0)
-      out.volume = total / o.concentracao;
-    if (num(o.doseMaxima) && o.doseMaxima > 0)
-      out.excedeMax = total > o.doseMaxima;
-    return out;
-  }
-
   // Ritmo de infusão IV — gotas por minuto
   function ivDripRate(o) {
     var vol = o.volume, t = o.tempoHoras, gtt = o.fatorGotejamento || 20;
@@ -282,51 +264,6 @@
       return { error: 'Informe o volume (mL) e o tempo (horas).' };
     var mlh = vol / t;
     return { mlPorHora: mlh, gotasPorMin: (vol * gtt) / (t * 60) };
-  }
-
-  // Conversão de opioides — equivalência em mg de morfina oral
-  // Fatores de conversão para MME (morphine milligram equivalents) baseados
-  // no CDC Clinical Practice Guideline for Prescribing Opioids (2022).
-  // NOTA: metadona e fentanil transdérmico foram deliberadamente OMITIDOS.
-  // A metadona tem razão de conversão não linear (varia de ~4:1 a >12:1
-  // conforme a dose) e o fentanil adesivo é dosado em mcg/h, não em mg —
-  // converter qualquer um deles com fator fixo é inseguro.
-  var OPIOID_ORAL_MME = {     // 1 mg do fármaco = X mg de morfina oral
-    morfina_oral: 1,
-    morfina_iv: 3,
-    codeina: 0.15,
-    tramadol: 0.1,
-    oxicodona: 1.5,
-    hidromorfona_oral: 4,
-    hidromorfona_iv: 12
-  };
-  function opioidConversion(o) {
-    var from = o.de, to = o.para, dose = o.dose;
-    if (!num(dose) || dose <= 0) return { error: 'Informe a dose atual.' };
-    var fA = OPIOID_ORAL_MME[from], fB = OPIOID_ORAL_MME[to];
-    if (!fA || !fB) return { error: 'Opioide não reconhecido.' };
-    var mme = dose * fA;
-    var equiv = mme / fB;
-    // redução por tolerância cruzada incompleta (25–50%): aplica 25%
-    return { mme: mme, doseEquivalente: equiv, doseSegura: equiv * 0.75 };
-  }
-
-  // Conversão de corticoides — equivalência a mg de prednisona
-  var STEROID_PREDNISONE = {  // 1 mg do fármaco = X mg de prednisona
-    hidrocortisona: 0.25,
-    cortisona: 0.2,
-    prednisona: 1,
-    prednisolona: 1,
-    metilprednisolona: 1.25,
-    triancinolona: 1.25,
-    dexametasona: 6.67,
-    betametasona: 6.67
-  };
-  function steroidConversion(o) {
-    var fA = STEROID_PREDNISONE[o.de], fB = STEROID_PREDNISONE[o.para];
-    if (!num(o.dose) || o.dose <= 0) return { error: 'Informe a dose atual.' };
-    if (!fA || !fB) return { error: 'Corticoide não reconhecido.' };
-    return { equivalentePrednisona: o.dose * fA, doseEquivalente: o.dose * fA / fB };
   }
 
   /* ======================================================================
@@ -553,11 +490,11 @@
     ['confusao', 'ureia', 'fr', 'pressao', 'idade'].forEach(function (k) {
       if (o[k]) p += 1;
     });
-    var conduta, cls;
-    if (p <= 1) { conduta = 'Baixa gravidade — tratamento ambulatorial costuma ser possível'; cls = 'ok'; }
-    else if (p === 2) { conduta = 'Gravidade intermediária — considerar internação hospitalar'; cls = 'warn'; }
-    else { conduta = 'Alta gravidade — internação; avaliar UTI quando 4 a 5 pontos'; cls = 'alert'; }
-    return { total: p, conduta: conduta, cls: cls };
+    var faixa, cls;
+    if (p <= 1) { faixa = 'Faixa 0–1 ponto no CURB-65 publicado'; cls = 'ok'; }
+    else if (p === 2) { faixa = 'Faixa 2 pontos no CURB-65 publicado'; cls = 'warn'; }
+    else { faixa = 'Faixa 3–5 pontos no CURB-65 publicado'; cls = 'alert'; }
+    return { total: p, faixa: faixa, cls: cls };
   }
 
   // Índice de Apgar do recém-nascido — 5 itens de 0 a 2
@@ -680,34 +617,34 @@
      PAINEIS CLINICOS INTEGRADOS — funcoes que combinam resultados
      ====================================================================== */
 
-  // Anticoagulacao em FA — balanço entre risco de AVC (CHA2DS2-VASc) e
-  // risco de sangramento (HAS-BLED). Indica decisao de anticoagulacao.
+  // Anticoagulacao em FA — apresenta faixas publicadas de risco sem
+  // indicar decisao terapeutica.
   function afibAnticoagPanel(o) {
     var c = o.chadsvasc, h = o.hasbled;
     if (!num(c) || !num(h) || c < 0 || h < 0)
       return { error: 'Informe os escores CHA2DS2-VASc e HAS-BLED.' };
     var sexoF = !!o.sexoF;
-    var recomenda, cls, justificativa;
+    var faixa, cls, justificativa;
     // CHA2DS2-VASc cutoffs: >=2 (homem) ou >=3 (mulher) tipicamente indicam anticoagulacao
     var limiteAVC = sexoF ? 3 : 2;
     if (c < limiteAVC) {
-      recomenda = 'Anticoagulação geralmente NÃO indicada';
+      faixa = 'Faixa abaixo do limiar usual descrito para maior risco tromboembólico';
       cls = 'ok';
-      justificativa = 'Risco de AVC baixo (CHA2DS2-VASc abaixo do limiar). Reavaliar anualmente.';
+      justificativa = 'CHA2DS2-VASc abaixo do limiar usualmente citado em diretrizes. A interpretação depende do contexto clínico.';
     } else if (h >= 3 && c < limiteAVC + 2) {
-      recomenda = 'Avaliar individualmente — risco de sangramento alto';
+      faixa = 'Faixa com risco tromboembólico e hemorrágico relevantes';
       cls = 'warn';
-      justificativa = 'Anticoagulação indicada pelo CHA2DS2-VASc, mas HAS-BLED ≥ 3 sugere cautela. Corrigir fatores reversíveis (hipertensão, INR lábil, álcool, drogas) e reavaliar.';
+      justificativa = 'CHA2DS2-VASc no limiar usual e HAS-BLED elevado. A decisão cabe ao profissional habilitado.';
     } else if (h >= 3) {
-      recomenda = 'Anticoagular com vigilância — HAS-BLED elevado não contraindica';
+      faixa = 'Faixa de risco tromboembólico elevado com HAS-BLED elevado';
       cls = 'warn';
-      justificativa = 'Risco de AVC supera o de sangramento; o HAS-BLED alto serve para acompanhar de perto, não para suspender a anticoagulação.';
+      justificativa = 'Scores elevados em ambas as dimensões. A página apenas reproduz a leitura dos escores publicados.';
     } else {
-      recomenda = 'Anticoagulação INDICADA';
+      faixa = 'Faixa de risco tromboembólico elevado nos limiares publicados';
       cls = 'alert';
-      justificativa = 'Benefício claro: risco de AVC justifica anticoagulação e o risco de sangramento é aceitável.';
+      justificativa = 'CHA2DS2-VASc acima do limiar usualmente citado em diretrizes. A decisão terapêutica não é fornecida por esta página.';
     }
-    return { recomenda: recomenda, cls: cls, justificativa: justificativa,
+    return { faixa: faixa, cls: cls, justificativa: justificativa,
              chadsvasc: c, hasbled: h, limiteAVC: limiteAVC };
   }
 
@@ -725,19 +662,19 @@
     if (fenaBaixa && feuBaixa) {
       padrao = 'Padrão pré-renal';
       cls = 'ok';
-      comentario = 'Ambos os marcadores indicam hipoperfusão renal. Investigar volemia (hidratar com cautela), hemorragia, sepse e ICC.';
+      comentario = 'Ambos os marcadores aparecem em padrões de hipoperfusão renal. Achados associados na literatura incluem hipovolemia, hemorragia, sepse e insuficiência cardíaca.';
     } else if (fenaAlta && feuAlta) {
       padrao = 'Padrão de necrose tubular aguda (NTA)';
       cls = 'alert';
-      comentario = 'Ambos os marcadores indicam disfunção tubular intrínseca. Investigar causa (isquêmica, nefrotóxica) e suporte clínico.';
+      comentario = 'Ambos os marcadores aparecem em padrões de disfunção tubular intrínseca. Causas descritas incluem lesão isquêmica e nefrotóxica.';
     } else if (fenaAlta && feuBaixa) {
       padrao = 'Padrão pré-renal mascarado por diurético';
       cls = 'warn';
-      comentario = 'A FeUreia sugere pré-renal, mas a FeNa está falsamente alta pelo uso de diurético. Em pacientes em uso de furosemida, a FeUreia é o marcador mais confiável.';
+      comentario = 'A FeUreia fica compatível com padrão pré-renal, enquanto a FeNa pode estar elevada pelo uso de diurético. Em pacientes em uso de furosemida, a FeUreia costuma ser o marcador mais confiável nas referências.';
     } else if (fenaBaixa && feuAlta) {
-      padrao = 'Padrão discordante — investigar';
+      padrao = 'Padrão discordante';
       cls = 'warn';
-      comentario = 'FeNa baixa com FeUreia alta é incomum. Considerar contraste recente, nefrite intersticial, glomerulonefrite ou erro pré-analítico.';
+      comentario = 'FeNa baixa com FeUreia alta é incomum. Achados associados descritos incluem contraste recente, nefrite intersticial, glomerulonefrite ou erro pré-analítico.';
     } else {
       padrao = 'Padrão intermediário / indeterminado';
       cls = 'warn';
@@ -746,31 +683,32 @@
     return { padrao: padrao, cls: cls, comentario: comentario, fena: fena, feUreia: feUreia };
   }
 
-  // Cirrose: combina Child-Pugh e MELD-Na em uma leitura unica de gravidade
+  // Cirrose: combina Child-Pugh e MELD-Na em uma leitura unica de gravidade,
+  // sem orientar aplicação clínica individual.
   function cirrhosisPanel(o) {
     var meld = o.meldNa, child = o.childClasse;
     if (!num(meld) || !child) return { error: 'Informe MELD-Na e a classe Child-Pugh.' };
-    var conduta, cls;
+    var referencia, cls;
     if (meld >= 15 || child === 'C') {
-      conduta = 'Avaliar lista de transplante hepático e cuidados especializados.';
+      referencia = 'Faixa de maior gravidade nas referências publicadas.';
       cls = 'alert';
     } else if (meld >= 10 || child === 'B') {
-      conduta = 'Acompanhamento por hepatologia, prevenção de descompensações (varizes, encefalopatia, ascite) e vacinação.';
+      referencia = 'Faixa intermediária de gravidade nas referências publicadas.';
       cls = 'warn';
     } else {
-      conduta = 'Cirrose compensada — monitoramento semestral, rastreio de CHC e varizes, controle de fatores agravantes.';
+      referencia = 'Faixa mais baixa de gravidade nas referências publicadas.';
       cls = 'ok';
     }
-    return { meld: meld, child: child, conduta: conduta, cls: cls };
+    return { meld: meld, child: child, referencia: referencia, cls: cls };
   }
 
   // Distúrbios acido-base — combina anion gap, sodio corrigido e osmolaridade
-  // para sugerir um tipo de acidose ou de disturbio osmolar.
+  // para apresentar padrões publicados de acidose ou de disturbio osmolar.
   function acidBasePanel(o) {
     var ag = o.anionGap, naCorr = o.sodioCorrigido, osm = o.osmolaridade, osmMedida = o.osmMedida;
     if (!num(ag)) return { error: 'Informe ao menos o ânion gap.' };
     var notas = [];
-    if (ag > 12) notas.push('**Acidose metabólica com ânion gap elevado** — investigar causas (MUDPILES: metanol, uremia, cetoacidose diabética, paraldeído, INH/ferro, ácido láctico, etilenoglicol, salicilatos).');
+    if (ag > 12) notas.push('**Acidose metabólica com ânion gap elevado** — causas descritas na literatura (MUDPILES: metanol, uremia, cetoacidose diabética, paraldeído, INH/ferro, ácido láctico, etilenoglicol, salicilatos).');
     else if (ag < 8) notas.push('Ânion gap baixo — hipoalbuminemia, mieloma, intoxicação por lítio/brometo.');
     else notas.push('Ânion gap normal.');
     if (num(naCorr)) {
@@ -785,24 +723,6 @@
       notas.push('Osmolaridade calculada: ' + osm.toFixed(0) + ' mOsm/kg.');
     }
     return { notas: notas, anionGap: ag, sodioCorrigido: naCorr, osmolaridade: osm };
-  }
-
-  // Ajuste de dose por funcao renal — combina TFG com dose por peso
-  // Aplica fator de reducao conforme faixas tipicas (esquema generico
-  // KDIGO/Bennett — confirmar na bula de cada medicamento).
-  function doseByTfgPanel(o) {
-    var dose = o.doseTotal, tfg = o.tfg;
-    if (!num(dose) || !num(tfg) || dose <= 0 || tfg <= 0)
-      return { error: 'Informe a dose habitual e a TFG.' };
-    var fator, faixa, observacao;
-    if (tfg >= 60) { fator = 1.0;  faixa = 'TFG ≥ 60';     observacao = 'Função renal normal ou levemente reduzida — dose habitual.'; }
-    else if (tfg >= 30) { fator = 0.75; faixa = 'TFG 30–59'; observacao = 'Redução moderada — considerar 50–75% da dose ou ampliar intervalo (consultar bula).'; }
-    else if (tfg >= 15) { fator = 0.5;  faixa = 'TFG 15–29'; observacao = 'Redução grave — geralmente 25–50% da dose ou intervalos prolongados.'; }
-    else { fator = 0.25; faixa = 'TFG < 15'; observacao = 'Falência renal — muitos fármacos contraindicados; avaliar substituição e/ou diálise.'; }
-    return {
-      doseHabitual: dose, doseAjustada: dose * fator,
-      tfg: tfg, faixa: faixa, fator: fator, observacao: observacao
-    };
   }
 
   // Perfil metabolico — IMC + RCQ + % gordura corporal
@@ -831,18 +751,18 @@
     return { perfil: perfil, cls: cls, pontos: pontos, notas: notas };
   }
 
-  // Triagem em pneumonia — CURB-65 + sinais vitais
+  // Referencia em pneumonia — CURB-65 + sinais vitais, sem indicar local de cuidado.
   function pneumoniaTriage(o) {
     var curb = o.curb, pas = o.pas, fr = o.fr, sat = o.satO2;
     if (!num(curb)) return { error: 'Informe o escore CURB-65.' };
-    var local, cls, motivos = [];
-    if (curb >= 3) { local = 'UTI'; cls = 'alert'; motivos.push('CURB-65 ≥ 3.'); }
-    else if (curb === 2) { local = 'Enfermaria'; cls = 'warn'; motivos.push('CURB-65 = 2 sugere internação.'); }
-    else { local = 'Tratamento ambulatorial'; cls = 'ok'; motivos.push('CURB-65 ≤ 1.'); }
-    if (num(pas) && pas < 90) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Hipotensão (PAS < 90 mmHg).'); }
-    if (num(fr) && fr >= 30) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Taquipneia (FR ≥ 30 irpm).'); }
-    if (num(sat) && sat < 90) { if (local !== 'UTI') { local = 'UTI'; cls = 'alert'; } motivos.push('Hipoxemia (SatO₂ < 90%).'); }
-    return { local: local, cls: cls, motivos: motivos, curb: curb };
+    var faixa, cls, motivos = [];
+    if (curb >= 3) { faixa = 'Faixa alta no CURB-65'; cls = 'alert'; motivos.push('CURB-65 ≥ 3.'); }
+    else if (curb === 2) { faixa = 'Faixa intermediária no CURB-65'; cls = 'warn'; motivos.push('CURB-65 = 2.'); }
+    else { faixa = 'Faixa baixa no CURB-65'; cls = 'ok'; motivos.push('CURB-65 ≤ 1.'); }
+    if (num(pas) && pas < 90) { cls = 'alert'; motivos.push('PAS < 90 mmHg descrita como marcador de gravidade.'); }
+    if (num(fr) && fr >= 30) { cls = 'alert'; motivos.push('FR ≥ 30 irpm descrita como marcador de gravidade.'); }
+    if (num(sat) && sat < 90) { cls = 'alert'; motivos.push('SatO₂ < 90% descrita como marcador de gravidade.'); }
+    return { faixa: faixa, cls: cls, motivos: motivos, curb: curb };
   }
 
   // Decisao de imagem em TVP/TEP — Wells + sinais
@@ -883,8 +803,7 @@
     correctedSodium: correctedSodium, correctedCalcium: correctedCalcium,
     anionGap: anionGap, osmolality: osmolality,
     qtc: qtc, sumScore: sumScore,
-    doseByWeight: doseByWeight, ivDripRate: ivDripRate,
-    opioidConversion: opioidConversion, steroidConversion: steroidConversion,
+    ivDripRate: ivDripRate,
     hollidaySegar: hollidaySegar,
     bmrMifflin: bmrMifflin, bmrHarris: bmrHarris, tdee: tdee, macros: macros,
     waterNeeds: waterNeeds, waistHip: waistHip, bodyFat: bodyFat,
@@ -896,7 +815,7 @@
     // paineis integrados
     afibAnticoagPanel: afibAnticoagPanel, akiPattern: akiPattern,
     cirrhosisPanel: cirrhosisPanel, acidBasePanel: acidBasePanel,
-    doseByTfgPanel: doseByTfgPanel, metabolicProfile: metabolicProfile,
+    metabolicProfile: metabolicProfile,
     pneumoniaTriage: pneumoniaTriage, tevImagingDecision: tevImagingDecision
   };
   global.Clinical = Clinical;

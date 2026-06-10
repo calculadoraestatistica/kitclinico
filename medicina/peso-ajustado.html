@@ -6,14 +6,14 @@
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
 <title>Calculadora de Peso Ajustado | Kit Clínico</title>
-<meta name="description" content="Calculadora de Peso Ajustado online e gratuita. Informe peso atual, altura e sexo e veja o peso ajustado para dosagem de medicamentos em obesos.">
+<meta name="description" content="Calculadora educacional de peso ajustado. Informe peso atual, altura e sexo e veja o resultado aritmético pela fórmula publicada.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/peso-ajustado.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
 <meta property="og:title" content="Calculadora de Peso Ajustado">
-<meta property="og:description" content="Calcule o peso ajustado para dosagem de medicamentos em pacientes obesos. Grátis.">
+<meta property="og:description" content="Resultado aritmético de peso ajustado pela fórmula publicada. Uso educacional.">
 <meta property="og:url" content="https://kitclinico.com.br/medicina/peso-ajustado.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -35,7 +35,7 @@
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora do peso ajustado para dosagem de medicamentos em obesos."
+  "description": "Calculadora educacional do peso ajustado pela fórmula publicada."
 }
 </script>
 <script type="application/ld+json">
@@ -91,7 +91,7 @@
         </ol>
       </nav>
       <h1>Calculadora de Peso Ajustado</h1>
-      <p class="lead">O peso ajustado corrige o peso de pacientes obesos para a dosagem de medicamentos.</p>
+      <p class="lead">O peso ajustado é uma fórmula publicada que combina peso ideal e peso atual. Esta página apresenta apenas o resultado aritmético, sem recomendar uso clínico.</p>
     </div>
   </div>
 
@@ -152,10 +152,10 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>peso ajustado</strong> é usado para <strong>dosar medicamentos em pacientes obesos</strong>. Como muitos fármacos não se distribuem bem no tecido adiposo, usar o peso real pode resultar em superdosagem. O peso ajustado corrige esse excesso, somando ao peso ideal apenas uma fração do peso extra.</p>
+      <p>O <strong>peso ajustado</strong> é uma fórmula descrita na literatura para estimar um peso intermediário entre o peso ideal e o peso atual. O cálculo abaixo mostra apenas esse valor aritmético e não define qual peso deve ser usado em decisões clínicas.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>O resultado, em <strong>quilogramas</strong>, fica entre o peso ideal e o peso atual do paciente. Ele é o valor recomendado para o cálculo de doses de diversos medicamentos em pacientes com sobrepeso ou obesidade.</p>
+      <p>O resultado, em <strong>quilogramas</strong>, fica entre o peso ideal e o peso atual do paciente. A aplicabilidade clínica varia conforme contexto, protocolo e referência específica.</p>
       <div class="formula">Peso ajustado = peso ideal + 0,4 × (peso atual − peso ideal)</div>
 
       <h2>Exemplo</h2>
@@ -166,7 +166,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>Nem todo medicamento usa o peso ajustado — alguns exigem peso real, outros peso ideal. Sempre confira a referência específica do fármaco e os protocolos da instituição antes de prescrever.</p>
+        <p>Nem toda situação usa peso ajustado. Sempre confira referências técnicas, protocolos institucionais e avaliação profissional antes de aplicar qualquer fórmula ao cuidado de uma pessoa.</p>
       </div>
 
       <h2>Referências</h2>
@@ -294,7 +294,7 @@
     result.innerHTML =
       '<div class="result__banner">' + ICON_OK +
         '<div><div class="result__headline">Peso ajustado estimado</div>' +
-        '<div class="result__sub">Para dosagem de medicamentos em obesos.</div></div></div>' +
+        '<div class="result__sub">Resultado aritmético pela fórmula publicada.</div></div></div>' +
       '<div class="result__body">' +
         '<div class="result__main">' + Fmt.num(r.pesoAjustado, 1) + ' <small>kg</small></div>' +
         '<div class="result__metrics">' +
@@ -302,8 +302,7 @@
           ' kg</span><span class="result__metric-label">Peso ideal</span></div>' +
         '</div>' +
         '<div class="result__interpretation"><p>O peso ajustado é de <strong>' +
-        Fmt.num(r.pesoAjustado, 1) + ' kg</strong>. Use-o para o cálculo de doses em pacientes ' +
-        'obesos, conferindo sempre a referência específica de cada medicamento.</p></div>' +
+        Fmt.num(r.pesoAjustado, 1) + ' kg</strong>. Resultado educacional; esta página não recomenda aplicação clínica individual.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

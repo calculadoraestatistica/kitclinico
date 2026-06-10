@@ -180,7 +180,7 @@
 
       <h2>Como ler a tabela</h2>
       <p>Na literatura, o <strong>ânion gap</strong> classifica os padrões de acidose metabólica em "com gap aumentado" (mnemônico MUDPILES) e "sem gap aumentado" (perda de bicarbonato). O <strong>sódio corrigido</strong> ajusta a natremia na presença de hiperglicemia (sódio cai ~1,6 a 2,4 mEq/L para cada 100 mg/dL de glicose acima de 100). A <strong>osmolaridade calculada</strong>, comparada com a medida, define o <strong>gap osmolar</strong>: valores &gt; 10 mOsm/kg estão descritos em presença de metanol, etilenoglicol ou manitol no soro.</p>
-      <p>A página apenas reproduz a tabela interpretativa publicada e o cálculo dos índices. <strong>Diagnóstico clínico definitivo, hipóteses etiológicas, contexto e conduta terapêutica são responsabilidade exclusiva do médico assistente.</strong></p>
+      <p>A página apenas reproduz a tabela interpretativa publicada e o cálculo dos índices. <strong>Diagnóstico clínico definitivo, hipóteses etiológicas e aplicação prática são responsabilidade exclusiva do médico assistente.</strong></p>
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Berend K, et al. Physiological approach to assessment of acid-base disturbances. <cite>N Engl J Med</cite>. 2014;371(15):1434-45. <a href="https://doi.org/10.1056/NEJMra1003327" target="_blank" rel="noopener">doi:10.1056/NEJMra1003327</a>.</li>
@@ -286,7 +286,7 @@
   // só a redação textual de cada item.
   function rewriteNota(n) {
     n = n.replace(
-      /\*\*Acidose metabólica com ânion gap elevado\*\* — investigar causas \(MUDPILES: ([^)]+)\)\.?/,
+      /\*\*Acidose metabólica com ânion gap elevado\*\* — causas descritas na literatura \(MUDPILES: ([^)]+)\)\.?/,
       '**Padrão compatível com acidose metabólica de ânion gap elevado** segundo a tabela interpretativa publicada. Causas descritas na literatura (mnemônico MUDPILES): $1.'
     );
     n = n.replace(
@@ -368,7 +368,7 @@
 
     var disclaimer =
       '<p class="result__disclaimer"><strong>Padrão laboratorial sugestivo conforme tabela interpretativa publicada.</strong> ' +
-      'Diagnóstico clínico definitivo, contexto e conduta terapêutica são responsabilidade exclusiva do médico assistente.</p>';
+      'Diagnóstico clínico definitivo, contexto e aplicação prática são responsabilidade exclusiva do médico assistente.</p>';
 
     result.className = 'result result--warn';
     result.innerHTML =

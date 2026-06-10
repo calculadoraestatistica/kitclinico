@@ -151,9 +151,9 @@
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Na dúvida, dose o cálcio iônico
+          Na dúvida, meça o cálcio iônico
         </div>
-        <p>A fórmula de correção é apenas uma estimativa e pode ser imprecisa em distúrbios ácido-base, doença renal crônica e estados críticos. Quando o resultado for decisivo para a conduta, prefira dosar diretamente o <strong>cálcio iônico</strong>, que reflete a fração fisiologicamente ativa.</p>
+        <p>A fórmula de correção é apenas uma estimativa e pode ser imprecisa em distúrbios ácido-base, doença renal crônica e estados críticos. Quando o resultado tiver peso clínico relevante, a medição direta do <strong>cálcio iônico</strong> pode ser mais informativa.</p>
       </div>
 
       <h2>Referências</h2>
@@ -283,7 +283,7 @@
         '<div class="result__main">' + Fmt.num(r.calcioCorrigido, 2) + ' <small>mg/dL</small></div>' +
         '<div class="result__interpretation"><p>O cálcio corrigido estimado é de <strong>' +
         Fmt.num(r.calcioCorrigido, 2) + ' mg/dL</strong>. ' +
-        'Interprete esse valor com a faixa habitual do cálcio total (cerca de 8,5 a 10,5 mg/dL). Na dúvida, dose o cálcio iônico.</p></div>' +
+        'Interprete esse valor com a faixa habitual do cálcio total (cerca de 8,5 a 10,5 mg/dL). Na dúvida, considere a medição direta do cálcio iônico.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
