@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Conversão de Corticoides — Equivalência de Prednisona | Kit Clínico</title>
-<meta name="description" content="Calculadora de conversão de corticoides online e gratuita. Converta doses entre corticoides pela potência anti-inflamatória e veja o equivalente em prednisona.">
+<title>Tabela de Equivalência Glicocorticoide (Potência Anti-inflamatória) | Kit Clínico</title>
+<meta name="description" content="Tabela de equivalência publicada da potência anti-inflamatória entre glicocorticoides (hidrocortisona, prednisona, metilprednisolona, dexametasona e outros). Ferramenta educacional.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/conversao-corticoides.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Calculadora de Conversão de Corticoides — Equivalência de Prednisona">
-<meta property="og:description" content="Converta doses entre corticoides pela potência anti-inflamatória. Grátis.">
+<meta property="og:title" content="Tabela de Equivalência Glicocorticoide (Potência Anti-inflamatória)">
+<meta property="og:description" content="Equivalência publicada da potência anti-inflamatória entre glicocorticoides. Ferramenta educacional.">
 <meta property="og:url" content="https://kitclinico.com.br/medicina/conversao-corticoides.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,17 +24,18 @@
 <link rel="apple-touch-icon" href="/favicon-192.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/css/style.css">
+<script src="/js/professional-gate.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Calculadora de Conversão de Corticoides",
+  "name": "Tabela de Equivalência Glicocorticoide",
   "url": "https://kitclinico.com.br/medicina/conversao-corticoides.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Calculadora de conversão de doses entre corticoides pela potência anti-inflamatória."
+  "description": "Tabela de equivalência publicada da potência anti-inflamatória entre glicocorticoides. Ferramenta educacional."
 }
 </script>
 <script type="application/ld+json">
@@ -44,12 +45,12 @@
   "itemListElement": [
     {"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},
     {"@type":"ListItem","position":2,"name":"Calculadoras médicas","item":"https://kitclinico.com.br/medicina.html"},
-    {"@type":"ListItem","position":3,"name":"Calculadora de Conversão de Corticoides","item":"https://kitclinico.com.br/medicina/conversao-corticoides.html"}
+    {"@type":"ListItem","position":3,"name":"Tabela de Equivalência Glicocorticoide","item":"https://kitclinico.com.br/medicina/conversao-corticoides.html"}
   ]
 }
 </script>
 </head>
-<body>
+<body data-kit-gate="medicina">
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="site-header">
@@ -86,11 +87,11 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Calculadora de Conversão de Corticoides</li>
+          <li>Tabela de Equivalência Glicocorticoide</li>
         </ol>
       </nav>
-      <h1>Calculadora de Conversão de Corticoides</h1>
-      <p class="lead">Converte doses entre corticoides pela potência anti-inflamatória, usando a prednisona como referência.</p>
+      <h1>Tabela de Equivalência Glicocorticoide (Potência Anti-inflamatória)</h1>
+      <p class="lead">Apresenta a equivalência publicada da potência anti-inflamatória entre glicocorticoides, usando a prednisona como referência da escala.</p>
     </div>
   </div>
 
@@ -99,15 +100,15 @@
     <form class="calculator" id="calc-form" novalidate>
       <h2 class="calculator__title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
-        Converter corticoide
+        Consultar equivalência
       </h2>
-      <p class="calculator__hint">Selecione o corticoide atual, o corticoide de destino e informe a dose.</p>
+      <p class="calculator__hint">Selecione o corticoide de referência, o corticoide a comparar e informe a dose para consulta da equivalência publicada.</p>
 
       <fieldset class="field-group">
-        <legend>Dados da conversão</legend>
+        <legend>Dados da consulta</legend>
         <div class="field-row">
           <div class="field">
-            <label for="de">Corticoide atual</label>
+            <label for="de">Corticoide de referência</label>
             <select class="input" id="de">
               <option value="hidrocortisona">Hidrocortisona</option>
               <option value="cortisona">Cortisona</option>
@@ -120,7 +121,7 @@
             </select>
           </div>
           <div class="field">
-            <label for="para">Converter para</label>
+            <label for="para">Comparar com</label>
             <select class="input" id="para">
               <option value="hidrocortisona">Hidrocortisona</option>
               <option value="cortisona">Cortisona</option>
@@ -134,7 +135,7 @@
           </div>
         </div>
         <div class="field">
-          <label for="dose">Dose atual</label>
+          <label for="dose">Dose de referência</label>
           <div class="input-affix">
             <input class="input" type="text" inputmode="decimal" id="dose" placeholder="Ex.: 40" autocomplete="off">
             <span class="input-affix__unit">mg</span>
@@ -145,7 +146,7 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Converter</button>
+        <button class="btn btn--primary btn--lg" type="submit">Consultar equivalência</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
@@ -156,27 +157,53 @@
 
     <article class="prose">
 
-      <h2>Para que serve</h2>
-      <p>A <strong>conversão de corticoides</strong> é usada quando se troca um glicocorticoide por outro mantendo o mesmo efeito anti-inflamatório — por mudança de via, disponibilidade do fármaco ou ajuste de esquema terapêutico. A calculadora usa a <strong>prednisona</strong> como referência para estimar a dose equivalente do corticoide de destino.</p>
+      <h2>O que esta ferramenta apresenta</h2>
+      <p>Esta página apresenta a <strong>equivalência publicada</strong> da potência anti-inflamatória (glicocorticoide) entre diferentes corticosteroides sistêmicos, com base em tabelas amplamente referenciadas na literatura. É um conteúdo <strong>educacional e de consulta</strong>: não recomenda doses, não orienta esquemas, não sugere início, ajuste ou redução de tratamento. A escolha do fármaco, a dose, a via e o esquema são <strong>responsabilidade exclusiva do médico assistente</strong>, à luz do contexto clínico individual.</p>
 
-      <h2>Como interpretar o resultado</h2>
-      <p>A <strong>dose equivalente</strong> é a dose do corticoide de destino com potência anti-inflamatória semelhante à dose atual. O <strong>equivalente em prednisona</strong> coloca a dose em uma escala única, útil para comparar esquemas e avaliar a magnitude do tratamento. Corticoides de alta potência, como dexametasona e betametasona, exigem doses muito menores em miligramas para o mesmo efeito.</p>
+      <h2>Tabela de equivalência publicada</h2>
+      <p>Equivalências aproximadas da potência anti-inflamatória (glicocorticoide), relativas a 5 mg de prednisona oral:</p>
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th scope="col">Glicocorticoide</th>
+              <th scope="col">Dose equipotente (mg)</th>
+              <th scope="col">Potência relativa</th>
+              <th scope="col">Duração de ação</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Hidrocortisona</th><td>20</td><td>1</td><td>Curta</td></tr>
+            <tr><th scope="row">Cortisona</th><td>25</td><td>0,8</td><td>Curta</td></tr>
+            <tr><th scope="row">Prednisona</th><td>5</td><td>4</td><td>Intermediária</td></tr>
+            <tr><th scope="row">Prednisolona</th><td>5</td><td>4</td><td>Intermediária</td></tr>
+            <tr><th scope="row">Metilprednisolona</th><td>4</td><td>5</td><td>Intermediária</td></tr>
+            <tr><th scope="row">Triancinolona</th><td>4</td><td>5</td><td>Intermediária</td></tr>
+            <tr><th scope="row">Dexametasona</th><td>0,75</td><td>25–30</td><td>Longa</td></tr>
+            <tr><th scope="row">Betametasona</th><td>0,6–0,75</td><td>25–30</td><td>Longa</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p>Leitura da linha: por exemplo, <strong>Prednisona 5 mg &asymp; Metilprednisolona 4 mg &asymp; Dexametasona 0,75 mg &asymp; Hidrocortisona 20 mg</strong> em termos de potência anti-inflamatória.</p>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente em uso de <strong>40 mg de prednisona</strong> que será trocado por <strong>dexametasona</strong>: o equivalente em prednisona é 40 mg e a dose equivalente de dexametasona é cerca de <strong>6 mg</strong>, refletindo a potência anti-inflamatória muito maior da dexametasona.</p>
+      <h2>Como ler o resultado</h2>
+      <p>O valor apresentado corresponde à <strong>equivalência teórica publicada</strong> da potência anti-inflamatória entre os dois corticoides selecionados, escalonada pela dose informada. Trata-se de uma comparação farmacológica, não de uma indicação de dose a ser administrada. O <strong>ajuste por contexto clínico — paciente, comorbidades, via, duração, interações, monitorização e desfecho terapêutico — é responsabilidade do médico</strong>.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           O que a equivalência não cobre
         </div>
-        <p>A equivalência considera apenas a <strong>potência anti-inflamatória (glicocorticoide)</strong>. Ela <strong>não</strong> contempla o efeito <strong>mineralocorticoide</strong> (retenção de sódio e água, que varia muito entre os fármacos) nem a <strong>duração de ação</strong> (curta, intermediária ou longa). Considere esses fatores na escolha do corticoide e confirme em fonte oficial.</p>
+        <p>A tabela contempla apenas a <strong>potência anti-inflamatória (glicocorticoide)</strong>. Ela <strong>não</strong> contempla o efeito <strong>mineralocorticoide</strong> (retenção de sódio e água, que difere substancialmente entre os fármacos), a <strong>duração de ação</strong>, perfis de meia-vida, biodisponibilidade por via, supressão do eixo HHA, indicações específicas ou tolerabilidade individual. Confirme valores em fonte oficial (bula do fabricante) e na literatura de referência.</p>
       </div>
 
       <h2>Referências</h2>
       <ol class="ref-list">
+        <li>UpToDate. Major side effects of systemic glucocorticoids — equivalent anti-inflammatory doses. Wolters Kluwer, edição corrente. <a href="https://www.uptodate.com/" target="_blank" rel="noopener">uptodate.com</a>.</li>
+        <li>Sociedade Brasileira de Endocrinologia e Metabologia (SBEM). Diretrizes e materiais sobre uso de glicocorticoides. <a href="https://www.endocrino.org.br/" target="_blank" rel="noopener">endocrino.org.br</a>.</li>
         <li>Liu D, Ahmet A, Ward L, et al. A practical guide to the monitoring and management of the complications of systemic corticosteroid therapy. <cite>Allergy, Asthma &amp; Clinical Immunology</cite>. 2013;9(1):30. <a href="https://doi.org/10.1186/1710-1492-9-30" target="_blank" rel="noopener">doi:10.1186/1710-1492-9-30</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/23947590/" target="_blank" rel="noopener">PMID&nbsp;23947590</a>.</li>
         <li>Williams DM. Clinical pharmacology of corticosteroids. <cite>Respiratory Care</cite>. 2018;63(6):655-670. <a href="https://doi.org/10.4187/respcare.06314" target="_blank" rel="noopener">doi:10.4187/respcare.06314</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/29794202/" target="_blank" rel="noopener">PMID&nbsp;29794202</a>.</li>
+        <li>Bulas dos fabricantes (Anvisa) dos respectivos glicocorticoides — consulta obrigatória para informações farmacotécnicas e regulatórias atualizadas.</li>
       </ol>
 
       <div class="related">
@@ -273,16 +300,30 @@
   });
   form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
 
+  var NOMES = {
+    hidrocortisona: 'Hidrocortisona',
+    cortisona: 'Cortisona',
+    prednisona: 'Prednisona',
+    prednisolona: 'Prednisolona',
+    metilprednisolona: 'Metilprednisolona',
+    triancinolona: 'Triancinolona',
+    dexametasona: 'Dexametasona',
+    betametasona: 'Betametasona'
+  };
+
   function compute() {
     clearError();
     var de = $('de').value, para = $('para').value;
     var dose = parseNum($('dose').value);
     if (isNaN(dose)) {
-      showError('Informe a dose atual com um número válido.');
+      showError('Informe a dose de referência com um número válido.');
       return;
     }
     var r = Clinical.steroidConversion({ de: de, para: para, dose: dose });
     if (r.error) { showError(r.error); return; }
+    r._de = NOMES[de] || de;
+    r._para = NOMES[para] || para;
+    r._dose = dose;
     render(r);
   }
 
@@ -294,17 +335,22 @@
 
   function render(r) {
     result.className = 'result result--neutral';
+    var equivalencia =
+      '<strong>' + Fmt.num(r._dose, 2) + ' mg de ' + r._de + '</strong> ' +
+      '&asymp; <strong>' + Fmt.num(r.doseEquivalente, 2) + ' mg de ' + r._para + '</strong>';
     result.innerHTML =
       '<div class="result__banner">' + ICONS.alert +
-        '<div><div class="result__headline">Dose equivalente estimada</div>' +
-        '<div class="result__sub">Equivalência da potência anti-inflamatória.</div></div></div>' +
+        '<div><div class="result__headline">Equivalência publicada</div>' +
+        '<div class="result__sub">Potência anti-inflamatória (glicocorticoide) — referência teórica.</div></div></div>' +
       '<div class="result__body">' +
         '<div class="result__main">' + Fmt.num(r.doseEquivalente, 2) + ' <small>mg</small></div>' +
         '<div class="result__metrics">' +
-          '<div class="metric"><div class="metric__label">Equivalente em prednisona</div>' +
+          '<div class="metric"><div class="metric__label">Equivalência</div>' +
+            '<div class="metric__value">' + equivalencia + '</div></div>' +
+          '<div class="metric"><div class="metric__label">Em prednisona (escala de referência)</div>' +
             '<div class="metric__value">' + Fmt.num(r.equivalentePrednisona, 2) + ' mg</div></div>' +
         '</div>' +
-        '<div class="result__interpretation"><p>A dose equivalente reflete apenas a potência anti-inflamatória. Considere o efeito mineralocorticoide e a duração de ação na escolha do corticoide.</p></div>' +
+        '<div class="result__interpretation"><p>Equivalência teórica publicada da potência anti-inflamatória. O ajuste por contexto clínico (paciente, via, duração, comorbidades, efeito mineralocorticoide e monitorização) é responsabilidade do médico. Esta ferramenta não recomenda dose, não orienta esquema e não substitui a bula nem o julgamento clínico.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

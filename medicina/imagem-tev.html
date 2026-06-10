@@ -5,15 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Google AdSense -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<title>Decisão de imagem em TEV — Wells × d-dímero | Kit Clínico</title>
-<meta name="description" content="Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário.">
+<title>Wells + d-dímero — apresentação dos critérios publicados | Kit Clínico</title>
+<meta name="description" content="Apresenta o escore Wells (TVP ou TEP) e a interpretação do d-dímero publicada nas diretrizes.">
 <link rel="canonical" href="https://kitclinico.com.br/medicina/imagem-tev.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
-<meta property="og:title" content="Decisão de imagem em TEV — Wells × d-dímero">
-<meta property="og:description" content="Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário.">
+<meta property="og:title" content="Wells + d-dímero — apresentação dos critérios publicados">
+<meta property="og:description" content="Apresenta o escore Wells (TVP ou TEP) e a interpretação do d-dímero publicada nas diretrizes.">
 <meta property="og:url" content="https://kitclinico.com.br/medicina/imagem-tev.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -24,24 +24,25 @@
 <link rel="apple-touch-icon" href="/favicon-192.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/css/style.css">
+<script src="/js/professional-gate.js" defer></script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "WebApplication",
-  "name": "Decisão de imagem em TEV — Wells × d-dímero",
+  "name": "Wells + d-dímero — apresentação dos critérios publicados",
   "url": "https://kitclinico.com.br/medicina/imagem-tev.html",
   "applicationCategory": "HealthApplication",
   "operatingSystem": "Web",
   "inLanguage": "pt-BR",
   "offers": {"@type": "Offer", "price": "0", "priceCurrency": "BRL"},
-  "description": "Painel que combina Wells (TVP ou TEP) com o d-dímero para decidir se exame de imagem é necessário."
+  "description": "Apresenta o escore Wells (TVP ou TEP) e a interpretação do d-dímero publicada nas diretrizes."
 }
 </script>
 
 <!-- schema-enhanced -->
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},{"@type":"ListItem","position":2,"name":"Medicina","item":"https://kitclinico.com.br/medicina/"},{"@type":"ListItem","position":3,"name":"Decisão de imagem em TEV — Wells × d-dímero","item":"https://kitclinico.com.br/medicina/imagem-tev.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},{"@type":"ListItem","position":2,"name":"Medicina","item":"https://kitclinico.com.br/medicina/"},{"@type":"ListItem","position":3,"name":"Wells + d-dímero — apresentação dos critérios publicados","item":"https://kitclinico.com.br/medicina/imagem-tev.html"}]}</script>
 </head>
-<body>
+<body data-kit-gate="medicina">
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
 <header class="site-header">
@@ -77,11 +78,11 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Decisão de imagem em TEV</li>
+          <li>Wells + d-dímero</li>
         </ol>
       </nav>
-      <h1>Decisão de imagem em TEV — Painel Wells × d-dímero</h1>
-      <p class="lead">O Wells estratifica em provável / improvável; o <strong>d-dímero</strong> ajuda a evitar imagem desnecessária quando o Wells é baixo.</p>
+      <h1>Wells + d-dímero — apresentação dos critérios publicados</h1>
+      <p class="lead">Apresenta o escore Wells (TVP ou TEP) e a interpretação do d-dímero publicada nas diretrizes.</p>
     </div>
   </div>
 
@@ -107,11 +108,20 @@
         </div>
         <div class="">
           <div class="field">
-            <label for="tipo">Suspeita</label>
+            <label for="tipo">Modelo</label>
             <select class="input" id="tipo">
-              <option value="tvp">TVP (limiar ≥ 2)</option>
-              <option value="tep">TEP (limiar > 4)</option>
+              <option value="tvp">Wells TVP</option>
+              <option value="tep">Wells TEP</option>
             </select>
+          </div>
+        </div>
+        <div class="">
+          <div class="field">
+            <label for="idade">Idade (opcional, para cutoff ajustado do d-dímero)</label>
+            <div class="input-affix">
+              <input class="input" type="text" inputmode="decimal" id="idade" placeholder="Ex.: 68" autocomplete="off">
+              <span class="input-affix__unit">anos</span>
+            </div>
           </div>
         </div>
       </fieldset>
@@ -132,7 +142,7 @@
       <p class="field-error" id="calc-error" role="alert"></p>
 
       <div class="calculator__actions">
-        <button class="btn btn--primary btn--lg" type="submit">Decidir imagem</button>
+        <button class="btn btn--primary btn--lg" type="submit">Calcular</button>
         <button class="btn btn--ghost" type="button" id="calc-example">Preencher com exemplo</button>
       </div>
 
@@ -144,13 +154,14 @@
     <article class="prose">
 
       <h2>Como ler o painel</h2>
-      <p>Quando o Wells é alto (TVP ≥ 2 ou TEP &gt; 4), <strong>imagem é indicada de saída</strong> — d-dímero não modifica a conduta. Quando o Wells é baixo, o d-dímero quantitativo tem alto valor preditivo negativo: um valor ≤ 500 ng/mL FEU (com ajuste por idade nos &gt; 50 anos: idade × 10) <strong>exclui razoavelmente</strong> o evento e dispensa o exame. Se elevado, faz-se a imagem para confirmar.</p>
+      <p>O painel apresenta o escore de Wells (TVP ou TEP) com a estratificação publicada em probabilidade clínica <strong>baixa / intermediária / alta</strong> (ou nos modelos dicotômicos, <em>provável</em> / <em>improvável</em>). Junto, apresenta a interpretação textual do d-dímero conforme o cutoff publicado (500 ng/mL FEU) e o cutoff ajustado por idade descrito nas diretrizes (idade × 10 para pacientes &gt; 50 anos).</p>
+      <p><strong>Conduta diagnóstica (necessidade de imagem por TC angio, USG Doppler ou outro) é decisão clínica do médico assistente.</strong> O painel apenas reproduz os critérios e a interpretação publicada — não recomenda exame, não substitui avaliação e não realiza triagem.</p>
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           D-dímero tem baixa especificidade
         </div>
-        <p>O d-dímero é altamente sensível mas pouco específico — sobe em infecção, gestação, pós-operatório, neoplasia. Use-o como filtro de exclusão, não como confirmação.</p>
+        <p>O d-dímero é altamente sensível mas pouco específico — eleva-se em infecção, gestação, pós-operatório, neoplasia e diversos contextos não trombóticos. A interpretação isolada do valor laboratorial não tem significado clínico fora do contexto avaliado pelo médico assistente.</p>
       </div>
       <h2>Referências</h2>
       <ol class="ref-list">
@@ -250,26 +261,89 @@
 
 
 
+  function wellsStratification(wells, tipo) {
+    // Estratificação em três níveis conforme modelo clássico publicado
+    // (Wells PJ et al. — TVP: <1 baixa, 1-2 intermediária, ≥3 alta;
+    //  TEP: <2 baixa, 2-6 intermediária, >6 alta)
+    if (tipo === 'tvp') {
+      if (wells <= 0) return { nivel: 'baixa', cls: 'ok' };
+      if (wells <= 2) return { nivel: 'intermediária', cls: 'warn' };
+      return { nivel: 'alta', cls: 'alert' };
+    }
+    // tep
+    if (wells < 2) return { nivel: 'baixa', cls: 'ok' };
+    if (wells <= 6) return { nivel: 'intermediária', cls: 'warn' };
+    return { nivel: 'alta', cls: 'alert' };
+  }
+
+  function dDimerCutoff(idade) {
+    // Cutoff convencional 500 ng/mL FEU; ajuste por idade (idade × 10) para > 50 anos
+    if (!isNaN(idade) && idade > 50) return Math.round(idade * 10);
+    return 500;
+  }
+
+  function dDimerInterpretation(d, cutoff) {
+    if (isNaN(d)) return null;
+    if (d <= cutoff) {
+      return {
+        rotulo: 'negativo (≤ cutoff publicado)',
+        texto: 'D-dímero ' + d + ' ng/mL FEU está abaixo ou igual ao cutoff publicado de ' + cutoff + ' ng/mL FEU.',
+        cls: 'ok'
+      };
+    }
+    return {
+      rotulo: 'positivo (> cutoff publicado)',
+      texto: 'D-dímero ' + d + ' ng/mL FEU está acima do cutoff publicado de ' + cutoff + ' ng/mL FEU.',
+      cls: 'warn'
+    };
+  }
+
   function compute() {
     clearError();
-    var w = parseNum($('wells').value), tipo = $('tipo').value, d = parseNum($('dDimero').value);
+    var w = parseNum($('wells').value);
+    var tipo = $('tipo').value;
+    var d = parseNum($('dDimero').value);
+    var idade = parseNum($('idade').value);
     if (isNaN(w)) { showError('Informe o escore de Wells.'); return; }
-    var p = Clinical.tevImagingDecision({ wells: w, tipo: tipo, dDimero: isNaN(d)?null:d });
-    if (p.error) { showError(p.error); return; }
-    result.className = 'result result--' + p.cls;
+
+    var strat = wellsStratification(w, tipo);
+    var cutoff = dDimerCutoff(idade);
+    var ddi = dDimerInterpretation(d, cutoff);
+
+    // A classe geral do banner segue o nível Wells (apresentação, não conduta)
+    var cls = strat.cls;
+    result.className = 'result result--' + cls;
+
+    var modelo = (tipo === 'tvp') ? 'Wells TVP' : 'Wells TEP';
+    var headline = modelo + ' = ' + w + ' ponto(s) — probabilidade clínica ' + strat.nivel;
+    var sub = 'Apresentação dos critérios publicados';
+
+    var corpo = '';
+    corpo += '<div class="result__interpretation">';
+    corpo += '<p><strong>Escore Wells:</strong> ' + w + ' ponto(s). Estratificação publicada: probabilidade clínica <strong>' + strat.nivel + '</strong>.</p>';
+    if (ddi) {
+      corpo += '<p><strong>D-dímero:</strong> ' + ddi.texto + ' Interpretação publicada: <strong>' + ddi.rotulo + '</strong>.';
+      if (!isNaN(idade) && idade > 50) {
+        corpo += ' (Cutoff ajustado por idade: idade × 10 = ' + cutoff + ' ng/mL FEU.)';
+      }
+      corpo += '</p>';
+    } else {
+      corpo += '<p><strong>D-dímero:</strong> não informado. Cutoff publicado de referência: ' + cutoff + ' ng/mL FEU' + ((!isNaN(idade) && idade > 50) ? ' (ajustado por idade)' : '') + '.</p>';
+    }
+    corpo += '<p><em>Conduta diagnóstica (necessidade de imagem por TC angio, USG Doppler ou outro) é decisão clínica do médico assistente.</em></p>';
+    corpo += '</div>';
+
     result.innerHTML =
-      '<div class="result__banner">' + ICONS[p.cls] +
-        '<div><div class="result__headline">' + p.decisao + '</div>' +
-        '<div class="result__sub">' + (p.tipo === 'tvp' ? 'TVP' : 'TEP') + ' · Wells ' + p.wells + ' (' + (p.provavel ? 'provável' : 'improvável') + ')</div></div></div>' +
-      '<div class="result__body">' +
-        '<div class="result__interpretation"><p>' + p.comentario + '</p></div>' +
-      '</div>';
+      '<div class="result__banner">' + ICONS[cls] +
+        '<div><div class="result__headline">' + headline + '</div>' +
+        '<div class="result__sub">' + sub + '</div></div></div>' +
+      '<div class="result__body">' + corpo + '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }
 
   form.addEventListener('submit', function (e) { e.preventDefault(); compute(); });
-  $('calc-example').addEventListener('click', function(){ $('wells').value='2'; $('tipo').value='tvp'; $('dDimero').value='450'; compute(); });
+  $('calc-example').addEventListener('click', function(){ $('wells').value='2'; $('tipo').value='tvp'; $('dDimero').value='450'; $('idade').value='68'; compute(); });
 })();
 </script>
 </body>
