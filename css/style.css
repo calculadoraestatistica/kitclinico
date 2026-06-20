@@ -1373,6 +1373,7 @@ a.card:hover {
   padding: var(--sp-5);
   margin-block: var(--sp-5);
   box-shadow: var(--sh-1);
+  scroll-margin-top: 80px;
 }
 .report-preview__head {
   display: flex; align-items: center;
@@ -1995,8 +1996,8 @@ body.kc-gate-open { overflow: hidden; }
 .site-footer {
   background: var(--c-ink);
   color: #94a3b8;
-  padding-block: var(--sp-7) var(--sp-5);
-  margin-top: var(--sp-7);
+  padding-block: var(--sp-6) var(--sp-5);
+  margin-top: var(--sp-5);
   font-size: 0.9375rem;
 }
 .site-footer h3 {
@@ -2047,8 +2048,8 @@ body.kc-gate-open { overflow: hidden; }
   border-top: 1px solid color-mix(in srgb, #94a3b8 25%, var(--c-ink));
   color: #94a3b8;
   font-size: 0.8125rem;
-  font-family: var(--font-mono);
-  font-variant-numeric: tabular-nums;
+  font-family: var(--font-body);
+  line-height: 1.55;
 }
 .footer-bottom p + p { margin-top: 6px; }
 
@@ -2112,7 +2113,7 @@ body.kc-gate-open { overflow: hidden; }
   .card-grid--3 { grid-template-columns: repeat(3, 1fr); }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr 1fr 1fr; }
   .calculator { padding: var(--sp-6); }
-  .section { padding-block: var(--sp-8); }
+  .section { padding-block: var(--sp-6); }
   .cadastro-row {
     flex-direction: row;
     align-items: center;
@@ -2154,7 +2155,7 @@ body.kc-gate-open { overflow: hidden; }
 }
 
 @media (min-width: 1024px) {
-  .section { padding-block: var(--sp-9); }
+  .section { padding-block: var(--sp-7); }
   .hero { padding-block: var(--sp-8) var(--sp-8); }
 }
 
