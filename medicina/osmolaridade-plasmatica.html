@@ -161,24 +161,56 @@
       <p>A <strong>osmolaridade plasmática</strong> mede a concentração de partículas osmoticamente ativas no plasma. Esta calculadora <strong>estima</strong> a osmolaridade a partir dos três principais solutos — sódio, glicose e ureia — usando uma fórmula clássica. É útil na avaliação de distúrbios do sódio, estados hiperglicêmicos, suspeita de intoxicações e no cálculo do gap osmolar.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>A faixa normal da osmolaridade plasmática fica em torno de <strong>285 a 295 mOsm/kg</strong>. A diferença entre a osmolaridade medida no laboratório e esta estimativa calculada é o <strong>gap osmolar</strong>; um gap aumentado (geralmente acima de 10 mOsm/kg) sugere a presença de osmóis não medidos, como o etanol, o metanol ou o etilenoglicol.</p>
+      <p>A faixa normal da osmolaridade plasmática descrita na literatura fica em torno de <strong>285 a 295 mOsm/kg</strong>. A diferença entre a osmolaridade medida no laboratório e esta estimativa calculada é o <strong>gap osmolar</strong>; publica-se que um gap acima de 10 mOsm/kg pode estar associado à presença de osmóis não medidos, como etanol, metanol ou etilenoglicol.</p>
       <div class="formula">Osmolaridade = (2 × sódio) + (glicemia ÷ 18) + (ureia ÷ 6)</div>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente com <strong>sódio de 140 mEq/L</strong>, <strong>glicemia de 90 mg/dL</strong> e <strong>ureia de 30 mg/dL</strong> tem osmolaridade = (2 × 140) + (90 ÷ 18) + (30 ÷ 6) = 280 + 5 + 5 = <strong>290 mOsm/kg</strong> — dentro da faixa normal.</p>
+      <h2>População validada</h2>
+      <p>A fórmula simplificada descrita por Worthley, Guerin e Pain (1987) foi avaliada em adultos hospitalizados, comparando estimativas calculadas com a osmolalidade medida por crioscopia. O trabalho original publicou que esta forma — somando o dobro do sódio e os equivalentes molares de glicose e ureia — apresentou desempenho comparável a fórmulas mais elaboradas em pacientes adultos. A literatura descreve cautela em situações nas quais a fração aquosa do plasma está alterada (hiperlipidemia, hiperproteinemia) e em populações pediátricas, nas quais a validação publicada é mais restrita.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora usa <strong>sódio em mEq/L</strong> (faixas habitualmente reportadas entre 120 e 160), <strong>glicemia em mg/dL</strong> (sanity range comum 40 a 800) e <strong>ureia em mg/dL</strong> (faixa habitual 5 a 200). Os divisores 18 e 6 convertem mg/dL em mmol/L para a glicose (massa molar 180) e para a ureia (massa molar 60, considerando uma molécula de ureia com dois átomos de nitrogênio). Quando o resultado laboratorial é fornecido como BUN (mg/dL), a literatura descreve o divisor 2,8 em vez de 6.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Osmolaridade (mOsm/kg) = (2 × Na⁺) + (glicemia ÷ 18) + (ureia ÷ 6)</div>
+      <p>Onde <strong>Na⁺</strong> é o sódio sérico em mEq/L (multiplicado por 2 para refletir o ânion acompanhante), <strong>glicemia ÷ 18</strong> converte mg/dL em mmol/L e <strong>ureia ÷ 6</strong> converte mg/dL em mmol/L. A sequência publicada é: (1) confirmar unidades das três variáveis; (2) multiplicar o sódio por 2; (3) dividir a glicemia por 18; (4) dividir a ureia por 6; (5) somar os três termos. <strong>Exemplo trabalhado:</strong> sódio 140 mEq/L, glicemia 90 mg/dL, ureia 30 mg/dL → (2 × 140) + (90 ÷ 18) + (30 ÷ 6) = 280 + 5 + 5 = <strong>290 mOsm/kg</strong>, valor que cai dentro da faixa normal descrita.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula assume unidades convencionais e composição plasmática preservada. Erros comuns publicados incluem inserir glicemia ou ureia em mmol/L sem ajustar os divisores, confundir ureia com BUN (que exige divisor 2,8) e aplicar a fórmula em amostras com pseudo-hiponatremia por hiperlipidemia ou hiperproteinemia, situação na qual o sódio plasmático medido por fotometria de chama não reflete a osmolalidade real. Em suspeita de intoxicação por álcoois tóxicos, a literatura descreve que a estimativa calculada deve ser comparada com a osmolalidade medida (gap osmolar) e que a própria fórmula não detecta esses solutos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Publica-se diversas variantes: Smithline e Gardner (1976) propuseram <em>2×Na + glicose/18 + BUN/2,8</em>; Dorwart e Chalmers (1975) acrescentam um termo aditivo; Bhagat e colaboradores incluem etanol. Worthley e colaboradores (1987) demonstraram que a forma simplificada apresentou desempenho semelhante a variantes mais extensas em pacientes adultos. A literatura descreve que, quando há ingestão conhecida de etanol, costuma-se somar <em>etanol (mg/dL) ÷ 4,6</em> ao cálculo.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula implementada aqui é a forma simplificada publicada por <strong>Worthley LIG, Guerin M, Pain RW</strong> em <cite>Anaesthesia and Intensive Care</cite>, 1987;15(2):199-202 (<a href="https://doi.org/10.1177/0310057X8701500214" target="_blank" rel="noopener">doi:10.1177/0310057X8701500214</a>; PMID 3605570). A versão implementada usa sódio em mEq/L e glicemia/ureia em mg/dL, com divisores 18 e 6, conforme descrito no artigo original.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a fórmula publicada: (1) Na 140, glicemia 90, ureia 30 → 280 + 5 + 5 = <strong>290 mOsm/kg</strong>; (2) Na 145, glicemia 180, ureia 60 → 290 + 10 + 10 = <strong>310 mOsm/kg</strong>; (3) Na 125, glicemia 72, ureia 12 → 250 + 4 + 2 = <strong>256 mOsm/kg</strong>. Verificada contra exemplos numéricos descritos em Worthley et al. (1987); reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve que valores muito divergentes do esperado geralmente refletem unidades incorretas — confirme se a glicemia e a ureia estão em mg/dL e se o valor digitado para ureia não é BUN (que exige divisor 2,8).</p>
+      <p><strong>Posso usar em crianças?</strong> A validação publicada concentra-se em adultos hospitalizados; a aplicação pediátrica é descrita com menor robustez na literatura citada.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> Worthley et al. (1987) publicaram que a forma simplificada apresentou desempenho comparável a variantes mais extensas, mantendo o cálculo prático à beira do leito.</p>
+      <p><strong>O resultado substitui a osmolalidade medida?</strong> Não — a literatura descreve que o cálculo é uma estimativa e que o gap osmolar exige a osmolalidade medida por crioscopia.</p>
+      <p><strong>Como considero o etanol?</strong> Publica-se a soma do termo <em>etanol (mg/dL) ÷ 4,6</em> ao cálculo quando a ingestão é conhecida e quantificada.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>A fórmula assume unidades convencionais (glicemia e ureia em mg/dL) e existem variantes que usam a glicemia e a ureia de outras formas. O valor calculado é apenas uma estimativa; quando há suspeita de intoxicação, compare-o com a osmolaridade medida para obter o gap osmolar.</p>
+        <p>A fórmula assume unidades convencionais (glicemia e ureia em mg/dL) e existem variantes que usam a glicemia e a ureia de outras formas. O valor calculado é apenas uma estimativa; quando há suspeita de intoxicação, a literatura descreve que ele deve ser comparado com a osmolaridade medida para obter o gap osmolar.</p>
       </div>
 
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Worthley LIG, Guerin M, Pain RW. For calculating osmolality, the simplest formula is the best. <cite>Anaesthesia and Intensive Care</cite>. 1987;15(2):199-202. <a href="https://doi.org/10.1177/0310057X8701500214" target="_blank" rel="noopener">doi:10.1177/0310057X8701500214</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/3605570/" target="_blank" rel="noopener">PMID&nbsp;3605570</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

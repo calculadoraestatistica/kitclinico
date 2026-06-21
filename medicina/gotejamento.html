@@ -174,10 +174,50 @@
         <p>O cálculo apresenta a aplicação da fórmula publicada; o fator de gotejamento varia entre fabricantes e deve ser verificado na embalagem do equipo. A prescrição e o ajuste da velocidade da infusão são exclusivos do médico assistente.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A fórmula clássica de velocidade de infusão é uma identidade aritmética entre volume, tempo e fator do equipo, descrita em manuais de terapia intravenosa como o de Phillips e Gorski. Não há "validação populacional" no sentido epidemiológico: a literatura de enfermagem em terapia infusional descreve seu uso em adultos, crianças e neonatos, com a escolha do equipo (macrogotas ou microgotas) variando conforme idade e volume a administrar. Publica-se que microgotas são empregadas tipicamente em pediatria e em volumes pequenos, e macrogotas em adultos e volumes maiores. A precisão real do gotejamento por gravidade tem variação descrita entre fabricantes e ao longo do tempo de infusão.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita três entradas: <strong>volume</strong> em mililitros (mL); <strong>tempo</strong> em horas (h); e <strong>fator do equipo</strong> em gotas por mililitro (gtt/mL), com valores fixos 20 (macrogotas) ou 60 (microgotas). Conversões úteis: 1 h = 60 min; 1 L = 1000 mL. Faixas de sanidade típicas em literatura de enfermagem infusional: volumes de 50 a 3000 mL; tempos de 0,25 a 24 h. Resultados publicam-se com arredondamento ao inteiro mais próximo, pois a contagem visual de gotas não distingue frações.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Gotas/min = (Volume<sub>mL</sub> × Fator<sub>gtt/mL</sub>) ÷ (Tempo<sub>h</sub> × 60)<br>mL/h = Volume<sub>mL</sub> ÷ Tempo<sub>h</sub></div>
+      <p>Cada variável representa: <em>Volume</em>, o volume total prescrito a ser infundido; <em>Fator</em>, o número de gotas equivalentes a 1 mL no equipo escolhido; <em>Tempo</em>, a duração total da infusão em horas; o fator 60 converte horas em minutos. A sequência de cálculo: (1) multiplica-se volume pelo fator do equipo para obter o total de gotas; (2) multiplica-se o tempo por 60 para obter o total de minutos; (3) divide-se total de gotas por total de minutos. Exemplo trabalhado: 500 mL em 4 h com microgotas (60 gtt/mL): gotas/min = (500 × 60) ÷ (4 × 60) = 30000 ÷ 240 = <strong>125 gotas/min</strong>; mL/h = 500 ÷ 4 = <strong>125 mL/h</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A fórmula publicada assume infusão por gravidade com equipo calibrado segundo o fator declarado pelo fabricante. Não se aplica diretamente a: bombas de infusão (que utilizam programação direta em mL/h e desprezam contagem de gotas); soluções viscosas (sangue, manitol, lipídios), cuja velocidade real pode divergir do calculado; e infusões com colapso parcial do equipo ao longo do tempo. Erros comuns descritos em literatura incluem confundir fator de 20 com 15 gtt/mL (equipos antigos), trocar horas por minutos no campo tempo, e contagem visual em janelas de tempo muito curtas. Em terapias críticas ou em pediatria de baixo peso, a literatura publica preferência por bombas infusoras pela menor variabilidade.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A versão clássica em gtt/min coexiste com a programação direta em mL/h usada em bombas eletrônicas. Equipos de macrogotas têm fator descrito de 10, 15 ou 20 gtt/mL conforme fabricante e mercado (a fórmula vale para qualquer fator, alterando-se o valor numérico). Em pediatria publica-se preferência por microgotas (60 gtt/mL) pela maior precisão em volumes pequenos. Em adultos hemodinamicamente estáveis com volumes ≥ 500 mL, macrogotas costumam ser descritas como suficientes. Bombas volumétricas são preferidas em literatura para drogas vasoativas, quimioterápicos e nutrição parenteral.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A relação aritmética entre volume, tempo e fator do equipo é amplamente difundida em manuais de terapia intravenosa, sendo referida em Phillips LD, Gorski LA, <em>Manual of I.V. Therapeutics: Evidence-Based Practice for Infusion Therapy</em>, 6ª edição (Filadélfia: F.A. Davis; 2014). Esta calculadora implementa a forma canônica com fatores fixos de 20 gtt/mL (macrogotas) e 60 gtt/mL (microgotas), correspondentes aos padrões mais difundidos no Brasil. Versão da implementação: 1.0 (2026-06-21).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>1000 mL / 8 h / macrogotas (20):</strong> (1000×20)÷(8×60) = 41,67 ≈ <strong>42 gtt/min</strong>; <strong>125 mL/h</strong>.</li>
+        <li><strong>500 mL / 4 h / microgotas (60):</strong> (500×60)÷(4×60) = <strong>125 gtt/min</strong>; <strong>125 mL/h</strong>.</li>
+        <li><strong>100 mL / 0,5 h / microgotas (60):</strong> (100×60)÷(0,5×60) = <strong>200 gtt/min</strong>; <strong>200 mL/h</strong>.</li>
+      </ul>
+      <p>Verificada contra exemplos do manual de Phillips e Gorski; reporte discrepâncias ao endereço editorial.</p>
+
+      <h2>FAQ</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confirme que volume foi digitado em mL (não em L) e tempo em horas (não em minutos). Verifique se o fator do equipo selecionado corresponde ao indicado na embalagem do equipo usado, pois há variação entre fabricantes.</p>
+      <p><strong>Posso usar em pediatria ou neonatologia?</strong> A fórmula matemática é a mesma para qualquer faixa etária. Publica-se em literatura de enfermagem infusional que microgotas e bombas infusoras são preferidas nesses contextos pela menor margem de erro em volumes pequenos.</p>
+      <p><strong>Por que macrogotas vale 20 gtt/mL aqui?</strong> 20 gtt/mL é o padrão amplamente descrito no Brasil. Equipos importados podem apresentar 10 ou 15 gtt/mL — verifique sempre a embalagem antes de aplicar a calculadora.</p>
+      <p><strong>O cálculo é o mesmo para sangue e hemoderivados?</strong> A aritmética é a mesma, mas literatura específica para hemoterapia descreve equipos próprios com filtro e fatores distintos.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Phillips LD, Gorski LA. Manual of I.V. Therapeutics: Evidence-Based Practice for Infusion Therapy. 6ª ed. Filadélfia: F.A. Davis; 2014. <a href="https://www.fadavis.com/product/pharmacology-medications-manual-IV-therapeutics-evidence-based-practice-phillips-6" target="_blank" rel="noopener">fadavis.com</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

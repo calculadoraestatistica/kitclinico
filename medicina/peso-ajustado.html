@@ -170,9 +170,43 @@
         <p>Nem toda situação usa peso ajustado. Sempre confira referências técnicas, protocolos institucionais e avaliação profissional antes de aplicar qualquer fórmula ao cuidado de uma pessoa.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura sobre peso ajustado descreve seu emprego principalmente em <strong>adultos obesos</strong> (frequentemente IMC ≥ 30 kg/m²) em contextos de farmacocinética e ajuste de dose. Pai (2012) revisa que o fator 0,4 foi proposto a partir de estudos com aminoglicosídeos em populações adultas de origem majoritariamente norte-americana e europeia, com casuísticas hospitalares.<sup><a href="#ref-1">1</a></sup> A literatura registra que o fator não foi sistematicamente validado em <strong>crianças, gestantes, idosos sarcopênicos, indivíduos com edema importante, amputados</strong> ou populações com composição corporal muito distinta da utilizada na derivação original. Publicações revisaram limites de extrapolação para faixas extremas de IMC.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza três entradas. <strong>Peso atual</strong> em quilogramas (kg); a literatura registra que 1 lb ≈ 0,4536 kg. Faixa razoável publicada: 20–300 kg. <strong>Altura</strong> em centímetros (cm); 1 in = 2,54 cm; 1 ft = 30,48 cm. Faixa razoável: 100–230 cm. <strong>Sexo</strong> biológico (masculino/feminino), entrada categórica usada apenas para estimar o peso ideal por Devine, conforme a fórmula original publicada.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Peso ideal (Devine, homens) = 50 + 2,3 × (altura<sub>in</sub> − 60)<br>Peso ideal (Devine, mulheres) = 45,5 + 2,3 × (altura<sub>in</sub> − 60)<br>Peso ajustado = Peso ideal + 0,4 × (Peso atual − Peso ideal)</div>
+      <p>A fórmula original calcula primeiro o peso ideal (PI) por Devine a partir da altura convertida para polegadas (altura<sub>cm</sub> ÷ 2,54). Em seguida aplica-se o fator de correção de 0,4 sobre a diferença entre peso atual (PA) e PI, somando-se ao PI. As variáveis representam: <em>PI</em> = peso ideal estimado para a estatura e sexo; <em>PA</em> = peso medido no momento; <em>0,4</em> = fator descrito na literatura como proporção de tecido metabolicamente ativo no excesso de massa. <strong>Exemplo trabalhado:</strong> homem, 170 cm, 110 kg. Altura<sub>in</sub> = 170 ÷ 2,54 ≈ 66,93. PI = 50 + 2,3 × (66,93 − 60) ≈ 50 + 15,94 ≈ 65,94 kg. Peso ajustado = 65,94 + 0,4 × (110 − 65,94) ≈ 65,94 + 17,62 ≈ <strong>83,6 kg</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>Publica-se que o peso ajustado não se aplica universalmente a todas as classes de fármacos. Pai (2012) descreve que o fator 0,4 derivou de estudos com aminoglicosídeos, e a literatura observa desempenho variável para fármacos hidrofílicos versus lipofílicos.<sup><a href="#ref-1">1</a></sup> Erros comuns de medida registrados incluem: confusão entre lb e kg, altura aferida com sapatos, e uso do peso ajustado quando o paciente apresenta IMC < 30 (cenário em que a literatura considera a fórmula sem ganho aritmético relevante). Em pacientes com <strong>ascite, edema generalizado, gestação ou amputações</strong>, a literatura registra que peso atual e ideal perdem comparabilidade direta. Para alguns fármacos, publicações descrevem preferência pelo peso magro (LBW) ou pelo peso corporal total, e não pelo peso ajustado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve <strong>fatores alternativos</strong>: 0,3 e 0,25, propostos em diferentes contextos terapêuticos.<sup><a href="#ref-1">1</a></sup> Concorrentes incluem o <strong>peso magro (Lean Body Weight, Janmahasatian 2005)</strong>, descrito como superior para vancomicina e alguns anestésicos; o <strong>peso corporal total</strong>, publicado como preferível para enoxaparina; e o próprio <strong>peso ideal (Devine)</strong>, utilizado em protocolos de ventilação mecânica protetora (ARDSNet). Pai (2012) tabula contextos em que cada estimativa de peso supera as demais, conforme o fármaco e a propriedade físico-química envolvida.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A combinação peso ideal + 0,4 × (peso atual − peso ideal) foi popularizada a partir de estudos farmacocinéticos com aminoglicosídeos nas décadas de 1980–1990. A revisão consolidada utilizada como referência editorial nesta página é Pai MP, <cite>Pharmacotherapy</cite> 2012;32(9):856-868, <a href="https://doi.org/10.1002/j.1875-9114.2012.01108.x" target="_blank" rel="noopener">doi:10.1002/j.1875-9114.2012.01108.x</a>. A página implementa a <strong>versão com fator 0,4</strong> e peso ideal estimado por Devine (1974).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados aritmeticamente contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> homem, 170 cm, 110 kg → PI ≈ 65,9 kg; peso ajustado ≈ <strong>83,6 kg</strong>.</li>
+        <li><strong>Caso 2:</strong> mulher, 160 cm, 95 kg → PI ≈ 52,5 kg; peso ajustado ≈ <strong>69,5 kg</strong>.</li>
+        <li><strong>Caso 3:</strong> homem, 180 cm, 120 kg → PI ≈ 75,1 kg; peso ajustado ≈ <strong>93,1 kg</strong>.</li>
+      </ul>
+      <p>Resultado verificado contra exemplos numéricos em Pai (2012); reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade do peso (kg, não lb) e da altura (cm, não in ou m), e confirme o sexo selecionado. A literatura registra que o peso ajustado sempre fica entre o peso ideal e o peso atual — valores fora dessa faixa indicam erro de entrada.</p>
+      <p><strong>Posso usar em crianças ou gestantes?</strong> A fórmula não foi validada nessas populações na literatura consultada. Pai (2012) descreve o uso em adultos obesos como o cenário de derivação principal.<sup><a href="#ref-1">1</a></sup></p>
+      <p><strong>Por que peso ajustado e não peso ideal ou peso atual?</strong> Publica-se que, para alguns fármacos hidrofílicos em obesos, o peso atual superestima a dose e o peso ideal subestima; o peso ajustado foi proposto como compromisso aritmético. A escolha do peso adequado depende do fármaco específico e está descrita em literatura farmacocinética.</p>
+      <p><strong>O fator é sempre 0,4?</strong> A literatura também registra os fatores 0,3 e 0,25 em contextos terapêuticos distintos.<sup><a href="#ref-1">1</a></sup> Esta calculadora implementa apenas o fator 0,4.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
-        <li>Pai MP. Drug dosing based on weight and body surface area: mathematical assumptions and limitations in obese adults. <cite>Pharmacotherapy</cite>. 2012;32(9):856-868. <a href="https://doi.org/10.1002/j.1875-9114.2012.01108.x" target="_blank" rel="noopener">doi:10.1002/j.1875-9114.2012.01108.x</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/22711238/" target="_blank" rel="noopener">PMID&nbsp;22711238</a>.</li>
+        <li id="ref-1">Pai MP. Drug dosing based on weight and body surface area: mathematical assumptions and limitations in obese adults. <cite>Pharmacotherapy</cite>. 2012;32(9):856-868. <a href="https://doi.org/10.1002/j.1875-9114.2012.01108.x" target="_blank" rel="noopener">doi:10.1002/j.1875-9114.2012.01108.x</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/22711238/" target="_blank" rel="noopener">PMID&nbsp;22711238</a>.</li>
       </ol>
 
       <div class="related">
@@ -182,6 +216,12 @@
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
           <a class="calc-card" href="/medicina/superficie-corporal.html"><h3>Superfície corporal</h3><p>Área de superfície corporal (BSA).</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

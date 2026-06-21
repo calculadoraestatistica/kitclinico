@@ -161,11 +161,45 @@
         <p>O escore apresenta uma estimativa de probabilidade baseada em critérios publicados; não confirma nem exclui a TVP. A conduta diagnóstica e terapêutica é exclusiva do médico assistente, que avalia o quadro clínico e os exames complementares pertinentes.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve a derivação original do escore por Wells et al. (1997) em coorte de 529 pacientes ambulatoriais com suspeita clínica de TVP em membros inferiores, avaliados em centros canadenses e norte-americanos, com mediana de idade próxima a 60 anos e distribuição equilibrada entre sexos. A revisão posterior (2003) ampliou a validação para 1.096 pacientes em 7 centros, novamente em contexto ambulatorial. Os autores reportam que o desempenho do escore não foi avaliado de forma equivalente em gestantes, pacientes hospitalizados, usuários de drogas injetáveis ou suspeita restrita a TVP de membro superior, populações descritas como limitações do instrumento.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Cada um dos 10 itens é uma variável categórica binária (presente ou ausente). Nove achados publicados somam +1 ponto cada quando presentes; o item "diagnóstico alternativo tão ou mais provável que a TVP" subtrai 2 pontos. A medida do edema da panturrilha pressupõe diferença maior que 3&nbsp;cm entre o lado sintomático e o assintomático, aferida 10&nbsp;cm abaixo da tuberosidade tibial. O escore total publicado varia de −2 a +9 pontos.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Escore de Wells (TVP) = Σ (achado<sub>i</sub> × 1) − 2 × (diagnóstico alternativo igualmente ou mais provável)</div>
+      <p>Em que cada achado<sub>i</sub> é 1 se presente e 0 se ausente, considerando: câncer ativo, paralisia/paresia/imobilização recente, acamado ≥3 dias ou cirurgia maior em 12 semanas, dor à palpação no trajeto venoso profundo, edema de toda a perna, edema da panturrilha &gt;3&nbsp;cm em relação ao lado contralateral, edema com cacifo restrito à perna sintomática, veias colaterais superficiais não varicosas e TVP prévia documentada. A sequência publicada consiste em marcar cada item, somar os positivos e subtrair 2 quando há diagnóstico alternativo. <strong>Exemplo trabalhado:</strong> paciente com câncer ativo (+1), dor no trajeto venoso (+1), edema de toda a perna (+1) e panturrilha 4&nbsp;cm maior que o lado oposto (+1), sem diagnóstico alternativo: 1+1+1+1 − 0 = <strong>4 pontos</strong>, classificados na versão original como alta probabilidade.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>Os autores descrevem que o escore foi derivado em ambulatório e que a aplicação em pacientes internados, gestantes ou com TVP recorrente sintomática não foi validada da mesma forma. Erros comuns de medida incluem aferir a panturrilha em alturas distintas entre os lados, classificar varizes como veias colaterais e considerar "diagnóstico alternativo" sem critério objetivo, fonte reconhecida de variabilidade interobservador. Wells et al. (2003) descrevem que, em pacientes com TVP prévia, a acurácia do escore isolado é menor e que a literatura recomenda combinação com D-dímero ou ultrassonografia conforme protocolo institucional. A pontuação não substitui exame de imagem nem dosagem de D-dímero como elementos do raciocínio publicado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve a versão modificada de Wells (2003) com dois níveis ("TVP provável" ≥2 vs. "TVP improvável" &lt;2) como alternativa à versão original de três níveis (1997). Outros instrumentos publicados para suspeita de TVP incluem o escore de Constans (escore primário para TVP de membro superior) e o algoritmo AMUSE/Oudega, derivado em atenção primária. Os autores descrevem o Wells modificado como ferramenta combinada a D-dímero em ambulatório e o Oudega como instrumento testado em atenção primária europeia.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O escore foi publicado originalmente por Wells PS, Anderson DR, Bormanis J et&nbsp;al. em <cite>The Lancet</cite> 1997;350(9094):1795-1798 (doi:10.1016/S0140-6736(97)08140-3). A revisão validada com D-dímero foi publicada por Wells PS, Anderson DR, Rodger M et&nbsp;al. no <cite>New England Journal of Medicine</cite> 2003;349(13):1227-1235 (doi:10.1056/NEJMoa023153). Esta página implementa os 10 critérios e os pontos descritos nessas publicações, com classificação em três níveis (baixa/moderada/alta) conforme a versão original.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenário 1 — apenas dor no trajeto venoso (+1) e edema de toda a perna (+1), sem demais achados: resultado esperado <strong>2 pontos</strong>, classificado pelos autores como probabilidade moderada. Cenário 2 — câncer ativo (+1), acamado ≥3 dias (+1), edema da panturrilha &gt;3&nbsp;cm (+1) e TVP prévia (+1): resultado esperado <strong>4 pontos</strong>, classificado como alta. Cenário 3 — dor no trajeto venoso (+1) com diagnóstico alternativo igualmente provável (−2): resultado esperado <strong>−1 ponto</strong>, classificado como baixa probabilidade. Estes cenários foram verificados contra exemplos numéricos descritos em Wells et al. (1997, 2003); reporte discrepâncias ao contato editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se cada achado foi marcado conforme a descrição publicada, em especial a aferição da panturrilha 10&nbsp;cm abaixo da tuberosidade tibial e a definição de "diagnóstico alternativo igualmente provável". Persistindo divergência com o cálculo manual, a interpretação assistencial pertence ao médico responsável.</p>
+      <p><strong>Posso usar em gestantes ou pacientes internados?</strong> A literatura descreve que o escore foi derivado e validado em pacientes ambulatoriais; o desempenho em gestantes, internados e em suspeita de TVP de membro superior não foi avaliado da mesma forma pelos autores originais.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> O escore de Wells é um dos mais publicados para estimativa de probabilidade pré-teste de TVP de membros inferiores em ambulatório. A versão modificada (dois níveis) e o algoritmo de Oudega aparecem na literatura como alternativas em cenários específicos descritos nas referências.</p>
+      <p><strong>O escore confirma ou exclui TVP?</strong> Os autores descrevem que o escore estima probabilidade clínica pré-teste e que a confirmação ou exclusão depende de exames complementares (D-dímero, ultrassonografia com Doppler) conforme protocolo institucional.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Wells PS, Anderson DR, Bormanis J, et al. Value of assessment of pretest probability of deep-vein thrombosis in clinical management. <cite>The Lancet</cite>. 1997;350(9094):1795-1798. <a href="https://doi.org/10.1016/S0140-6736(97)08140-3" target="_blank" rel="noopener">doi:10.1016/S0140-6736(97)08140-3</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/9428249/" target="_blank" rel="noopener">PMID&nbsp;9428249</a>.</li>
         <li>Wells PS, Anderson DR, Rodger M, et al. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis. <cite>New England Journal of Medicine</cite>. 2003;349(13):1227-1235. <a href="https://doi.org/10.1056/NEJMoa023153" target="_blank" rel="noopener">doi:10.1056/NEJMoa023153</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/14507948/" target="_blank" rel="noopener">PMID&nbsp;14507948</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

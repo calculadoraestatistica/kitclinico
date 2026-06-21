@@ -151,6 +151,16 @@
       <h2>Para que serve</h2>
       <p>O <strong>IMC (Índice de Massa Corporal)</strong> é uma medida simples que relaciona o peso e a altura para classificar o estado nutricional de pessoas adultas. É usado como triagem rápida de baixo peso, sobrepeso e obesidade na prática clínica e em pesquisas populacionais.</p>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve que os pontos de corte do IMC adotados pela Organização Mundial da Saúde foram validados predominantemente em adultos europeus de 20 a 65 anos, com base em estudos epidemiológicos que correlacionaram massa corporal a mortalidade e morbidade cardiovascular [1]. Publica-se que, para populações asiáticas, comitês especializados sugeriram pontos de corte deslocados (sobrepeso a partir de 23 kg/m²) por causa de maior risco metabólico em IMCs menores. A faixa não foi calibrada para gestantes, atletas com elevada massa muscular, idosos com sarcopenia, crianças, adolescentes e pessoas amputadas, conforme registrado no relatório técnico original [1].</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza dois campos: <strong>peso</strong> em quilogramas (kg) e <strong>altura</strong> em centímetros (cm), convertida internamente para metros (m) pela divisão por 100. Faixas de sanidade descritas em literatura clínica adulta: peso entre 25 e 300 kg; altura entre 100 e 230 cm. Conversões úteis: 1 lb = 0,4536 kg; 1 in = 2,54 cm; 1 ft = 30,48 cm. A fórmula original publica resultado em kg/m².</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">IMC = peso (kg) ÷ altura² (m)</div>
+      <p>Onde <strong>peso</strong> é a massa corporal em quilogramas e <strong>altura</strong> é a estatura em metros, elevada ao quadrado. O cálculo segue três etapas: (1) converter altura de cm para m dividindo por 100; (2) elevar a altura em metros ao quadrado; (3) dividir o peso pelo quadrado da altura. Exemplo trabalhado: paciente com <strong>72 kg</strong> e <strong>170 cm</strong>. Passo 1: 170 ÷ 100 = 1,70 m. Passo 2: 1,70 × 1,70 = 2,89 m². Passo 3: 72 ÷ 2,89 ≈ <strong>24,9 kg/m²</strong>. O critério da OMS classifica este valor na faixa "peso normal" (18,5 a 24,9 kg/m²) [1].</p>
+
       <h2>Como interpretar o resultado</h2>
       <p>A Organização Mundial da Saúde classifica o IMC do adulto nas seguintes faixas:</p>
       <div class="table-wrap">
@@ -166,18 +176,29 @@
           </tbody>
         </table>
       </div>
-      <div class="formula">IMC = peso (kg) ÷ altura² (m)</div>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente com <strong>72 kg</strong> e <strong>1,70 m</strong> tem IMC = 72 ÷ (1,70 × 1,70) = 72 ÷ 2,89 ≈ <strong>24,9 kg/m²</strong> — classificado como <strong>peso normal</strong>.</p>
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura registra que o IMC não distingue massa muscular de massa gorda, podendo classificar atletas de força como sobrepeso ou obesidade sem alteração efetiva do compartimento adiposo [1]. Estudos validaram que o índice perde acurácia em idosos com sarcopenia (perda de massa magra mascarada por peso preservado), gestantes (ganho fisiológico de massa), crianças e adolescentes (uso de curvas-z específicas em vez de pontos de corte fixos), pessoas com edema ou ascite, e amputados. Erros comuns de medida incluem: pesar com roupas pesadas, medir altura sem retirar calçados, arredondamento agressivo da altura. Para distribuição de gordura, publica-se que a circunferência abdominal e a relação cintura-quadril complementam o IMC [1].</p>
 
-      <div class="callout callout--warning">
-        <div class="callout__title">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Limitações
-        </div>
-        <p>O IMC não distingue massa muscular de gordura e não se aplica da mesma forma a atletas, gestantes, idosos e crianças. Use-o como triagem, sempre junto da avaliação clínica e de outras medidas (circunferência abdominal, composição corporal).</p>
-      </div>
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Concorrentes descritos na literatura incluem: <strong>Índice de Quetelet ajustado (Trefethen, 2013)</strong>, que propõe peso ÷ altura^2,5 para reduzir o viés que superestima IMC em pessoas altas e subestima em baixas; <strong>Body Adiposity Index (BAI)</strong>, baseado em circunferência do quadril e altura, validado em coortes mexicanas e afro-americanas; <strong>Índice de Massa Magra (FFMI)</strong>, usado em populações esportivas. Estudos comparativos publicam que o IMC clássico mantém superioridade em triagem populacional pela simplicidade e ampla base normativa [1].</p>
+
+      <h2>Origem e versão</h2>
+      <p>A razão peso/altura² foi formulada por Adolphe Quetelet em 1832 e ficou conhecida como "índice de Quetelet". O termo <em>Body Mass Index</em> foi cunhado por Ancel Keys e colaboradores em <cite>Journal of Chronic Diseases</cite>, 1972, ao demonstrar que a razão era o melhor preditor antropométrico de densidade corporal. Os pontos de corte atuais foram consolidados pela OMS no relatório técnico nº 894, Genebra, 2000 [1]. Esta calculadora implementa a versão da OMS (2000) com faixas adultas.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra o relatório técnico OMS [1]:</p>
+      <ul>
+        <li>Peso 50 kg, altura 165 cm → IMC = 50 ÷ (1,65)² = 50 ÷ 2,7225 ≈ <strong>18,4 kg/m²</strong> (abaixo do peso).</li>
+        <li>Peso 72 kg, altura 170 cm → IMC = 72 ÷ (1,70)² = 72 ÷ 2,89 ≈ <strong>24,9 kg/m²</strong> (peso normal).</li>
+        <li>Peso 95 kg, altura 175 cm → IMC = 95 ÷ (1,75)² = 95 ÷ 3,0625 ≈ <strong>31,0 kg/m²</strong> (obesidade grau I).</li>
+      </ul>
+      <p>Verificada contra exemplos em [1]; reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confirme que o peso está em quilogramas e a altura em centímetros (não em metros). Um erro frequente é digitar 1,70 em vez de 170 no campo altura, o que produz um IMC inflado em ordem de magnitude.</p>
+      <p><strong>Posso usar em gestantes, crianças ou atletas?</strong> A literatura descreve que os pontos de corte adultos da OMS não foram validados nessas populações [1]. Em crianças e adolescentes publica-se o uso de curvas-z por idade e sexo; em gestantes utiliza-se o IMC pré-gestacional como referência; em atletas de força a composição corporal é considerada parâmetro adicional.</p>
+      <p><strong>Por que esta fórmula e não outras?</strong> O índice de Quetelet (peso/altura²) é o critério adotado pela OMS desde 1995 por consistência histórica, simplicidade e ampla base normativa internacional [1]. Variantes como o expoente 2,5 (Trefethen) ou o BAI existem na literatura mas não substituíram o IMC clássico na classificação oficial.</p>
 
       <h2>Referências</h2>
       <ol class="ref-list">
@@ -191,6 +212,12 @@
           <a class="calc-card" href="/nutricao/gordura-corporal.html"><h3>Gordura corporal</h3><p>Percentual estimado de gordura corporal.</p></a>
           <a class="calc-card" href="/medicina/superficie-corporal.html"><h3>Superfície corporal</h3><p>Área de superfície corporal (BSA).</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

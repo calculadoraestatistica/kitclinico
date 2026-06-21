@@ -161,8 +161,42 @@
       <h2>Como interpretar o resultado</h2>
       <p>Cada fator vale 1 ou 2 pontos, num total de 0 a 9. Quanto maior o escore, maior o risco anual de AVC nas coortes publicadas. A decisão clínica não é definida por esta calculadora.</p>
 
-      <h2>Exemplo</h2>
-      <p>Uma mulher de 78 anos (2 pontos pela idade + 1 pelo sexo) com hipertensão (1) e diabetes (1) soma <strong>5 pontos</strong>, com risco anual de AVC em torno de 7%.</p>
+      <h2>População validada</h2>
+      <p>A literatura descreve que o CHA₂DS₂-VASc foi derivado por Lip e colaboradores a partir da coorte Euro Heart Survey on Atrial Fibrillation (n=1.084 pacientes com FA não valvar, multicêntrico europeu) e publicado em 2010 na <cite>Chest</cite> [1]. Estudos de validação posteriores aplicaram o escore em populações maiores, como a coorte sueca descrita por Friberg, Rosenqvist e Lip com 182.678 pacientes com FA [2]. Publica-se que o desempenho é melhor descrito em pacientes adultos com FA não valvar; a literatura registra limitação em FA valvar (estenose mitral reumática moderada/grave ou prótese mecânica), gestação e pacientes pediátricos, populações para as quais o escore não foi validado.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza idade (em anos completos; faixa razoável 18–110) e sexo biológico (Masculino/Feminino). As demais entradas são binárias (presente/ausente): insuficiência cardíaca/disfunção ventricular, hipertensão arterial, diabetes mellitus, AVC/AIT/tromboembolismo prévio e doença vascular (IAM, doença arterial periférica ou placa aórtica). Não há conversões de unidade. A idade é categorizada em três faixas (&lt;65, 65–74, ≥75) conforme o critério original.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula original soma pontos atribuídos a cada critério, segundo o acrônimo CHA₂DS₂-VASc:</p>
+      <div class="formula">
+        Escore = C (ICC, +1) + H (HAS, +1) + A₂ (Idade ≥75, +2) + D (DM, +1) + S₂ (AVC/AIT prévio, +2) + V (vascular, +1) + A (Idade 65–74, +1) + Sc (Sexo feminino, +1)
+      </div>
+      <p>Significado: o subscrito "2" indica os fatores que pontuam 2 (idade ≥75 anos e AVC/AIT prévio). O total varia de 0 a 9. <strong>Sequência:</strong> (1) classificar idade em &lt;65 (0), 65–74 (1) ou ≥75 (2); (2) somar 1 ponto se sexo feminino; (3) adicionar 1 ponto para cada comorbidade presente (ICC, HAS, DM, vascular); (4) somar 2 pontos se houver AVC/AIT/embolia prévia. <strong>Exemplo trabalhado:</strong> mulher de 78 anos, hipertensa, diabética — idade ≥75 (+2), sexo feminino (+1), HAS (+1), DM (+1), sem AVC prévio (0), sem doença vascular (0), sem ICC (0) → total = 2+1+1+1 = <strong>5 pontos</strong>; risco anual de AVC publicado em torno de 6,7% [2].</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o escore não foi validado em FA valvar (estenose mitral reumática moderada/grave ou prótese mecânica), nem em gestantes, crianças ou pacientes sem FA documentada. Erros comuns de aplicação incluem: classificar como "vascular" apenas com fatores de risco coronariano sem IAM, doença arterial periférica ou placa aórtica documentada; omitir o ponto adicional para sexo feminino quando presente; e contar AIT como AVC quando o critério original já considera ambos no mesmo item de 2 pontos. Publica-se que, em pacientes com escore 1 (homem) ou 2 (mulher) atribuíveis apenas ao sexo, a decisão terapêutica é mais incerta e a literatura sugere considerar escores complementares como o ABC-stroke ou o ATRIA [1,2].</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>O CHA₂DS₂-VASc sucedeu o <strong>CHADS₂</strong> (Gage et al., 2001), que não incluía os pontos para sexo feminino, idade 65–74 e doença vascular. Publica-se que o CHA₂DS₂-VASc é superior na identificação de pacientes de "baixo risco verdadeiro" (escore 0), reduzindo classificações falsamente baixas do CHADS₂. Estudos validaram também escores como <strong>ABC-stroke</strong> (Hijazi et al., 2016), baseado em biomarcadores (troponina, NT-proBNP), e <strong>ATRIA</strong> (Singer et al., 2013), descritos em coortes específicas. O CHA₂DS₂-VASc permanece como o escore mais amplamente referenciado em diretrizes internacionais para FA não valvar [1,2].</p>
+
+      <h2>Origem e versão</h2>
+      <p>O escore foi publicado originalmente por Lip GYH, Nieuwlaat R, Pisters R, Lane DA e Crijns HJGM em fevereiro de 2010 na revista <cite>Chest</cite> (vol. 137, n. 2, p. 263–272; DOI: 10.1378/chest.09-1584) [1]. Esta página implementa a versão original de 2010, com a categorização de idade em três faixas (&lt;65, 65–74, ≥75) e os percentuais anuais de AVC derivados da coorte de validação sueca descrita por Friberg, Rosenqvist e Lip em 2012 [2].</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra os exemplos publicados em [1] e [2]:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> homem de 60 anos, sem comorbidades → 0 pontos; risco anual publicado próximo de 0%.</li>
+        <li><strong>Caso 2:</strong> mulher de 70 anos com HAS e DM → 1 (sexo) + 1 (idade 65–74) + 1 (HAS) + 1 (DM) = <strong>4 pontos</strong>; risco anual publicado em torno de 4,0%.</li>
+        <li><strong>Caso 3:</strong> homem de 80 anos com ICC, HAS, DM e AVC prévio → 2 (idade) + 1 (ICC) + 1 (HAS) + 1 (DM) + 2 (AVC) = <strong>7 pontos</strong>; risco anual publicado em torno de 9,6%.</li>
+      </ul>
+      <p>Verificada contra exemplos em [1,2]; reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se a idade foi classificada na faixa correta (&lt;65, 65–74, ≥75) e se o sexo feminino acrescentou 1 ponto. Reconte manualmente usando a fórmula passo a passo. Discrepâncias persistentes podem ser reportadas pelo e-mail editorial.</p>
+      <p><strong>Posso usar em pacientes com FA valvar?</strong> A literatura descreve que o escore não foi validado em FA valvar (estenose mitral reumática moderada/grave ou prótese mecânica) [1]. Para essas populações, publicações de cardiologia descrevem critérios distintos.</p>
+      <p><strong>Por que esta fórmula e não o CHADS₂?</strong> Publica-se que o CHA₂DS₂-VASc melhora a identificação de pacientes de baixo risco verdadeiro e inclui fatores adicionais (sexo, idade intermediária, doença vascular) ausentes no CHADS₂ original [1].</p>
+      <p><strong>O risco anual exibido vale para qualquer paciente?</strong> Os percentuais foram derivados da coorte sueca descrita em [2] e refletem médias populacionais; o risco individual pode variar conforme outras características clínicas não capturadas pelo escore.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -185,6 +219,12 @@
           <a class="calc-card" href="/medicina/escore-wells-tvp.html"><h3>Escore de Wells (TVP)</h3><p>Probabilidade de trombose venosa.</p></a>
           <a class="calc-card" href="/medicina/qtc.html"><h3>Intervalo QTc</h3><p>QT corrigido pela frequência cardíaca.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

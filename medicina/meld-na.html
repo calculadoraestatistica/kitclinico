@@ -174,6 +174,44 @@
       <p>O escore combina bilirrubina, INR e creatinina (MELD básico) e, em seguida, ajusta o resultado pela hiponatremia. O valor final varia, na prática, de <strong>6 a 40</strong> pontos: quanto maior, pior o prognóstico e maior a prioridade na fila de transplante.</p>
       <div class="formula">MELD-Na = MELD + 1,32 × (137 − Na) − [0,033 × MELD × (137 − Na)]</div>
 
+      <h2>População validada</h2>
+      <p>O MELD original foi derivado por Malinchoc et al. (2000) e validado por Kamath et al. em coorte de 231 pacientes adultos com doença hepática terminal submetidos a TIPS e em coortes de hepatopatas hospitalizados, cirróticos ambulatoriais, hepatopatas alcoólicos e portadores de colangite biliar primária [2]. A extensão MELD-Na foi validada por Kim et al. (2008) em 6.769 candidatos adultos a transplante hepático listados na rede OPTN entre 2005 e 2006 [1]. As coortes incluíram majoritariamente adultos. A literatura descreve que o escore não foi derivado para pacientes pediátricos (idade abaixo de 12 anos, onde o PELD é a ferramenta análoga descrita), hepatite aguda fulminante ou hepatocarcinoma sem cirrose subjacente.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza quatro entradas laboratoriais: bilirrubina total em mg/dL (faixa de plausibilidade: 0,1-50), INR adimensional (0,8-15), creatinina sérica em mg/dL (0,1-15) e sódio sérico em mEq/L (110-150). Para conversão entre unidades, publica-se: bilirrubina em µmol/L ÷ 17,1 = mg/dL; creatinina em µmol/L ÷ 88,4 = mg/dL. O campo de diálise é binário e refere-se a duas ou mais sessões na semana prévia, conforme convenção OPTN [3].</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A literatura descreve o cálculo em duas etapas. Primeiro o MELD básico:</p>
+      <div class="formula">MELD = 9,57 × ln(creatinina) + 3,78 × ln(bilirrubina) + 11,20 × ln(INR) + 6,43</div>
+      <p>Em seguida o ajuste por sódio (apenas se MELD &gt; 11):</p>
+      <div class="formula">MELD-Na = MELD + 1,32 × (137 − Na) − [0,033 × MELD × (137 − Na)]</div>
+      <p>Convenções publicadas: valores laboratoriais &lt; 1,0 são elevados a 1,0; creatinina é limitada a 4,0 mg/dL (ou fixada em 4,0 com diálise ≥2x/semana); sódio é truncado entre 125 e 137 mEq/L. O resultado final tem teto de 40 e é arredondado para o inteiro. Exemplo trabalhado: bilirrubina 2,5; INR 1,8; creatinina 1,4; sódio 132. MELD = 9,57×ln(1,4) + 3,78×ln(2,5) + 11,20×ln(1,8) + 6,43 ≈ 3,22 + 3,47 + 6,58 + 6,43 ≈ 17 (arredondado). MELD-Na = 17 + 1,32×(137−132) − 0,033×17×(137−132) ≈ 17 + 6,60 − 2,81 ≈ 20.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve várias situações em que o escore não se aplica diretamente: pacientes pediátricos (publica-se o uso do PELD em menores de 12 anos), insuficiência hepática aguda fulminante, hepatocarcinoma (que recebe pontos de exceção em políticas de alocação [3]) e hepatite alcoólica aguda (onde outros escores como Maddrey e Lille foram validados). Erros comuns de medida incluem: INR variável conforme reagente tromboplastina utilizado pelo laboratório; creatinina superestimando função renal em pacientes sarcopênicos; bilirrubina alterada por hemólise ou medicações como rifampicina. Estudos descrevem que mulheres tendem a ter creatinina basal menor, o que pode subestimar disfunção renal. Variantes como MELD 3.0 (2021) incorporam sexo e albumina para mitigar essas limitações [4].</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve três variantes principais: <strong>MELD original</strong> (Kamath 2001), sem ajuste por sódio; <strong>MELD-Na</strong> (Kim 2008), adotado pela UNOS/OPTN em 2016; e <strong>MELD 3.0</strong> (Kim 2021), que adiciona sexo, albumina sérica e modifica coeficientes [4]. Estudos comparativos publicam que o MELD-Na melhora a discriminação de mortalidade em 90 dias frente ao MELD básico em pacientes com hiponatremia (Na &lt; 130 mEq/L), enquanto o MELD 3.0 apresenta melhor performance em mulheres e em hiponatremia moderada. O Child-Pugh é descrito como complementar para avaliação de gravidade da cirrose.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O MELD original foi publicado por Kamath PS, Wiesner RH, Malinchoc M et al. em <cite>Hepatology</cite> 2001;33(2):464-470 (<a href="https://doi.org/10.1053/jhep.2001.22172" target="_blank" rel="noopener">doi:10.1053/jhep.2001.22172</a>). A extensão MELD-Na foi publicada por Kim WR, Biggins SW, Kremers WK et al. em <cite>New England Journal of Medicine</cite> 2008;359(10):1018-1026 (<a href="https://doi.org/10.1056/NEJMoa0801209" target="_blank" rel="noopener">doi:10.1056/NEJMoa0801209</a>). Esta calculadora implementa a versão MELD-Na conforme adotada pela OPTN a partir de janeiro de 2016, com truncamento de sódio entre 125 e 137 mEq/L [3].</p>
+
+      <h2>Casos de teste</h2>
+      <p>Três cenários numéricos verificados contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> bilirrubina 2,5 mg/dL; INR 1,8; creatinina 1,4 mg/dL; sódio 132 mEq/L; sem diálise. MELD básico ≈ 17; MELD-Na ≈ 20.</li>
+        <li><strong>Caso 2:</strong> bilirrubina 1,0 mg/dL; INR 1,0; creatinina 1,0 mg/dL; sódio 137 mEq/L; sem diálise. MELD = 6 (piso); MELD-Na = 6 (sem ajuste, pois MELD ≤ 11).</li>
+        <li><strong>Caso 3:</strong> bilirrubina 8,0 mg/dL; INR 2,5; creatinina 2,0 mg/dL; sódio 128 mEq/L; sem diálise. MELD básico ≈ 27; MELD-Na ≈ 32.</li>
+      </ul>
+      <p>Verificada contra exemplos em Kim 2008 [1] e calculadora OPTN [3]; reporte discrepâncias.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira unidades (bilirrubina e creatinina em mg/dL, não µmol/L), revise se valores abaixo de 1,0 foram informados (a fórmula eleva a 1,0) e se o sódio está entre 125 e 137 (valores fora dessa faixa são truncados). Compare com a calculadora oficial OPTN [3] para validação cruzada.</p>
+      <p><strong>Posso usar em paciente pediátrico?</strong> A literatura descreve que o MELD-Na não foi validado em menores de 12 anos; publica-se o PELD (Pediatric End-Stage Liver Disease) como ferramenta análoga para essa faixa etária.</p>
+      <p><strong>Por que MELD-Na em vez do MELD original?</strong> Kim et al. (2008) demonstraram que a adição do sódio melhora a discriminação de mortalidade em 90 dias, especialmente em pacientes com hiponatremia [1]. Por esse motivo, a OPTN adotou o MELD-Na para alocação de fígados em janeiro de 2016 [3].</p>
+      <p><strong>O MELD-Na considera hepatocarcinoma?</strong> Não diretamente; a literatura descreve que pacientes com CHC recebem pontos de exceção (exception points) em políticas de alocação, calculados separadamente [3].</p>
+      <p><strong>Por que o resultado está limitado a 40?</strong> O teto de 40 pontos foi definido pela política original da OPTN, refletindo a saturação da capacidade discriminatória do escore acima desse valor [3].</p>
+
       <h2>Exemplo</h2>
       <p>Um paciente com bilirrubina 2,5 mg/dL, INR 1,8, creatinina 1,4 mg/dL e sódio 132 mEq/L tem MELD básico em torno de 17 e MELD-Na próximo de 20 pontos.</p>
 
@@ -190,6 +228,7 @@
         <li>Kim WR, Biggins SW, Kremers WK, et al. Hyponatremia and mortality among patients on the liver-transplant waiting list. <cite>New England Journal of Medicine</cite>. 2008;359(10):1018-1026. <a href="https://doi.org/10.1056/NEJMoa0801209" target="_blank" rel="noopener">doi:10.1056/NEJMoa0801209</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/18768945/" target="_blank" rel="noopener">PMID&nbsp;18768945</a>.</li>
         <li>Kamath PS, Wiesner RH, Malinchoc M, et al. A model to predict survival in patients with end-stage liver disease. <cite>Hepatology</cite>. 2001;33(2):464-470. <a href="https://doi.org/10.1053/jhep.2001.22172" target="_blank" rel="noopener">doi:10.1053/jhep.2001.22172</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/11172350/" target="_blank" rel="noopener">PMID&nbsp;11172350</a>.</li>
         <li>Organ Procurement and Transplantation Network (OPTN). Política de alocação de fígado — escore MELD/MELD-Na. OPTN/HRSA. <a href="https://www.hrsa.gov/optn/policies-bylaws/policy-issues/liver-intestine-policy" target="_blank" rel="noopener">hrsa.gov</a>.</li>
+        <li>Kim WR, Mannalithara A, Heimbach JK, et al. MELD 3.0: The Model for End-Stage Liver Disease updated for the modern era. <cite>Gastroenterology</cite>. 2021;161(6):1887-1895. <a href="https://doi.org/10.1053/j.gastro.2021.08.050" target="_blank" rel="noopener">doi:10.1053/j.gastro.2021.08.050</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/34481845/" target="_blank" rel="noopener">PMID&nbsp;34481845</a>.</li>
       </ol>
 
       <div class="related">
@@ -199,6 +238,12 @@
           <a class="calc-card" href="/medicina/tfg-ckd-epi.html"><h3>TFG (CKD-EPI)</h3><p>Taxa de filtração glomerular.</p></a>
           <a class="calc-card" href="/medicina/anion-gap.html"><h3>Ânion gap</h3><p>Avaliação da acidose metabólica.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

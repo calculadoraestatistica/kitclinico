@@ -159,10 +159,51 @@
         <p>Filhotes, fêmeas em lactação, calor intenso, atividade física e diversas doenças alteram bastante a necessidade de água. Mudanças marcantes no consumo, para mais ou para menos, devem ser avaliadas por um médico-veterinário.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A estimativa de manutenção hídrica em torno de <strong>50-60 mL/kg/dia</strong> foi descrita pelas diretrizes 2013 AAHA/AAFP para cães e gatos adultos clinicamente estáveis, em condições ambientais usuais e dieta padrão. A literatura veterinária descreve que filhotes apresentam necessidade proporcional maior (próximo de 70-90 mL/kg/dia), fêmeas em lactação aumentam a demanda hídrica conforme produção de leite e animais geriátricos ou com doença renal crônica frequentemente saem da faixa. A fórmula não foi validada para répteis, aves, exóticos, neonatos com menos de 4 semanas, nem para uso em fluidoterapia parenteral hospitalar — para esses cenários a literatura descreve cálculos específicos por superfície corporal ou metabólicos.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita um único parâmetro: <strong>peso corporal em quilogramas (kg)</strong>, com casas decimais permitidas (ex.: 3,5 kg). Faixa de sanidade tipicamente usada na clínica de pequenos animais: 0,5 kg a 90 kg. Para peso medido em gramas, divida por 1000 antes da entrada. A saída é apresentada em mililitros por dia (mL/dia) e convertida para litros (L/dia) dividindo por 1000. A conversão para xícaras americanas (~240 mL) é aproximada e usada apenas para comunicação com o tutor.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula simplificada implementada nesta página usa coeficiente linear baseado no peso, conforme descrito em literatura veterinária para manutenção em condições basais.</p>
+      <div class="formula">Água (mL/dia) = Peso (kg) × 60</div>
+      <p>Onde <strong>Peso</strong> é o peso corporal atual do animal em quilogramas e <strong>60</strong> é o coeficiente em mL/kg/dia descrito como limite superior da faixa de manutenção (50-60 mL/kg/dia) para cães e gatos adultos. Sequência de cálculo: (1) coletar peso aferido em balança; (2) multiplicar por 60; (3) converter para litros dividindo por 1000. <strong>Exemplo trabalhado:</strong> cão adulto saudável de 12 kg → 12 × 60 = <strong>720 mL/dia</strong> → 720 ÷ 1000 = <strong>0,72 L/dia</strong>. Para um gato de 4,5 kg → 4,5 × 60 = <strong>270 mL/dia</strong> → 0,27 L/dia.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A fórmula linear superestima necessidades em animais de porte muito grande (acima de 40 kg) e subestima em pacientes muito pequenos ou neonatos, segundo descrito nas diretrizes AAHA/AAFP. Não se aplica a animais com perdas patológicas em curso (vômito, diarreia, poliúria), febre, queimaduras, drenagem por dreno torácico ou em ambiente extremamente quente, situações em que a literatura descreve uso de fórmulas alométricas ou monitoramento por balanço hídrico. Erros comuns: usar peso ideal em vez de peso atual; aplicar em filhotes lactentes; extrapolar para coelhos, hamsters ou aves (que têm necessidades diferentes). A literatura veterinária descreve que em pacientes hospitalizados ou com doença sistêmica o cálculo de manutenção é tradicionalmente feito por equações metabólicas (ver seção seguinte).</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura veterinária descreve diversas equações para manutenção hídrica: (1) <strong>Linear simples</strong> (50-60 mL/kg/dia) — usada nesta calculadora, prática e adequada para tutor em casa. (2) <strong>Alométrica metabólica</strong>: Água (mL/dia) = 70 × Peso(kg)^0,75 — descrita como mais acurada em pacientes pediátricos, geriátricos e de portes extremos. (3) <strong>Regra "1 mL por kcal"</strong> — usada quando a necessidade energética de manutenção (RER/MER) já foi calculada. Em ambiente hospitalar e fluidoterapia, a fórmula alométrica é descrita como preferida; para orientação ao tutor, a linear é a mais difundida.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A faixa de manutenção de 50-60 mL/kg/dia para cães e gatos é descrita nas <em>2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats</em> (Davis H, Jensen T, Johnson A, et al.), publicadas no <cite>Journal of the American Animal Hospital Association</cite> 2013;49(3):149-159 (DOI 10.5326/JAAHA-MS-5868). Esta calculadora implementa a <strong>versão linear com coeficiente 60 mL/kg/dia</strong>, correspondente ao limite superior dessa faixa, conforme adotado por materiais educativos veterinários em português.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>Gato de 4 kg:</strong> 4 × 60 = <strong>240 mL/dia</strong> (0,24 L).</li>
+        <li><strong>Cão pequeno de 10 kg:</strong> 10 × 60 = <strong>600 mL/dia</strong> (0,60 L).</li>
+        <li><strong>Cão grande de 35 kg:</strong> 35 × 60 = <strong>2100 mL/dia</strong> (2,10 L).</li>
+      </ul>
+      <p>Cálculo verificado contra exemplos descritos nas diretrizes AAHA/AAFP 2013; reporte discrepâncias por e-mail.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se o peso foi inserido em kg (não gramas) e se a balança está calibrada. Para pets muito grandes ou muito pequenos, a literatura descreve a fórmula alométrica (70 × Peso^0,75) como mais precisa.</p>
+      <p><strong>Posso usar em filhotes, fêmeas lactantes ou animais doentes?</strong> A faixa 50-60 mL/kg/dia foi descrita para adultos saudáveis em condições basais. Para filhotes, lactantes, pacientes febris ou com perdas patológicas, as diretrizes AAHA/AAFP descrevem ajustes específicos que dependem de avaliação clínica por médico-veterinário.</p>
+      <p><strong>Posso usar em coelhos, aves ou répteis?</strong> Não. A fórmula foi descrita apenas para cães e gatos. Coelhos publicam-se valores próximos de 100 mL/kg/dia e aves/répteis têm equações alométricas próprias.</p>
+      <p><strong>Por que esta fórmula e não a alométrica?</strong> A versão linear é descrita como mais simples para comunicação com o tutor; a alométrica (Pˆ0,75) é descrita como mais acurada em ambiente hospitalar e em portes extremos.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. <cite>Journal of the American Animal Hospital Association</cite>. 2013;49(3):149-159. <a href="https://doi.org/10.5326/JAAHA-MS-5868" target="_blank" rel="noopener">doi:10.5326/JAAHA-MS-5868</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/23645543/" target="_blank" rel="noopener">PMID&nbsp;23645543</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

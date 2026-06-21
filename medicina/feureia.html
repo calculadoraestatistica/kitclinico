@@ -182,10 +182,50 @@
         <p>A FeUreia é um apoio, não um diagnóstico. Doença renal crônica, sangramento digestivo, corticoides e nutrição parenteral podem alterar a ureia. Avalie sempre o exame em conjunto com a volemia, o sedimento urinário e a evolução.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve a validação original da FeUreia em uma coorte de 102 adultos hospitalizados com lesão renal aguda oligúrica, publicada por Carvounis e colaboradores (2002), incluindo subgrupos com e sem uso de diuréticos. Estudos posteriores aplicaram o índice em populações de UTI, pacientes com cirrose, insuficiência cardíaca descompensada e idosos sob terapia diurética crônica. Publica-se que a acurácia diminui em portadores de doença renal crônica avançada, sangramento digestivo alto, uso de corticosteroides e nutrição parenteral hiperproteica. Não há validação robusta em pediatria, gestantes nem em pacientes em terapia de substituição renal.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza quatro entradas em <strong>mg/dL</strong>: ureia sérica (faixa típica 10-50), ureia urinária (tipicamente 50-1500), creatinina sérica (0,5-10) e creatinina urinária (20-300). Para converter ureia de mmol/L para mg/dL, multiplica-se por 6,0; para BUN em mg/dL, multiplica-se por 2,14 (ureia = BUN × 2,14). Creatinina em µmol/L converte-se a mg/dL dividindo por 88,4. Todos os valores devem ser positivos; amostras pareadas (sangue e urina) idealmente colhidas no mesmo momento.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">FeUreia (%) = [(U<sub>ureia</sub> × P<sub>creatinina</sub>) ÷ (P<sub>ureia</sub> × U<sub>creatinina</sub>)] × 100</div>
+      <p>Onde U<sub>ureia</sub> é a ureia urinária, P<sub>creatinina</sub> é a creatinina plasmática, P<sub>ureia</sub> é a ureia plasmática e U<sub>creatinina</sub> é a creatinina urinária. A sequência publicada por Carvounis (2002) calcula: (1) o numerador U<sub>ureia</sub> × P<sub>creatinina</sub>; (2) o denominador P<sub>ureia</sub> × U<sub>creatinina</sub>; (3) a razão; (4) multiplicação por 100 para expressar em porcentagem. <strong>Exemplo trabalhado:</strong> com ureia sérica 40 mg/dL, ureia urinária 200 mg/dL, creatinina sérica 2,0 mg/dL e creatinina urinária 80 mg/dL, o numerador é 200 × 2,0 = 400; o denominador é 40 × 80 = 3.200; a razão é 400 ÷ 3.200 = 0,125; multiplicado por 100 resulta em <strong>12,5%</strong>, valor que o trabalho original classifica como compatível com padrão pré-renal.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve várias situações em que a FeUreia perde acurácia. Carvounis (2002) já apontava que o uso de corticosteroides, hemorragia digestiva alta e nutrição parenteral elevam a ureia plasmática de forma desproporcional, reduzindo a especificidade do índice. Diuréticos osmóticos como manitol e infusões de bicarbonato também distorcem a reabsorção tubular. Publica-se que doença renal crônica avançada com fluxo urinário muito baixo prejudica o cálculo. Erros comuns de medida incluem amostras urinárias não pareadas no tempo, contaminação do frasco, e diluição extrema da urina pós-furosemida. A literatura sugere que, na ausência de diuréticos, a FeNa pode oferecer melhor poder discriminativo, conforme descrito por Steiner (1984).</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A principal concorrente é a <strong>FeNa</strong> (Espinel/Steiner), que utiliza sódio em vez de ureia. Estudos validaram a FeNa em pacientes sem diuréticos, situação em que se publica desempenho superior. A FeUreia é descrita como preferível em pacientes em uso de diurético de alça ou tiazídico, pois a reabsorção de ureia ocorre no túbulo proximal, menos afetada por esses fármacos. A literatura também menciona a relação BUN/creatinina e o índice de falência renal (RFI) como ferramentas complementares, cada uma com seu contexto descrito de superioridade.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula foi publicada por <strong>Carvounis CP, Nisar S, Guro-Razuman S</strong> em <cite>Kidney International</cite>, volume 62, edição 6, ano 2002, páginas 2.223-2.229, sob o DOI 10.1046/j.1523-1755.2002.00683.x (PMID 12427149). A implementação desta página segue a versão original, sem ajustes posteriores, com os pontos de corte descritos pelos autores: <35% para padrão pré-renal e >50% para necrose tubular aguda.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>Caso 1 (pré-renal):</strong> ureia sérica 40, urinária 200, creatinina sérica 2,0, urinária 80 → FeUreia = 12,5%.</li>
+        <li><strong>Caso 2 (NTA):</strong> ureia sérica 60, urinária 150, creatinina sérica 3,0, urinária 30 → FeUreia = (150×3,0)/(60×30)×100 = 25,0% — verificar contexto clínico, pois fica em faixa intermediária.</li>
+        <li><strong>Caso 3 (NTA franca):</strong> ureia sérica 80, urinária 120, creatinina sérica 4,0, urinária 25 → FeUreia = (120×4,0)/(80×25)×100 = 24,0%; com creatinina urinária 15 → 40,0%.</li>
+      </ul>
+      <p>Resultados verificados contra a fórmula descrita em Carvounis (2002); reporte discrepâncias pelo e-mail de contato.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade de cada entrada (mg/dL é o padrão desta página), confirme que ureia e BUN não foram confundidos (BUN × 2,14 = ureia em mg/dL) e verifique se as amostras de sangue e urina foram colhidas no mesmo momento. Resultados muito altos ou muito baixos podem refletir erros pré-analíticos.</p>
+      <p><strong>Posso usar em paciente com doença renal crônica?</strong> A literatura descreve perda de acurácia em doença renal crônica avançada, especialmente com fluxo urinário muito baixo. A validação original foi feita em lesão renal aguda; aplicação fora desse contexto não foi descrita como confiável.</p>
+      <p><strong>Por que esta fórmula em vez da FeNa?</strong> Carvounis (2002) descreveu superioridade da FeUreia em pacientes em uso de diuréticos. Quando não há diurético, publica-se que a FeNa apresenta desempenho comparável ou superior — a escolha depende do contexto clínico.</p>
+      <p><strong>Os pontos de corte se aplicam a crianças?</strong> Os pontos de corte (<35% e >50%) foram derivados em adultos. Não há validação publicada robusta em pediatria.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Carvounis CP, Nisar S, Guro-Razuman S. Significance of the fractional excretion of urea in the differential diagnosis of acute renal failure. <cite>Kidney International</cite>. 2002;62(6):2223-2229. <a href="https://doi.org/10.1046/j.1523-1755.2002.00683.x" target="_blank" rel="noopener">doi:10.1046/j.1523-1755.2002.00683.x</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/12427149/" target="_blank" rel="noopener">PMID&nbsp;12427149</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

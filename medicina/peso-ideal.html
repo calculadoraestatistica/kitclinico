@@ -164,11 +164,46 @@
         <p>A fórmula de Devine considera apenas altura e sexo e perde precisão em pessoas muito baixas, muito altas ou com composição corporal atípica. Em pacientes obesos, o peso ajustado pode ser apresentado como referência antropométrica complementar.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve que a fórmula original de Devine [1] foi publicada em 1974 no contexto do cálculo de dose de gentamicina em adultos, sem coorte populacional formal de derivação. Pai e Paloucek [2] documentaram que as equações de "peso ideal corporal" amplamente difundidas em farmácia clínica derivam de tabelas atuariais norte-americanas para adultos entre 152 cm e 198 cm de altura. Publica-se que a aplicação em crianças, adolescentes, gestantes, pacientes com amputações, distúrbios musculoesqueléticos ou composição corporal extrema apresenta limitações reconhecidas, sem validação prospectiva em populações asiáticas, africanas ou sul-americanas.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita <strong>altura em centímetros</strong> (faixa fisiológica plausível para adultos: 130–220 cm) e <strong>sexo biológico</strong> categórico (masculino/feminino). A fórmula original opera em polegadas; a conversão aplicada internamente é altura (pol) = altura (cm) ÷ 2,54. Conversões adicionais comuns: 1 pé = 12 polegadas = 30,48 cm; 1 kg = 2,2046 lb. Valores fora da faixa de altura de derivação retornam estimativas extrapoladas.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Peso ideal (Devine) = base + 2,3 × (altura<sub>polegadas</sub> − 60)</div>
+      <p>Onde <em>base</em> = 50 kg para sexo masculino e 45,5 kg para sexo feminino; <em>altura<sub>polegadas</sub></em> é a estatura convertida de centímetros para polegadas (cm ÷ 2,54); o coeficiente <em>2,3</em> representa o incremento de peso publicado por polegada acima dos 60 polegadas de altura (≈ 152 cm). Sequência: (1) converter altura de cm para polegadas; (2) subtrair 60; (3) multiplicar por 2,3; (4) somar a base correspondente ao sexo.</p>
+      <p><strong>Exemplo trabalhado:</strong> mulher de 162 cm. Passo 1: 162 ÷ 2,54 = 63,78 polegadas. Passo 2: 63,78 − 60 = 3,78. Passo 3: 3,78 × 2,3 = 8,69 kg. Passo 4: 45,5 + 8,69 = <strong>54,2 kg</strong> de peso ideal estimado.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura registra que a fórmula de Devine [1,2]: (i) não se aplica a indivíduos com altura inferior a 60 polegadas (≈ 152 cm), onde o termo do incremento se torna negativo e a estimativa perde sentido fisiológico; (ii) não considera composição corporal, massa muscular, etnia nem distribuição de gordura; (iii) tende a subestimar o peso em atletas e indivíduos muito musculosos; (iv) tende a divergir do peso saudável em pacientes com obesidade, situação em que se publica o uso do peso ajustado como referência complementar. Erros comuns de medida incluem altura aferida com calçado, postura incorreta e uso de altura autorrelatada, que em estudos populacionais é tipicamente superestimada em adultos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Publica-se que outras equações antropométricas concorrem com a de Devine [2]: <strong>Robinson</strong> (1983) e <strong>Miller</strong> (1983), com bases e coeficientes ligeiramente menores, descritas como mais conservadoras em alturas maiores; <strong>Hamwi</strong> (1964), de uso histórico em diabetologia. Estudos descritivos indicam que Devine e Robinson tendem a convergir entre 165–185 cm de altura, divergindo nas extremidades. A escolha entre fórmulas é apresentada na literatura conforme o contexto clínico de aplicação (dosagem de fármacos, ventilação mecânica, antropometria geral).</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação foi publicada por Ben J. Devine em 1974 no periódico <cite>Drug Intelligence &amp; Clinical Pharmacy</cite>, volume 8, número 11, páginas 650–655 [1], como ferramenta auxiliar para o cálculo de dose de gentamicina. A revisão histórica de Pai e Paloucek (2000), <a href="https://doi.org/10.1345/aph.19381" target="_blank" rel="noopener">doi:10.1345/aph.19381</a> [2], documenta a origem das equações de "peso ideal". Esta calculadora implementa a forma original de Devine de 1974, com entrada de altura em centímetros e conversão interna para polegadas.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada [1]: (1) homem de 175 cm → 175 ÷ 2,54 = 68,90 pol; 50 + 2,3 × (68,90 − 60) = <strong>70,5 kg</strong>; (2) mulher de 162 cm → 63,78 pol; 45,5 + 2,3 × 3,78 = <strong>54,2 kg</strong>; (3) homem de 180 cm → 70,87 pol; 50 + 2,3 × 10,87 = <strong>75,0 kg</strong>. Os valores foram conferidos contra exemplos descritos em [2]; reporte discrepâncias via e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade da altura (cm, não metros nem polegadas) e o sexo selecionado. Para alturas abaixo de 152 cm a fórmula original não foi derivada e a estimativa pode parecer baixa ou negativa.</p>
+      <p><strong>Posso usar em crianças e adolescentes?</strong> A literatura descreve que a fórmula de Devine foi proposta para adultos; para faixa pediátrica publicam-se equações específicas baseadas em idade, altura e percentis de crescimento.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> A equação de Devine é a referência historicamente mais citada em farmácia clínica e em ajustes de dose de aminoglicosídeos [1,2]. Robinson, Miller e Hamwi são alternativas com perfis ligeiramente distintos descritos na revisão de Pai e Paloucek.</p>
+      <p><strong>O peso ideal é uma meta de emagrecimento?</strong> Publica-se que se trata de uma referência antropométrica obtida apenas de altura e sexo, sem considerar composição corporal, idade ou condição de saúde. Não corresponde, na literatura, a uma meta individual de peso.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Devine BJ. Gentamicin therapy. <cite>Drug Intelligence &amp; Clinical Pharmacy</cite>. 1974;8(11):650-655.</li>
         <li>Pai MP, Paloucek FP. The origin of the "ideal" body weight equations. <cite>Annals of Pharmacotherapy</cite>. 2000;34(9):1066-1069. <a href="https://doi.org/10.1345/aph.19381" target="_blank" rel="noopener">doi:10.1345/aph.19381</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/10981254/" target="_blank" rel="noopener">PMID&nbsp;10981254</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

@@ -189,6 +189,46 @@
         <p>O Apgar descreve a condição do recém-nascido, mas decisões assistenciais dependem da avaliação imediata da respiração, da frequência cardíaca, do tônus e do protocolo clínico aplicável.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A proposta original de Apgar (1953) descreveu o sistema em uma série de 1.025 recém-nascidos avaliados na Sala de Parto do Sloane Hospital for Women, em Nova York, incluindo neonatos a termo e pré-termo de ambos os sexos. A literatura posterior aplicou o índice a populações neonatais amplas em diferentes países e etnias. A reafirmação publicada pela American Academy of Pediatrics e pelo American College of Obstetricians and Gynecologists (2015) descreve limitações em recém-nascidos pré-termo, sob anestesia materna, com malformações cardiopulmonares ou neurológicas, em que componentes como tônus e irritabilidade reflexa publicam-se como influenciados pela maturidade e não exclusivamente pela vitalidade.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Cada um dos cinco sinais é uma variável categórica ordinal pontuada em <strong>0, 1 ou 2</strong>, sem unidade física. O componente <em>pulso</em> usa o ponto de corte de 100 bpm (batimentos por minuto). Os demais componentes (aparência, gesticulação, atividade, respiração) são observacionais e descritos por categorias clínicas. Sanity range: cada campo aceita apenas {0, 1, 2}; o total resultante está restrito ao intervalo inteiro [0, 10]. Não há conversões de unidade aplicáveis ao escore.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Apgar = Aparência + Pulso + Gesticulação + Atividade + Respiração</div>
+      <p>Variáveis: <strong>Aparência</strong> (cor da pele), <strong>Pulso</strong> (frequência cardíaca), <strong>Gesticulação</strong> (irritabilidade reflexa), <strong>Atividade</strong> (tônus muscular) e <strong>Respiração</strong> (esforço respiratório). A sequência descrita por Apgar (1953) compreende: (1) observar cada um dos cinco sinais ao 1º minuto completo após o nascimento; (2) atribuir 0, 1 ou 2 a cada sinal conforme a categoria observada; (3) somar os cinco valores; (4) repetir o procedimento ao 5º minuto e, conforme a literatura, a cada 5 minutos até os 20 minutos se o escore permanecer abaixo de 7.</p>
+      <p>Exemplo trabalhado: recém-nascido com corpo rosado e extremidades cianóticas → Aparência = 1; frequência cardíaca de 140 bpm → Pulso = 2; choro vigoroso → Gesticulação = 2; movimentos ativos → Atividade = 2; choro forte → Respiração = 2. Substituindo: 1 + 2 + 2 + 2 + 2 = <strong>9</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A própria reafirmação da American Academy of Pediatrics (2015) publica que o índice de Apgar não é apropriado para definir asfixia perinatal, para predizer isoladamente desfecho neurológico de longo prazo ou para orientar a sequência de reanimação. Erros comuns de aplicação descritos na literatura incluem: pontuar antes de 1 minuto completo, aplicar o escore em recém-nascidos sob ventilação assistida sem registrar essa condição, confundir tônus reduzido por prematuridade com vitalidade deprimida, e considerar palidez por anemia como cianose. A literatura também descreve variabilidade interobservador entre componentes subjetivos (cor, tônus, irritabilidade reflexa). Em pré-termos extremos, componentes neurológicos publicam-se como dependentes da idade gestacional.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve o <strong>Apgar expandido</strong> (Expanded Apgar Score Reporting Form), formulado pela American Academy of Pediatrics, que registra simultaneamente o escore convencional e as intervenções de suporte em curso (oxigênio suplementar, ventilação com pressão positiva, intubação, compressões torácicas, medicações) a cada intervalo de avaliação. A reafirmação de 2015 publica que essa forma expandida é descritivamente superior em recém-nascidos que recebem reanimação, pois separa a vitalidade observada do contexto assistencial. O escore clássico de 0 a 10, sem campos de intervenção, segue sendo a forma original descrita por Apgar (1953).</p>
+
+      <h2>Origem e versão</h2>
+      <p>O índice foi publicado pela anestesiologista <strong>Virginia Apgar</strong> em 1953 no periódico <cite>Current Researches in Anesthesia &amp; Analgesia</cite>, volume 32, número 4, páginas 260–267 (PMID 13083014). A reafirmação contemporânea está publicada em <cite>Pediatrics</cite>, 2015;136(4):819-822 (doi:10.1542/peds.2015-2651). Esta página implementa a versão clássica de 5 sinais × 3 níveis (0/1/2), com soma simples no intervalo [0, 10], conforme descrita no artigo original de 1953.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a descrição original e a reafirmação de 2015:</p>
+      <ul>
+        <li><strong>Caso A</strong> — Aparência 2, Pulso 2, Gesticulação 2, Atividade 2, Respiração 2 → total <strong>10</strong>.</li>
+        <li><strong>Caso B</strong> — Aparência 1, Pulso 2, Gesticulação 2, Atividade 2, Respiração 2 → total <strong>9</strong>.</li>
+        <li><strong>Caso C</strong> — Aparência 0, Pulso 1, Gesticulação 0, Atividade 0, Respiração 0 → total <strong>1</strong>.</li>
+      </ul>
+      <p>Verificada contra os exemplos descritos em Apgar (1953) e na reafirmação AAP (2015); reporte discrepâncias pelo e-mail editorial abaixo.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Reverifique cada uma das cinco categorias selecionadas; o total é uma soma simples de cinco valores em {0, 1, 2}. Diferenças entre observadores publicam-se como mais frequentes nos componentes cor, tônus e irritabilidade reflexa.</p>
+      <p><strong>Posso usar em recém-nascido pré-termo?</strong> A literatura (AAP, 2015) publica que o índice foi aplicado em pré-termos, mas que componentes neurológicos podem estar diminuídos por imaturidade, e não por vitalidade deprimida. A forma expandida descreve adicionalmente as intervenções em curso.</p>
+      <p><strong>Por que esta fórmula em vez de outra?</strong> O escore clássico de Apgar (1953) é o instrumento descrito na literatura para avaliação observacional sumária. O Apgar expandido publica-se como complementar quando há reanimação em curso, pois separa o que foi observado do suporte aplicado.</p>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Apgar V. A proposal for a new method of evaluation of the newborn infant. <cite>Current Researches in Anesthesia &amp; Analgesia</cite>. 1953;32(4):260-267. <a href="https://pubmed.ncbi.nlm.nih.gov/13083014/" target="_blank" rel="noopener">PMID&nbsp;13083014</a>.</li>
@@ -324,7 +364,7 @@
       '<div class="result__sub">Índice de Apgar</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.int(r.total) + ' <small>de 10 pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.interpretacao + '.</strong> ' + (r.total <= 6 ? 'Pontuação de 6 ou menos pede atenção e reavaliação — mas a reanimação, quando indicada, não deve esperar pelo cálculo do índice.' : 'Repita a avaliação no 1º, no 5º e, se necessário, no 10º minuto de vida.')) + '</p></div>';
+    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.interpretacao + '.</strong> ' + (r.total <= 6 ? 'Pontuação de 6 ou menos é descrita pela literatura como ponto de atenção e reavaliação. A literatura também descreve que o início de manobras de reanimação não deve depender do cálculo do índice. A conduta clínica é exclusiva do médico assistente.' : 'A literatura descreve reavaliação no 1º, 5º e, se necessário, 10º minuto de vida.')) + '</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

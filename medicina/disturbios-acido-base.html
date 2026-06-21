@@ -182,10 +182,51 @@
       <h2>Como ler a tabela</h2>
       <p>Na literatura, o <strong>ânion gap</strong> classifica os padrões de acidose metabólica em "com gap aumentado" (mnemônico MUDPILES) e "sem gap aumentado" (perda de bicarbonato). O <strong>sódio corrigido</strong> ajusta a natremia na presença de hiperglicemia (sódio cai ~1,6 a 2,4 mEq/L para cada 100 mg/dL de glicose acima de 100). A <strong>osmolaridade calculada</strong>, comparada com a medida, define o <strong>gap osmolar</strong>: valores &gt; 10 mOsm/kg estão descritos em presença de metanol, etilenoglicol ou manitol no soro.</p>
       <p>A página apenas reproduz a tabela interpretativa publicada e o cálculo dos índices. <strong>Diagnóstico clínico definitivo, hipóteses etiológicas e aplicação prática são responsabilidade exclusiva do médico assistente.</strong></p>
+
+      <h2>População validada</h2>
+      <p>A abordagem fisiológica de Henderson-Hasselbalch foi descrita inicialmente em adultos hospitalizados; a revisão de Berend et al. (NEJM 2014) compila séries em pacientes adultos de unidades de emergência e terapia intensiva, sem estratificação por sexo ou etnia. A correção do ânion gap pela albumina foi validada por Figge et al. em coortes de UTI (n &gt; 150). Publica-se que faixas de referência podem variar em gestantes (alcalose respiratória basal descrita), em crianças pequenas (bicarbonato basal mais baixo) e em pacientes em hemodiálise, contextos em que a literatura descreve limitações da tabela clássica.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Sódio, cloro e bicarbonato em mEq/L (equivalente numérico a mmol/L para íons monovalentes). Albumina em g/dL (multiplicar por 10 para g/L). Glicemia em mg/dL (dividir por 18 para mmol/L). Ureia em mg/dL (BUN = ureia/2,14; dividir por 2,8 para BUN em mmol/L). Osmolaridade em mOsm/kg. Faixas plausíveis publicadas: Na 120-160, Cl 80-120, HCO3 5-40, albumina 1-5, glicemia 40-1000, ureia 5-300, osmolaridade 260-360.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">
+        <p>Ânion gap = Na − (Cl + HCO₃)</p>
+        <p>AG corrigido = AG + 2,5 × (4,0 − albumina g/dL)</p>
+        <p>Na corrigido = Na + 1,6 × ((glicemia − 100) / 100)</p>
+        <p>Osmolaridade calculada = 2 × Na + (glicemia / 18) + (ureia / 6)</p>
+        <p>Gap osmolar = Osm medida − Osm calculada</p>
+      </div>
+      <p>Variáveis: Na, Cl, HCO₃ em mEq/L; albumina em g/dL; glicemia e ureia em mg/dL. A sequência aplicada na página: primeiro calcula o ânion gap, em seguida corrige pela albumina quando informada, depois calcula o sódio corrigido e por fim a osmolaridade. Exemplo trabalhado com Na 133, Cl 95, HCO₃ 12, albumina 3,8, glicemia 420, ureia 38: AG = 133 − (95 + 12) = 26 mEq/L; AG corrigido = 26 + 2,5 × (4,0 − 3,8) = 26,5 mEq/L; Na corrigido = 133 + 1,6 × ((420 − 100)/100) = 133 + 5,12 = 138,1 mEq/L; Osm calculada = 2 × 133 + 420/18 + 38/6 = 266 + 23,3 + 6,3 = 295,6 mOsm/kg.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>Publica-se que a tabela interpretativa pressupõe estado estável; em distúrbios mistos rápidos (ex.: parada cardiorrespiratória recente) o padrão laboratorial pode não refletir o estado fisiopatológico. Erros pré-analíticos descritos: hemólise eleva K e altera HCO₃; demora no transporte da seringa de gasometria altera pH/pCO₂; pseudo-hiponatremia em hiperlipidemia ou hiperproteinemia distorce Na sérico (descrita com métodos indiretos). O ânion gap não corrigido subestima acidose em hipoalbuminemia (descrito em UTI). Em insuficiência renal crônica avançada, a literatura descreve que ureia eleva a osmolaridade calculada sem necessariamente indicar tóxico exógeno. O fator 1,6 para Na corrigido é discutido — Hillier et al. (1999) publicaram fator 2,4.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Para ânion gap: a fórmula clássica (Na − Cl − HCO₃) compete com a versão estendida (Na + K − Cl − HCO₃); a literatura descreve a clássica como padrão por menor variabilidade do K. Para sódio corrigido em hiperglicemia: fator de Katz (1,6 mEq/L por 100 mg/dL) versus fator de Hillier (2,4) — o Hillier foi derivado em voluntários submetidos a infusão de glicose hipertônica e é descrito como melhor para glicemias &gt; 400. Para osmolaridade: fórmula de Smithline-Gardner versus Worthley; a página utiliza a de uso clínico mais amplo (Smithline).</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação de Henderson-Hasselbalch foi publicada por Karl Albert Hasselbalch em <cite>Biochemische Zeitschrift</cite> (1916), a partir da equação de Lawrence Henderson (1908). O ânion gap clínico foi popularizado por Emmett &amp; Narins, <cite>Medicine (Baltimore)</cite>, 1977. A correção pela albumina é de Figge et al., <cite>J Lab Clin Med</cite>, 1992. A correção do sódio pela glicemia atribuída a Katz, <cite>NEJM</cite>, 1973. A página implementa a versão consolidada na revisão de Berend et al. (NEJM 2014).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Caso 1: Na 140, Cl 104, HCO₃ 24, albumina 4,0 — AG esperado 12 mEq/L, AG corrigido 12 mEq/L (referência publicada). Caso 2: Na 133, Cl 95, HCO₃ 12, albumina 3,8, glicemia 420 — AG 26, AG corrigido 26,5, Na corrigido 138,1 (padrão compatível com acidose de gap elevado por cetoacidose, descrito por Berend 2014). Caso 3: Na 145, Cl 110, HCO₃ 18, albumina 2,0 — AG 17, AG corrigido 22 (publica-se que a correção pela hipoalbuminemia desmascara gap elevado). Verificada contra exemplos em Berend et al. (NEJM 2014); reporte discrepâncias para o e-mail do rodapé.</p>
+
+      <h2>FAQ</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve verificar unidades (mEq/L vs mmol/L) e estado pré-analítico da amostra (hemólise, tempo de transporte). Discrepâncias persistentes podem indicar pseudo-hiponatremia ou interferência laboratorial descrita.</p>
+      <p><strong>Posso usar em crianças ou gestantes?</strong> Publica-se que as faixas de referência foram derivadas predominantemente em adultos não-gestantes. Em pediatria, valores basais de HCO₃ são descritos como mais baixos; em gestantes, descreve-se alcalose respiratória crônica fisiológica.</p>
+      <p><strong>Por que esta fórmula vs outra?</strong> A página apresenta a versão de Berend (NEJM 2014) por ser a revisão de referência atual. Outras versões (fator de Hillier para Na, AG estendido com K) estão descritas na seção "Fórmulas alternativas".</p>
+      <p><strong>Por que o ânion gap mudou ao informar a albumina?</strong> A literatura descreve que cada 1 g/dL de queda na albumina sérica reduz o ânion gap medido em ~2,5 mEq/L (Figge, 1992). A correção restaura a sensibilidade do ânion gap para detectar ânions não-mensurados em hipoalbuminemia.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Berend K, et al. Physiological approach to assessment of acid-base disturbances. <cite>N Engl J Med</cite>. 2014;371(15):1434-45. <a href="https://doi.org/10.1056/NEJMra1003327" target="_blank" rel="noopener">doi:10.1056/NEJMra1003327</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras envolvidas</h2>

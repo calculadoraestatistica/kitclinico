@@ -174,6 +174,46 @@
         <p>A MER é uma estimativa inicial. Cada animal tem necessidades individuais que dependem de raça, metabolismo, ambiente e condições de saúde. Ajuste o plano nutricional conforme a avaliação do médico-veterinário e a evolução do peso do animal.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve fatores de manutenção derivados de estudos com cães domésticos (Canis lupus familiaris) e gatos domésticos (Felis catus) adultos saudáveis, em peso ideal e mantidos em condições de alojamento padronizadas. O National Research Council (NRC, 2006) compilou dados de coortes experimentais de várias raças, faixas de peso entre 2 e 60 kg em cães e 2,5 a 7 kg em gatos. As diretrizes da AAHA (2010) sintetizam essas equações para uso clínico em animais de companhia. Publica-se que a precisão é menor em raças gigantes, animais geriátricos com sarcopenia, gatos obesos e em ambientes com temperaturas extremas, populações sub-representadas nas coortes originais.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza dois campos: <strong>peso corporal</strong> em quilogramas (kg) e a <strong>condição do animal</strong>, que define o fator multiplicador. Faixas plausíveis: cães 1-90 kg; gatos 1-12 kg. Para conversão de libras (lb) para quilogramas, divide-se por 2,2046. O fator de manutenção é adimensional. O resultado final é expresso em kcal/dia (1 kcal = 4,184 kJ, caso a referência do alimento esteja em quilojoules).</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula original combina a energia de repouso (RER) com um fator multiplicador de manutenção:</p>
+      <div class="formula">RER = 70 × (peso<sub>kg</sub>)<sup>0,75</sup><br>MER = RER × fator de manutenção</div>
+      <p>Significado das variáveis: <em>peso<sub>kg</sub></em> é a massa corporal atual; o expoente 0,75 corresponde à lei alométrica de Kleiber para taxa metabólica entre espécies; <em>fator de manutenção</em> varia de 1,2 a 2,5 conforme a tabela acima. Sequência de cálculo: (1) eleva o peso a 0,75; (2) multiplica por 70 para obter a RER; (3) multiplica a RER pelo fator. <strong>Exemplo trabalhado</strong>: gato adulto castrado de 4 kg. RER = 70 × 4^0,75 = 70 × 2,828 ≈ 198 kcal/dia. MER = 198 × 1,2 ≈ 238 kcal/dia.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A fórmula não se aplica a fêmeas em gestação ou lactação, animais em recuperação de cirurgia, pacientes com hipertireoidismo, doença renal crônica avançada ou em protocolos de perda ponderal — situações em que a literatura descreve equações ou fatores específicos (NRC, 2006). Erros frequentes de medida incluem o uso do peso ideal em vez do peso atual em animais obesos (a literatura recomenda peso atual para estimativa inicial) e a aplicação de fatores caninos a gatos. O coeficiente alométrico de 0,75 representa uma média populacional; em filhotes muito jovens e em raças braquicefálicas o gasto energético observado divergiu dos valores preditos em alguns estudos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Além da equação exponencial (70 × peso^0,75), a literatura descreve a fórmula linear simplificada para cães entre 2 e 30 kg: RER = 30 × peso + 70. A AAHA (2010) descreve que a versão exponencial mantém acurácia em toda a faixa de peso, enquanto a linear apresenta desvios em pesos abaixo de 2 kg ou acima de 45 kg. Em medicina humana, equivalentes conceituais incluem Harris-Benedict e Mifflin-St Jeor, não aplicáveis a animais. Para perda ponderal em pets, publica-se o uso de 1,0 × RER em vez do fator de manutenção convencional.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação alométrica RER = 70 × peso^0,75 deriva dos trabalhos de Kleiber sobre taxa metabólica basal (Hospital Practice, década de 1930-1960). Os fatores de manutenção foram compilados pelo National Research Council em "Nutrient Requirements of Dogs and Cats" (Washington, DC: National Academies Press; 2006, <a href="https://doi.org/10.17226/10668" target="_blank" rel="noopener">doi:10.17226/10668</a>) e sintetizados em uso clínico pelas AAHA Nutritional Assessment Guidelines (Baldwin et al., 2010, <a href="https://doi.org/10.5326/0460285" target="_blank" rel="noopener">doi:10.5326/0460285</a>). Esta calculadora implementa a versão alométrica do NRC 2006 com os fatores de manutenção tabulados pela AAHA.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra as equações publicadas:</p>
+      <ul>
+        <li>Cão adulto castrado de 10 kg → RER ≈ 394 kcal/dia; MER ≈ 631 kcal/dia (fator 1,6).</li>
+        <li>Cão ativo de 25 kg → RER ≈ 783 kcal/dia; MER ≈ 1.566 kcal/dia (fator 2,0).</li>
+        <li>Gato adulto castrado de 4 kg → RER ≈ 198 kcal/dia; MER ≈ 238 kcal/dia (fator 1,2).</li>
+      </ul>
+      <p>Verificada contra exemplos em NRC (2006) e AAHA Guidelines (2010); reporte discrepâncias para o e-mail no rodapé.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade do peso (kg, não libras) e o fator selecionado para a espécie correta. Para cães, fatores entre 1,4 e 2,0; para gatos, entre 1,2 e 1,6. A literatura descreve que o consumo real pode variar até 30% para mais ou menos em torno do estimado, sendo a evolução do peso ao longo de semanas o melhor indicador de adequação.</p>
+      <p><strong>Posso usar em filhotes ou fêmeas gestantes?</strong> A opção "Filhote (até 4 meses)" com fator 2,5 corresponde à fase de crescimento intenso descrita pelo NRC. Para fêmeas em gestação tardia ou lactação, publica-se o uso de fatores entre 3,0 e 6,0 × RER, não cobertos por esta calculadora.</p>
+      <p><strong>Por que esta fórmula em vez de outras?</strong> A equação alométrica 70 × peso^0,75 é a mais validada em estudos com cães e gatos de várias faixas de peso (NRC, 2006). A versão linear (30 × peso + 70) é uma simplificação útil em pesos intermediários, mas perde acurácia nos extremos.</p>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Baldwin K, Bartges J, Buffington T, et al. AAHA Nutritional Assessment Guidelines for Dogs and Cats. <cite>Journal of the American Animal Hospital Association</cite>. 2010;46(4):285-296. <a href="https://doi.org/10.5326/0460285" target="_blank" rel="noopener">doi:10.5326/0460285</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/20610704/" target="_blank" rel="noopener">PMID&nbsp;20610704</a>.</li>

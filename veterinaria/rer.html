@@ -148,11 +148,53 @@
         <p>A RER é uma estimativa de repouso e não considera atividade, idade, gestação, lactação ou doenças. Use-a como ponto de partida e ajuste o plano nutricional conforme a avaliação do médico-veterinário e a evolução do peso do animal.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve que a fórmula alométrica da RER foi derivada de medições de calorimetria indireta em mamíferos, posteriormente adaptada pelo <cite>National Research Council</cite> (2006) para cães e gatos adultos saudáveis em estado pós-absortivo, ambiente termoneutro e sem atividade física. As diretrizes nutricionais da AAHA (2010) descrevem aplicação clínica em cães e gatos de praticamente todas as faixas de peso adulto, com validações publicadas em amostras heterogêneas de raças. Publica-se que filhotes, gestantes, lactantes, geriátricos com sarcopenia e animais críticos apresentam desvios sistemáticos em relação à estimativa, conforme registrado nas referências abaixo.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita uma única entrada: <strong>peso corporal em quilogramas (kg)</strong>. A literatura descreve que valores em libras (lb) podem ser convertidos por 1 lb ≈ 0,4536 kg; gramas dividem-se por 1.000. Sanity range descrito para uso clínico: aproximadamente 0,5 kg a 90 kg, cobrindo gatos pequenos até cães de raças gigantes. Valores fora desse intervalo publica-se que indicam erro de digitação ou unidade trocada. O resultado é expresso em <strong>kcal/dia</strong> (quilocalorias por dia); para conversão a quilojoules a literatura usa 1 kcal ≈ 4,184 kJ.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula alométrica original publicada pelo NRC (2006) calcula a RER elevando o peso corporal à potência metabólica de 0,75:</p>
+      <div class="formula">RER (kcal/dia) = 70 × peso (kg)<sup>0,75</sup></div>
+      <p>Onde: <strong>70</strong> é a constante derivada da regressão interspecífica de Kleiber; <strong>peso</strong> é o peso corporal atual em kg; <strong>0,75</strong> é o expoente alométrico do metabolismo basal de mamíferos. A sequência de cálculo descrita é: (1) registrar o peso em kg; (2) elevar o peso à potência 0,75 (peso<sup>0,75</sup> = exp(0,75 × ln(peso))); (3) multiplicar o resultado por 70. Exemplo trabalhado para um cão de <strong>15 kg</strong>: peso<sup>0,75</sup> = 15<sup>0,75</sup> = 7,622; RER = 70 × 7,622 = 533,5 ≈ <strong>534 kcal/dia</strong>. Para um gato de <strong>4 kg</strong>: 4<sup>0,75</sup> = 2,828; RER = 70 × 2,828 = 197,99 ≈ <strong>198 kcal/dia</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula alométrica não se aplica diretamente a filhotes em crescimento, fêmeas gestantes ou lactantes, animais hipotireoideos, hipertireoideos, com obesidade grave (peso real vs. peso ideal) ou caquexia. Erros comuns de medida publicados incluem: usar peso em libras como se fosse em kg, registrar peso de animal molhado ou com gesso/curativos, e digitar vírgula/ponto decimal trocados. Para pacientes obesos, publica-se que o cálculo sobre o peso real superestima a necessidade e que diretrizes recomendam recalcular sobre peso ideal estimado. A fórmula linear simplificada (30 × peso + 70) divulgada em algumas referências aproxima a alométrica apenas no intervalo aproximado de 2–25 kg, conforme descrito nas referências; fora dessa faixa a literatura registra divergência crescente.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Existem duas formulações concorrentes documentadas: a <strong>alométrica</strong> (70 × peso<sup>0,75</sup>), implementada nesta calculadora, e a <strong>linear simplificada</strong> (30 × peso + 70), publicada para uso rápido em animais entre aproximadamente 2 e 25 kg. A literatura descreve que a alométrica é superior em filhotes muito pequenos, gatos abaixo de 2 kg e cães acima de 25 kg, onde a linear superestima ou subestima sistematicamente. Algumas publicações antigas usam a constante 132 com o mesmo expoente 0,75, derivada de equações específicas para cães adultos sedentários; o NRC (2006) padronizou 70 para uso geral em cães e gatos.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A relação alométrica entre massa corporal e metabolismo basal foi originalmente publicada por Max Kleiber em <cite>Hilgardia</cite>, 1932 (<a href="https://doi.org/10.3733/hilg.v06n11p315" target="_blank" rel="noopener">doi:10.3733/hilg.v06n11p315</a>), e detalhada em <cite>The Fire of Life</cite> (Wiley, 1961). A versão implementada nesta calculadora segue a parametrização do <cite>National Research Council. Nutrient Requirements of Dogs and Cats</cite> (National Academies Press, 2006; <a href="https://doi.org/10.17226/10668" target="_blank" rel="noopener">doi:10.17226/10668</a>), reafirmada pelas diretrizes AAHA 2010 (Baldwin et al., <a href="https://doi.org/10.5326/0460285" target="_blank" rel="noopener">doi:10.5326/0460285</a>).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada pelo NRC (2006):</p>
+      <ul>
+        <li><strong>Gato de 4 kg</strong> → 70 × 4<sup>0,75</sup> = 70 × 2,828 ≈ <strong>198 kcal/dia</strong>.</li>
+        <li><strong>Cão de 10 kg</strong> → 70 × 10<sup>0,75</sup> = 70 × 5,623 ≈ <strong>394 kcal/dia</strong>.</li>
+        <li><strong>Cão de 30 kg</strong> → 70 × 30<sup>0,75</sup> = 70 × 12,818 ≈ <strong>897 kcal/dia</strong>.</li>
+      </ul>
+      <p>Verificada contra exemplos publicados em Baldwin et al. (2010) e NRC (2006); reporte discrepâncias para o contato editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve conferir a unidade do peso (kg, não lb nem g), confirmar uso do peso atual e não do peso ideal, e validar o cálculo manualmente com a fórmula 70 × peso<sup>0,75</sup>. Discrepâncias persistentes podem ser reportadas pelo e-mail editorial.</p>
+      <p><strong>Posso usar em filhotes ou animais gestantes?</strong> Publica-se que a fórmula básica subestima a necessidade nessas populações; o NRC (2006) descreve fatores multiplicativos específicos (filhotes ~2× a 3× RER; gestação tardia ~1,6× a 2× RER; lactação até 4× a 6× RER) que devem ser aplicados sobre o valor de RER calculado aqui.</p>
+      <p><strong>Por que esta fórmula e não a linear (30 × peso + 70)?</strong> A literatura descreve a forma alométrica como universalmente aplicável ao intervalo de peso de cães e gatos clínicos; a linear é uma aproximação válida apenas em faixa restrita (aproximadamente 2–25 kg), conforme NRC (2006).</p>
+      <p><strong>RER inclui atividade física?</strong> Não. A RER por definição representa o gasto em repouso; a literatura descreve a multiplicação por um fator de manutenção (MER) para incluir atividade, termogênese e ajustes de condição corporal.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Baldwin K, Bartges J, Buffington T, et al. AAHA Nutritional Assessment Guidelines for Dogs and Cats. <cite>Journal of the American Animal Hospital Association</cite>. 2010;46(4):285-296. <a href="https://doi.org/10.5326/0460285" target="_blank" rel="noopener">doi:10.5326/0460285</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/20610704/" target="_blank" rel="noopener">PMID&nbsp;20610704</a>.</li>
         <li>National Research Council. Nutrient Requirements of Dogs and Cats. Washington, DC: National Academies Press; 2006. <a href="https://doi.org/10.17226/10668" target="_blank" rel="noopener">doi:10.17226/10668</a>.</li>
+        <li>Kleiber M. Body size and metabolism. <cite>Hilgardia</cite>. 1932;6(11):315-353. <a href="https://doi.org/10.3733/hilg.v06n11p315" target="_blank" rel="noopener">doi:10.3733/hilg.v06n11p315</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

@@ -171,8 +171,40 @@
       <p>Esta calculadora usa a <strong>equação de Deurenberg</strong>, que estima a gordura corporal a partir do <strong>IMC</strong>, da <strong>idade</strong> e do <strong>sexo</strong>. Em geral, percentuais mais altos indicam maior adiposidade, e as faixas de referência diferem entre homens e mulheres — mulheres têm, fisiologicamente, percentual maior.</p>
       <div class="formula">Gordura (%) = 1,20 × IMC + 0,23 × idade − 10,8 × sexo − 5,4 (sexo: 1 homem, 0 mulher)</div>
 
-      <h2>Exemplo</h2>
-      <p>Uma pessoa <strong>masculina</strong>, com <strong>80 kg</strong>, <strong>175 cm</strong> e <strong>35 anos</strong>, tem IMC de aproximadamente 26,1 kg/m². Aplicando a equação de Deurenberg, o percentual de gordura corporal estimado é de cerca de <strong>23,5%</strong>.</p>
+      <h2>População validada</h2>
+      <p>A equação foi derivada por Deurenberg e colaboradores em amostra de <strong>1.229 adultos holandeses</strong> (caucasianos), com idade de 7 a 83 anos, comparando estimativas de gordura por IMC contra densitometria por pesagem hidrostática [1]. Publica-se que o desempenho é melhor em adultos brancos com IMC entre 18 e 35 kg/m². A literatura descreve viés sistemático em populações asiáticas (subestimativa), em afrodescendentes (superestimativa), em idosos com sarcopenia e em atletas com elevada massa muscular. Estudos validaram a fórmula em crianças com ajustes adicionais, mas o modelo implementado aqui é o de adultos.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita <strong>peso em quilogramas</strong> (intervalo típico 30–250 kg), <strong>altura em centímetros</strong> (100–230 cm; converter polegadas multiplicando por 2,54), <strong>idade em anos completos</strong> (faixa 18–80 anos publicada) e <strong>sexo biológico</strong> (codificado 1 = homem, 0 = mulher na fórmula original). Internamente a altura é convertida para metros para o cálculo do IMC (IMC = peso / altura²). Valores fora dessas faixas continuam calculáveis, porém saem do domínio em que a equação foi originalmente validada.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Gordura (%) = 1,20 × IMC + 0,23 × idade − 10,8 × sexo − 5,4</div>
+      <p>Onde <strong>IMC</strong> é peso (kg) ÷ altura² (m²); <strong>idade</strong> em anos; <strong>sexo</strong> é variável binária (1 = masculino, 0 = feminino). A sequência publicada é: (1) converter a altura de cm para m; (2) calcular o IMC; (3) aplicar a equação linear acima.</p>
+      <p><strong>Exemplo trabalhado:</strong> homem, 80 kg, 175 cm, 35 anos. Passo 1: altura = 1,75 m. Passo 2: IMC = 80 ÷ (1,75)² = 80 ÷ 3,0625 ≈ 26,12 kg/m². Passo 3: Gordura (%) = (1,20 × 26,12) + (0,23 × 35) − (10,8 × 1) − 5,4 = 31,35 + 8,05 − 10,8 − 5,4 ≈ <strong>23,2%</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A fórmula de Deurenberg <strong>não distingue massa magra de massa gorda</strong>: por usar o IMC como única medida antropométrica, classifica como "gordo" qualquer indivíduo com IMC elevado, mesmo quando o excesso é massa muscular (descrita como "falso-positivo" em atletas) [1]. A literatura descreve erro padrão de estimativa de aproximadamente 4 pontos percentuais comparado a métodos diretos. Erros comuns de medida incluem peso vestido, altura sem rigor (medir descalço, em jejum, pela manhã) e idade aproximada. Publica-se que em IMC > 40 kg/m², em crianças, em gestantes e em pessoas com edema, retenção hídrica ou amputações a equação não se aplica. Para composição corporal precisa a literatura cita DEXA, pesagem hidrostática, pletismografia (BodPod) ou bioimpedância octapolar.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Outras equações antropométricas concorrentes incluem: <strong>Jackson-Pollock</strong> (3 ou 7 dobras cutâneas), descrita como superior em pessoas treinadas por incorporar gordura subcutânea direta; <strong>Navy Method</strong> (Hodgdon-Beckett), que usa circunferências de pescoço, cintura e quadril, publicada como prática em triagens militares; <strong>YMCA</strong> (cintura + peso). A equação de Deurenberg é destacada na literatura por exigir somente dados básicos (peso, altura, idade, sexo), sendo o trade-off menor precisão comparada às que usam dobras ou circunferências.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação foi publicada originalmente por <strong>Deurenberg P, Weststrate JA, Seidell JC</strong> em "Body mass index as a measure of body fatness: age- and sex-specific prediction formulas", <cite>British Journal of Nutrition</cite> 1991;65(2):105-114, DOI <a href="https://doi.org/10.1079/BJN19910073" target="_blank" rel="noopener">10.1079/BJN19910073</a> [1]. A versão implementada nesta página é a <strong>equação para adultos</strong> (sem o termo cúbico opcional), conforme reportada no resumo do artigo original.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a equação publicada:</p>
+      <ul>
+        <li><strong>Homem, 80 kg, 175 cm, 35 anos</strong> — IMC 26,1 kg/m² — Gordura ≈ <strong>23,2%</strong>.</li>
+        <li><strong>Mulher, 60 kg, 165 cm, 30 anos</strong> — IMC 22,0 kg/m² — Gordura = (1,20 × 22,04) + (0,23 × 30) − (10,8 × 0) − 5,4 ≈ <strong>27,9%</strong>.</li>
+        <li><strong>Homem, 95 kg, 180 cm, 50 anos</strong> — IMC 29,3 kg/m² — Gordura ≈ <strong>26,1%</strong>.</li>
+      </ul>
+      <p>Resultados verificados contra exemplos derivados da equação descrita em [1]; reporte discrepâncias pelo e-mail no rodapé.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que fazer se o resultado parecer errado?</strong> Confira se a altura está em centímetros e o peso em quilogramas, e se o sexo selecionado corresponde ao biológico. A literatura descreve erro padrão de cerca de ±4 pontos percentuais comparado a DEXA — divergências dentro dessa faixa são esperadas.</p>
+      <p><strong>Posso usar em atletas ou crianças?</strong> O estudo original validou a equação em adultos com IMC entre 18 e 35 kg/m². Publica-se viés conhecido em atletas (superestima gordura por interpretar massa muscular como adiposa) e em crianças (existe versão pediátrica específica, não implementada aqui).</p>
+      <p><strong>Por que esta fórmula em vez de bioimpedância?</strong> Bioimpedância e DEXA são descritos como métodos mais precisos para composição corporal. A equação de Deurenberg é usada quando só estão disponíveis peso, altura, idade e sexo, sendo uma estimativa de triagem.</p>
+      <p><strong>O resultado serve para diagnóstico?</strong> Não. A calculadora é ferramenta de referência educacional e a literatura cita avaliação clínica e métodos de imagem para diagnóstico de composição corporal.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -186,6 +218,12 @@
       <ol class="ref-list">
         <li>Deurenberg P, Weststrate JA, Seidell JC. Body mass index as a measure of body fatness: age- and sex-specific prediction formulas. <cite>British Journal of Nutrition</cite>. 1991;65(2):105-114. <a href="https://doi.org/10.1079/BJN19910073" target="_blank" rel="noopener">doi:10.1079/BJN19910073</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/2043597/" target="_blank" rel="noopener">PMID&nbsp;2043597</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

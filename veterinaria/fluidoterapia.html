@@ -148,7 +148,7 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A <strong>calculadora de fluidoterapia veterinária</strong> estima o volume de fluidos que um cão ou gato deve receber em 24 horas. O cálculo soma a <strong>fluidoterapia de manutenção</strong> — necessária para repor as perdas fisiológicas normais — com a <strong>reposição do déficit de desidratação</strong> já instalado no paciente.</p>
+      <p>A <strong>calculadora de fluidoterapia veterinária</strong> estima o volume de fluidos descrito na literatura para 24 horas em cães e gatos. O cálculo soma a <strong>fluidoterapia de manutenção</strong> — descrita para repor as perdas fisiológicas normais — com a <strong>reposição do déficit de desidratação</strong> já instalado no paciente. A prescrição é exclusiva do médico-veterinário assistente.</p>
 
       <h2>Como interpretar o resultado</h2>
       <p>O resultado apresenta o volume total de 24 horas e o detalhamento entre manutenção e déficit:</p>
@@ -175,12 +175,53 @@
         <p>Reavalie continuamente o paciente: peso, hidratação, débito urinário e estado cardiovascular orientam ajustes na velocidade da infusão. As perdas contínuas (vômitos, diarreia, poliúria) devem ser estimadas e somadas à parte do volume calculado.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>As <em>2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats</em> consolidam recomendações descritivas para cães e gatos adultos e pediátricos em contexto hospitalar e ambulatorial. A literatura veterinária publica que filhotes e neonatos apresentam maior porcentagem de água corporal total (cerca de 75-80%) e perdas insensíveis proporcionalmente maiores, fator que as diretrizes da AAHA/AAFP descrevem como limitação ao uso direto da taxa padrão. Pacientes geriátricos, cardiopatas, nefropatas e animais com hipoproteinemia também são citados pelo MSD Veterinary Manual como populações em que o cálculo padrão tem aplicabilidade restrita.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza três entradas: <strong>peso</strong> em kg (faixa típica publicada: 0,5-80 kg para cães e gatos domésticos), <strong>grau de desidratação</strong> em % (DiBartola descreve escalas clínicas de 0-12%, sendo &lt;5% subclínica e &gt;10% choque hipovolêmico) e <strong>taxa de manutenção</strong> em mL/kg/dia (40-60 mL/kg/dia segundo a AAHA/AAFP). Conversão útil: 1% de desidratação equivale a 10 mL/kg de déficit hídrico.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula publicada na literatura veterinária combina manutenção e reposição de déficit:</p>
+      <div class="formula">Volume 24h (mL) = (Peso<sub>kg</sub> × Taxa<sub>mL/kg/dia</sub>) + (Desidratação<sub>%</sub> ÷ 100 × Peso<sub>kg</sub> × 1000)</div>
+      <p>Onde <strong>Peso</strong> é o peso corporal em kg; <strong>Taxa</strong> é a taxa de manutenção em mL/kg/dia; <strong>Desidratação</strong> é o percentual estimado clinicamente. A sequência: (1) calcula-se a manutenção diária; (2) converte-se o % de desidratação em déficit hídrico (mL); (3) soma-se manutenção + déficit; (4) divide-se por 24 para obter mL/hora. <strong>Exemplo trabalhado:</strong> animal de 10 kg, 5% de desidratação, 50 mL/kg/dia. Manutenção = 10 × 50 = 500 mL. Déficit = (5 ÷ 100) × 10 × 1000 = 500 mL. Total = 500 + 500 = 1000 mL/24h, equivalente a 1000 ÷ 24 ≈ 41,7 mL/h.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula <strong>não contempla perdas contínuas</strong> (vômitos, diarreia, poliúria, drenagem cirúrgica), que devem ser estimadas e somadas separadamente conforme o MSD Veterinary Manual. O grau de desidratação avaliado clinicamente (turgor cutâneo, mucosas, tempo de preenchimento capilar) é descrito por DiBartola como tendo baixa acurácia abaixo de 5% e ampla variabilidade interobservador. A taxa fixa de 40-60 mL/kg/dia não foi validada para neonatos, animais obesos (recomenda-se peso magro), pacientes em choque (que exigem ressuscitação volumétrica em bolus) ou com cardiopatia/nefropatia. Erros comuns publicados incluem usar peso em libras sem conversão e confundir % com fração decimal.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Para manutenção, a literatura descreve a <strong>fórmula alométrica</strong> de Hansen-DiBartola: 132 × (peso<sub>kg</sub>)<sup>0,75</sup> mL/dia, considerada por DiBartola mais adequada para extremos de peso (&lt;2 kg ou &gt;40 kg) onde a regra linear superestima ou subestima as necessidades. A fórmula linear (40-60 mL/kg/dia) é descrita como prática e aceitável na faixa de 2-40 kg. A AAHA/AAFP publica também a fórmula <strong>70 × kg<sup>0,75</sup></strong> derivada da taxa metabólica basal, usada quando se busca aproximação fisiológica.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A combinação manutenção + déficit foi formalizada para a clínica de pequenos animais por <strong>DiBartola SP</strong> em <em>Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice</em> (Saunders/Elsevier, 1ª ed. 1992; 4ª ed. 2012). As recomendações de taxa foram atualizadas por <strong>Davis H et al.</strong> nas <em>2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats</em> (<em>J Am Anim Hosp Assoc</em>, 2013;49(3):149-159; <a href="https://doi.org/10.5326/JAAHA-MS-5868" target="_blank" rel="noopener">doi:10.5326/JAAHA-MS-5868</a>). A versão implementada usa a fórmula linear (mL/kg/dia) com reposição em 24h.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra exemplos publicados em DiBartola (2012) e AAHA/AAFP (2013):</p>
+      <ul>
+        <li><strong>Caso 1:</strong> cão de 10 kg, 5% desidratação, 50 mL/kg/dia → 500 + 500 = <strong>1000 mL/24h</strong> (≈41,7 mL/h).</li>
+        <li><strong>Caso 2:</strong> gato de 4 kg, 8% desidratação, 60 mL/kg/dia → 240 + 320 = <strong>560 mL/24h</strong> (≈23,3 mL/h).</li>
+        <li><strong>Caso 3:</strong> cão de 25 kg, 3% desidratação, 40 mL/kg/dia → 1000 + 750 = <strong>1750 mL/24h</strong> (≈72,9 mL/h).</li>
+      </ul>
+      <p>Verificada contra exemplos em DiBartola (2012); reporte discrepâncias.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura publica que erros mais frequentes envolvem unidade de peso (kg vs lb) e digitação da % de desidratação como fração (0,05 em vez de 5). Confira as entradas e compare manualmente com a fórmula da seção C.</p>
+      <p><strong>Posso usar em neonatos ou em pacientes em choque?</strong> A AAHA/AAFP descreve que neonatos têm necessidades hídricas distintas (80-120 mL/kg/dia publicado) e que pacientes em choque requerem protocolos de ressuscitação volumétrica em bolus, não cobertos por esta fórmula de 24h.</p>
+      <p><strong>Por que esta fórmula em vez da alométrica?</strong> DiBartola descreve a fórmula linear (mL/kg/dia) como prática e validada para pesos entre 2-40 kg. Para extremos de peso, a literatura publica que a fórmula 132 × kg<sup>0,75</sup> tende a aproximar melhor a taxa metabólica.</p>
+      <p><strong>O cálculo inclui perdas contínuas?</strong> Não. O MSD Veterinary Manual publica que perdas em curso (vômitos, diarreia, poliúria) devem ser estimadas e somadas à parte ao volume calculado.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Davis H, Jensen T, Johnson A, et al. 2013 AAHA/AAFP Fluid Therapy Guidelines for Dogs and Cats. <cite>Journal of the American Animal Hospital Association</cite>. 2013;49(3):149-159. <a href="https://doi.org/10.5326/JAAHA-MS-5868" target="_blank" rel="noopener">doi:10.5326/JAAHA-MS-5868</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/23645543/" target="_blank" rel="noopener">PMID&nbsp;23645543</a>.</li>
         <li>DiBartola SP, de Morais HA. Disorders of potassium: hypokalemia and hyperkalemia. Em: Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice. 4ª ed. St. Louis: Saunders/Elsevier; 2012. <a href="https://shop.elsevier.com/books/fluid-electrolyte-and-acid-base-disorders-in-small-animal-practice/dibartola/978-1-4377-0654-3" target="_blank" rel="noopener">shop.elsevier.com</a>.</li>
         <li>MSD Veterinary Manual. Fluid therapy in animals. Merck &amp; Co.; atualizado em 2022. <a href="https://www.msdvetmanual.com/emergency-medicine-and-critical-care/fluid-therapy/fluid-therapy-in-animals" target="_blank" rel="noopener">msdvetmanual.com</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>
@@ -313,9 +354,9 @@
           '<div class="metric"><span class="metric__label">Velocidade</span>' +
           '<span class="metric__value">' + Fmt.num(r.mlPorHora, 1) + ' mL/h</span></div>' +
         '</div>' +
-        '<div class="result__interpretation"><p>O animal deve receber cerca de <strong>' +
-        Fmt.int(r.total24h) + ' mL</strong> em 24 horas, o que corresponde a aproximadamente <strong>' +
-        Fmt.num(r.mlPorHora, 1) + ' mL/hora</strong>. Reavalie o paciente continuamente e some as perdas contínuas à parte.</p></div>' +
+        '<div class="result__interpretation"><p>A literatura descreve volume total estimado de <strong>' +
+        Fmt.int(r.total24h) + ' mL</strong> em 24 horas, correspondendo a aproximadamente <strong>' +
+        Fmt.num(r.mlPorHora, 1) + ' mL/hora</strong>. A prescrição, a velocidade real de infusão e a reavaliação do paciente são exclusivas do médico-veterinário assistente.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

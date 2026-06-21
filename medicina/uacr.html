@@ -176,10 +176,44 @@
         <p>Um único resultado alterado não fecha diagnóstico: situações transitórias (exercício intenso, febre, infecção urinária, hiperglicemia, insuficiência cardíaca descompensada) elevam a albuminúria. A KDIGO descreve confirmação com pelo menos <strong>duas amostras alteradas em três meses</strong> antes de classificar a categoria A.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A KDIGO descreve que a relação albumina/creatinina urinária em amostra isolada foi validada em adultos com e sem diabetes, hipertensão arterial e doença renal crônica, com correspondência publicada à coleta de 24 horas em estudos populacionais amplos. A literatura também documenta o uso pediátrico, embora os pontos de corte sejam discutidos separadamente. Em gestantes, indivíduos com infecção urinária ativa, exercício físico recente intenso, febre, hematúria macroscópica ou em vigência de descompensação cardíaca, publica-se que o resultado pode ser transitoriamente elevado, e a categorização KDIGO descreve confirmação seriada antes de classificar.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora recebe a <strong>albumina urinária em mg/L</strong> (faixa habitual descrita em laudos: 2 a 5000 mg/L) e a <strong>creatinina urinária em g/L</strong> (faixa habitual: 0,2 a 4 g/L). Conversões publicadas: creatinina em mg/dL é dividida por 100 para obter g/L; creatinina em mmol/L é multiplicada por 0,113 para mg/dL. Para apresentar o resultado em mg/mmol (unidades SI), divide-se o UACR em mg/g por 8,84.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">UACR (mg/g) = Albumina urinária (mg/L) ÷ Creatinina urinária (g/L)</div>
+      <p>Cada variável: <em>Albumina urinária</em> é a concentração de albumina na amostra spot; <em>Creatinina urinária</em> é a concentração de creatinina na mesma amostra, usada para corrigir a diluição. Sequência publicada: (1) verifica-se que albumina e creatinina vieram da <em>mesma</em> amostra; (2) ajustam-se unidades (albumina em mg/L, creatinina em g/L); (3) divide-se uma pela outra; (4) compara-se o valor com a tabela KDIGO A1/A2/A3. <strong>Exemplo trabalhado:</strong> albumina = 50 mg/L, creatinina = 1,2 g/L. UACR = 50 ÷ 1,2 = 41,67 mg/g. Como o valor cai entre 30 e 300 mg/g, a tabela KDIGO classifica como <strong>A2 (moderadamente aumentada / microalbuminúria)</strong>. Em mg/mmol: 41,67 ÷ 8,84 ≈ 4,71 mg/mmol, também na faixa A2 (3 a 30 mg/mmol).</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve limitações: (1) a creatinina urinária reflete a massa muscular, então em pessoas muito magras ou caquéticas o denominador é baixo e o UACR pode superestimar a albuminúria; o oposto ocorre em indivíduos muito musculosos. (2) Coletas após exercício intenso, em vigência de infecção urinária, hematúria macroscópica, febre, descompensação cardíaca ou crise hiperglicêmica são associadas a elevações transitórias. (3) Métodos imunoturbidimétricos para albumina sub-detectam concentrações muito baixas; publica-se que ensaios de HPLC ou imunonefelometria têm melhor desempenho na faixa inferior. (4) Amostras armazenadas inadequadamente, com pH muito alterado ou contaminação por sangue menstrual também distorcem o resultado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Alternativas descritas na literatura: <strong>excreção de albumina em 24 horas</strong> (padrão histórico, mas sujeita a erros de coleta), <strong>relação proteína/creatinina urinária (UPCR)</strong> e <strong>proteinúria de 24 horas</strong>. A KDIGO publica que o UACR é preferido como teste inicial por captar albumina (a proteína mais relevante para risco cardiovascular e renal) e por dispensar coleta cronometrada. UPCR e proteinúria de 24 horas permanecem úteis quando há suspeita de proteinúria não-albumínica (cadeias leves, tubular).</p>
+
+      <h2>Origem e versão</h2>
+      <p>A relação albumina/creatinina em amostra isolada foi descrita por Ginsberg et al. em 1983 (<cite>New England Journal of Medicine</cite>, <a href="https://doi.org/10.1056/NEJM198306093082302" target="_blank" rel="noopener">doi:10.1056/NEJM198306093082302</a>), demonstrando correspondência com a coleta de 24 horas. Os pontos de corte A1/A2/A3 implementados aqui seguem a <strong>KDIGO 2012/2024</strong> (&lt;30; 30–300; &gt;300 mg/g).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a fórmula publicada: (1) albumina 10 mg/L, creatinina 1,0 g/L → UACR = 10 mg/g → <strong>A1</strong>. (2) albumina 50 mg/L, creatinina 1,2 g/L → UACR ≈ 41,7 mg/g → <strong>A2</strong>. (3) albumina 600 mg/L, creatinina 1,0 g/L → UACR = 600 mg/g → <strong>A3</strong>. Verificada contra os pontos de corte descritos na KDIGO 2024 [1]; reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que fazer se o resultado parecer errado?</strong> Confira se albumina está em mg/L e creatinina em g/L (laudos brasileiros costumam trazer creatinina em mg/dL — divida por 100). Confira também se ambos os valores são da <em>mesma</em> amostra de urina. A KDIGO descreve repetir a dosagem em até três meses antes de classificar.</p>
+      <p><strong>Posso usar em gestantes ou crianças?</strong> A literatura publica pontos de corte específicos para gestantes (proteinúria significativa em pré-eclâmpsia usa critérios próprios) e para a faixa pediátrica. O cálculo numérico é o mesmo, mas a interpretação clínica nessas populações é descrita em diretrizes separadas (KDIGO Pediatric, ACOG).</p>
+      <p><strong>Por que UACR e não proteinúria de 24 horas?</strong> A KDIGO publica que o UACR em spot tem boa correspondência com a coleta de 24 horas, dispensa cronometragem (fonte comum de erro) e é mais sensível para albumina, que é o marcador associado ao risco cardiovascular e renal nos estudos populacionais.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International</cite>. 2024;105(4S):S117-S314. <a href="https://doi.org/10.1016/j.kint.2023.10.018" target="_blank" rel="noopener">doi:10.1016/j.kint.2023.10.018</a>.</li>
+        <li>Ginsberg JM, Chang BS, Matarese RA, Garella S. Use of single voided urine samples to estimate quantitative proteinuria. <cite>N Engl J Med</cite>. 1983;309(25):1543-1546. <a href="https://doi.org/10.1056/NEJM198306093082302" target="_blank" rel="noopener">doi:10.1056/NEJM198306093082302</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

@@ -182,11 +182,51 @@
         <p>A faixa de referência depende do método do laboratório e alguns serviços incluem o potássio no cálculo. Sempre corrija o ânion gap na hipoalbuminemia e interprete o resultado dentro do contexto clínico e da gasometria completa.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve o ânion gap como ferramenta investigada inicialmente em adultos hospitalizados com distúrbios ácido-base, com extensa caracterização em populações de UTI e nefrologia (Kraut e Madias, 2007). Publica-se que a faixa de referência foi estabelecida em coortes mistas de adultos, sem estratificação ampla por etnia. Figge e colaboradores (1998) validaram a correção pela albumina em pacientes críticos com hipoalbuminemia. A literatura indica limitações em pediatria, gestantes e pacientes com distúrbios proteicos significativos, onde a faixa de normalidade pode diferir do intervalo descrito para adultos. Métodos laboratoriais distintos (eletrodos íon-seletivos versus coulometria) deslocam o intervalo de referência.</p>
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A fórmula utiliza <strong>sódio</strong> (mEq/L; equivalente a mmol/L para íon monovalente), <strong>cloro</strong> (mEq/L) e <strong>bicarbonato</strong> (mEq/L; também reportado como HCO<sub>3</sub><sup>-</sup> ou CO<sub>2</sub> total). A <strong>albumina</strong> (opcional) entra em g/dL; para converter de g/L, divide-se por 10. Faixas de sanidade descritas: sódio 120-160, cloro 80-120, bicarbonato 5-45, albumina 1-6. Valores fora desses limites sugerem erro de digitação ou amostra inadequada.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Ânion gap = [Na<sup>+</sup>] − ([Cl<sup>-</sup>] + [HCO<sub>3</sub><sup>-</sup>])<br>Ânion gap corrigido = ânion gap + 2,5 × (4 − albumina)</div>
+      <p>A fórmula original calcula a diferença entre o cátion mensurado (sódio) e os ânions mensurados (cloro e bicarbonato), representando os ânions não medidos (proteínas, fosfato, sulfato, ácidos orgânicos). A sequência é: (1) somam-se cloro e bicarbonato; (2) subtrai-se do sódio; (3) se albumina estiver disponível e abaixo de 4 g/dL, soma-se 2,5 mEq/L por g/dL de déficit. Exemplo trabalhado: sódio = 138, cloro = 100, bicarbonato = 18, albumina = 2,5 g/dL. Ânion gap = 138 − (100 + 18) = 20 mEq/L. Correção = 20 + 2,5 × (4 − 2,5) = 20 + 3,75 = <strong>23,8 mEq/L</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o ânion gap não se aplica isoladamente sem contexto da gasometria arterial e do quadro clínico. Erros comuns de medida incluem: hemólise (eleva potássio sem afetar diretamente os ânions calculados), hiperlipidemia ou hiperproteinemia severa (pseudo-hiponatremia em métodos indiretos), bromismo (eleva cloro falsamente reduzindo o gap) e demora no processamento (perda de bicarbonato). Publica-se que em hipoalbuminemia não corrigida o gap pode parecer normal mascarando acidose orgânica (Figge et al., 1998). Em pacientes com paraproteinemias, mieloma múltiplo ou intoxicação por lítio, o gap pode apresentar-se reduzido ou negativo. A literatura recomenda usar a versão corrigida pela albumina em pacientes críticos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Algumas publicações incluem o <strong>potássio</strong> no cálculo: AG = (Na + K) − (Cl + HCO<sub>3</sub>), descrita como superior em pacientes com distúrbios significativos do potássio, com faixa de referência deslocada (12-16 mEq/L). A abordagem de <strong>Stewart</strong> (strong ion gap) calcula o gap a partir de princípios físico-químicos e é descrita como mais sensível em pacientes críticos complexos. A literatura indica que a fórmula tradicional sem potássio é a mais utilizada por simplicidade e por o potássio ter contribuição pequena.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O conceito de ânion gap foi popularizado por Emmett e Narins em <cite>Medicine</cite> (Baltimore) em 1977. A correção pela albumina foi publicada por Figge, Jabor, Kazda e Fencl em <cite>Critical Care Medicine</cite> em 1998 (<a href="https://doi.org/10.1097/00003246-199811000-00019" target="_blank" rel="noopener">doi:10.1097/00003246-199811000-00019</a>). A revisão moderna mais citada é de Kraut e Madias (CJASN, 2007). Esta página implementa a fórmula tradicional sem potássio com correção opcional pela albumina (fator 2,5 por g/dL).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra os exemplos da literatura citada:</p>
+      <ul>
+        <li><strong>Caso 1 (normal):</strong> Na 140, Cl 104, HCO<sub>3</sub> 24 → ânion gap = 12,0 mEq/L.</li>
+        <li><strong>Caso 2 (acidose com gap aumentado):</strong> Na 135, Cl 95, HCO<sub>3</sub> 10 → ânion gap = 30,0 mEq/L.</li>
+        <li><strong>Caso 3 (hipoalbuminemia mascarando):</strong> Na 138, Cl 110, HCO<sub>3</sub> 16, albumina 2,0 → ânion gap = 12,0; corrigido = 17,0 mEq/L.</li>
+      </ul>
+      <p>Verificada contra exemplos em Kraut e Madias (2007) e Figge et al. (1998); reporte discrepâncias.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve verificar se as unidades estão em mEq/L (não mmol/L para todos os íons), confirmar se o laboratório usa método direto ou indireto e checar se a albumina foi inserida em g/dL.</p>
+      <p><strong>Posso usar em pediatria?</strong> A faixa de referência descrita aqui foi estabelecida em adultos; publica-se que valores normais em neonatos e lactentes podem diferir.</p>
+      <p><strong>Por que esta fórmula em vez da que inclui potássio?</strong> A literatura indica que a contribuição do potássio é pequena (3-5 mEq/L) e a versão sem potássio é a mais difundida nos textos de referência (Kraut e Madias, 2007).</p>
+      <p><strong>Quando devo corrigir pela albumina?</strong> Publica-se que a correção é descrita como relevante quando albumina &lt; 4 g/dL, especialmente em pacientes críticos (Figge et al., 1998).</p>
+      <p><strong>Por que meu paciente tem ânion gap negativo?</strong> A literatura associa gap negativo a paraproteinemias (mieloma), intoxicação por lítio, bromismo ou erro analítico.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Kraut JA, Madias NE. Serum anion gap: its uses and limitations in clinical medicine. <cite>Clinical Journal of the American Society of Nephrology</cite>. 2007;2(1):162-174. <a href="https://doi.org/10.2215/CJN.03020906" target="_blank" rel="noopener">doi:10.2215/CJN.03020906</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/17699401/" target="_blank" rel="noopener">PMID&nbsp;17699401</a>.</li>
         <li>Figge J, Jabor A, Kazda A, Fencl V. Anion gap and hypoalbuminemia. <cite>Critical Care Medicine</cite>. 1998;26(11):1807-1810. <a href="https://doi.org/10.1097/00003246-199811000-00019" target="_blank" rel="noopener">doi:10.1097/00003246-199811000-00019</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/9824071/" target="_blank" rel="noopener">PMID&nbsp;9824071</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>
@@ -333,7 +373,7 @@
         metric +
         '<div class="result__interpretation"><p>O ânion gap é de <strong>' +
         Fmt.num(r.anionGap, 1) + ' mEq/L</strong>. O valor normal fica em torno de 8 a 12 mEq/L. ' +
-        'Na hipoalbuminemia, considere o valor corrigido. Interprete sempre junto da gasometria e do quadro clínico.</p></div>' +
+        'Na hipoalbuminemia, a literatura descreve o valor corrigido. A interpretação clínica é exclusiva do médico assistente.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

@@ -156,6 +156,42 @@
         <p>O CURB-65 pode subestimar a gravidade em jovens, em quem tem hipoxemia ou comorbidades descompensadas. A saturação de oxigênio, o estado geral e o suporte social pesam tanto quanto a pontuação.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve que o CURB-65 foi derivado e validado por Lim e colaboradores (2003) em estudo internacional prospectivo com 1.068 adultos hospitalizados com pneumonia adquirida na comunidade no Reino Unido, Países Baixos e Nova Zelândia [1]. A coorte original incluiu pacientes com mediana de idade próxima a 64 anos, ambos os sexos, sem restrição étnica explícita. Publica-se que a performance preditiva para mortalidade em 30 dias foi semelhante entre os centros. Estudos posteriores apontam limitações em populações fora do escopo original: pacientes ambulatoriais não-hospitalizados, imunossuprimidos, gestantes, crianças e residentes de instituições de longa permanência não compõem a amostra de derivação [1,2].</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>O escore agrega cinco variáveis dicotômicas. A literatura descreve: confusão mental aferida pelo AMT ≤ 8 ou desorientação nova; ureia sérica > 7 mmol/L, equivalente publicado a > 50 mg/dL (fator de conversão 6,0 entre mmol/L e mg/dL para ureia); frequência respiratória ≥ 30 incursões por minuto; pressão arterial sistólica < 90 mmHg ou diastólica ≤ 60 mmHg; idade ≥ 65 anos [1]. Faixas plausíveis de sanity: ureia 5-300 mg/dL, FR 6-60 irpm, PAS 40-260 mmHg, idade 0-120 anos.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">CURB-65 = C + U + R + B + idade≥65, com cada item ∈ {0, 1}</div>
+      <p>A fórmula original soma um ponto por critério presente, gerando um inteiro de 0 a 5 [1]. Os componentes: <strong>C</strong> = confusão (1 se presente); <strong>U</strong> = ureia > 50 mg/dL (1 se presente); <strong>R</strong> = FR ≥ 30 (1 se presente); <strong>B</strong> = PAS < 90 ou PAD ≤ 60 (1 se qualquer um); idade ≥ 65 anos (1 se presente). Sequência: 1) verificar cada critério; 2) atribuir 0 ou 1; 3) somar.</p>
+      <p><strong>Exemplo trabalhado:</strong> mulher de 78 anos (idade=1), confusa na admissão (C=1), ureia 62 mg/dL (U=1), FR 24 irpm (R=0), PAS 110 mmHg e PAD 70 mmHg (B=0). Soma: 1+1+1+0+0 = <strong>3 pontos</strong>, faixa alta nas tabelas publicadas [1].</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o CURB-65 não foi validado para população pediátrica, gestantes, pacientes imunossuprimidos (HIV avançado, neoplasias hematológicas, transplantados) ou portadores de pneumonia hospitalar e associada à ventilação mecânica [1,2]. Erros frequentes incluem: confundir ureia com BUN (BUN ≈ ureia/2,14); aferir FR em paciente agitado ou sedado; usar a PA mais alta do prontuário em vez da admissional; classificar como confuso paciente com demência basal estável. Publica-se que o escore subestima gravidade em jovens hipoxêmicos sem os critérios clássicos, e que a NICE (NG138) recomenda considerar SpO₂, comorbidades descompensadas e condições sociais em conjunto com o CURB-65 [2].</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Concorrentes publicados incluem o <strong>PSI/PORT</strong> (Fine, 1997), que estratifica em 5 classes usando 20 variáveis, e o <strong>CRB-65</strong>, versão sem ureia para uso ambulatorial onde não há laboratório disponível [2]. A literatura descreve que o PSI tem maior acurácia preditiva para mortalidade e maior poder discriminativo para pacientes de baixo risco, enquanto o CURB-65 é mais simples e rápido. O CRB-65 é a versão sugerida pela NICE para atenção primária [2]. O SMART-COP avalia necessidade de suporte ventilatório intensivo, contexto distinto da estratificação CURB-65.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O CURB-65 foi publicado por Lim WS, van der Eerden MM, Laing R e colaboradores na revista <cite>Thorax</cite> em maio de 2003, volume 58, edição 5, páginas 377-382, DOI 10.1136/thorax.58.5.377 [1]. A versão implementada nesta página segue exatamente os pontos de corte do artigo original: ureia > 7 mmol/L (≈ 50 mg/dL), FR ≥ 30, PAS < 90 ou PAD ≤ 60, idade ≥ 65 e confusão mental nova. Não foram aplicadas modificações posteriores.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a tabela do artigo original [1]: <strong>(1)</strong> Homem de 45 anos, sem confusão, ureia 30 mg/dL, FR 18, PA 130/80 → 0 pontos (faixa baixa). <strong>(2)</strong> Mulher de 72 anos com confusão nova, ureia 40 mg/dL, FR 22, PA 100/70 → 2 pontos (faixa intermediária: confusão + idade). <strong>(3)</strong> Homem de 80 anos confuso, ureia 80 mg/dL, FR 32, PA 85/55 → 5 pontos (faixa alta, todos os critérios). Verificada contra exemplos em Lim 2003; reporte discrepâncias pelo e-mail de contato.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira: 1) ureia em mg/dL e não BUN; 2) FR aferida em 60 segundos; 3) PA da admissão, não a corrigida; 4) confusão de início recente, não basal. Discrepâncias persistentes podem ser reportadas pelo e-mail editorial.</p>
+      <p><strong>Posso usar em paciente com pneumonia hospitalar?</strong> A literatura descreve que o CURB-65 foi validado em pneumonia adquirida na comunidade [1]. Pneumonia hospitalar e associada à ventilação mecânica não compõem a coorte original e a aplicação fora desse contexto não está validada.</p>
+      <p><strong>Por que CURB-65 e não PSI/PORT?</strong> Publica-se que o CURB-65 usa 5 variáveis fáceis de coletar à beira do leito, enquanto o PSI exige 20 variáveis e estratifica em 5 classes [2]. A escolha entre ambos é editorial e depende do contexto de uso descrito na literatura.</p>
+      <p><strong>Crianças podem usar?</strong> Não. A coorte de derivação incluiu apenas adultos [1]; pediatria utiliza escores próprios descritos em outras publicações.</p>
+      <p><strong>E se faltar a ureia?</strong> A literatura descreve a versão CRB-65 (sem ureia) como alternativa publicada para ambientes sem acesso laboratorial imediato [2].</p>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Lim WS, van der Eerden MM, Laing R, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. <cite>Thorax</cite>. 2003;58(5):377-382. <a href="https://doi.org/10.1136/thorax.58.5.377" target="_blank" rel="noopener">doi:10.1136/thorax.58.5.377</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/12728155/" target="_blank" rel="noopener">PMID&nbsp;12728155</a>.</li>

@@ -2,21 +2,18 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-7516029395999799">
 <title>Cadastro clínico — Medicina | Kit Clínico</title>
-<meta name="description" content="Cadastre os dados do paciente e rode as calculadoras médicas — gere o relatório em PDF, Excel ou JSON.">
+<meta name="description" content="Ferramenta utilitária para rodar calculadoras médicas a partir de dados clínicos numéricos. Uso educacional.">
 <link rel="canonical" href="https://kitclinico.com.br/cadastro-medicina.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
 <meta property="og:title" content="Cadastro clínico — Medicina — Kit Clínico">
-<meta property="og:description" content="Cadastre os dados do paciente e rode as calculadoras médicas — gere o relatório em PDF, Excel ou JSON.">
+<meta property="og:description" content="Ferramenta utilitária para rodar calculadoras médicas a partir de dados clínicos numéricos. Uso educacional.">
 <meta property="og:url" content="https://kitclinico.com.br/cadastro-medicina.html">
-<meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -70,7 +67,7 @@
         </ol>
       </nav>
       <h1>Cadastro clínico — Medicina</h1>
-      <p class="lead">Cadastre os dados do paciente e rode as calculadoras médicas — gere o relatório em PDF, Excel ou JSON.</p>
+      <p class="lead">Utilitário educacional: insira apenas valores numéricos e clínicos para rodar as calculadoras e exportar o resultado em PDF, Excel ou JSON. Nenhum dado pessoal é solicitado.</p>
     </div>
   </div>
 
@@ -79,16 +76,16 @@
     <div class="privacy-notice">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <div>
-        <strong>O Kit Clínico não armazena nenhum dado do cadastro.</strong> Tudo o que você digitar fica apenas no seu navegador, nesta sessão, e some quando você fechar ou limpar a página. Não há envio para nenhum servidor. Cabe ao profissional decidir se inclui — e quais — dados pessoais do paciente no relatório exportado.
+        <strong>Privacidade técnica.</strong> Os campos preenchidos permanecem na memória do navegador durante a sessão. Esta página NÃO carrega scripts de terceiros (AdSense, Analytics, rastreamento). Bibliotecas auxiliares (jsPDF, SheetJS) servidas localmente desta origem. Esta ferramenta não solicita nem aceita dados de identificação pessoal — utilize apenas um código opaco definido por você (sem nome, documento ou contato) e os valores numéricos/clínicos exigidos pelas calculadoras.
       </div>
     </div>
 
     <div class="calculator" id="cad-form">
       <h2 class="calculator__title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-        Dados do paciente
+        Dados clínicos (sem identificação)
       </h2>
-      <p class="calculator__hint">Preencha apenas os campos que forem relevantes. Nenhum campo é obrigatório.</p>
+      <p class="calculator__hint">Preencha apenas os campos relevantes para os cálculos. Nenhum campo é obrigatório e nenhum dado pessoal é solicitado — use somente um código opaco e valores numéricos/clínicos.</p>
 
       <div id="cad-form-fields"></div>
     </div>
@@ -117,18 +114,16 @@
       <button class="btn btn--ghost" type="button" id="cad-btn-json">Exportar JSON</button>
     </div>
 
-    <div class="ad-slot" data-ad-slot=""></div>
-
     <article class="prose">
       <h2>Como funciona</h2>
-      <p>O cadastro clínico do Kit Clínico foi pensado para quem atende em consultório ou enfermaria e quer um relatório rápido para colar no prontuário, mandar para o paciente ou guardar como histórico. Você digita os dados, escolhe quais cálculos quer rodar (IMC, TFG, escores e por aí vai) e exporta em três formatos: <strong>PDF</strong> (relatório legível), <strong>Excel</strong> (uma aba com os dados e outra com os cálculos) ou <strong>JSON</strong> (para reaproveitar em outras ferramentas ou prontuários eletrônicos).</p>
+      <p>Esta página é um utilitário <strong>educacional</strong> para rodar calculadoras médicas (IMC, TFG, escores, balanço hídrico etc.) a partir de valores numéricos e clínicos. Você digita as variáveis necessárias para o cálculo, escolhe quais fórmulas quer rodar e exporta o resultado em <strong>PDF</strong>, <strong>Excel</strong> ou <strong>JSON</strong>. O único campo de identificação aceito é um <strong>código opaco</strong> (até 30 caracteres) definido livremente por você — para que o resultado exportado possa ser amarrado offline ao seu próprio sistema, sem que a ferramenta veja qualquer dado pessoal.</p>
 
       <h2>Privacidade</h2>
-      <p>Os dados ficam apenas no seu navegador. Nada é enviado, salvo, indexado ou compartilhado. Mesmo a Google Ads e a Google Analytics não recebem o conteúdo do cadastro — eles só sabem que você visitou a página. Se quiser, faça o cadastro sem identificar o paciente (use apenas as iniciais ou um código de prontuário) — os cálculos funcionam do mesmo jeito.</p>
+      <p>Os campos preenchidos permanecem na memória do navegador durante a sessão. Esta página NÃO carrega scripts de terceiros (AdSense, Analytics, rastreamento). Bibliotecas auxiliares (jsPDF, SheetJS) servidas localmente desta origem. Os campos clássicos de identificação (nome, CPF, RG, data de nascimento, telefone, e-mail, endereço, CEP, doenças, comorbidades, medicamentos em uso) foram removidos do formulário — a ferramenta deliberadamente não solicita, não armazena, não transmite e não exporta nenhuma informação pessoalmente identificável.</p>
 
       <div class="disclaimer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        <div><strong>Uso educacional.</strong> As calculadoras têm finalidade educacional e informativa e não substituem a avaliação, o diagnóstico ou o julgamento de um profissional de saúde habilitado. Confira sempre os valores, as unidades e o contexto clínico de cada paciente.</div>
+        <div><strong>Uso educacional.</strong> Ferramenta de finalidade exclusivamente educacional e informativa: as fórmulas implementadas servem para estudo, demonstração e conferência de cálculos. Não substituem a avaliação, o diagnóstico ou o julgamento de um profissional de saúde habilitado. Confira sempre os valores, as unidades e o contexto clínico antes de qualquer uso assistencial.</div>
       </div>
     </article>
 
@@ -188,12 +183,89 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+<script src="/js/vendor/jspdf.umd.min.js" defer></script>
+<script src="/js/vendor/xlsx.full.min.js" defer></script>
 <script src="/js/cadastro.js"></script>
 <script>
+  // Hard-anonymize: remove do formulário renderizado TODOS os campos de PII
+  // (nome, CPF, RG, data de nascimento, telefone, e-mail, endereço, CEP, cidade,
+  // profissão, plano/convênio, queixa, HDA, antecedentes, comorbidades,
+  // alergias, medicações em uso, tabagismo, etilismo).
+  // Mantém apenas:
+  //   (a) um código opaco opcional (máx. 30 caracteres) definido pelo usuário,
+  //   (b) entradas numéricas/clínicas exigidas pelas calculadoras
+  //       (idade, sexo biológico, antropometria, sinais vitais, laboratório).
+  var KIT_PII_FIELD_IDS = [
+    'nome', 'documento', 'data_nasc', 'telefone', 'email',
+    'endereco', 'cidade', 'profissao', 'plano',
+    'queixa', 'hda', 'antecedentes', 'comorbidades',
+    'alergias', 'medicacoes', 'tabagismo', 'etilismo'
+  ];
+
+  function kitStripPII() {
+    var container = document.getElementById('cad-form-fields');
+    if (!container) return;
+
+    // Remove cada input/textarea/select de PII (e seu wrapper de label).
+    KIT_PII_FIELD_IDS.forEach(function (fid) {
+      var node = document.getElementById('cad-' + fid);
+      if (!node) return;
+      var wrap = node.closest('label, .field, .input-affix');
+      if (wrap && wrap.parentNode) {
+        // Subir até o ancestral imediato dentro do fieldset.
+        var p = wrap.parentNode;
+        if (p && p.tagName !== 'FIELDSET') {
+          while (p.parentNode && p.parentNode.tagName !== 'FIELDSET') p = p.parentNode;
+        }
+        (p || wrap).remove();
+      } else {
+        node.remove();
+      }
+    });
+
+    // Remove fieldsets que ficaram sem nenhum input visível.
+    document.querySelectorAll('#cad-form-fields fieldset').forEach(function (fs) {
+      if (!fs.querySelector('input, textarea, select')) fs.remove();
+    });
+
+    // Injeta o campo de código opaco no topo do primeiro fieldset (ou cria um).
+    var firstFs = document.querySelector('#cad-form-fields fieldset');
+    if (!firstFs) {
+      firstFs = document.createElement('fieldset');
+      firstFs.className = 'field-group';
+      var lg = document.createElement('legend');
+      lg.textContent = 'Identificação opaca';
+      firstFs.appendChild(lg);
+      container.insertBefore(firstFs, container.firstChild);
+    }
+    var label = document.createElement('label');
+    label.className = 'field';
+    label.htmlFor = 'cad-codigo';
+    var span = document.createElement('span');
+    span.className = 'field__label';
+    span.textContent = 'Código opaco do registro (opcional, máx. 30 caracteres)';
+    var input = document.createElement('input');
+    input.className = 'input';
+    input.id = 'cad-codigo';
+    input.type = 'text';
+    input.maxLength = 30;
+    input.autocomplete = 'off';
+    input.setAttribute('inputmode', 'text');
+    input.addEventListener('input', function () {
+      // Mantém em memória do navegador apenas durante a sessão.
+      try { window.__kitCodigoOpaco = input.value.slice(0, 30); } catch (e) {}
+    });
+    label.appendChild(span);
+    label.appendChild(input);
+    // Insere logo após a legend.
+    var lgEl = firstFs.querySelector('legend');
+    if (lgEl && lgEl.nextSibling) firstFs.insertBefore(label, lgEl.nextSibling);
+    else firstFs.appendChild(label);
+  }
+
   window.addEventListener('DOMContentLoaded', function () {
     KitCadastro.init('medicina');
+    kitStripPII();
   });
 </script>
 </body>

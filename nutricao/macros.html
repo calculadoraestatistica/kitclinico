@@ -181,10 +181,51 @@
         <p>As três porcentagens — proteína, carboidrato e gordura — devem somar exatamente 100%. A distribuição ideal varia conforme objetivo, prática esportiva e condições de saúde; defina-a junto de um nutricionista.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>Os fatores energéticos de Atwater (4-4-9 kcal/g para proteína, carboidrato e gordura) foram derivados em estudos calorimétricos com adultos saudáveis no final do século XIX e início do XX. As <em>Dietary Reference Intakes</em> publicadas pelo Institute of Medicine [1] aplicam esses fatores e descrevem faixas aceitáveis de distribuição (AMDR) validadas em populações adultas norte-americanas e canadenses, incluindo ambos os sexos. A literatura registra limitações conhecidas: os fatores são médias de digestibilidade e não capturam variabilidade individual, microbiota intestinal, processamento alimentar nem fibras fermentáveis, que liberam menos energia do que os 4 kcal/g atribuídos a carboidratos digeríveis.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza quatro entradas numéricas: <strong>calorias-alvo</strong> em kcal/dia (faixa típica publicada: 1.200–4.500), <strong>porcentagem de proteína</strong>, <strong>porcentagem de carboidrato</strong> e <strong>porcentagem de gordura</strong>, cada uma em valor percentual de 0 a 100. As três porcentagens devem totalizar 100%. Caso a meta esteja em quilojoules (kJ), a conversão publicada é 1 kcal = 4,184 kJ; divida o valor em kJ por 4,184 antes de inserir.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A literatura nutricional [1] descreve o cálculo em três passos sequenciais aplicados separadamente a cada macronutriente:</p>
+      <div class="formula">gramas<sub>macro</sub> = (calorias × %<sub>macro</sub> ÷ 100) ÷ fator<sub>macro</sub></div>
+      <p>Em que <em>calorias</em> é a meta diária em kcal, <em>%<sub>macro</sub></em> é a porcentagem atribuída ao macronutriente e <em>fator<sub>macro</sub></em> é o valor de Atwater: 4 kcal/g para proteína, 4 kcal/g para carboidrato e 9 kcal/g para gordura. Exemplo trabalhado para 2.000 kcal com distribuição 30/40/30:</p>
+      <div class="formula">proteína = (2000 × 30 ÷ 100) ÷ 4 = 600 ÷ 4 = 150 g<br>carboidrato = (2000 × 40 ÷ 100) ÷ 4 = 800 ÷ 4 = 200 g<br>gordura = (2000 × 30 ÷ 100) ÷ 9 = 600 ÷ 9 ≈ 66,7 g</div>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve limitações relevantes da abordagem 4-4-9: os fatores são valores médios e não distinguem aminoácidos individuais, tipos de carboidrato (digeríveis, fibra solúvel, fibra insolúvel) ou perfis de ácidos graxos. Bebidas alcoólicas contribuem energia (publica-se 7 kcal/g de álcool) e não são contabilizadas pela calculadora. Erros comuns publicados incluem inserir gramas em vez de porcentagens, somar valores que ultrapassam 100% e ignorar que parte da energia ingerida não é absorvida. O modelo não captura termogênese induzida pela dieta, que é descrita como maior para proteínas (≈20–30%) do que para carboidratos (≈5–10%) ou gorduras (≈0–3%) segundo a literatura.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve abordagens alternativas para distribuir calorias: prescrição por <strong>gramas absolutas de proteína por kg de peso</strong> (publicada como 0,8–2,2 g/kg conforme a finalidade descrita por estudos esportivos e clínicos), <strong>contagem de carboidratos</strong> usada no contexto descrito por diretrizes de diabetes [1], e os fatores específicos de Atwater (que ajustam a digestibilidade por alimento). A versão percentual implementada aqui é descrita como adequada para conversão direta de uma meta calórica em gramas, enquanto a abordagem por g/kg é descrita como superior quando a massa corporal magra é o ponto de partida.</p>
+
+      <h2>Origem e versão</h2>
+      <p>Os fatores de conversão energética foram propostos por Wilbur O. Atwater em publicações do United States Department of Agriculture entre 1896 e 1900. As faixas aceitáveis de distribuição de macronutrientes (AMDR) foram publicadas pelo Institute of Medicine em 2005 nas <em>Dietary Reference Intakes</em> [1] (DOI: 10.17226/10490). A versão implementada aqui aplica os fatores arredondados (4-4-9 kcal/g) sem ajustes específicos por alimento.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Casos verificados contra o cálculo descrito em [1]:</p>
+      <ul>
+        <li><strong>2.000 kcal · 30/40/30</strong> → 150 g proteína · 200 g carboidrato · ≈66,7 g gordura</li>
+        <li><strong>1.500 kcal · 25/50/25</strong> → ≈93,8 g proteína · ≈187,5 g carboidrato · ≈41,7 g gordura</li>
+        <li><strong>2.500 kcal · 20/55/25</strong> → 125 g proteína · ≈343,8 g carboidrato · ≈69,4 g gordura</li>
+      </ul>
+      <p>Reporte discrepâncias pelo e-mail listado no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve que as três porcentagens devem somar exatamente 100% e que a meta calórica deve estar em kcal (não kJ). Caso a soma seja diferente, o cálculo aplicado a cada macronutriente isolado segue válido, mas a soma das calorias parciais não baterá com a meta informada.</p>
+      <p><strong>Posso usar em crianças, gestantes ou atletas?</strong> Publica-se que as faixas AMDR do Institute of Medicine [1] foram derivadas para adultos saudáveis; para crianças, gestantes, lactantes e atletas de alto rendimento existem faixas e gramaturas específicas descritas em literatura especializada.</p>
+      <p><strong>Por que esta fórmula percentual e não g/kg?</strong> A literatura descreve a abordagem percentual como conversão direta de uma meta calórica preexistente, enquanto a abordagem por g/kg de peso parte da massa corporal e é descrita por estudos esportivos como mais sensível ao perfil individual. As duas são complementares.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Institute of Medicine. Dietary Reference Intakes for Energy, Carbohydrate, Fiber, Fat, Fatty Acids, Cholesterol, Protein, and Amino Acids. Washington, DC: National Academies Press; 2005. <a href="https://doi.org/10.17226/10490" target="_blank" rel="noopener">doi:10.17226/10490</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

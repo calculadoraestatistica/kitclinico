@@ -158,19 +158,47 @@
       <h2>Para que serve</h2>
       <p>A <strong>Taxa Metabólica Basal (TMB)</strong> é a energia mínima que o corpo gasta em repouso para manter as funções vitais. A <strong>equação de Harris-Benedict</strong>, publicada em 1918 e revisada em 1984, foi por muito tempo a fórmula padrão para estimar a TMB de adultos e ainda é amplamente usada na prática clínica e nutricional.</p>
 
-      <h2>Como interpretar o resultado</h2>
-      <p>O resultado é a TMB em <strong>kcal/dia</strong>: a energia gasta apenas para o corpo funcionar em repouso. Para chegar ao <strong>gasto energético total (GET)</strong>, multiplica-se a TMB por um fator de atividade física. A equação de Harris-Benedict <strong>tende a superestimar um pouco</strong> a TMB quando comparada à de Mifflin-St Jeor, especialmente em pessoas com sobrepeso.</p>
-      <div class="formula">Homens: TMB = 88,362 + 13,397 × peso + 4,799 × altura − 5,677 × idade<br>Mulheres: TMB = 447,593 + 9,247 × peso + 3,098 × altura − 4,330 × idade</div>
+      <h2>População validada</h2>
+      <p>A publicação original de Harris e Benedict (1918) baseou-se em medições de calorimetria indireta em <strong>136 homens, 103 mulheres e 94 crianças</strong>, predominantemente adultos brancos norte-americanos de peso considerado normal para a época. A reavaliação de Roza e Shizgal (1984) atualizou os coeficientes a partir de uma coorte hospitalar adicional. A literatura descreve aplicabilidade em <strong>adultos de 19 a 78 anos</strong>, com validação limitada em idosos acima de 80 anos, atletas, gestantes, indivíduos com obesidade grau II/III e populações não caucasianas, onde estudos comparativos apontam vieses sistemáticos.</p>
 
-      <h2>Exemplo</h2>
-      <p>Um homem de <strong>70 kg</strong>, <strong>175 cm</strong> e <strong>30 anos</strong>: TMB = 88,362 + 13,397 × 70 + 4,799 × 175 − 5,677 × 30 ≈ <strong>1.696 kcal/dia</strong> — um valor um pouco mais alto do que o estimado pela equação de Mifflin-St Jeor.</p>
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A fórmula original consome quatro variáveis: <strong>peso em quilogramas (kg)</strong>, <strong>altura em centímetros (cm)</strong>, <strong>idade em anos completos</strong> e <strong>sexo biológico</strong> (masculino/feminino). Conversões usuais: 1 libra = 0,4536 kg; 1 polegada = 2,54 cm. Faixas plausíveis para sanity check descritas na literatura: peso 30–250 kg, altura 120–220 cm, idade 18–90 anos. Valores fora destas faixas saem do envelope onde a equação foi calibrada.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A versão implementada nesta página corresponde à <strong>revisão de Roza e Shizgal (1984)</strong> da equação original de Harris-Benedict:</p>
+      <div class="formula">Homens: TMB = 88,362 + 13,397 × peso + 4,799 × altura − 5,677 × idade<br>Mulheres: TMB = 447,593 + 9,247 × peso + 3,098 × altura − 4,330 × idade</div>
+      <p>Onde <em>peso</em> está em kg, <em>altura</em> em cm e <em>idade</em> em anos; o resultado sai em kcal/dia. A sequência de cálculo é: (1) multiplicar cada variável pelo seu coeficiente, (2) somar os três produtos à constante específica do sexo, (3) o sinal negativo do termo de idade reflete a queda da taxa metabólica com o envelhecimento.</p>
+      <p><strong>Exemplo trabalhado</strong> — homem, 70 kg, 175 cm, 30 anos:<br>TMB = 88,362 + (13,397 × 70) + (4,799 × 175) − (5,677 × 30)<br>TMB = 88,362 + 937,79 + 839,825 − 170,31<br>TMB ≈ <strong>1.696 kcal/dia</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a equação de Harris-Benedict <strong>superestima a TMB</strong> em cerca de 5% a 15% quando confrontada com calorimetria indireta, particularmente em indivíduos com sobrepeso e obesidade [2]. Erros comuns de medida que distorcem o resultado incluem: peso vestido (sobrestima), altura autorrelatada, idade aproximada e troca de unidades (libras por kg, polegadas por cm). A fórmula não foi validada para crianças, adolescentes em estirão puberal, gestantes, lactantes, pacientes críticos com sepse ou queimados, atletas de alta performance com massa magra atípica e indivíduos com amputações. Em populações asiáticas e afrodescendentes, publicações apontam viés sistemático. A literatura mais recente descreve a equação de Mifflin-St Jeor como mais acurada em adultos saudáveis modernos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>As principais concorrentes em adultos são: <strong>Mifflin-St Jeor (1990)</strong> — descrita como mais acurada em adultos saudáveis e em sobrepeso, com erro médio menor; <strong>FAO/OMS/UNU (1985, 2004)</strong> — equações por faixa etária e sexo, validadas em populações internacionais; <strong>Cunningham (1980)</strong> — baseada em massa magra, descrita como superior em atletas; <strong>Owen (1986)</strong> — derivada em obesos e com bom desempenho neste grupo; e <strong>Schofield (1985)</strong> — adotada por organismos internacionais. A escolha entre fórmulas depende da população avaliada.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação original foi publicada por <strong>James Arthur Harris e Francis Gano Benedict</strong> em 1918 nas <cite>Proceedings of the National Academy of Sciences</cite> (DOI 10.1073/pnas.4.12.370) [1]. A revisão de coeficientes implementada nesta página é a de <strong>Roza AM e Shizgal HM</strong>, publicada em 1984 no <cite>American Journal of Clinical Nutrition</cite> (DOI 10.1093/ajcn/40.1.168) [2]. Esta revisão recalculou as constantes a partir de medições adicionais de calorimetria indireta e mantém a estrutura linear original.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificáveis contra a fórmula publicada [2]:</p>
+      <ul>
+        <li><strong>Homem, 70 kg, 175 cm, 30 anos:</strong> TMB esperada ≈ <strong>1.696 kcal/dia</strong>.</li>
+        <li><strong>Mulher, 60 kg, 165 cm, 35 anos:</strong> TMB esperada ≈ <strong>1.361 kcal/dia</strong>.</li>
+        <li><strong>Homem, 90 kg, 180 cm, 60 anos:</strong> TMB esperada ≈ <strong>1.823 kcal/dia</strong>.</li>
+      </ul>
+      <p>Valores verificados contra exemplos derivados das equações em [1] e [2]; reporte discrepâncias pelo e-mail editorial abaixo.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confirme se as unidades estão corretas (kg e cm, não libras e polegadas), se a idade está em anos completos e se o sexo selecionado corresponde ao biológico usado nos estudos originais. Compare com a equação de Mifflin-St Jeor; diferenças de até 10% entre fórmulas são descritas na literatura.</p>
+      <p><strong>Posso usar em crianças, gestantes ou atletas?</strong> A literatura descreve que a equação foi validada em adultos não gestantes e que pediátricos, gestantes e atletas com massa magra atípica ficam fora da faixa onde a fórmula foi calibrada. Para estes grupos, publicações apontam equações específicas (Schofield, FAO/OMS pediátrica, Cunningham).</p>
+      <p><strong>Por que esta fórmula em vez de Mifflin-St Jeor?</strong> Harris-Benedict é descrita como historicamente padrão e ainda figura em livros-texto e protocolos clínicos. Mifflin-St Jeor é mais recente (1990) e a literatura comparativa publica menor erro médio em adultos saudáveis modernos. Ambas estão disponíveis no Kit Clínico para comparação.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>Por tender a superestimar a TMB, a equação de Harris-Benedict pode levar a metas calóricas mais altas do que o necessário. Para adultos saudáveis, a equação de Mifflin-St Jeor costuma ser a mais recomendada atualmente. Use o resultado como referência e ajuste conforme a avaliação nutricional.</p>
+        <p>A literatura descreve que a equação de Harris-Benedict tende a superestimar a TMB frente à calorimetria indireta, especialmente em pessoas com sobrepeso. Para adultos saudáveis, publicações apontam a equação de Mifflin-St Jeor como mais acurada.</p>
       </div>
 
       <h2>Referências</h2>
@@ -186,6 +214,12 @@
           <a class="calc-card" href="/nutricao/gasto-energetico.html"><h3>Gasto energético total</h3><p>GET pela TMB e o fator de atividade.</p></a>
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal e classificação.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

@@ -174,8 +174,39 @@
       </div>
       <div class="formula">Clearance = [(140 − idade) × peso] ÷ (72 × creatinina) × (0,85 se mulher)</div>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente <strong>masculino</strong>, com <strong>60 anos</strong>, <strong>70 kg</strong> e creatinina sérica de <strong>1,0 mg/dL</strong>, tem clearance de creatinina estimado de aproximadamente <strong>77,8 mL/min</strong>.</p>
+      <h2>População validada</h2>
+      <p>A fórmula foi derivada por Cockcroft e Gault em 1976 a partir de uma coorte de <strong>249 pacientes hospitalizados do sexo masculino</strong>, com idades entre 18 e 92 anos, em Montreal (Canadá), correlacionando a depuração medida em urina de 24 horas com a creatinina sérica. O fator de correção 0,85 para mulheres foi extrapolado, não derivado de coorte feminina própria. A literatura descreve limitações reconhecidas em pediatria (não validada em menores de 18 anos), em obesos mórbidos, em desnutridos graves, em pacientes amputados e em gestantes, conforme discutido por Cockcroft e Gault (1976).</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita: <strong>idade</strong> em anos completos (faixa típica 18-110); <strong>peso corporal</strong> em quilogramas (kg); <strong>creatinina sérica</strong> em mg/dL (faixa típica 0,3-15). Para laboratórios que reportam creatinina em µmol/L, publica-se a conversão: mg/dL = µmol/L ÷ 88,4. O sexo é binário (M/F) conforme o estudo original. Valores fora dessas faixas geram resultados aritmeticamente válidos, porém clinicamente questionáveis segundo a literatura.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">ClCr (mL/min) = [(140 − idade) × peso] ÷ (72 × creatinina sérica) × F<br>F = 1,00 (homem) ou 0,85 (mulher)</div>
+      <p>Onde: <em>idade</em> em anos, <em>peso</em> em kg, <em>creatinina</em> em mg/dL e <em>F</em> é o fator de correção por sexo. A sequência aritmética é: (1) subtrair a idade de 140; (2) multiplicar pelo peso; (3) dividir o produto por (72 × creatinina); (4) multiplicar por F se mulher. <strong>Exemplo trabalhado</strong>: paciente masculino, 60 anos, 70 kg, creatinina 1,0 mg/dL. Etapa 1: 140 − 60 = 80. Etapa 2: 80 × 70 = 5.600. Etapa 3: 72 × 1,0 = 72. Etapa 4: 5.600 ÷ 72 = 77,8. Fator F = 1,00. Resultado: <strong>77,8 mL/min</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>Cockcroft e Gault (1976) publicaram que a fórmula assume estado estável da creatinina sérica; em <strong>injúria renal aguda</strong>, com creatinina mudando dia a dia, o resultado não reflete a função renal real. A literatura descreve perda de acurácia em <strong>extremos de peso</strong> (obesos: superestima; emagrecidos: subestima), em <strong>idosos com sarcopenia</strong> (baixa produção de creatinina mascara disfunção) e em <strong>amputados</strong>. Erros comuns de medida incluem: uso de peso desejado em vez de peso real, conversão incorreta de µmol/L, e uso de creatinina não calibrada por IDMS. Em insuficiência renal crônica avançada, a literatura descreve que CKD-EPI superou Cockcroft-Gault em acurácia (Levey et al., 2009).</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>As principais alternativas publicadas para estimar função renal são <strong>MDRD</strong> (Levey, 1999) e <strong>CKD-EPI 2009/2021</strong> (Levey et al., 2009; Inker et al., 2021). A literatura descreve que Cockcroft-Gault permanece em uso por estar incorporada em <strong>bulas de medicamentos antigas</strong> e em estudos farmacocinéticos clássicos de ajuste de dose. CKD-EPI 2021 foi publicada como mais acurada para estadiamento de doença renal crônica e não requer peso. MDRD foi derivada em coorte com DRC estabelecida e subestima a TFG em indivíduos saudáveis.</p>
+
+      <h2>Origem e versão</h2>
+      <p>Publicada originalmente por <strong>Donald W. Cockcroft</strong> e <strong>Matthew H. Gault</strong> no periódico <cite>Nephron</cite>, volume 16, número 1, páginas 31-41, em 1976 (DOI: 10.1159/000180580; PMID 1244564). A versão implementada nesta calculadora corresponde à equação original, com o fator multiplicativo 0,85 para o sexo feminino conforme publicado, sem ajustes posteriores por superfície corporal nem normalização para 1,73 m².</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a equação publicada:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> Masculino, 60 anos, 70 kg, creatinina 1,0 mg/dL → <strong>77,8 mL/min</strong>.</li>
+        <li><strong>Caso 2:</strong> Feminino, 60 anos, 70 kg, creatinina 1,0 mg/dL → <strong>66,1 mL/min</strong> (77,8 × 0,85).</li>
+        <li><strong>Caso 3:</strong> Masculino, 80 anos, 60 kg, creatinina 1,5 mg/dL → <strong>33,3 mL/min</strong>.</li>
+      </ul>
+      <p>Verificada contra exemplos derivados da equação em Cockcroft &amp; Gault (1976); reporte discrepâncias pelo e-mail ao final da página.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se a creatinina está em mg/dL e não em µmol/L (divida por 88,4 se necessário), se o peso foi informado em kg, e se a idade está em anos completos. Erro frequente publicado é o uso de creatinina urinária no lugar da sérica.</p>
+      <p><strong>Posso usar em crianças?</strong> A fórmula não foi validada em menores de 18 anos. A literatura pediátrica descreve equações específicas como a de Schwartz (1976, atualizada 2009) para essa população.</p>
+      <p><strong>Por que esta fórmula e não a CKD-EPI?</strong> Cockcroft-Gault permanece publicada como referência em bulas e estudos farmacocinéticos para ajuste de dose. CKD-EPI 2021 foi publicada como mais acurada para estadiamento de doença renal crônica e não usa peso na equação.</p>
+      <p><strong>Devo usar peso real, ideal ou ajustado?</strong> A publicação original de 1976 utilizou peso corporal real. Estudos posteriores discutiram, sem consenso único, o uso de peso ideal em obesos.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -188,6 +219,8 @@
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Cockcroft DW, Gault MH. Prediction of creatinine clearance from serum creatinine. <cite>Nephron</cite>. 1976;16(1):31-41. <a href="https://doi.org/10.1159/000180580" target="_blank" rel="noopener">doi:10.1159/000180580</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/1244564/" target="_blank" rel="noopener">PMID&nbsp;1244564</a>.</li>
+        <li>Levey AS, Stevens LA, Schmid CH, et al. A new equation to estimate glomerular filtration rate. <cite>Ann Intern Med</cite>. 2009;150(9):604-612. <a href="https://doi.org/10.7326/0003-4819-150-9-200905050-00006" target="_blank" rel="noopener">doi:10.7326/0003-4819-150-9-200905050-00006</a>.</li>
+        <li>Inker LA, Eneanya ND, Coresh J, et al. New creatinine- and cystatin C-based equations to estimate GFR without race. <cite>N Engl J Med</cite>. 2021;385(19):1737-1749. <a href="https://doi.org/10.1056/NEJMoa2102953" target="_blank" rel="noopener">doi:10.1056/NEJMoa2102953</a>.</li>
       </ol>
 
       <div class="related">
@@ -197,6 +230,12 @@
           <a class="calc-card" href="/medicina/fena.html"><h3>FeNa</h3><p>Fração de excreção de sódio.</p></a>
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

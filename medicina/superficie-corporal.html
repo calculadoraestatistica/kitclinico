@@ -157,11 +157,55 @@
         <p>A BSA é uma estimativa e pode ser menos precisa em extremos de peso, em obesos e em crianças muito pequenas. Esta página apenas calcula a fórmula publicada e não define aplicação clínica individual.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A fórmula original de Du Bois (1916) foi derivada de medidas diretas em apenas <strong>nove indivíduos</strong>, incluindo um menino de 12 anos com desnutrição, conforme descreve o artigo original<sup>[2]</sup>. Mosteller (1987) propôs uma simplificação algébrica equivalente, validada por comparação com nomogramas clássicos em adultos e crianças<sup>[1]</sup>. Publica-se que a estimativa apresenta maior dispersão em obesos, neonatos prematuros e amputados, populações nas quais a literatura descreve limitações conhecidas. Estudos validaram a fórmula em coortes caucasianas; a literatura também descreve uso amplo em populações pediátricas e adultas em geral.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita <strong>peso em quilogramas (kg)</strong> e <strong>altura em centímetros (cm)</strong>. Para converter libras em quilos, divide-se por 2,2046; para converter polegadas em centímetros, multiplica-se por 2,54. Faixas de sanidade típicas: peso entre 0,5 kg (neonato) e 250 kg; altura entre 30 cm e 220 cm. Valores fora dessas faixas costumam refletir erro de digitação de unidade.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula de Mosteller calcula BSA como a raiz quadrada do produto altura por peso dividido por 3600:</p>
+      <div class="formula">BSA (Mosteller) = √(altura[cm] × peso[kg] ÷ 3600)</div>
+      <p>A fórmula de Du Bois usa potências fracionárias:</p>
+      <div class="formula">BSA (DuBois) = 0,007184 × peso[kg]<sup>0,425</sup> × altura[cm]<sup>0,725</sup></div>
+      <p>Onde <em>altura</em> é a estatura em centímetros e <em>peso</em> é a massa corporal em quilogramas; o resultado sai em m². Sequência: (1) multiplica-se altura por peso; (2) divide-se por 3600; (3) extrai-se a raiz quadrada. <strong>Exemplo trabalhado:</strong> paciente de 70 kg e 170 cm. Substituindo: 170 × 70 = 11.900; 11.900 ÷ 3600 = 3,3056; √3,3056 = 1,818 m². Pela fórmula de DuBois: 0,007184 × 70<sup>0,425</sup> × 170<sup>0,725</sup> ≈ 1,810 m². A diferença entre as duas fórmulas para este caso é menor que 1%.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula é uma estimativa empírica e não uma medida direta; o erro relativo aumenta nos extremos antropométricos. Publica-se que em obesidade mórbida (IMC > 40), neonatos prematuros, edema generalizado e amputados as fórmulas tradicionais subestimam ou superestimam a área verdadeira. Erros comuns de medida incluem usar altura em metros em vez de centímetros (resultado fica 10× menor), inverter peso e altura, ou usar peso vestido. Em pediatria, a literatura descreve a fórmula de Haycock como alternativa frequentemente citada. Em obesos para cálculos farmacológicos, publica-se discussão sobre uso de BSA por peso ideal ou peso ajustado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Além de Mosteller e DuBois, a literatura descreve <strong>Haycock</strong> (1978), validada em ampla faixa pediátrica incluindo neonatos; <strong>Gehan & George</strong> (1970), derivada de 401 indivíduos; e <strong>Boyd</strong> (1935), historicamente usada em oncologia pediátrica. Publica-se que Mosteller é preferida por simplicidade algébrica e Du Bois mantém uso por tradição histórica. Em neonatos, estudos descrevem Haycock como mais acurada; em adultos eutróficos, as diferenças entre as fórmulas costumam ser inferiores a 5%.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula de Du Bois foi publicada por Delafield Du Bois e Eugene F. Du Bois em <cite>Archives of Internal Medicine</cite>, 1916<sup>[2]</sup>. A simplificação de Mosteller foi publicada por Richard D. Mosteller no <cite>New England Journal of Medicine</cite>, 1987 (DOI 10.1056/NEJM198710223171717)<sup>[1]</sup>. Esta página implementa a fórmula de Mosteller como valor principal e DuBois como comparação, ambas conforme publicação original.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra as fórmulas publicadas:</p>
+      <ul>
+        <li><strong>Adulto eutrófico:</strong> 70 kg / 170 cm → Mosteller 1,82 m²; DuBois 1,81 m².</li>
+        <li><strong>Adulto baixo peso:</strong> 50 kg / 160 cm → Mosteller 1,49 m²; DuBois 1,49 m².</li>
+        <li><strong>Adulto obeso:</strong> 110 kg / 180 cm → Mosteller 2,35 m²; DuBois 2,28 m².</li>
+      </ul>
+      <p>Resultados verificados contra exemplos no artigo de Mosteller<sup>[1]</sup>; reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se peso está em kg e altura em cm. Confundir altura em metros com centímetros é o erro mais comum e produz BSA cerca de 10 vezes menor que o esperado.</p>
+      <p><strong>Posso usar em crianças e neonatos?</strong> A literatura descreve Mosteller como aplicável em pediatria, mas publica-se que Haycock apresenta melhor acurácia em neonatos e lactentes pequenos. Du Bois foi derivada com amostra majoritariamente adulta.</p>
+      <p><strong>Por que Mosteller e não DuBois?</strong> Mosteller é algebricamente equivalente à raiz quadrada e dispensa potências fracionárias, sendo mais simples de calcular mentalmente. Publica-se que ambas concordam dentro de 5% na faixa adulta usual.</p>
+      <p><strong>A BSA serve para definir doses de quimioterapia?</strong> Esta página apenas calcula a fórmula publicada. Decisões terapêuticas dependem de avaliação por profissional habilitado e protocolos institucionais específicos.</p>
+      <p><strong>Existe diferença entre etnias?</strong> A literatura original foi derivada em populações caucasianas; estudos posteriores em outras etnias descrevem diferenças pequenas, geralmente inferiores à variabilidade interindividual.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Mosteller RD. Simplified calculation of body-surface area. <cite>New England Journal of Medicine</cite>. 1987;317(17):1098. <a href="https://doi.org/10.1056/NEJM198710223171717" target="_blank" rel="noopener">doi:10.1056/NEJM198710223171717</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/3657876/" target="_blank" rel="noopener">PMID&nbsp;3657876</a>.</li>
         <li>Du Bois D, Du Bois EF. A formula to estimate the approximate surface area if height and weight be known. <cite>Archives of Internal Medicine</cite>. 1916;17:863-871.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

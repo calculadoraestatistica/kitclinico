@@ -146,8 +146,36 @@
       <p>Em muitos contextos críticos, a literatura usa <strong>PAM ≥ 65 mmHg</strong> como referência de perfusão. Valores abaixo dessa faixa são descritos como associados a maior risco de <strong>hipoperfusão tecidual</strong>, mas a interpretação depende do contexto clínico completo.</p>
       <div class="formula">PAM = (PAS + 2 × PAD) ÷ 3</div>
 
+      <h2>População validada</h2>
+      <p>A fórmula clássica de PAM foi descrita inicialmente para adultos em ritmo sinusal com frequências cardíacas próximas do normal (60–100 bpm), considerando uma razão diástole:sístole de aproximadamente 2:1. A literatura publica que a estimativa apresenta boa correlação com a PAM invasiva em adultos hemodinamicamente estáveis. Estudos descrevem limitações de acurácia em pacientes pediátricos, em gestantes, em quadros de taquicardia importante e em situações de pressão de pulso muito ampla, como insuficiência aórtica grave. A meta de PAM ≥ 65 mmHg foi validada em coortes adultas de choque séptico, conforme registrado nas diretrizes citadas em StatPearls.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza duas entradas: <strong>PAS</strong> (pressão arterial sistólica) e <strong>PAD</strong> (pressão arterial diastólica), ambas em <strong>mmHg</strong>. Ranges plausíveis publicados na literatura: PAS entre 40 e 260 mmHg; PAD entre 20 e 200 mmHg, sempre com PAD &lt; PAS. Conversão para quilopascal: 1 mmHg ≈ 0,1333 kPa. Medidas obtidas por método oscilométrico não invasivo e por linha arterial podem divergir, sobretudo em hipotensão.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">PAM ≈ PAD + (PAS − PAD) ÷ 3 = (PAS + 2 × PAD) ÷ 3</div>
+      <p>Significado das variáveis: <strong>PAS</strong> é a pressão de pico do ciclo (sístole ventricular); <strong>PAD</strong> é a pressão mínima ao final da diástole; <strong>(PAS − PAD)</strong> é a pressão de pulso. A aproximação parte da observação de que, em frequências cardíacas usuais, a diástole ocupa cerca de dois terços do ciclo. Sequência: (1) confirme que PAD &lt; PAS; (2) calcule a pressão de pulso; (3) divida por 3; (4) some à PAD. <strong>Exemplo trabalhado</strong>: PAS = 140 mmHg, PAD = 90 mmHg. Pressão de pulso = 140 − 90 = 50 mmHg. 50 ÷ 3 ≈ 16,7 mmHg. PAM ≈ 90 + 16,7 ≈ <strong>107 mmHg</strong>. Aplicando a forma equivalente: (140 + 2 × 90) ÷ 3 = 320 ÷ 3 ≈ <strong>107 mmHg</strong>.</p>
+
       <h2>Exemplo</h2>
       <p>Um paciente com pressão <strong>120 / 80 mmHg</strong> tem PAM = (120 + 2 × 80) ÷ 3 = 280 ÷ 3 ≈ <strong>93 mmHg</strong> — acima da meta de 65 mmHg.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula 1/3·PAS + 2/3·PAD subestima a PAM real em frequências cardíacas elevadas (taquicardia), porque a fração do ciclo ocupada pela diástole diminui. Em bradicardia acentuada o efeito é inverso. Erros comuns de medida não invasiva incluem: manguito de tamanho incorreto, braço sem apoio, paciente falando durante a aferição e arritmias com pressão de pulso irregular. Em fibrilação atrial publica-se que a média de várias aferições é mais representativa que uma medida isolada. Quando há linha arterial disponível, estudos mostram que a PAM medida diretamente pelo monitor é considerada o padrão de referência, dispensando a estimativa pela fórmula. A meta de 65 mmHg é descrita para adultos em choque e não se aplica automaticamente a populações pediátricas ou neonatais.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Além da forma clássica 1/3·PAS + 2/3·PAD, a literatura descreve a fórmula corrigida por frequência cardíaca de Razminia et al., PAM = PAD + [0,33 + (FC × 0,0012)] × pressão de pulso, publicada como mais precisa em taquicardia. A integração da curva arterial por linha invasiva é descrita como padrão-ouro quando disponível, pois calcula a área média sob a onda em vez de aproximar pela razão sístole/diástole. Em monitores oscilométricos, o aparelho frequentemente reporta a PAM medida diretamente, sem necessidade de cálculo manual.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A aproximação PAM ≈ PAD + 1/3 × (PAS − PAD) é atribuída na literatura aos trabalhos clássicos de fisiologia cardiovascular do século XX e está consolidada em capítulos de referência como o de DeMers e Wachs em <cite>StatPearls</cite> (revisão 2023, PMID 30855814). Esta página implementa a versão clássica <strong>PAM = (PAS + 2 × PAD) ÷ 3</strong>, sem correção por frequência cardíaca, com arredondamento do resultado para o inteiro mais próximo em mmHg.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra o cálculo aritmético da fórmula clássica: (1) PAS 120 / PAD 80 → PAM = (120 + 160) ÷ 3 = 93 mmHg; (2) PAS 90 / PAD 50 → PAM = (90 + 100) ÷ 3 ≈ 63 mmHg (abaixo de 65); (3) PAS 180 / PAD 100 → PAM = (180 + 200) ÷ 3 ≈ 127 mmHg. Os exemplos foram conferidos contra os valores tabulados em DeMers & Wachs, <cite>StatPearls</cite>, 2023. Reporte discrepâncias pelo e-mail editorial indicado no rodapé.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se PAS e PAD foram digitadas na ordem correta e na unidade mmHg, e se PAD &lt; PAS. A literatura descreve que valores muito divergentes da PAM medida em linha arterial podem ocorrer em pressão de pulso ampla ou em taquicardia importante.</p>
+      <p><strong>Posso usar em crianças?</strong> A fórmula clássica foi validada em coortes adultas. Para faixas pediátricas e neonatais, publicações específicas descrevem outras referências e metas; esta calculadora não substitui essas tabelas.</p>
+      <p><strong>Por que esta fórmula e não a de Razminia?</strong> A versão 1/3·PAS + 2/3·PAD é a mais difundida na literatura e em livros-texto de fisiologia, conforme descrito em StatPearls. A fórmula de Razminia é publicada como mais precisa em frequências cardíacas extremas, porém exige a frequência cardíaca como entrada adicional.</p>
+      <p><strong>A PAM invasiva e a calculada coincidem?</strong> Estudos descrevem boa correlação em pacientes hemodinamicamente estáveis. Quando o monitor mostra PAM medida diretamente pela linha arterial, esse valor é descrito na literatura como referência preferencial.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -161,6 +189,12 @@
       <ol class="ref-list">
         <li>DeMers D, Wachs D. Physiology, Mean Arterial Pressure. <cite>StatPearls</cite>. Treasure Island (FL): StatPearls Publishing; 2023. <a href="https://pubmed.ncbi.nlm.nih.gov/30855814/" target="_blank" rel="noopener">PMID&nbsp;30855814</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

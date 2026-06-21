@@ -29,6 +29,7 @@
 
 <!-- schema-enhanced -->
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Início","item":"https://kitclinico.com.br/"},{"@type":"ListItem","position":2,"name":"Calculadoras Médicas - Escores e Fórmulas de Referência","item":"https://kitclinico.com.br/medicina.html"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Calculadoras Médicas - Escores e Fórmulas de Referência","description":"Compilação editorial de escores de risco cardiovascular, hepático e respiratório, fórmulas de nefrologia e eletrólitos, e referências pediátricas, com finalidade exclusivamente educacional.","url":"https://kitclinico.com.br/medicina.html","inLanguage":"pt-BR","isPartOf":{"@type":"WebSite","name":"Kit Clínico","url":"https://kitclinico.com.br/"},"about":[{"@type":"Thing","name":"Escores de risco cardiovascular"},{"@type":"Thing","name":"Função renal e eletrólitos"},{"@type":"Thing","name":"Gravidade de cirrose hepática"},{"@type":"Thing","name":"Pediatria essencial"}]}</script>
 </head>
 <body data-kit-gate="medicina">
 <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
@@ -73,6 +74,21 @@
   </div>
 
   <div class="container">
+
+    <section class="hub-intro">
+      <h2>Sobre esta seção</h2>
+      <p>A medicina clínica trabalha rotineiramente com escores e fórmulas que organizam variáveis dispersas em uma pontuação interpretável: estimativas de filtração glomerular, índices de gravidade hepática, escores de risco tromboembólico, critérios de gravidade respiratória, ajustes eletrolíticos e regras hídricas pediátricas. Nenhum desses instrumentos substitui o raciocínio clínico, mas todos eles funcionam como pontos de ancoragem padronizados: linguagem comum entre médicos, residentes, enfermagem especializada, farmacêuticos clínicos e pesquisadores. Esta página reúne implementações fiéis das fórmulas publicadas mais consultadas no dia a dia hospitalar e ambulatorial, em formato de calculadora online, com finalidade educacional e de referência rápida.</p>
+      <p>O escopo aqui é deliberadamente conservador. Foram priorizados escores de risco cardiovascular (CHA₂DS₂-VASc, HAS-BLED, índice de choque, PAM, QTc), escores e fórmulas de gravidade hepática (MELD-Na, Child-Pugh), critérios respiratórios (CURB-65 para pneumonia comunitária, Wells e d-dímero ajustado por idade para tromboembolismo), nefrologia e eletrólitos (TFG por CKD-EPI 2021, Cockcroft-Gault, UACR, FeNa, FeUreia, ânion gap, sódio corrigido, cálcio corrigido, osmolaridade) e pediatria essencial (Holliday-Segar para hidratação de manutenção, índice de Apgar, escala de Glasgow aplicada a trauma). Esses são, em sua maioria, instrumentos com décadas de literatura validacional e estão presentes em diretrizes amplamente adotadas — KDIGO, SBC, AASLD, ESC, BTS, entre outras.</p>
+      <p>O que esta página <strong>não é</strong>: não é um sistema de apoio à decisão homologado, não é registro eletrônico de saúde, não emite alertas automatizados, não substitui consulta médica e não recomenda conduta clínica para nenhum paciente específico. É uma biblioteca de referência. Profissionais de saúde habilitados consultam estas calculadoras como conveniência — para confirmar uma faixa, recalcular um escore com valores atualizados, ou simplesmente economizar o tempo de uma multiplicação. Toda a interpretação, contextualização e decisão pertencem ao profissional que examina o paciente.</p>
+    </section>
+
+    <section class="hub-usecases">
+      <h2>Quando profissionais consultam estas referências</h2>
+      <p>O perfil de uso típico das calculadoras médicas online é o de consulta pontual em situações de carga cognitiva. Um plantonista no pronto-atendimento pode recorrer à fórmula de Wells para organizar a probabilidade pré-teste de tromboembolismo enquanto monta o raciocínio; um residente de nefrologia confere o CKD-EPI 2021 ao discutir o estadiamento de um caso novo; um médico de enfermaria recalcula MELD-Na antes da visita ao paciente cirrótico; uma equipe de UTI verifica QTc após introdução de droga com risco arritmogênico; um pediatra confirma a necessidade hídrica diária pelo Holliday-Segar antes de prescrever a hidratação venosa. Em todos esses cenários, a calculadora não decide nada — apenas evita erros aritméticos e mantém a interpretação ancorada na regra publicada.</p>
+      <p>Para estudantes de medicina e residentes, o uso é primariamente didático: rodar os escores com vinhetas clínicas, comparar como CHA₂DS₂-VASc e HAS-BLED se comportam em pacientes idosos, observar como o sódio corrigido muda em hiperglicemia importante, ou verificar o impacto da albuminemia sobre o ânion gap. Pesquisadores e auditores clínicos usam as fórmulas para padronização retrospectiva de coortes ou revisões de prontuário. Profissionais administrativos da área de saúde — enfermagem coordenadora, farmácia clínica, equipe de qualidade — consultam pontuações em discussões de caso, fluxos institucionais e auditorias.</p>
+      <p>O que <strong>não</strong> é um caso de uso apropriado: pacientes ou familiares tentando interpretar exames próprios, autodiagnóstico, comparação de "score do meu vizinho", ou qualquer tentativa de derivar conduta médica sem acompanhamento profissional. Escores são instrumentos de comunicação entre profissionais treinados; fora desse contexto, a probabilidade de leitura equivocada é alta e o risco potencial é real. Esta página existe como referência aberta porque a literatura clínica é aberta, mas o uso responsável depende da formação de quem consulta.</p>
+    </section>
+
     <div class="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <input type="search" id="calc-search" placeholder="Buscar calculadora (ex.: creatinina, IMC, Glasgow)..." aria-label="Buscar calculadora">
@@ -90,6 +106,8 @@
 
     <section class="calc-category">
       <h2>Painéis clínicos integrados</h2>
+      <p>Os painéis combinam mais de uma fórmula relacionada em uma mesma tela, espelhando situações em que escores costumam ser interpretados em conjunto. A matriz KDIGO de risco de doença renal crônica cruza TFG e albuminúria em um mapa de cores publicado; o painel de fibrilação atrial reúne CHA₂DS₂-VASc e HAS-BLED, que tipicamente são discutidos lado a lado para sopesar benefício antitrombótico e risco hemorrágico; gravidade de cirrose costuma envolver MELD-Na <em>e</em> Child-Pugh.</p>
+      <p>Os agrupamentos seguem o que a literatura e as diretrizes consolidam, não preferência editorial. A função de cada painel é estritamente computacional: receber os inputs declarados, retornar o número e exibir a faixa interpretativa textual original. Nenhum painel sugere conduta, nenhum cruza dados com prontuário, nenhum gera alerta automatizado.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/risco-drc.html" data-keywords="risco drc kdigo doenca renal cronica tfg uacr albuminuria matriz"><h3>Risco de DRC (KDIGO)</h3><p>TFG x albuminúria em matriz KDIGO publicada.</p></a>
         <a class="calc-card" href="/medicina/anticoagulacao-fa.html" data-keywords="cha2ds2 vasc has bled fibrilacao atrial avc sangramento score"><h3>CHA₂DS₂-VASc e HAS-BLED</h3><p>Scores publicados e riscos anuais associados.</p></a>
@@ -104,6 +122,8 @@
 
     <section class="calc-category">
       <h2>Antropometria e geral</h2>
+      <p>Antropometria fornece o substrato de outras fórmulas: superfície corporal entra em ajustes de dose, peso ideal entra em cálculos de ventilação mecânica, peso ajustado entra em decisões farmacocinéticas em obesidade. As implementações aqui seguem as equações originais (Mosteller, DuBois, Devine), sem interpretações adicionais.</p>
+      <p>O IMC é mantido pela utilidade epidemiológica das faixas publicadas pela OMS, mesmo reconhecendo que é uma medida indireta, insensível a composição corporal e historicamente discutida. Quando o objetivo é avaliação nutricional individual aprofundada, a referência apropriada está no consultório de nutrição, não em uma calculadora pública.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/imc.html" data-keywords="indice massa corporal peso altura obesidade"><h3>IMC</h3><p>Índice de Massa Corporal e classificação nutricional.</p></a>
         <a class="calc-card" href="/medicina/superficie-corporal.html" data-keywords="bsa area mosteller dubois superficie corporal"><h3>Superfície corporal (BSA)</h3><p>Área de superfície corporal por Mosteller e DuBois.</p></a>
@@ -114,6 +134,8 @@
 
     <section class="calc-category">
       <h2>Cardiologia e hemodinâmica</h2>
+      <p>Cardiologia condensa muito do raciocínio numérico do plantão: pressão arterial média (PAM) para perfusão tecidual, índice de choque (FC/PAS) como marcador precoce de instabilidade hemodinâmica, e QTc para vigilância de risco arritmogênico antes e depois de drogas que prolongam o intervalo QT. As fórmulas são aritméticas simples, mas a confiabilidade do resultado depende inteiramente da qualidade dos dados de entrada.</p>
+      <p>Para QTc, oferecemos as correções de Bazett e Fridericia porque ambas continuam em uso clínico — Bazett é a histórica e mais difundida, Fridericia tende a ter melhor desempenho em frequências cardíacas extremas. A escolha entre elas é uma decisão do profissional, condicionada ao contexto e à diretriz institucional adotada.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/pressao-arterial-media.html" data-keywords="pam map pressao arterial media perfusao"><h3>Pressão arterial média (PAM)</h3><p>PAM a partir da pressão sistólica e diastólica.</p></a>
         <a class="calc-card" href="/medicina/indice-choque.html" data-keywords="shock index indice choque frequencia cardiaca pas"><h3>Índice de choque</h3><p>Relação FC/PAS como índice hemodinâmico.</p></a>
@@ -123,6 +145,8 @@
 
     <section class="calc-category">
       <h2>Função renal e eletrólitos</h2>
+      <p>Nefrologia é um dos terrenos onde calculadoras fazem mais diferença prática, porque agregam variáveis (creatinina, idade, sexo, peso, ureia, sódio urinário) em índices estabilizados. Mantemos a TFG estimada pelo CKD-EPI 2021 (versão sem coeficiente de raça, conforme recomendação da NKF-ASN Task Force) como referência principal, e o Cockcroft-Gault como alternativa histórica útil em ajuste de dose de medicamentos cuja bula ainda se referencia a clearance estimado.</p>
+      <p>Eletrólitos seguem a lógica de "correções" publicadas: sódio corrigido pela hiperglicemia, cálcio corrigido pela albumina, ânion gap corrigido pela albumina, e osmolaridade plasmática estimada a partir de sódio, glicose e ureia. São equações simples, mas frequentemente mal lembradas no calor da urgência — daí a utilidade de uma calculadora dedicada que sempre aplica a forma publicada exata.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/tfg-ckd-epi.html" data-keywords="tfg taxa filtracao glomerular ckd epi rim renal creatinina"><h3>TFG (CKD-EPI 2021)</h3><p>Taxa de filtração glomerular estimada.</p></a>
         <a class="calc-card" href="/medicina/clearance-creatinina.html" data-keywords="cockcroft gault clearance creatinina depuracao"><h3>Clearance de creatinina</h3><p>Depuração de creatinina por Cockcroft-Gault.</p></a>
@@ -138,6 +162,8 @@
 
     <section class="calc-category">
       <h2>Infusão e fórmulas de volume</h2>
+      <p>Fórmulas de volume são aritmética pura, mas erros nelas têm impacto direto: subestimar manutenção hídrica pediátrica, equivocar a velocidade de gotejamento em soroterapia. A regra de Holliday-Segar (4-2-1 mL/kg/h) é mantida porque continua sendo a referência didática e prática mais utilizada para necessidade hídrica de manutenção em pediatria, mesmo com toda a discussão moderna sobre fluidoterapia balanceada.</p>
+      <p>Gotejamento converte volume e tempo em gotas por minuto ou mL/hora considerando o fator do equipo (20 gtt/mL para macrogotas, 60 gtt/mL para microgotas). É uma das contas que mais aparece em provas de enfermagem e residência, e justamente a que mais se beneficia de uma calculadora confiável quando o turno está cheio.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/holliday-segar.html" data-keywords="holliday segar hidratacao manutencao pediatria liquidos"><h3>Hidratação de manutenção</h3><p>Necessidade hídrica pediátrica por Holliday-Segar.</p></a>
         <a class="calc-card" href="/medicina/gotejamento.html" data-keywords="gotejamento infusao gotas equipo soro intravenoso"><h3>Gotejamento / infusão IV</h3><p>Velocidade de infusão em gotas e mL/hora.</p></a>
@@ -146,6 +172,8 @@
 
     <section class="calc-category">
       <h2>Escores e índices clínicos</h2>
+      <p>Esta categoria reúne escores consolidados de várias subespecialidades: Glasgow (avaliação neurológica padronizada em trauma e rebaixamento de consciência), Apgar (vitalidade do recém-nascido no 1º e 5º minutos), CHA₂DS₂-VASc e HAS-BLED (tromboembolismo e sangramento em fibrilação atrial não-valvar), Wells para TVP e TEP (probabilidade pré-teste de tromboembolismo venoso), CURB-65 (gravidade de pneumonia comunitária), MELD-Na e Child-Pugh (gravidade de cirrose hepática), e Parkland (estimativa de reposição volêmica em queimaduras extensas).</p>
+      <p>Cada um desses escores tem população original de validação, contexto de aplicação e limitações que estão na literatura original e em diretrizes. As implementações aqui retornam a pontuação e a faixa de risco descrita pelos autores; <em>não</em> traduzem o número em conduta. A leitura clínica do que o escore significa para um paciente específico — comorbidades, valores, preferências, contexto socioeconômico — pertence ao profissional assistente.</p>
       <div class="calc-grid">
         <a class="calc-card" href="/medicina/escala-glasgow.html" data-keywords="glasgow coma consciencia neurologico trauma"><h3>Escala de Glasgow</h3><p>Resposta ocular, verbal e motora.</p></a>
         <a class="calc-card" href="/medicina/indice-apgar.html" data-keywords="apgar recem nascido neonatal vitalidade parto"><h3>Índice de Apgar</h3><p>Pontuação no 1º e no 5º minuto.</p></a>
@@ -159,6 +187,61 @@
         <a class="calc-card" href="/medicina/parkland.html" data-keywords="parkland queimadura reposicao fluidos"><h3>Fórmula de Parkland</h3><p>Cálculo aritmético de volume pela fórmula publicada.</p></a>
       </div>
     </section>
+
+    <section class="hub-editorial">
+      <h2>Como esta seção é mantida</h2>
+      <p>Esta seção é uma <strong>compilação editorial baseada em literatura médica publicada</strong>. Os artigos originais (Cockcroft &amp; Gault 1976; Levey et al. para CKD-EPI; Lip et al. para CHA₂DS₂-VASc e HAS-BLED; Wells et al. para escores de TEV; Lim et al. para CURB-65; Kamath et al. para MELD; Pugh et al. para Child-Pugh; APA para Apgar; Teasdale &amp; Jennett para Glasgow; Holliday &amp; Segar para hidratação pediátrica; Baxter para Parkland), as diretrizes que os consolidam (KDIGO 2024 sobre DRC, SBC sobre fibrilação atrial, AASLD sobre cirrose, BTS sobre pneumonia, ESC sobre tromboembolismo) e fontes terciárias estabelecidas (UpToDate, MDCalc, manuais de referência) foram a base das implementações.</p>
+      <p>O responsável pelo site <strong>não é profissional de saúde habilitado</strong>. <strong>Nenhuma página desta seção foi revisada por médico, enfermeiro especialista, farmacêutico clínico ou qualquer profissional da área de saúde registrado em conselho.</strong> Não existe corpo editorial médico, conselho consultivo, comitê de revisão clínica ou autoria por especialista — afirmar o contrário seria desonesto. O que existe é leitura cuidadosa das fontes primárias, implementação aritmética das fórmulas publicadas, e checagem de que o resultado da calculadora bate com exemplos publicados quando esses exemplos estão disponíveis.</p>
+      <p>A política de manutenção é de <strong>revisão anual</strong>: uma vez por ano todas as páginas são reabertas, comparadas com as versões mais recentes das diretrizes citadas e atualizadas se houve mudança relevante (por exemplo, a transição do CKD-EPI 2009 para a equação sem raça de 2021 foi propagada nessa janela). Correções pontuais reportadas via canal de contato são tratadas fora do ciclo anual quando o erro é claro. O histórico de mudanças relevantes é mantido em controle de versão do código-fonte.</p>
+    </section>
+
+    <section class="hub-limitations">
+      <h2>Limitações importantes</h2>
+      <p><strong>Erro de implementação é possível.</strong> Uma calculadora pode estar matematicamente errada, com bug de arredondamento, com unidade trocada (mg/dL vs µmol/L em creatinina), ou com lógica condicional incorreta em um escore com pontos compostos. Confiar cegamente no número que aparece na tela sem verificar o contexto é um anti-padrão clínico. Se o resultado parecer inconsistente com o quadro clínico, a hipótese de bug na calculadora <em>precede</em> qualquer reinterpretação do paciente.</p>
+      <p><strong>Thresholds e versões mudam.</strong> Diretrizes são atualizadas: o ponto de corte para o sódio na correção pela hiperglicemia é revisitado periodicamente; o coeficiente de raça do CKD-EPI foi removido; critérios de Wells receberam versões simplificadas; MELD ganhou variantes (MELD 3.0). Mesmo com revisão anual, há sempre risco de a versão exibida não ser a mais atual — o profissional precisa confirmar contra a diretriz vigente da sua instituição.</p>
+      <p><strong>Escore nunca substitui julgamento clínico.</strong> Esta é a limitação mais importante e a mais frequentemente esquecida. CHA₂DS₂-VASc alto em um octogenário caquético com risco de queda recorrente <em>não</em> implica anticoagulação automática; Wells positivo <em>não</em> dispensa imagem confirmatória; MELD-Na em paciente em descompensação aguda pode subestimar gravidade nas primeiras horas. O número é insumo, não veredito.</p>
+      <p><strong>Conteúdo YMYL.</strong> Este é território "Your Money or Your Life" na taxonomia de qualidade da informação online: erros podem afetar decisões clínicas e, por extensão, a saúde de pessoas. O padrão de cuidado exigido é maior. Por isso a postura editorial aqui é conservadora: replicar fielmente o publicado, sinalizar incertezas, evitar opinião própria sobre conduta, e ser explícito sobre a ausência de revisão profissional. Quando estes critérios não puderem ser cumpridos para um instrumento específico, ele é removido da seção.</p>
+    </section>
+
+    <section class="hub-faq">
+      <h2>Perguntas frequentes</h2>
+
+      <details>
+        <summary>Quem mantém este site?</summary>
+        <p>Um desenvolvedor de software com interesse em educação médica e formação em estatística. <strong>Não sou profissional de saúde habilitado</strong>: não sou médico, enfermeiro, farmacêutico nem tenho registro em conselho de área da saúde. As fórmulas e escores são implementados a partir da literatura publicada e diretrizes citadas, com a postura editorial descrita na seção "Como esta seção é mantida".</p>
+      </details>
+
+      <details>
+        <summary>Posso confiar nestas calculadoras?</summary>
+        <p>Confie no que elas afirmam ser: implementações aritméticas de fórmulas e escores publicados, sem revisão por profissional de saúde habilitado. Para uso em decisão clínica real, o profissional assistente é quem confirma o resultado, valida as unidades de entrada, interpreta dentro do contexto do paciente e checa contra a diretriz vigente da sua instituição. Não confie em qualquer calculadora online — esta ou outra — como única fonte para tomada de decisão.</p>
+      </details>
+
+      <details>
+        <summary>Como saber se a página está atualizada?</summary>
+        <p>O ciclo de revisão é anual. A data da última revisão e as fontes consultadas estão listadas em cada página de calculadora. Diretrizes mudam entre ciclos — o profissional deve sempre confrontar o resultado com a versão mais recente da diretriz da sua sociedade ou instituição. Se identificar discrepância entre a calculadora e a diretriz vigente, escreva para o canal de contato indicado no rodapé; correções claras são aplicadas fora do ciclo anual.</p>
+      </details>
+
+      <details>
+        <summary>Posso usar isso para autodiagnóstico?</summary>
+        <p><strong>Não.</strong> Escores clínicos são instrumentos de comunicação entre profissionais treinados. Sem formação para interpretar os pressupostos, as faixas de validade, as limitações e o contexto do paciente, o resultado é facilmente mal lido — e a má leitura tende a gerar ansiedade desnecessária ou, pior, falsa tranquilidade. Para qualquer dúvida sobre sua saúde, procure consulta médica.</p>
+      </details>
+
+      <details>
+        <summary>Por que tantos disclaimers?</summary>
+        <p>Porque conteúdo médico online é território de alto impacto (categoria YMYL), porque o site não tem revisão profissional, e porque transparência é a única forma honesta de operar nessas condições. Disclaimers explícitos permitem que cada visitante decida com clareza se a página atende ou não à necessidade — em vez de inferir credenciais que não existem. Preferimos perder o usuário que esperava aconselhamento médico do que enganá-lo.</p>
+      </details>
+
+      <details>
+        <summary>Como contribuir ou reportar erro?</summary>
+        <p>Pelo e-mail de contato listado no rodapé. Reportes de bug em fórmulas (resultado inconsistente, unidade trocada, threshold desatualizado em relação à diretriz vigente) são especialmente bem-vindos e tratados como prioridade. Sugestões de inclusão de novos escores também são consideradas, com prioridade para instrumentos amplamente validados, com fonte primária pública e relevância clínica reconhecida.</p>
+      </details>
+    </section>
+
+    <section class="hub-final-disclaimer">
+      <h2>Aviso final</h2>
+      <p><strong>Compilação editorial baseada em literatura médica publicada. Esta página NÃO foi revisada por profissional de saúde habilitado.</strong> Conteúdo destinado a fins educacionais e de referência para profissionais; <strong>não substitui consulta médica nem recomenda conduta clínica</strong>. O uso das calculadoras é por conta e risco do usuário. Para qualquer decisão clínica sobre um paciente específico, o julgamento do profissional assistente, com acesso ao quadro completo, prevalece sobre qualquer número exibido aqui.</p>
+    </section>
+
   </div>
 </main>
 

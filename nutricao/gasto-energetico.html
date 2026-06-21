@@ -166,10 +166,16 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>Gasto Energético Total (GET)</strong> é a estimativa de quantas calorias o corpo consome ao longo de um dia, considerando o metabolismo de repouso e as atividades realizadas. É a base para planejar a alimentação: a quantidade de calorias necessária para <strong>manter o peso atual</strong>.</p>
+      <p>O <strong>Gasto Energético Total (GET)</strong> é a estimativa de quantas calorias o corpo consome ao longo de um dia, considerando o metabolismo de repouso e as atividades realizadas. A literatura descreve o GET como referência para planejamento alimentar voltado à manutenção do peso corporal.</p>
+
+      <h2>População validada</h2>
+      <p>A equação de Mifflin-St Jeor foi publicada em 1990 a partir de um estudo com 498 adultos saudáveis (251 mulheres e 247 homens), com idades entre 19 e 78 anos, incluindo participantes eutróficos, com sobrepeso e obesidade. A validação original foi conduzida em população predominantemente caucasiana norte-americana. Os fatores de atividade derivam do relatório FAO/WHO/UNU 2004, baseado em estudos de água duplamente marcada em adultos. A literatura reporta menor acurácia em idosos acima de 80 anos, atletas de elite, pacientes críticos, gestantes e indivíduos com obesidade grau III (IMC ≥ 40).</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Peso em quilogramas (kg); para libras, divide-se por 2,2046. Altura em centímetros (cm); para polegadas, multiplica-se por 2,54. Idade em anos completos. Sexo biológico (masculino/feminino) conforme a fórmula original. Nível de atividade como fator multiplicativo adimensional. Faixas plausíveis publicadas: peso 30-250 kg, altura 120-220 cm, idade 18-90 anos.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>O cálculo é feito em dois passos. Primeiro estima-se a <strong>Taxa Metabólica Basal (TMB)</strong> pela equação de Mifflin-St Jeor; depois multiplica-se a TMB por um <strong>fator de atividade</strong> que reflete a rotina de exercícios. As faixas de fator usadas são:</p>
+      <p>O cálculo é feito em dois passos. Primeiro estima-se a <strong>Taxa Metabólica Basal (TMB)</strong> pela equação de Mifflin-St Jeor; depois multiplica-se a TMB por um <strong>fator de atividade</strong> que reflete a rotina de exercícios. As faixas de fator publicadas são:</p>
       <div class="table-wrap">
         <table class="data">
           <thead><tr><th>Nível de atividade</th><th>Fator</th></tr></thead>
@@ -182,24 +188,53 @@
           </tbody>
         </table>
       </div>
-      <div class="formula">GET = TMB × fator de atividade</div>
-      <p>O GET representa as calorias para <strong>manter o peso</strong>. Para perder peso, planeja-se um valor abaixo do GET; para ganhar, acima dele.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">
+        TMB (masculino) = 10 × peso(kg) + 6,25 × altura(cm) − 5 × idade(anos) + 5<br>
+        TMB (feminino) = 10 × peso(kg) + 6,25 × altura(cm) − 5 × idade(anos) − 161<br>
+        GET = TMB × fator de atividade
+      </div>
+      <p>Onde: <em>peso</em> em kg, <em>altura</em> em cm, <em>idade</em> em anos completos, e <em>fator</em> entre 1,2 e 1,9 conforme rotina. A sequência publicada é: (1) calcula-se TMB pela equação do sexo correspondente; (2) multiplica-se TMB pelo fator de atividade para obter o GET em kcal/dia. <strong>Exemplo trabalhado:</strong> homem, 70 kg, 175 cm, 30 anos, moderadamente ativo. TMB = 10 × 70 + 6,25 × 175 − 5 × 30 + 5 = 700 + 1093,75 − 150 + 5 = 1648,75 kcal/dia. GET = 1648,75 × 1,55 ≈ 2556 kcal/dia.</p>
 
       <h2>Exemplo</h2>
       <p>Uma pessoa <strong>masculina</strong>, com <strong>70 kg</strong>, <strong>175 cm</strong>, <strong>30 anos</strong> e <strong>moderadamente ativa</strong>, tem TMB de aproximadamente 1.649 kcal/dia. Multiplicando pelo fator 1,55, o GET estimado é de cerca de <strong>2.556 kcal/dia</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve menor acurácia da equação de Mifflin-St Jeor em populações específicas: idosos com sarcopenia, atletas com massa muscular elevada (a fórmula subestima o GET), pacientes em estado crítico ou com febre (subestima a demanda metabólica), gestantes e lactantes (não foram incluídas na coorte original). Erros comuns de medida incluem o uso de peso vestido em vez de peso aferido, altura referida em vez de medida, e superestimação subjetiva do fator de atividade. Para pacientes hospitalizados, publica-se que calorimetria indireta é o método padrão-ouro. Em obesidade grau III, estudos sugerem que a equação superestima a TMB porque a massa magra não cresce proporcionalmente ao peso total.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Concorrentes publicadas: <strong>Harris-Benedict (1919, revista 1984)</strong>, primeira equação preditiva; estudos mostram superestimação em obesos. <strong>Mifflin-St Jeor (1990)</strong>, validada como a mais acurada em adultos saudáveis pela revisão da Academy of Nutrition and Dietetics (2005). <strong>Schofield (1985)</strong>, adotada pela FAO/WHO/UNU 2004, estratificada por idade e sexo. <strong>Cunningham (1980)</strong>, baseada em massa magra, descrita como superior em atletas quando a composição corporal é conhecida.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A equação foi publicada por Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. <em>A new predictive equation for resting energy expenditure in healthy individuals.</em> American Journal of Clinical Nutrition. 1990;51(2):241-247. DOI: 10.1093/ajcn/51.2.241. A versão implementada nesta calculadora é a original de 1990 para TMB, combinada com os fatores de atividade do relatório FAO/WHO/UNU 2004.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a equação original: (1) Homem, 70 kg, 175 cm, 30 anos, fator 1,55 → TMB ≈ 1649 kcal/dia, GET ≈ 2556 kcal/dia. (2) Mulher, 60 kg, 165 cm, 35 anos, fator 1,375 → TMB = 10×60 + 6,25×165 − 5×35 − 161 = 600 + 1031,25 − 175 − 161 = 1295,25 kcal/dia; GET ≈ 1781 kcal/dia. (3) Homem, 80 kg, 180 cm, 50 anos, fator 1,2 → TMB = 800 + 1125 − 250 + 5 = 1680 kcal/dia; GET ≈ 2016 kcal/dia. Cálculos verificados contra Mifflin et al. (1990); reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira as unidades (peso em kg, altura em cm), confirme o sexo selecionado e revise o fator de atividade — a literatura aponta que a superestimação subjetiva do nível de atividade é a fonte mais comum de discrepância. Calorimetria indireta é o método padrão-ouro descrito para medição direta.</p>
+      <p><strong>Posso usar em gestantes, atletas ou pacientes críticos?</strong> A equação de Mifflin-St Jeor foi validada em adultos saudáveis (19-78 anos) e não inclui gestantes, lactantes, atletas de elite ou pacientes hospitalizados. Para essas populações, a literatura descreve equações específicas (Cunningham para atletas) ou medição direta por calorimetria.</p>
+      <p><strong>Por que Mifflin-St Jeor e não Harris-Benedict?</strong> A revisão sistemática da Academy of Nutrition and Dietetics (2005) identificou Mifflin-St Jeor como a equação preditiva mais acurada em adultos saudáveis com IMC normal e sobrepeso, com viés menor que Harris-Benedict (que tende a superestimar o gasto em ~5%).</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>O GET é uma estimativa populacional e pode variar conforme composição corporal, genética, condições de saúde e a real intensidade da rotina. Use-o como ponto de partida e ajuste conforme a evolução do peso, de preferência com acompanhamento de um nutricionista.</p>
+        <p>O GET é uma estimativa populacional e pode variar conforme composição corporal, genética, condições de saúde e a real intensidade da rotina. A literatura descreve a calculadora como ferramenta de referência educacional; o acompanhamento individualizado é conduzido por profissional habilitado.</p>
       </div>
 
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>FAO/WHO/UNU. Human Energy Requirements: Report of a Joint FAO/WHO/UNU Expert Consultation. Roma: FAO; 2004. <a href="https://www.fao.org/4/y5686e/y5686e00.htm" target="_blank" rel="noopener">fao.org</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

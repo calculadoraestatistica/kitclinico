@@ -152,6 +152,41 @@
       <h2>Exemplo</h2>
       <p>Um paciente de 70 anos (1 ponto) com hipertensão não controlada (1) que usa anti-inflamatórios (1) soma <strong>3 pontos</strong> — faixa mais alta na tabela publicada.</p>
 
+      <h2>População validada</h2>
+      <p>A coorte original (Pisters et al., 2010) que derivou o HAS-BLED foi a Euro Heart Survey on Atrial Fibrillation, com 3.978 pacientes europeus ambulatoriais ou hospitalizados com fibrilação atrial não valvar, idade mediana próxima de 66 anos e ambos os sexos representados. O escore foi descrito para estimar sangramento maior em um ano nesse perfil. A literatura registra que a validação externa em pacientes muito jovens, em FA valvar reumática, em uso de DOACs em monoterapia ou em populações asiáticas tem amostras menores e intervalos de confiança mais amplos, conforme discutido pelos próprios autores no artigo original.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Cada item é uma marcação binária (presente/ausente). A definição publicada usa: PAS &gt; 160 mmHg para hipertensão não controlada; creatinina sérica ≥ 2,3 mg/dL (equivalente a ≥ 200 µmol/L; conversão: mg/dL × 88,4 = µmol/L) ou diálise/transplante para função renal alterada; bilirrubina &gt; 2× LSN com AST/ALT/FA &gt; 3× LSN, ou cirrose, para função hepática alterada; idade limiar de 65 anos completos. INR lábil refere-se a TTR &lt; 60% nas referências.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">HAS-BLED = H + A + S + B + L + E + D<sub>fármacos</sub> + D<sub>álcool</sub><br>onde cada letra vale 0 ou 1; A (renal) e A (hepática) somam até 2; D pode somar até 2 (fármacos + álcool)</div>
+      <p>Significado das variáveis: <strong>H</strong> = hipertensão não controlada; <strong>A</strong> = função renal e/ou hepática alterada (1 ponto cada); <strong>S</strong> = stroke (AVC) prévio; <strong>B</strong> = bleeding (sangramento) prévio ou predisposição; <strong>L</strong> = labile INR; <strong>E</strong> = elderly (idade &gt; 65); <strong>D</strong> = drugs (AINE/antiplaquetário) e/ou álcool (1 ponto cada). Sequência: (1) marcar cada item presente; (2) somar pontos; (3) localizar o total (0 a 9) na faixa publicada.</p>
+      <p><strong>Exemplo trabalhado:</strong> mulher de 72 anos (E = 1), com cirrose Child B (A<sub>hepática</sub> = 1), em uso de AAS por doença coronariana (D<sub>fármacos</sub> = 1), sem demais critérios. Cálculo: 0 + 1 + 0 + 0 + 0 + 1 + 1 + 0 = <strong>3 pontos</strong>, que recai na faixa de maior risco da tabela do artigo original.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o HAS-BLED foi derivado predominantemente em pacientes em uso de varfarina, e que o item "INR lábil" perde sentido em pacientes em monoterapia com DOACs. Erros frequentes de medida incluem: (a) contar como "função renal alterada" qualquer redução discreta de TFG, quando o limiar publicado é creatinina ≥ 2,3 mg/dL ou diálise; (b) considerar HAS apenas hipertensão diagnosticada, em vez de PAS &gt; 160 mmHg atual; (c) somar AVC isquêmico já contabilizado em outro escore sem reler a definição. O artigo original também aponta que o escore não foi desenhado para guiar suspensão de anticoagulação, e sim para identificar fatores corrigíveis (PAS, álcool, AINE, controle do INR).</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Outros escores de sangramento citados na literatura para FA incluem <strong>ATRIA</strong> (Fang et al., 2011), <strong>ORBIT</strong> (O'Brien et al., 2015) e <strong>HEMORR<sub>2</sub>HAGES</strong>. Estudos comparativos (p. ex. Roldán et al., 2013) descrevem que o HAS-BLED apresenta discriminação semelhante ou ligeiramente superior aos demais para sangramento maior em coortes de varfarina, enquanto o ORBIT é apontado em algumas validações posteriores como mais simples para pacientes em DOAC. Para pacientes não-FA (síndrome coronariana, TEV), publica-se que o escore não foi validado, e outras ferramentas específicas costumam ser referidas.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O HAS-BLED foi publicado originalmente por <em>Pisters R, Lane DA, Nieuwlaat R, de Vos CB, Crijns HJGM, Lip GYH</em>, na revista <cite>Chest</cite>, volume 138, edição 5, páginas 1093-1100, em novembro de 2010 (DOI: 10.1378/chest.10-0134). A versão implementada nesta página segue exatamente a definição original de 9 itens binários (escala 0-9), sem modificações posteriores propostas em diretrizes, e usa os limiares numéricos descritos no artigo de derivação.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a tabela do artigo original:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> Homem de 60 anos, hígido, INR estável, sem nenhum critério → 0 pontos (faixa de menor risco).</li>
+        <li><strong>Caso 2:</strong> Homem de 70 anos, hipertensão não controlada, em uso de AINE crônico → 1 + 1 + 1 = <strong>3 pontos</strong>.</li>
+        <li><strong>Caso 3:</strong> Mulher de 78 anos, AVC prévio, sangramento gastrointestinal prévio, creatinina 2,5 mg/dL, INR lábil, etilismo → 1 + 1 + 1 + 1 + 1 + 1 = <strong>6 pontos</strong>.</li>
+      </ul>
+      <p>Os três casos foram verificados contra exemplos discutidos em Pisters et al. (2010); reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Reconfira cada item contra os limiares publicados (PAS &gt; 160 mmHg; creatinina ≥ 2,3 mg/dL; idade &gt; 65). Erros comuns descritos na literatura envolvem usar definições mais frouxas que as do artigo original.</p>
+      <p><strong>Posso usar em paciente com FA valvar reumática ou em uso apenas de DOAC?</strong> A coorte de derivação era predominantemente não-valvar e em varfarina; a literatura descreve incerteza na aplicação fora desse perfil e o item INR lábil tende a ser pontuado como 0 em monoterapia com DOAC, o que pode subestimar o escore.</p>
+      <p><strong>Por que HAS-BLED em vez de ORBIT ou ATRIA?</strong> O HAS-BLED é o escore mais frequentemente citado em diretrizes europeias para FA e foi validado em maior número de coortes; ORBIT e ATRIA aparecem em validações alternativas, com performance comparável segundo estudos de cabeça-a-cabeça publicados.</p>
+      <p><strong>O HAS-BLED contraindica anticoagulação?</strong> Os próprios autores publicam que escore elevado não é critério para suspender anticoagulação; serve para sinalizar fatores corrigíveis e intensificar monitoramento, conforme a publicação original.</p>
+
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -172,6 +207,12 @@
           <a class="calc-card" href="/medicina/escore-wells-tep.html"><h3>Escore de Wells (TEP)</h3><p>Probabilidade de embolia pulmonar.</p></a>
           <a class="calc-card" href="/medicina/qtc.html"><h3>Intervalo QTc</h3><p>QT corrigido pela frequência cardíaca.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

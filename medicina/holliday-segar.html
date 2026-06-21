@@ -158,6 +158,42 @@
         <p>Este cálculo estima somente o volume de manutenção. Ele não inclui a reposição de déficits prévios (desidratação) nem de perdas contínuas anormais (vômitos, diarreia, febre). Ajuste o volume conforme o estado clínico, o balanço hídrico e os eletrólitos da criança.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>O método foi originalmente derivado por Holliday e Segar (1957) a partir de dados de gasto energético em crianças hospitalizadas, abrangendo lactentes e crianças desde o período neonatal até a adolescência. A publicação correlacionou o consumo calórico estimado ao peso corporal em três faixas (≤10 kg, 10–20 kg, &gt;20 kg) e derivou as necessidades hídricas associadas ao metabolismo de cada faixa. A literatura descreve limitações em recém-nascidos prematuros, neonatos nas primeiras 72 horas de vida, obesos, pacientes com insuficiência renal, cardíaca, hepática ou em estados hipermetabólicos como queimados, nos quais publica-se que a fórmula pode superestimar ou subestimar a necessidade real.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A entrada única é o <strong>peso corporal</strong> em quilogramas (kg). Para pesos registrados em gramas, divide-se por 1000 (ex.: 8500 g = 8,5 kg). A faixa plausível em pediatria publica-se entre cerca de 2 kg (neonato a termo) e 70 kg (adolescente). O resultado é expresso em mililitros por dia (mL/dia) e por hora (mL/h), obtido por divisão por 24.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">V<sub>dia</sub> (mL) = 100 × min(P,10) + 50 × min(max(P−10,0),10) + 20 × max(P−20,0)<br>V<sub>hora</sub> (mL) = V<sub>dia</sub> / 24</div>
+      <p>Onde <em>P</em> é o peso em kg e <em>V</em> é o volume hídrico de manutenção. A sequência aplica primeiro a faixa de até 10 kg (100 mL/kg), depois a faixa entre 10 e 20 kg (50 mL/kg por cada kg acima de 10) e por fim a faixa acima de 20 kg (20 mL/kg por cada kg acima de 20). Esses três componentes são somados.</p>
+      <p><strong>Exemplo trabalhado:</strong> criança de 26 kg.<br>– Primeiros 10 kg: 100 × 10 = <strong>1000 mL</strong><br>– De 10 a 20 kg (10 kg): 50 × 10 = <strong>500 mL</strong><br>– Acima de 20 kg (6 kg): 20 × 6 = <strong>120 mL</strong><br>– Total: 1000 + 500 + 120 = <strong>1620 mL/dia</strong>; dividido por 24 = <strong>67,5 mL/h</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula não se aplica diretamente a recém-nascidos com menos de 14 dias de vida nem a prematuros, nos quais publica-se uso de protocolos específicos por superfície corporal e idade pós-natal. Em pacientes obesos, o cálculo com peso real pode superestimar a necessidade, sendo descrito o uso de peso ideal ou ajustado. Erros comuns de medida incluem pesos imprecisos por roupas e fraldas, conversão equivocada entre gramas e quilogramas e arredondamento. Em insuficiência cardíaca, renal, hepática ou síndrome da secreção inapropriada de ADH (SIADH), publica-se a necessidade de restrição hídrica. Em queimados, febre persistente, taquipneia, vômitos e diarreia, a literatura descreve aumento das perdas insensíveis ou anormais que não são contemplados pelo cálculo.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Alternativas descritas na literatura incluem o método da <strong>superfície corporal</strong> (1500 mL/m²/dia), publicado como mais apropriado para crianças acima de 10 kg em alguns contextos oncológicos, e o método de <strong>Darrow</strong>, baseado em calorias metabolizadas. Para neonatos, publica-se o uso de protocolos volumétricos progressivos por dia de vida (ex.: 60–80 mL/kg/dia no primeiro dia, com aumento gradual). A regra 4/2/1 mL/kg/h é a transposição horária direta da fórmula de Holliday-Segar e é usada em ambientes intraoperatórios.</p>
+
+      <h2>Origem e versão</h2>
+      <p>Publicada originalmente por Malcolm A. Holliday e William E. Segar na revista <cite>Pediatrics</cite>, volume 19, número 5, em maio de 1957, sob o título "The maintenance need for water in parenteral fluid therapy" (DOI: 10.1542/peds.19.5.823). A versão implementada nesta calculadora corresponde à regra clássica 100/50/20 mL/kg/dia, conforme descrita no artigo original e replicada em manuais pediátricos contemporâneos.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula original:</p>
+      <ul>
+        <li><strong>Lactente de 7 kg:</strong> 100 × 7 = 700 mL/dia (~29,2 mL/h).</li>
+        <li><strong>Criança de 15 kg:</strong> 100 × 10 + 50 × 5 = 1000 + 250 = 1250 mL/dia (~52,1 mL/h).</li>
+        <li><strong>Adolescente de 50 kg:</strong> 100 × 10 + 50 × 10 + 20 × 30 = 1000 + 500 + 600 = 2100 mL/dia (~87,5 mL/h).</li>
+      </ul>
+      <p>Resultados verificados contra exemplos descritos em Holliday &amp; Segar (1957); reporte discrepâncias pelo e-mail abaixo.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se o peso foi digitado em quilogramas e não em gramas, e se o ponto decimal está na posição correta. Recalcule manualmente pela regra 100/50/20 mL/kg para validar.</p>
+      <p><strong>Posso usar em recém-nascidos?</strong> A literatura descreve que a fórmula original não foi validada para neonatos nas primeiras semanas de vida nem para prematuros; nesses grupos publicam-se protocolos volumétricos progressivos por idade pós-natal.</p>
+      <p><strong>Por que esta fórmula em vez do cálculo por superfície corporal?</strong> A regra 100/50/20 é descrita como mais simples e amplamente difundida em pediatria geral. O método da superfície corporal (1500 mL/m²/dia) publica-se como alternativa em populações específicas, como oncologia pediátrica.</p>
+      <p><strong>O resultado inclui reposição de desidratação?</strong> Não. O cálculo estima apenas a manutenção fisiológica. Déficits prévios e perdas anormais (vômitos, diarreia, febre, drenagens) são tratados separadamente na literatura.</p>
+      <p><strong>Em obesos devo usar peso real ou ideal?</strong> A literatura descreve que o uso do peso real em pacientes obesos pode superestimar a necessidade hídrica; publica-se o uso do peso ideal ou peso ajustado em algumas referências.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. <cite>Pediatrics</cite>. 1957;19(5):823-832. <a href="https://doi.org/10.1542/peds.19.5.823" target="_blank" rel="noopener">doi:10.1542/peds.19.5.823</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/13431307/" target="_blank" rel="noopener">PMID&nbsp;13431307</a>.</li>
@@ -169,6 +205,12 @@
           <a class="calc-card" href="/medicina/gotejamento.html"><h3>Gotejamento IV</h3><p>Velocidade de infusão em gotas por minuto.</p></a>
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

@@ -167,6 +167,41 @@
         <p>O índice de choque é uma ferramenta de triagem e pode ser distorcido por medicamentos (betabloqueadores, vasopressores), arritmias, dor, febre e marca-passo. Ele não substitui a avaliação clínica completa nem a monitorização contínua do paciente grave.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>O índice de choque foi descrito originalmente por Allgöwer e Burri (1967) em pacientes adultos com hipovolemia e estados de choque circulatório agudo<sup>1</sup>. A re-avaliação de Rady e colaboradores (1992) consolidou seu uso em adultos atendidos em unidades de emergência por falência circulatória aguda, com casuísticas predominantemente masculinas e idade média entre 50 e 70 anos<sup>2</sup>. A literatura publica que o ponto de corte ≥ 0,9 reflete instabilidade hemodinâmica em adultos não-gestantes. Em gestantes, crianças, idosos com cronotropismo limitado e pacientes em uso de betabloqueadores os limiares descritos diferem dos valores originais.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza duas variáveis: <strong>frequência cardíaca</strong> em batimentos por minuto (bpm; faixa fisiológica plausível 30–220) e <strong>pressão arterial sistólica</strong> em milímetros de mercúrio (mmHg; faixa plausível 40–260). Não há conversão de unidades porque ambas são medidas universais. A literatura descreve a aferição da PAS de forma não-invasiva (esfigmomanômetro) ou invasiva (cateter arterial) — o valor utilizado deve corresponder à medição registrada no momento da avaliação clínica.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">SI = FC (bpm) ÷ PAS (mmHg)</div>
+      <p>Significado de cada variável: <strong>SI</strong> é o índice de choque (adimensional); <strong>FC</strong> é a frequência cardíaca em batimentos por minuto; <strong>PAS</strong> é a pressão arterial sistólica em milímetros de mercúrio. A sequência de cálculo descrita por Allgöwer e Burri segue três passos: (1) registrar FC e PAS na mesma janela temporal; (2) dividir FC por PAS; (3) comparar o quociente com as faixas publicadas (0,5–0,7 normal; 0,7–0,9 limítrofe; ≥ 0,9 alterado).</p>
+      <p><strong>Exemplo trabalhado:</strong> paciente com FC = 120 bpm e PAS = 80 mmHg. Substituindo na fórmula: SI = 120 ÷ 80 = <strong>1,50</strong>. O valor obtido (1,50) está acima de 0,9, faixa descrita como alterada na literatura original<sup>1,2</sup>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura publica que o índice de choque sofre distorções em situações específicas. Pacientes em uso de <strong>betabloqueadores</strong> podem manter FC artificialmente baixa apesar de hipovolemia, produzindo SI falsamente normal. <strong>Vasopressores</strong> elevam a PAS, reduzindo o SI sem refletir melhora hemodinâmica real. <strong>Arritmias</strong> (fibrilação atrial, taquicardias supraventriculares) e <strong>marca-passo</strong> dissociam FC da volemia. <strong>Dor, febre, ansiedade e exercício recente</strong> elevam a FC por mecanismos não-hipovolêmicos. Erros comuns de medida incluem aferição da PAS em manguito de tamanho inadequado, uso de braço com fístula arteriovenosa ou medição em paciente em decúbito não-padronizado. A literatura descreve o SI como ferramenta de triagem, não de diagnóstico isolado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve variantes do índice de choque: o <strong>Modified Shock Index (MSI)</strong> usa PAM (pressão arterial média) no denominador, publicado como mais sensível em sepse; o <strong>Shock Index Pediátrico (SIPA)</strong> ajusta limiares por faixa etária; o <strong>Age Shock Index</strong> multiplica SI pela idade, validado em trauma geriátrico. A escala de <strong>ATLS</strong> classifica choque hemorrágico por perda volêmica estimada e sinais clínicos compostos. Cada ferramenta tem contexto descrito na literatura: o SI original permanece como triagem geral em adultos; MSI e variantes pediátricas/geriátricas surgiram para corrigir limitações da fórmula clássica.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O índice de choque foi publicado originalmente por <strong>Martin Allgöwer e Carl Burri</strong> na revista <cite>Deutsche Medizinische Wochenschrift</cite> em 1967 (artigo "Schockindex"; DOI <a href="https://doi.org/10.1055/s-0028-1106070" target="_blank" rel="noopener">10.1055/s-0028-1106070</a>; PMID 5299769)<sup>1</sup>. A re-avaliação contemporânea de Rady, Nightingale, Little e Edwards foi publicada em <cite>Resuscitation</cite> em 1992 (DOI <a href="https://doi.org/10.1016/0300-9572(92)90006-x" target="_blank" rel="noopener">10.1016/0300-9572(92)90006-x</a>; PMID 1321482)<sup>2</sup>. A versão implementada nesta calculadora corresponde à fórmula original de Allgöwer-Burri (SI = FC ÷ PAS), com os pontos de corte clássicos (0,7 e 0,9) descritos nessas referências.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> FC = 70 bpm, PAS = 120 mmHg → SI = 70 ÷ 120 = <strong>0,58</strong> (faixa normal).</li>
+        <li><strong>Caso 2:</strong> FC = 100 bpm, PAS = 110 mmHg → SI = 100 ÷ 110 = <strong>0,91</strong> (faixa alterada, ≥ 0,9).</li>
+        <li><strong>Caso 3:</strong> FC = 130 bpm, PAS = 70 mmHg → SI = 130 ÷ 70 = <strong>1,86</strong> (faixa alterada).</li>
+      </ul>
+      <p>Resultados verificados contra a aritmética da fórmula publicada por Allgöwer e Burri (1967)<sup>1</sup>. Reporte discrepâncias ao endereço editorial abaixo.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve que valores discrepantes da impressão clínica podem refletir uso de betabloqueador, vasopressor, arritmia ou erro de aferição. A conferência dos valores de entrada e da técnica de medida da PAS é o primeiro passo descrito nas referências.</p>
+      <p><strong>Posso usar em gestantes ou crianças?</strong> A fórmula original foi validada em adultos não-gestantes<sup>1,2</sup>. A literatura publica variantes específicas (SIPA para pediatria; índices ajustados em obstetrícia) com pontos de corte diferentes. O SI clássico não é diretamente extrapolável a essas populações.</p>
+      <p><strong>Por que esta fórmula e não a escala ATLS?</strong> O SI é descrito como ferramenta de triagem rápida que requer apenas dois sinais vitais. A escala ATLS classifica choque hemorrágico por composição de múltiplos parâmetros (perda volêmica estimada, frequência respiratória, débito urinário, nível de consciência) e é descrita na literatura como instrumento de classificação mais detalhado, com objetivo distinto do SI.</p>
+      <p><strong>O resultado substitui a avaliação clínica?</strong> A literatura descreve o SI como marcador de triagem, não como substituto da avaliação clínica completa ou da monitorização contínua.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Allgöwer M, Burri C. Schockindex [Índice de choque]. <cite>Deutsche Medizinische Wochenschrift</cite>. 1967;92(43):1947-1950. <a href="https://doi.org/10.1055/s-0028-1106070" target="_blank" rel="noopener">doi:10.1055/s-0028-1106070</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/5299769/" target="_blank" rel="noopener">PMID&nbsp;5299769</a>.</li>
@@ -180,6 +215,12 @@
           <a class="calc-card" href="/medicina/fena.html"><h3>FeNa</h3><p>Fração de excreção de sódio.</p></a>
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

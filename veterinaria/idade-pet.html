@@ -175,11 +175,46 @@
         <p>A conversão de idade do pet para "anos humanos" é uma <strong>estimativa aproximada</strong>, não uma regra exata. Raça, genética, alimentação e estado de saúde influenciam o envelhecimento. Use o resultado apenas como referência didática.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve a conversão de idade pet-humano em populações distintas para cães e gatos. As diretrizes AAHA 2019 caninas foram construídas a partir de coortes de cães domésticos de várias raças e portes, com estratificação por peso adulto (pequeno: até 9 kg; médio: 9-23 kg; grande: 23-40 kg; gigante: acima de 40 kg). As diretrizes felinas AAHA/AAFP 2021 abrangeram gatos domésticos sem distinção significativa de porte. Publica-se que as tabelas têm limitações em raças braquicefálicas, animais com doença crônica e cães gigantes, cujo envelhecimento difere do padrão tabular.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora aceita três entradas: idade do animal em anos (campo decimal; faixa de sanidade entre 0 e 25 para cães e 0 e 30 para gatos), espécie (cão ou gato) e porte do cão (pequeno, médio ou grande). Para idades expressas em meses, divide-se por 12 antes de inserir. Valores fora dos ranges descritos na literatura não retornam erro técnico, mas perdem correspondência com as tabelas publicadas.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula original calcula a idade humana equivalente aplicando um fator multiplicador após os dois primeiros anos de vida, que correspondem a 24 anos humanos.</p>
+      <div class="formula">Idade humana = 24 + (idade do pet − 2) × fator<br>Fator: gato = 4; cão pequeno = 4; cão médio = 5; cão grande = 6</div>
+      <p>A sequência de cálculo segue: (1) verifica-se se a idade é maior que 2 anos; (2) subtrai-se 2 da idade do pet; (3) multiplica-se o resultado pelo fator correspondente; (4) soma-se 24. Exemplo trabalhado: cão de porte grande com 8 anos. Substituindo na fórmula: Idade humana = 24 + (8 − 2) × 6 = 24 + 6 × 6 = 24 + 36 = 60 anos humanos. Para gato de 10 anos: Idade humana = 24 + (10 − 2) × 4 = 24 + 32 = 56 anos humanos.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula linear não se aplica a filhotes (abaixo de 1 ano), cuja maturação segmentada por meses não cabe em multiplicador único. Erros comuns incluem confundir meses com anos, classificar incorretamente o porte do cão (filhotes ainda em crescimento) e aplicar a tabela canina a gatos. Cães gigantes (acima de 40 kg) envelhecem mais rápido que o fator 6 sugere — a literatura veterinária reporta expectativa de vida de 6-8 anos para algumas raças, o que distorce a equivalência. Estudos epigenéticos recentes (Wang et al., 2020) descrevem uma curva logarítmica (16 × ln(idade) + 31) que diverge da fórmula tabular após os 2 anos, sobretudo em idades extremas.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A regra clássica "1 ano de cão = 7 anos humanos" foi superada porque ignora a maturação acelerada nos primeiros anos. A fórmula epigenética de Wang et al. (idade humana = 16 × ln(idade canina) + 31), publicada em <cite>Cell Systems</cite> (2020), foi validada em Labradores adultos com base em metilação de DNA. A tabela AAHA estratificada por porte é descrita como superior para uso clínico/didático por sua simplicidade. A fórmula epigenética é descrita como superior em pesquisa de envelhecimento comparado.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A tabela estratificada por porte foi consolidada no documento <cite>2019 AAHA Canine Life Stage Guidelines</cite> (Creevy KE et al., <cite>JAAHA</cite>, 2019; doi:10.5326/JAAHA-MS-6999). A versão felina foi publicada em <cite>2021 AAHA/AAFP Feline Life Stage Guidelines</cite> (Quimby J et al., <cite>JFMS</cite>, 2021; doi:10.1177/1098612X21993657). A versão implementada nesta página é a tabular linear AAHA, com ponto de corte aos 2 anos e fatores 4/4/5/6.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenário 1 — cão de porte médio, 5 anos: 24 + (5 − 2) × 5 = 39 anos humanos. Cenário 2 — cão de porte grande, 8 anos: 24 + (8 − 2) × 6 = 60 anos humanos. Cenário 3 — gato, 12 anos: 24 + (12 − 2) × 4 = 64 anos humanos. Verificada contra exemplos publicados nas diretrizes AAHA 2019 e AAHA/AAFP 2021; reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Verifica-se a unidade da idade (anos, não meses), o porte do cão e a espécie. Diferenças em relação a tabelas publicadas em livros veterinários geralmente decorrem do uso de versões antigas (1 ano = 7) ou da curva epigenética de Wang et al.</p>
+      <p><strong>Posso usar em coelhos, aves ou roedores?</strong> A fórmula foi validada apenas em cães e gatos domésticos. A literatura descreve tabelas próprias para cada espécie exótica, com fatores distintos.</p>
+      <p><strong>Por que esta fórmula e não a curva logarítmica?</strong> Publica-se que a tabela linear AAHA é amplamente adotada em comunicação com tutores por sua simplicidade. A fórmula epigenética (Wang et al., 2020) foi validada principalmente em Labradores e exige cálculo logarítmico, sendo mais usada em pesquisa.</p>
+      <p><strong>Filhotes podem ser calculados?</strong> A fórmula assume idade igual ou maior que 2 anos. Para idades menores, a literatura veterinária descreve correspondências mês a mês: 2 meses ≈ 14 meses humanos, 6 meses ≈ 5 anos, 1 ano ≈ 15 anos.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Creevy KE, Grady J, Little SE, et al. 2019 AAHA Canine Life Stage Guidelines. <cite>Journal of the American Animal Hospital Association</cite>. 2019;55(6):267-290. <a href="https://doi.org/10.5326/JAAHA-MS-6999" target="_blank" rel="noopener">doi:10.5326/JAAHA-MS-6999</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/31622127/" target="_blank" rel="noopener">PMID&nbsp;31622127</a>.</li>
         <li>Quimby J, Gowland S, Carney HC, DePorter T, Plummer P, Westropp J. 2021 AAHA/AAFP Feline Life Stage Guidelines. <cite>Journal of Feline Medicine and Surgery</cite>. 2021;23(3):211-233. <a href="https://doi.org/10.1177/1098612X21993657" target="_blank" rel="noopener">doi:10.1177/1098612X21993657</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/33627003/" target="_blank" rel="noopener">PMID&nbsp;33627003</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

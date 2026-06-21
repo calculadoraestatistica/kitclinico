@@ -147,8 +147,32 @@
       <h2>Como interpretar o resultado</h2>
       <p>Os itens têm pesos diferentes (1 a 3 pontos). Na versão de dois níveis publicada por Wells, escore <strong>4 ou menos</strong> corresponde a um padrão de probabilidade descrito como TEP improvável e <strong>acima de 4</strong> a um padrão de probabilidade descrito como TEP provável. Na versão de três níveis, &lt; 2 é classificado como baixa, 2 a 6 como intermediária e &gt; 6 como alta probabilidade. A interpretação dos números na rotina assistencial é exclusiva do médico responsável.</p>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente em que a TEP é o diagnóstico mais provável (3), com frequência cardíaca acima de 100 bpm (1,5) e hemoptise (1) soma <strong>5,5 pontos</strong> — padrão de risco classificado pelos autores como TEP provável.</p>
+      <h2>População validada</h2>
+      <p>A literatura descreve que o modelo original de Wells foi derivado em coorte de 1.260 pacientes ambulatoriais e de emergência com suspeita de TEP, sem restrição estrita de idade ou sexo (Wells e cols., 2000). Estudos posteriores publicaram validações em populações de pronto-socorro adultas, com prevalência de TEP variando entre 9% e 26% conforme o cenário descrito nas diretrizes da ESC (Konstantinides e cols., 2020). Publica-se que o desempenho do escore é limitado em pacientes hospitalizados, em gestantes e em pacientes com comorbidades cardiopulmonares avançadas, onde estudos descrevem maior variabilidade do critério subjetivo "TEP é o diagnóstico mais provável".</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>O escore utiliza sete itens binários (presente/ausente). A literatura descreve frequência cardíaca em batimentos por minuto (bpm), com o ponto de corte publicado em &gt; 100 bpm. "Imobilização" é descrita como repouso no leito por pelo menos 3 dias consecutivos ou cirurgia geral/ortopédica nas últimas 4 semanas. "Câncer ativo" é definido na publicação original como neoplasia tratada nos últimos 6 meses ou em cuidado paliativo. Não há conversões de unidades. O somatório possui faixa publicada de 0 a 12,5 pontos.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Escore = 3·(sinais TVP) + 3·(TEP mais provável) + 1,5·(FC &gt; 100) + 1,5·(imobilização/cirurgia) + 1,5·(TEV prévio) + 1·(hemoptise) + 1·(câncer ativo)</div>
+      <p>Cada parcela vale o peso publicado quando o critério está presente e zero quando ausente. A fórmula original calcula o somatório linear dos sete itens. A sequência descrita é: (1) marcar os achados presentes, (2) multiplicar cada um pelo peso publicado, (3) somar. <strong>Exemplo trabalhado</strong>: paciente com TEP como diagnóstico mais provável (3,0), FC = 112 bpm (1,5), TVP prévia (1,5) e hemoptise (1,0). Substituindo: 3,0 + 1,5 + 1,5 + 1,0 = <strong>7,0 pontos</strong>. Na versão de três níveis publicada, esse valor corresponde ao padrão classificado como alta probabilidade (&gt; 6).</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o item "TEP é o diagnóstico mais provável" é subjetivo e estudos publicaram variação interobservador relevante (Konstantinides e cols., 2020). Publica-se que o escore não foi derivado para gestantes, e estudos descrevem o algoritmo YEARS adaptado para esta população. Erros comuns relatados na literatura incluem: contar imobilização inferior a 3 dias, classificar como "câncer ativo" neoplasias em remissão prolongada e duplicar o peso do item "TEP mais provável" com "sinais de TVP" quando ambos refletem o mesmo achado. Em pacientes com TEP recorrente ou doença cardiopulmonar grave, a literatura descreve menor especificidade do critério clínico isolado.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura publica o <strong>escore de Genebra revisado</strong> (Le Gal e cols., 2006) como alternativa que utiliza apenas variáveis objetivas, descrito como superior em cenários com múltiplos avaliadores. O <strong>PERC</strong> (Pulmonary Embolism Rule-out Criteria, Kline e cols., 2008) é descrito como ferramenta de exclusão em pacientes de baixo risco em pronto-socorro. O algoritmo <strong>YEARS</strong> (van der Hulle e cols., 2017) é descrito como alternativa simplificada de três itens combinada com d-dímero. Estudos comparativos publicaram desempenho global semelhante entre Wells e Genebra revisado.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O escore original foi publicado por Wells PS, Anderson DR, Rodger M e cols. em <cite>Thrombosis and Haemostasis</cite>, 2000;83(3):416-420 (PMID 10744147). A simplificação dicotômica (improvável/provável) com ponto de corte em 4 foi publicada por Wells e cols. em <cite>Annals of Internal Medicine</cite>, 2001. A versão implementada nesta página é a clássica de sete itens com pesos fracionários, conforme reproduzida nas diretrizes ESC 2019 (Konstantinides e cols., 2020).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenário 1: paciente sem nenhum critério presente — resultado esperado <strong>0 pontos</strong> (padrão classificado como TEP improvável em ambas as versões). Cenário 2: TEP mais provável (3,0) + FC &gt; 100 bpm (1,5) + hemoptise (1,0) = <strong>5,5 pontos</strong> (padrão classificado como TEP provável na versão dicotômica; intermediária na versão de três níveis). Cenário 3: todos os sete critérios presentes — resultado esperado <strong>12,5 pontos</strong> (máximo publicado). Verificada contra exemplos descritos em Wells e cols. (2000) e nas diretrizes ESC 2019; reporte discrepâncias.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se cada checkbox marca apenas critérios efetivamente presentes; o item "TEP mais provável" e "sinais de TVP" são frequentemente confundidos. Recalcule manualmente usando os pesos publicados (3, 3, 1,5, 1,5, 1,5, 1, 1) e compare. Em caso de discrepância persistente, reporte por e-mail.</p>
+      <p><strong>Posso usar em gestantes?</strong> A literatura descreve que o escore de Wells original não foi validado em gestantes; estudos publicaram o algoritmo YEARS adaptado para esta população (van der Pol e cols., 2019). A aplicação em populações fora da derivação original é decisão exclusiva do médico assistente.</p>
+      <p><strong>Por que esta fórmula e não Genebra revisado?</strong> Wells e Genebra revisado têm desempenho global semelhante na literatura publicada; Wells é descrito como mais difundido em diretrizes internacionais e utiliza menos variáveis, enquanto Genebra é descrito como mais objetivo. A escolha entre eles é exclusiva do médico assistente.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -163,6 +187,12 @@
         <li>Wells PS, Anderson DR, Rodger M, et al. Derivation of a simple clinical model to categorize patients probability of pulmonary embolism. <cite>Thrombosis and Haemostasis</cite>. 2000;83(3):416-420. <a href="https://pubmed.ncbi.nlm.nih.gov/10744147/" target="_blank" rel="noopener">PMID&nbsp;10744147</a>.</li>
         <li>Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism. <cite>European Heart Journal</cite>. 2020;41(4):543-603. <a href="https://doi.org/10.1093/eurheartj/ehz405" target="_blank" rel="noopener">doi:10.1093/eurheartj/ehz405</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/31504429/" target="_blank" rel="noopener">PMID&nbsp;31504429</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

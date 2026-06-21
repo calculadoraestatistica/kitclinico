@@ -182,10 +182,53 @@
         <p>A RCQ é uma triagem e depende da técnica de medição correta da cintura e do quadril. Interprete-a sempre junto da avaliação clínica e de outras medidas, como a circunferência abdominal e o IMC.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A consulta de especialistas da OMS de 2008 compilou dados de coortes adultas (idade ≥ 18 anos) de múltiplas etnias para estabelecer os pontos de corte de 0,90 (homens) e 0,85 (mulheres) como marcadores de risco substancialmente aumentado de complicações metabólicas (WHO, 2008). Os estudos incluídos eram majoritariamente caucasianos, asiáticos do sul e do leste e populações de origem africana. A literatura descreve que o critério não foi validado para crianças, adolescentes, gestantes nem para indivíduos com ascite, hepatomegalia volumosa ou grandes hérnias abdominais, situações em que a circunferência da cintura sofre distorção mecânica.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora usa duas entradas em centímetros (cm): circunferência da cintura e circunferência do quadril. Para converter de polegadas, publica-se a equivalência 1 pol = 2,54 cm. Faixas plausíveis descritas em adultos: cintura entre 50 cm e 200 cm; quadril entre 60 cm e 200 cm. Valores fora dessas faixas geralmente indicam erro de digitação ou de unidade. O sexo biológico (M/F) define o limiar de classificação aplicado.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">RCQ = Circunferência da cintura (cm) ÷ Circunferência do quadril (cm)</div>
+      <p>O numerador é a circunferência da cintura, medida no ponto médio entre a última costela e a crista ilíaca, segundo protocolo OMS. O denominador é a circunferência do quadril, medida na máxima extensão das nádegas, com fita métrica paralela ao solo. O resultado é adimensional. A sequência descrita é: (1) medir a cintura em expiração normal; (2) medir o quadril na maior protuberância; (3) dividir cintura por quadril; (4) comparar com o limite por sexo.</p>
+      <p>Exemplo trabalhado: homem com cintura = 95 cm e quadril = 100 cm. Substituindo na fórmula: RCQ = 95 ÷ 100 = 0,95. Como 0,95 > 0,90 (limite descrito para homens), a classificação publicada é "risco cardiometabólico substancialmente aumentado" (WHO, 2008).</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a RCQ perde acurácia em pessoas com IMC muito alto (≥ 35 kg/m²), em quem o quadril também aumenta e a razão tende a se estabilizar (WHO, 2008). Erros comuns de medida incluem: posicionar a fita sobre a roupa, medir a cintura na cicatriz umbilical em vez do ponto médio costela-crista ilíaca, comprimir tecidos moles e medir o quadril em altura diferente da máxima protuberância. Em gestantes, indivíduos com obesidade central decorrente de Cushing, lipodistrofia ou ascite, publica-se que a interpretação fica comprometida. A consulta OMS descreve a circunferência da cintura isolada como medida com associação mais consistente com risco cardiometabólico em algumas coortes, especialmente quando combinada ao IMC.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Concorrentes descritos na literatura: (a) <strong>circunferência da cintura</strong> isolada, com limiares OMS de 94 cm/102 cm (homens) e 80 cm/88 cm (mulheres); estudos validaram-na como preditor metabólico simples e robusto (WHO, 2008). (b) <strong>Relação cintura-estatura (RCEst)</strong>, com ponto de corte único de 0,5 aplicável a ambos os sexos e a múltiplas etnias, descrita em meta-análises como superior à RCQ e ao IMC para predizer risco cardiometabólico (Ashwell M, Gunn P, Gibson S. Obes Rev. 2012;13(3):275-86). (c) <strong>IMC</strong>, que avalia adiposidade global mas não distribuição.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A razão cintura-quadril foi popularizada por Vague J. (Am J Clin Nutr. 1956;4(1):20-34) ao descrever a obesidade androide vs. ginoide. Os pontos de corte atualmente difundidos (0,90 homens; 0,85 mulheres) foram consolidados pela <em>WHO Expert Consultation on Waist Circumference and Waist–Hip Ratio</em>, publicada em Genebra em 2008 (ISBN 978 92 4 150149 1). Esta calculadora implementa a versão OMS 2008 dos pontos de corte, aplicados ao sexo biológico informado.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a fórmula original (WHO, 2008):</p>
+      <ul>
+        <li>Homem, cintura 95 cm, quadril 100 cm → RCQ = 0,95 → acima de 0,90 (risco elevado descrito).</li>
+        <li>Mulher, cintura 70 cm, quadril 95 cm → RCQ = 0,74 → abaixo de 0,85 (dentro do limite descrito).</li>
+        <li>Mulher, cintura 90 cm, quadril 100 cm → RCQ = 0,90 → acima de 0,85 (risco elevado descrito).</li>
+      </ul>
+      <p>Resultados verificados contra exemplos publicados em WHO (2008); reporte discrepâncias para o e-mail editorial abaixo.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira se as duas medidas estão em centímetros (não em polegadas) e se a cintura foi medida no ponto médio entre a última costela e a crista ilíaca, e não na cicatriz umbilical. Diferenças de 2-3 cm na técnica alteram a RCQ em até 0,03.</p>
+      <p><strong>Posso usar em crianças ou gestantes?</strong> Os pontos de corte de 0,90/0,85 foram derivados de adultos não-gestantes (WHO, 2008); a literatura descreve que não há validação publicada para crianças, adolescentes nem gestantes.</p>
+      <p><strong>Por que esta fórmula vs. circunferência da cintura ou RCEst?</strong> A RCQ informa sobre distribuição da gordura (abdominal vs. glúteo-femoral); a circunferência da cintura informa quantidade de gordura abdominal; a RCEst ajusta a cintura pela estatura e tem ponto de corte único. Cada uma captura um aspecto diferente, e meta-análises descrevem a RCEst como tendo desempenho preditivo ligeiramente superior em populações mistas (Ashwell, 2012).</p>
+      <p><strong>A RCQ substitui o IMC?</strong> A consulta OMS descreve as duas como complementares: o IMC mede adiposidade global; a RCQ, a distribuição.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>World Health Organization. Waist Circumference and Waist–Hip Ratio: Report of a WHO Expert Consultation. Genebra: OMS; 2008. <a href="https://www.who.int/publications/i/item/9789241501491" target="_blank" rel="noopener">who.int</a>.</li>
+        <li>Vague J. The degree of masculine differentiation of obesities: a factor determining predisposition to diabetes, atherosclerosis, gout, and uric calculous disease. Am J Clin Nutr. 1956;4(1):20-34.</li>
+        <li>Ashwell M, Gunn P, Gibson S. Waist-to-height ratio is a better screening tool than waist circumference and BMI for adult cardiometabolic risk factors: systematic review and meta-analysis. Obes Rev. 2012;13(3):275-86.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

@@ -157,6 +157,34 @@
         <p>A fórmula de correção é apenas uma estimativa e pode ser imprecisa em distúrbios ácido-base, doença renal crônica e estados críticos. Quando o resultado tiver peso clínico relevante, a medição direta do <strong>cálcio iônico</strong> pode ser mais informativa.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A fórmula original de Payne et al. (1973) foi derivada em uma amostra de 410 pacientes adultos hospitalizados no Reino Unido com proteínas séricas alteradas, conforme descrito no <cite>British Medical Journal</cite>. A literatura descreve que a equação foi calibrada com o método colorimétrico de absorção da época e com faixas de referência laboratoriais locais. Publica-se que estudos posteriores observaram desempenho mais limitado em populações específicas, incluindo pacientes em terapia intensiva, indivíduos com doença renal crônica em diálise e idosos com hipoalbuminemia profunda. Estudos validaram o uso em adultos não-críticos com albumina entre 2,0 e 4,5 g/dL; aplicações fora dessa faixa têm precisão menor descrita na literatura.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora recebe duas entradas: <strong>cálcio total</strong> em mg/dL e <strong>albumina</strong> em g/dL. A literatura descreve a conversão de cálcio para mmol/L pela divisão por 4 (1 mg/dL ≈ 0,25 mmol/L) e da albumina para g/L pela multiplicação por 10. Faixas de sanidade publicadas: cálcio total entre 4 e 14 mg/dL e albumina entre 1 e 6 g/dL; valores fora desses limites costumam indicar erro pré-analítico. A fórmula de Payne em unidades SI usa o coeficiente 0,02 mmol/L por g/L de albumina abaixo de 40 g/L.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Cálcio corrigido (mg/dL) = Cálcio total (mg/dL) + 0,8 × [4,0 − Albumina (g/dL)]</div>
+      <p>O coeficiente <strong>0,8</strong> representa o incremento estimado em mg/dL de cálcio por g/dL de queda da albumina; <strong>4,0 g/dL</strong> é o valor normal de albumina assumido na publicação original. A sequência calcula: (1) o desvio da albumina em relação a 4,0 g/dL; (2) a multiplicação desse desvio por 0,8; (3) a soma do incremento ao cálcio total medido. Exemplo trabalhado: cálcio total 7,2 mg/dL, albumina 2,5 g/dL. Passo 1: 4,0 − 2,5 = 1,5. Passo 2: 0,8 × 1,5 = 1,2. Passo 3: 7,2 + 1,2 = <strong>8,4 mg/dL</strong>. A literatura descreve que, quando a albumina é igual ou maior que 4,0 g/dL, o termo de correção tende a zero ou se torna negativo, e o valor corrigido aproxima-se do cálcio total medido.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A fórmula não se aplica de forma adequada a algumas situações descritas na literatura. Publica-se que pacientes em terapia intensiva, com acidose ou alcalose marcadas, apresentam dissociação entre cálcio total e cálcio iônico que a correção não captura. Em doença renal crônica, hiperfosfatemia e hiperparatireoidismo secundário, estudos observaram que a fórmula superestima ou subestima o cálcio iônico de modo inconsistente. Erros comuns de medida incluem coleta com garrote prolongado, hemólise da amostra e calibração distinta entre laboratórios. A literatura descreve que, quando o resultado clínico depende da fração ativa, a medição direta do cálcio iônico tem maior valor descrito do que qualquer fórmula de correção.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve fórmulas concorrentes à de Payne. A correção de <strong>Orrell (1971)</strong> usa o coeficiente 0,02 mmol/L por g/L de albumina abaixo de 34 g/L. A correção pela <strong>proteína total</strong> (em vez da albumina) foi proposta em populações com perfis proteicos atípicos. Estudos validaram a correção pela albumina em adultos hospitalizados não-críticos; publica-se que em estados críticos e em diálise o cálcio iônico direto supera todas as fórmulas em concordância clínica. A escolha entre fórmulas, segundo a literatura, depende do método laboratorial local e da faixa de albumina assumida como normal pelo laboratório.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula foi publicada por Payne RB, Little AJ, Williams RB e Milner JR no artigo <cite>Interpretation of serum calcium in patients with abnormal serum proteins</cite>, no <cite>British Medical Journal</cite> em 1973, volume 4, número 5893, páginas 643-646 (DOI 10.1136/bmj.4.5893.643; PMID 4758544). Esta calculadora implementa a versão clássica em unidades convencionais (mg/dL e g/dL), com coeficiente 0,8 e albumina de referência de 4,0 g/dL, sem ajuste por método laboratorial específico.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula original. (1) Cálcio total 8,0 mg/dL, albumina 2,0 g/dL → resultado esperado 9,60 mg/dL. (2) Cálcio total 7,2 mg/dL, albumina 2,5 g/dL → resultado esperado 8,40 mg/dL. (3) Cálcio total 9,0 mg/dL, albumina 4,0 g/dL → resultado esperado 9,00 mg/dL (sem correção, pois a albumina coincide com o valor de referência). Verificada contra exemplos em Payne et al. 1973; reporte discrepâncias.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve verificar primeiro as unidades (mg/dL para cálcio e g/dL para albumina) e confirmar os valores no laudo laboratorial. Publica-se que erros pré-analíticos como hemólise ou garrote prolongado podem alterar tanto o cálcio total quanto a albumina.</p>
+      <p><strong>Posso usar em pacientes em UTI?</strong> Estudos validaram a fórmula sobretudo em adultos hospitalizados não-críticos. A literatura descreve concordância reduzida em pacientes críticos e em distúrbios ácido-base severos; nesses contextos, a medição direta do cálcio iônico tem desempenho descrito como superior.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> A correção de Payne é a versão historicamente mais citada e implementada em laboratórios de língua inglesa e portuguesa. Publica-se que alternativas como a correção pela proteína total ou variantes em unidades SI existem; a escolha, segundo a literatura, depende da prática laboratorial local e da população estudada.</p>
+      <p><strong>O cálcio corrigido substitui o cálcio iônico?</strong> A literatura descreve que não. O cálcio corrigido é uma estimativa indireta; o cálcio iônico é a medição direta da fração biologicamente ativa.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Payne RB, Little AJ, Williams RB, Milner JR. Interpretation of serum calcium in patients with abnormal serum proteins. <cite>British Medical Journal</cite>. 1973;4(5893):643-646. <a href="https://doi.org/10.1136/bmj.4.5893.643" target="_blank" rel="noopener">doi:10.1136/bmj.4.5893.643</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/4758544/" target="_blank" rel="noopener">PMID&nbsp;4758544</a>.</li>
@@ -169,6 +197,12 @@
           <a class="calc-card" href="/medicina/anion-gap.html"><h3>Ânion gap</h3><p>Classificação da acidose metabólica.</p></a>
           <a class="calc-card" href="/medicina/osmolaridade-plasmatica.html"><h3>Osmolaridade plasmática</h3><p>Estimativa da osmolaridade do plasma.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>
@@ -284,7 +318,7 @@
         '<div class="result__main">' + Fmt.num(r.calcioCorrigido, 2) + ' <small>mg/dL</small></div>' +
         '<div class="result__interpretation"><p>O cálcio corrigido estimado é de <strong>' +
         Fmt.num(r.calcioCorrigido, 2) + ' mg/dL</strong>. ' +
-        'Interprete esse valor com a faixa habitual do cálcio total (cerca de 8,5 a 10,5 mg/dL). Na dúvida, considere a medição direta do cálcio iônico.</p></div>' +
+        'A faixa habitual do cálcio total descrita na literatura é cerca de 8,5 a 10,5 mg/dL. A medição direta do cálcio iônico é descrita como referência laboratorial preferida em situações específicas. A interpretação clínica é exclusiva do médico assistente.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

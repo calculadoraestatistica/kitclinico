@@ -148,11 +148,48 @@
         <p>A necessidade de água varia bastante com o clima, o nível de atividade física, a presença de febre e condições clínicas. Pacientes com cardiopatia ou nefropatia podem precisar de <strong>restrição hídrica</strong>: nesses casos, siga sempre a orientação médica individualizada.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A estimativa de aproximadamente 35 mL/kg/dia para a ingestão hídrica total foi descrita por painéis de revisão para <strong>adultos saudáveis</strong> em clima temperado. O Institute of Medicine (IOM, 2005) propôs ingestões adequadas a partir de dados populacionais dos Estados Unidos e Canadá (NHANES III), com valores médios em torno de 3,7 L/dia para homens e 2,7 L/dia para mulheres adultas, incluindo água de bebidas e alimentos. A EFSA (2010) publicou referências semelhantes para a população europeia, observando que os dados em <strong>idosos, crianças, gestantes, lactantes e atletas</strong> são limitados e que valores absolutos variam com clima, atividade física e composição corporal.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza uma única entrada: <strong>peso corporal em quilogramas (kg)</strong>. A conversão de libras para kg segue 1 lb = 0,4536 kg. O resultado é apresentado em <strong>litros/dia (L)</strong> e em <strong>mililitros/dia (mL)</strong>, com 1 L = 1.000 mL. Faixas de sanidade descritas em adultos cobrem peso entre 30 kg e 200 kg; valores fora dessa faixa publicada têm aplicação limitada na fórmula linear de 35 mL/kg.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A regra prática descrita na literatura geriátrica e nutricional aplica um coeficiente fixo por quilo de peso corporal:</p>
+      <div class="formula">Necessidade hídrica (mL/dia) = Peso (kg) × 35 mL/kg/dia</div>
+      <p>Onde <em>Peso</em> é a massa corporal atual em kg e <em>35 mL/kg/dia</em> é o coeficiente publicado para adultos. A sequência de cálculo é: (1) registrar o peso em kg; (2) multiplicar pelo coeficiente; (3) converter de mL para L dividindo por 1.000. Exemplo trabalhado para uma pessoa de <strong>70 kg</strong>: 70 × 35 = <strong>2.450 mL/dia</strong>, o que corresponde a 2.450 ÷ 1.000 = <strong>2,45 L/dia</strong>, arredondado para 2,5 L/dia na apresentação. Para 50 kg, o cálculo resulta em 50 × 35 = 1.750 mL/dia (1,75 L/dia); para 90 kg, 90 × 35 = 3.150 mL/dia (3,15 L/dia).</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve várias limitações desta regra linear. O coeficiente fixo de 35 mL/kg não foi validado em <strong>obesidade extrema</strong>, onde pode superestimar a necessidade por usar peso total em vez de peso magro. Em <strong>idosos acima de 65 anos</strong>, publicações sugerem coeficientes menores (25–30 mL/kg). A fórmula não considera <strong>perdas aumentadas</strong> (febre, vômito, diarreia, sudorese intensa, queimaduras) nem <strong>restrições</strong> em insuficiência cardíaca, doença renal crônica avançada ou síndrome de secreção inapropriada de ADH. Erros comuns de medida incluem usar peso vestido, balanças não calibradas e confundir libras com quilos. A regra prevê ingestão total (bebidas + alimentos), e a literatura aponta que cerca de 20% da água diária vem dos alimentos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Outras abordagens publicadas incluem a <strong>fórmula de Holliday-Segar</strong> (1957), originalmente para pediatria: 100 mL/kg para os primeiros 10 kg, 50 mL/kg para os 10 kg seguintes e 20 mL/kg para o peso restante. O <strong>método baseado em calorias</strong> (1 mL/kcal consumida) é descrito por sociedades de nutrição enteral. As referências do IOM/EFSA publicam <strong>ingestões adequadas absolutas</strong> (2,7–3,7 L/dia para adultos) em vez de proporcionais ao peso. A regra de 35 mL/kg é descrita como prática para adultos em peso normal; Holliday-Segar é validada em crianças; ingestões adequadas absolutas têm melhor base populacional em adultos saudáveis.</p>
+
+      <h2>Origem e versão</h2>
+      <p>O coeficiente de aproximadamente 35 mL/kg/dia aparece em manuais de nutrição clínica e geriatria desde a década de 1980 e foi consolidado em revisões como Chernoff (1994, <cite>Nutrition Reviews</cite>, doi:10.1111/j.1753-4887.1994.tb01402.x). As referências contemporâneas usadas como ancoragem foram publicadas pelo Institute of Medicine (2005, doi:10.17226/10925) e pela EFSA (2010, doi:10.2903/j.efsa.2010.1459). Esta calculadora implementa a versão linear simples (Peso × 35 mL/kg) para adultos, sem ajuste por idade ou condição clínica.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a fórmula publicada: <strong>(1)</strong> Adulto de 50 kg → 50 × 35 = 1.750 mL/dia (1,75 L/dia). <strong>(2)</strong> Adulto de 70 kg → 70 × 35 = 2.450 mL/dia (2,45 L/dia). <strong>(3)</strong> Adulto de 90 kg → 90 × 35 = 3.150 mL/dia (3,15 L/dia). Estes resultados foram verificados contra exemplos didáticos descritos em Chernoff (1994) e em manuais de nutrição clínica. Reporte discrepâncias pelo e-mail editorial listado no rodapé.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade do peso (kg, não libras) e o ponto decimal. A literatura descreve valores típicos entre 1,5 e 3,5 L/dia para adultos com peso entre 45 e 100 kg; resultados muito fora dessa faixa sugerem erro de entrada.</p>
+      <p><strong>Posso usar em crianças, gestantes ou idosos?</strong> A fórmula de 35 mL/kg foi descrita para adultos saudáveis. Publicações usam Holliday-Segar em pediatria e coeficientes reduzidos (25–30 mL/kg) em idosos. Para gestantes e lactantes, EFSA (2010) publica acréscimos absolutos de 300 mL/dia e 700 mL/dia, respectivamente.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> A regra linear de 35 mL/kg é citada em manuais de nutrição clínica pela simplicidade e por ter mostrado, em estudos populacionais, aproximar-se das ingestões adequadas publicadas pelo IOM em adultos com peso entre 60 e 90 kg.</p>
+      <p><strong>O resultado inclui água dos alimentos?</strong> A literatura do IOM/EFSA descreve a ingestão total como soma de bebidas e alimentos; estima-se que cerca de 20% venha de alimentos como frutas, verduras e sopas.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Institute of Medicine. Dietary Reference Intakes for Water, Potassium, Sodium, Chloride, and Sulfate. Washington, DC: National Academies Press; 2005. <a href="https://doi.org/10.17226/10925" target="_blank" rel="noopener">doi:10.17226/10925</a>.</li>
         <li>EFSA Panel on Dietetic Products, Nutrition and Allergies. Scientific opinion on dietary reference values for water. <cite>EFSA Journal</cite>. 2010;8(3):1459. <a href="https://doi.org/10.2903/j.efsa.2010.1459" target="_blank" rel="noopener">doi:10.2903/j.efsa.2010.1459</a>.</li>
+        <li>Chernoff R. Meeting the nutritional needs of the elderly in the institutional setting. <cite>Nutrition Reviews</cite>. 1994;52(4):132-136. <a href="https://doi.org/10.1111/j.1753-4887.1994.tb01402.x" target="_blank" rel="noopener">doi:10.1111/j.1753-4887.1994.tb01402.x</a>.</li>
+        <li>Holliday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. <cite>Pediatrics</cite>. 1957;19(5):823-832.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

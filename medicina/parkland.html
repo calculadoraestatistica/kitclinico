@@ -154,14 +154,54 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Apenas uma estimativa inicial
         </div>
-        <p>A fórmula calcula um ponto de partida — a reposição real é titulada pela resposta clínica, sobretudo o débito urinário e os sinais de perfusão. Considere apenas queimaduras de segundo e terceiro graus e siga o protocolo do serviço de queimados.</p>
+        <p>A fórmula publicada calcula um ponto de partida — a literatura descreve titulação pela resposta clínica, sobretudo o débito urinário e os sinais de perfusão. A fórmula original aplica-se apenas a queimaduras de segundo e terceiro graus. A conduta clínica e o ajuste de infusão são exclusivos do médico assistente, conforme o protocolo do serviço de queimados.</p>
       </div>
+
+      <h2>População validada</h2>
+      <p>A fórmula original foi derivada por Baxter e Shires no Parkland Memorial Hospital com base em estudos de reposição em adultos vítimas de queimaduras térmicas extensas (Baxter & Shires, 1968). A literatura descreve sua utilização majoritária em adultos com queimaduras de segundo e terceiro graus envolvendo mais de 15-20% da superfície corporal. Publicações apontam limitações em pediatria (onde a necessidade basal hídrica é maior e a relação peso/superfície difere), em queimados elétricos de alta voltagem (com rabdomiólise) e em queimaduras por inalação, situações nas quais as diretrizes ISBI descrevem necessidades de ajuste (ISBI, 2016).</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza duas entradas: <strong>peso corporal em quilogramas (kg)</strong> e <strong>superfície corporal queimada (SCQ) em percentual (%)</strong>. Para conversão de peso de libras para kg, a literatura usa fator 0,4536. A SCQ é tradicionalmente estimada pela "regra dos nove" de Wallace ou pela tabela de Lund-Browder. Faixas de sanidade descritas: peso entre 1 e 250 kg; SCQ entre 0 e 100%. Apenas queimaduras de segundo e terceiro graus são computadas na SCQ pela formulação clássica.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Volume em 24 h (mL) = 4 × Peso (kg) × SCQ (%)</div>
+      <p>Onde: <strong>4</strong> é o coeficiente de Parkland em mL/kg/% de SCQ; <strong>Peso</strong> é a massa corporal em kg; <strong>SCQ</strong> é o percentual de superfície queimada (segundo e terceiro graus). A formulação original prevê: (1) calcular o volume total em 24 h pela fórmula acima; (2) administrar metade desse volume nas primeiras 8 horas contadas a partir do momento da queimadura (e não da chegada hospitalar); (3) administrar a metade restante nas 16 horas seguintes. Exemplo trabalhado: adulto de 70 kg com 40% de SCQ. Substituindo: 4 × 70 × 40 = 11 200 mL em 24 h. Primeiras 8 h: 5 600 mL (≈ 700 mL/h). Próximas 16 h: 5 600 mL (≈ 350 mL/h). O cristaloide descrito na publicação original é o Ringer lactato.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula calcula apenas um ponto de partida, não a reposição final, que é titulada pela resposta clínica (débito urinário, perfusão, lactato). Erros comuns descritos: estimar a SCQ contando queimaduras superficiais (primeiro grau) — o que infla o volume — ou usar o peso pré-queimadura em pacientes obesos. Publica-se que a aplicação isolada em pediatria pode subestimar necessidades, motivo pelo qual a fórmula de Galveston e variantes foram propostas (ISBI, 2016). Em queimaduras elétricas de alta voltagem com mioglobinúria, a literatura descreve volumes superiores aos estimados pela fórmula. A "fluid creep" — administração excessiva por seguimento rígido da fórmula sem titulação — é uma complicação publicada na literatura de queimados.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve diversas alternativas: <strong>fórmula de Brooke modificada</strong> (2 mL × kg × %SCQ, cristaloide); <strong>fórmula de Galveston</strong> em pediatria (5 000 mL × m² queimados + 2 000 mL × m² total); <strong>fórmula de ABA consenso</strong> (2-4 mL × kg × %SCQ como faixa inicial); <strong>fórmula de Evans</strong> (associa coloide). Publicações apontam que volumes menores (Brooke modificada) têm sido associados a menos edema e fluid creep, enquanto Parkland permanece amplamente descrita como referência histórica e didática (ISBI, 2016).</p>
+
+      <h2>Origem e versão</h2>
+      <p>Publicada por <strong>Charles R. Baxter e G. Tom Shires</strong> em 1968 nos <cite>Annals of the New York Academy of Sciences</cite>, com base em experiência no Parkland Memorial Hospital, Dallas (DOI: 10.1111/j.1749-6632.1968.tb14738.x). A versão implementada nesta calculadora segue a formulação original: 4 mL × kg × %SCQ em 24 h, com divisão 50% nas primeiras 8 h e 50% nas 16 h seguintes, conforme descrito por Baxter e Shires (1968) e mantido como referência histórica nas diretrizes ISBI (2016).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a formulação publicada:</p>
+      <ul>
+        <li><strong>Adulto de 70 kg, 40% SCQ:</strong> 4 × 70 × 40 = 11 200 mL em 24 h; 5 600 mL nas primeiras 8 h (≈ 700 mL/h); 5 600 mL nas 16 h seguintes (≈ 350 mL/h).</li>
+        <li><strong>Adulto de 80 kg, 25% SCQ:</strong> 4 × 80 × 25 = 8 000 mL em 24 h; 4 000 mL nas primeiras 8 h (500 mL/h); 4 000 mL nas 16 h seguintes (250 mL/h).</li>
+        <li><strong>Adulto de 60 kg, 50% SCQ:</strong> 4 × 60 × 50 = 12 000 mL em 24 h; 6 000 mL nas primeiras 8 h (750 mL/h); 6 000 mL nas 16 h seguintes (375 mL/h).</li>
+      </ul>
+      <p>Verificada contra exemplos numéricos descritos em Baxter & Shires (1968); reporte discrepâncias pelo contato editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade do peso (kg, não lb), o percentual de SCQ (0-100, não fração) e se foram excluídas queimaduras de primeiro grau do cálculo da SCQ, conforme a literatura clássica descreve.</p>
+      <p><strong>Posso usar em crianças?</strong> A literatura descreve que a aplicação isolada em pediatria pode subestimar a necessidade hídrica, dado que crianças têm maior relação superfície/peso e maior demanda basal. Publica-se que fórmulas pediátricas específicas (Galveston) ou a adição da manutenção hídrica de Holliday-Segar à reposição são alternativas descritas (ISBI, 2016).</p>
+      <p><strong>Por que Parkland e não Brooke modificada?</strong> Publicações descrevem que Parkland (4 mL/kg/%) permanece como referência histórica e didática mais difundida, enquanto Brooke modificada (2 mL/kg/%) tem sido associada na literatura recente a menor risco de fluid creep. A escolha entre fórmulas é descrita como dependente do protocolo institucional e da resposta clínica titulada (ISBI, 2016).</p>
+      <p><strong>O tempo conta a partir de quando?</strong> A formulação original descrita por Baxter e Shires (1968) define que as primeiras 8 horas são contadas a partir do momento da queimadura, e não da admissão hospitalar — tempo já decorrido é descontado da janela inicial.</p>
 
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Baxter CR, Shires T. Physiological response to crystalloid resuscitation of severe burns. <cite>Annals of the New York Academy of Sciences</cite>. 1968;150(3):874-894. <a href="https://doi.org/10.1111/j.1749-6632.1968.tb14738.x" target="_blank" rel="noopener">doi:10.1111/j.1749-6632.1968.tb14738.x</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/4973463/" target="_blank" rel="noopener">PMID&nbsp;4973463</a>.</li>
         <li>ISBI Practice Guidelines Committee. ISBI Practice Guidelines for Burn Care. <cite>Burns</cite>. 2016;42(5):953-1021. <a href="https://doi.org/10.1016/j.burns.2016.05.013" target="_blank" rel="noopener">doi:10.1016/j.burns.2016.05.013</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/27542292/" target="_blank" rel="noopener">PMID&nbsp;27542292</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

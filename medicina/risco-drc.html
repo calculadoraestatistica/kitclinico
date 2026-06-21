@@ -186,11 +186,50 @@
         <p>O diagnóstico de DRC exige que as alterações da TFG ou da albuminúria persistam por <strong>pelo menos 3 meses</strong>. Um único exame anormal indica investigação, mas não fecha diagnóstico.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A matriz KDIGO 2012 foi construída a partir de meta-análise do <em>CKD Prognosis Consortium</em>, que reuniu mais de 1,5 milhão de participantes de coortes gerais, de alto risco cardiovascular e de doentes renais conhecidos, com idades adultas e ambos os sexos (Kidney Int Suppl 2013;3:1-150). As associações entre TFG, albuminúria e desfechos (mortalidade global, mortalidade cardiovascular, falência renal, lesão renal aguda) foram testadas em populações da América do Norte, Europa, Ásia e Oceania. A literatura descreve limitações na aplicação direta a crianças, gestantes, transplantados renais e pacientes com lesão renal aguda, em que a estratificação de risco publicada não foi diretamente validada.</p>
+      <h2>Entradas, unidades e conversões</h2>
+      <p>O painel recebe quatro entradas. <strong>Creatinina sérica</strong> em mg/dL (faixa plausível 0,3-15); para µmol/L, divide-se por 88,4. <strong>Idade</strong> em anos completos (faixa adulta 18-110). <strong>Sexo</strong> biológico, conforme variável da fórmula CKD-EPI 2021. <strong>Albumina urinária</strong> em mg/L e <strong>creatinina urinária</strong> em g/L, ambas em amostra isolada; a razão UACR é publicada em mg/g. Para mg/mmol, multiplica-se mg/g por 0,113.</p>
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>O painel combina duas fórmulas publicadas e usa o resultado como coordenada na matriz KDIGO.</p>
+      <div class="formula">
+TFG (CKD-EPI 2021) = 142 × min(Scr/κ, 1)^α × max(Scr/κ, 1)^(-1,200) × 0,9938^idade × (1,012 se feminino)
+
+UACR (mg/g) = albumina urinária (mg/L) ÷ creatinina urinária (g/L)
+      </div>
+      <p>Scr é a creatinina sérica em mg/dL; κ vale 0,7 (feminino) ou 0,9 (masculino); α vale -0,241 (feminino) ou -0,302 (masculino). O valor de TFG define a linha (G1 a G5) e o UACR define a coluna (A1 a A3). <strong>Exemplo trabalhado:</strong> mulher de 65 anos, creatinina 1,8 mg/dL, albumina urinária 120 mg/L, creatinina urinária 0,8 g/L. Scr/κ = 1,8/0,7 = 2,571; min = 1; max = 2,571. TFG = 142 × 1 × 2,571^(-1,200) × 0,9938^65 × 1,012 = aproximadamente 30 mL/min/1,73m² (linha G3b). UACR = 120/0,8 = 150 mg/g (coluna A2). Coordenada G3b/A2 corresponde à faixa publicada de risco muito alto na matriz KDIGO 2012.</p>
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a estratificação publicada perde acurácia em situações de massa muscular extrema (atletas, amputados, sarcopenia), gravidez, dietas com alta carga proteica recente, uso de cimetidina ou trimetoprima (que elevam a creatinina sem reduzir TFG real) e em lesão renal aguda, em que a creatinina ainda não atingiu equilíbrio. O UACR de amostra isolada apresenta variabilidade biológica conhecida, especialmente em exercício, febre, infecção urinária e hematúria; publicações descrevem repetição em duas a três amostras antes da classificação definitiva. O diagnóstico de DRC exige persistência das alterações por pelo menos 3 meses. Para crianças e transplantados renais, a literatura descreve fórmulas e matrizes específicas.</p>
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Para TFG, a literatura compara CKD-EPI 2021 (sem coeficiente racial), CKD-EPI 2009 (com coeficiente racial), MDRD-IDMS e Cockcroft-Gault. A KDIGO 2024 descreve a CKD-EPI 2021 como referência atual em adultos. Para albuminúria, publicações comparam UACR de amostra isolada com proteinúria de 24 horas e PCR (relação proteína/creatinina); o UACR é o método descrito pelas diretrizes KDIGO para classificação A1-A3. Em pediatria, a literatura descreve a equação CKiD U25 e a fórmula de Schwartz.</p>
+      <h2>Origem e versão</h2>
+      <p>A matriz integrada G × A foi publicada pelo grupo de trabalho KDIGO em <em>KDIGO 2012 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease</em> (Kidney Int Suppl 2013;3:1-150) e mantida com pequenas atualizações em KDIGO 2024 (Kidney Int 2024;105(4S):S117-S314; doi:10.1016/j.kint.2023.10.018). A TFG implementada usa CKD-EPI 2021 (Inker LA et al., N Engl J Med 2021;385:1737-1749; doi:10.1056/NEJMoa2102953). O UACR segue a definição clássica em mg/g.</p>
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra exemplos publicados na diretriz KDIGO 2012, Apêndice 2:</p>
+      <ul>
+        <li>Homem 60 anos, creatinina 1,1 mg/dL, UACR 15 mg/g: TFG aproximadamente 76 mL/min/1,73m² (G2) e A1, coordenada G2/A1, faixa publicada de risco baixo.</li>
+        <li>Mulher 70 anos, creatinina 2,0 mg/dL, UACR 350 mg/g: TFG aproximadamente 26 mL/min/1,73m² (G4) e A3, coordenada G4/A3, faixa publicada de risco muito alto.</li>
+        <li>Homem 45 anos, creatinina 0,9 mg/dL, UACR 45 mg/g: TFG aproximadamente 102 mL/min/1,73m² (G1) e A2, coordenada G1/A2, faixa publicada de risco moderado.</li>
+      </ul>
+      <p>Reporte discrepâncias por e-mail.</p>
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira unidades (creatinina sérica em mg/dL, albumina urinária em mg/L, creatinina urinária em g/L) e revise se a vírgula decimal foi inserida corretamente. Recalcule à mão usando a fórmula acima; a literatura descreve variação aceitável entre implementações da ordem de 1-2 mL/min/1,73m² por arredondamento.</p>
+      <p><strong>Posso usar o painel em crianças, gestantes ou transplantados?</strong> A matriz KDIGO 2012 não foi validada nesses grupos. A literatura descreve equações pediátricas específicas (CKiD U25, Schwartz) e ressalvas em gestação e pós-transplante.</p>
+      <p><strong>Por que combinar TFG e UACR?</strong> Estudos do <em>CKD Prognosis Consortium</em> demonstraram que TFG e albuminúria são preditores independentes de desfechos renais e cardiovasculares; a matriz integra ambos e publica gradientes de risco que cada um isoladamente não captura.</p>
+      <p><strong>Uma única medida basta para classificar?</strong> A literatura KDIGO descreve confirmação por pelo menos duas medidas em amostras diferentes, e persistência por 3 meses para diagnóstico formal de DRC.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. KDIGO 2012 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International Supplements</cite>. 2013;3:1-150.</li>
         <li>KDIGO 2024 Clinical Practice Guideline for the Evaluation and Management of Chronic Kidney Disease. <cite>Kidney International</cite>. 2024;105(4S):S117-S314. <a href="https://doi.org/10.1016/j.kint.2023.10.018" target="_blank" rel="noopener">doi:10.1016/j.kint.2023.10.018</a>.</li>
+        <li>Inker LA, Eneanya ND, Coresh J, et al. New Creatinine- and Cystatin C-Based Equations to Estimate GFR without Race. <cite>N Engl J Med</cite>. 2021;385:1737-1749. <a href="https://doi.org/10.1056/NEJMoa2102953" target="_blank" rel="noopener">doi:10.1056/NEJMoa2102953</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras envolvidas</h2>

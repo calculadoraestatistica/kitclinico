@@ -3,18 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7516029395999799" crossorigin="anonymous"></script>
-<meta name="google-adsense-account" content="ca-pub-7516029395999799">
 <title>Cadastro clínico — Veterinária | Kit Clínico</title>
-<meta name="description" content="Cadastre os dados do pet e do tutor e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON.">
+<meta name="description" content="Informe espécie, peso e porte do animal e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON. Nenhum dado pessoal é solicitado.">
 <link rel="canonical" href="https://kitclinico.com.br/cadastro-veterinaria.html">
 <meta name="theme-color" content="#0d9488">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Kit Clínico">
 <meta property="og:title" content="Cadastro clínico — Veterinária — Kit Clínico">
-<meta property="og:description" content="Cadastre os dados do pet e do tutor e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON.">
+<meta property="og:description" content="Informe espécie, peso e porte do animal e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON. Nenhum dado pessoal é solicitado.">
 <meta property="og:url" content="https://kitclinico.com.br/cadastro-veterinaria.html">
 <meta property="og:image" content="https://kitclinico.com.br/og-image.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -70,7 +67,7 @@
         </ol>
       </nav>
       <h1>Cadastro clínico — Veterinária</h1>
-      <p class="lead">Cadastre os dados do pet e do tutor e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON.</p>
+      <p class="lead">Informe espécie, peso e porte do animal e rode as calculadoras veterinárias — gere o relatório em PDF, Excel ou JSON. Nenhum dado pessoal é solicitado.</p>
     </div>
   </div>
 
@@ -79,16 +76,16 @@
     <div class="privacy-notice">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
       <div>
-        <strong>O Kit Clínico não armazena nenhum dado do cadastro.</strong> Tudo o que você digitar fica apenas no seu navegador, nesta sessão, e some quando você fechar ou limpar a página. Não há envio para nenhum servidor. Cabe ao profissional decidir se inclui — e quais — dados pessoais do paciente no relatório exportado.
+        <strong>O Kit Clínico não solicita nem armazena nenhum dado pessoal.</strong> Esta página pede apenas informações clínicas do animal (espécie, peso, porte) — não há campos para nome, identificação, contato ou qualquer dado do tutor. Tudo o que você digitar fica apenas no seu navegador, nesta sessão, e some quando você fechar ou limpar a página. Não há envio para nenhum servidor.
       </div>
     </div>
 
     <div class="calculator" id="cad-form">
       <h2 class="calculator__title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="8.5" cy="7" r="4"/><line x1="20" y1="8" x2="20" y2="14"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
-        Dados do paciente
+        Dados clínicos do animal
       </h2>
-      <p class="calculator__hint">Preencha apenas os campos que forem relevantes. Nenhum campo é obrigatório.</p>
+      <p class="calculator__hint">Apenas informações clínicas necessárias para os cálculos (espécie, peso, porte). Nenhum campo é obrigatório e nenhum dado pessoal é solicitado.</p>
 
       <div id="cad-form-fields"></div>
     </div>
@@ -98,7 +95,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="8" y1="6" x2="16" y2="6"/><line x1="8" y1="10" x2="16" y2="10"/><line x1="8" y1="14" x2="12" y2="14"/></svg>
         Cálculos clínicos (opcional)
       </h2>
-      <p class="calculator__hint">Adicione quantos cálculos quiser. Os campos do cadastro preenchidos acima são usados automaticamente — campos extras (ex.: QT, fator de atividade) aparecem quando você escolhe o cálculo.</p>
+      <p class="calculator__hint">Adicione quantos cálculos quiser. Os dados clínicos preenchidos acima são usados automaticamente — campos extras (ex.: fator de atividade) aparecem quando você escolhe o cálculo.</p>
 
       <div id="cad-calc-builder"></div>
       <div id="cad-calc-list"></div>
@@ -121,10 +118,10 @@
 
     <article class="prose">
       <h2>Como funciona</h2>
-      <p>O cadastro clínico do Kit Clínico foi pensado para quem atende em consultório ou enfermaria e quer um relatório rápido para colar no prontuário, mandar para o paciente ou guardar como histórico. Você digita os dados, escolhe quais cálculos quer rodar (IMC, TFG, escores e por aí vai) e exporta em três formatos: <strong>PDF</strong> (relatório legível), <strong>Excel</strong> (uma aba com os dados e outra com os cálculos) ou <strong>JSON</strong> (para reaproveitar em outras ferramentas ou prontuários eletrônicos).</p>
+      <p>O cadastro clínico do Kit Clínico foi pensado para rodar contas rapidamente em consultório ou enfermaria, sem coletar dados pessoais. Você informa apenas as variáveis clínicas do animal (espécie, peso, porte), escolhe quais cálculos quer rodar e exporta em três formatos: <strong>PDF</strong> (relatório legível), <strong>Excel</strong> (uma aba com os dados clínicos e outra com os cálculos) ou <strong>JSON</strong> (para reaproveitar em outras ferramentas).</p>
 
       <h2>Privacidade</h2>
-      <p>Os dados ficam apenas no seu navegador. Nada é enviado, salvo, indexado ou compartilhado. Mesmo a Google Ads e a Google Analytics não recebem o conteúdo do cadastro — eles só sabem que você visitou a página. Se quiser, faça o cadastro sem identificar o paciente (use apenas as iniciais ou um código de prontuário) — os cálculos funcionam do mesmo jeito.</p>
+      <p>Esta página não solicita nome, identificação, contato ou qualquer dado do tutor — apenas variáveis clínicas anônimas do animal. Mesmo essas ficam só no seu navegador: nada é enviado, salvo, indexado ou compartilhado. A Google Ads e a Google Analytics não recebem o conteúdo do cadastro — só sabem que você visitou a página. Se quiser identificar o paciente para seu próprio uso, faça isso fora da ferramenta (no seu prontuário).</p>
 
       <div class="disclaimer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
@@ -188,8 +185,8 @@
 <script src="/js/config.js"></script>
 <script src="/js/clinical.js"></script>
 <script src="/js/app.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js" defer></script>
-<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js" defer></script>
+<script src="/js/vendor/jspdf.umd.min.js" defer></script>
+<script src="/js/vendor/xlsx.full.min.js" defer></script>
 <script src="/js/cadastro.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', function () {

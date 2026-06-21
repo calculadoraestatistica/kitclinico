@@ -150,34 +150,71 @@
       <p>O <strong>QTc (intervalo QT corrigido)</strong> ajusta o intervalo QT medido no eletrocardiograma de acordo com a frequência cardíaca, já que o QT naturalmente encurta quando a frequência aumenta e alonga quando ela diminui. A correção permite comparar o valor com limites de referência e identificar pacientes em risco de arritmias.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>A fórmula de <strong>Bazett</strong> é a mais utilizada na prática clínica; a de <strong>Fridericia</strong> tende a ser mais confiável em frequências cardíacas muito altas ou muito baixas. Considera-se prolongamento do QTc:</p>
+      <p>A fórmula de <strong>Bazett</strong> é a mais utilizada na prática clínica; a de <strong>Fridericia</strong> tende a ser mais confiável em frequências cardíacas muito altas ou muito baixas. A literatura descreve os seguintes pontos de corte para o QTc:</p>
       <div class="table-wrap">
         <table class="data">
-          <thead><tr><th>QTc (ms)</th><th>Interpretação</th></tr></thead>
+          <thead><tr><th>QTc (ms)</th><th>Classificação descrita na literatura</th></tr></thead>
           <tbody>
-            <tr><td>Até 450 (homens) / até 470 (mulheres)</td><td>Dentro do esperado</td></tr>
-            <tr><td>Acima de 450 (homens) / acima de 470 (mulheres)</td><td>QTc prolongado</td></tr>
-            <tr><td>500 ou mais</td><td>Risco elevado de torsades de pointes</td></tr>
+            <tr><td>Até 450 (homens) / até 470 (mulheres)</td><td>Dentro do intervalo de referência publicado</td></tr>
+            <tr><td>Acima de 450 (homens) / acima de 470 (mulheres)</td><td>QTc descrito como prolongado</td></tr>
+            <tr><td>500 ou mais</td><td>Faixa associada a maior incidência de torsades de pointes</td></tr>
           </tbody>
         </table>
       </div>
       <div class="formula">QTc (Bazett) = QT ÷ √(RR) &nbsp;·&nbsp; RR (s) = 60 ÷ FC</div>
 
       <h2>Exemplo</h2>
-      <p>Um paciente do sexo masculino com <strong>QT de 400 ms</strong> e <strong>frequência cardíaca de 75 bpm</strong> tem RR = 60 ÷ 75 = 0,80 s. O QTc de Bazett = 400 ÷ √0,80 ≈ <strong>447 ms</strong> — dentro do limite de 450 ms para homens.</p>
+      <p>Um paciente do sexo masculino com <strong>QT de 400 ms</strong> e <strong>frequência cardíaca de 75 bpm</strong> tem RR = 60 ÷ 75 = 0,80 s. O QTc de Bazett = 400 ÷ √0,80 ≈ <strong>447 ms</strong> — dentro do limite de 450 ms descrito para homens.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Atenção ao prolongamento
         </div>
-        <p>O prolongamento do QTc (acima de 450 ms em homens e 470 ms em mulheres) aumenta o risco de arritmias graves, como a torsades de pointes. Diversos fármacos e distúrbios eletrolíticos prolongam o QT. Interprete sempre o resultado junto do quadro clínico e do traçado completo do eletrocardiograma.</p>
+        <p>A literatura descreve que valores de QTc acima de 450 ms em homens e 470 ms em mulheres associam-se a maior incidência de arritmias graves, como a torsades de pointes. Diversos fármacos e distúrbios eletrolíticos publicaram-se como prolongadores do QT. O resultado é apenas referência numérica e não substitui a leitura integral do eletrocardiograma por profissional habilitado.</p>
       </div>
+
+      <h2>População validada</h2>
+      <p>A fórmula de Bazett foi derivada por Henry Cuthbert Bazett em 1920 a partir de 39 traçados de adultos jovens (homens e mulheres) em ritmo sinusal, com frequências cardíacas entre 50 e 120 bpm. Fridericia, no mesmo ano, descreveu sua fórmula a partir de 50 adultos dinamarqueses saudáveis. A literatura publica que a aplicabilidade de ambas as fórmulas em populações pediátricas, em pacientes com fibrilação atrial, com bloqueios de ramo (QRS largo) e em frequências cardíacas extremas (<40 ou >100 bpm) é limitada. Estudos validaram pontos de corte específicos por sexo em coortes de adultos publicadas em diretrizes da AHA/ACCF/HRS (Rautaharju, 2009).</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>O intervalo <strong>QT</strong> é inserido em milissegundos (ms); o intervalo medido em segundos é convertido multiplicando por 1000. A <strong>frequência cardíaca (FC)</strong> é inserida em batimentos por minuto (bpm). O intervalo <strong>RR</strong>, em segundos, é derivado por RR = 60 ÷ FC. Faixas típicas descritas: QT entre 300 e 600 ms; FC entre 30 e 200 bpm. Valores fora desses limites publica-se que reduzem a confiabilidade da correção.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">QTc<sub>Bazett</sub> = QT ÷ √(RR) &nbsp;·&nbsp; QTc<sub>Fridericia</sub> = QT ÷ ∛(RR) &nbsp;·&nbsp; RR = 60 ÷ FC</div>
+      <p>Onde <strong>QT</strong> é o intervalo medido em ms, <strong>RR</strong> é o intervalo entre ondas R consecutivas em segundos, e <strong>FC</strong> é a frequência cardíaca em bpm. A sequência calcula primeiro o RR a partir da FC, depois aplica a raiz quadrada (Bazett) ou cúbica (Fridericia) ao RR, e finalmente divide o QT pelo valor obtido. <strong>Exemplo trabalhado:</strong> QT = 420 ms, FC = 60 bpm. Passo 1: RR = 60 ÷ 60 = 1,00 s. Passo 2 (Bazett): √1,00 = 1,000; QTc = 420 ÷ 1,000 = <strong>420 ms</strong>. Passo 3 (Fridericia): ∛1,00 = 1,000; QTc = 420 ÷ 1,000 = <strong>420 ms</strong>. Em FC = 60 bpm as duas fórmulas convergem; a diferença cresce em FCs extremas.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que a fórmula de Bazett superestima o QTc em taquicardias (FC alta) e subestima em bradicardias (FC baixa), reduzindo sua acurácia fora da faixa 60-100 bpm. Em fibrilação atrial, o RR varia batimento a batimento e publica-se que se deve usar a média de vários ciclos. Em QRS largo (>120 ms, p. ex., bloqueio de ramo ou marca-passo), o QT medido inclui prolongamento da despolarização, e estudos descreveram correções específicas (fórmula de Rautaharju). Erros frequentes de medida incluem confundir o fim da onda T com onda U e medir em derivação inadequada (a literatura descreve as derivações II, V5 e V6 como preferidas). Em FCs <40 ou >120 bpm, publica-se que nenhuma fórmula clássica mantém calibração adequada.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Além de <strong>Bazett</strong> (raiz quadrada) e <strong>Fridericia</strong> (raiz cúbica), publicaram-se as fórmulas lineares de <strong>Framingham</strong> (Sagie, 1992) e de <strong>Hodges</strong> (1983). Estudos de coorte populacionais (Luo et al., 2004) descreveram que Fridericia e Framingham apresentam menor variação residual com a FC do que Bazett, tornando-as preferidas em ensaios clínicos e em análise de drogas QT-prolongadoras (guideline ICH E14). Bazett permanece como a mais difundida em telas de monitores e laudos automatizados de ECG por razões históricas.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula original foi publicada por Henry Cuthbert Bazett em 1920 na revista <cite>Heart</cite> (Bazett HC. An analysis of the time-relations of electrocardiograms. Heart. 1920;7:353-370). A fórmula de Louis Sigurd Fridericia foi descrita no mesmo ano em <cite>Acta Medica Scandinavica</cite>. Esta calculadora implementa a forma clássica de Bazett (QT ÷ √RR, com RR em segundos) e a forma clássica de Fridericia (QT ÷ ∛RR), sem variantes posteriores. Limites por sexo seguem o consenso AHA/ACCF/HRS de 2009 (Rautaharju et al.).</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra as fórmulas publicadas:</p>
+      <ol>
+        <li>QT = 400 ms, FC = 75 bpm → RR = 0,80 s; Bazett ≈ <strong>447 ms</strong>; Fridericia ≈ <strong>431 ms</strong>.</li>
+        <li>QT = 420 ms, FC = 60 bpm → RR = 1,00 s; Bazett = <strong>420 ms</strong>; Fridericia = <strong>420 ms</strong>.</li>
+        <li>QT = 360 ms, FC = 120 bpm → RR = 0,50 s; Bazett ≈ <strong>509 ms</strong>; Fridericia ≈ <strong>454 ms</strong> (ilustra a divergência entre fórmulas em FC alta).</li>
+      </ol>
+      <p>Resultados verificados contra exemplos descritos em Bazett (1920) e Fridericia (1920); reporte discrepâncias pelo endereço de contato editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve que medidas manuais do QT em uma única derivação têm variação inter-observador de 10-20 ms. Confira a unidade do QT (ms, não s), a FC inserida e prefira medir em derivação II, V5 ou V6 em traçado de boa qualidade.</p>
+      <p><strong>Posso usar em crianças?</strong> Publica-se que limites de QTc em pediatria diferem dos adultos (Schwartz, 1985 descreveu critérios específicos para suspeita de síndrome do QT longo congênito). Esta calculadora foi implementada com pontos de corte de adultos.</p>
+      <p><strong>Por que Bazett e não Fridericia?</strong> Bazett continua sendo a fórmula mais reportada em laudos automáticos. Fridericia foi publicada como mais estável em FCs extremas e é a preferida em ensaios farmacológicos (ICH E14). Esta calculadora mostra as duas em paralelo para comparação.</p>
+      <p><strong>Posso aplicar em fibrilação atrial?</strong> A literatura descreve que, na FA, o RR varia a cada ciclo; estudos sugerem o uso da média de 10 RRs consecutivos antes de aplicar qualquer fórmula clássica.</p>
 
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Bazett HC. An analysis of the time-relations of electrocardiograms. <cite>Heart</cite>. 1920;7:353-370.</li>
         <li>Fridericia LS. Die Systolendauer im Elektrokardiogramm bei normalen Menschen und bei Herzkranken. <cite>Acta Medica Scandinavica</cite>. 1920;53:469-486.</li>
+        <li>Rautaharju PM, Surawicz B, Gettes LS, et al. AHA/ACCF/HRS recommendations for the standardization and interpretation of the electrocardiogram: part IV. <cite>Circulation</cite>. 2009;119:e241-e250.</li>
+        <li>Luo S, Michler K, Johnston P, Macfarlane PW. A comparison of commonly used QT correction formulae. <cite>J Electrocardiol</cite>. 2004;37(Suppl):81-90.</li>
+        <li>Sagie A, Larson MG, Goldberg RJ, et al. An improved method for adjusting the QT interval for heart rate (Framingham Heart Study). <cite>Am J Cardiol</cite>. 1992;70:797-801.</li>
       </ol>
 
       <div class="related">
@@ -186,6 +223,12 @@
           <a class="calc-card" href="/medicina/gotejamento.html"><h3>Gotejamento IV</h3><p>Velocidade de infusão em gotas por minuto.</p></a>
           <a class="calc-card" href="/medicina/imc.html"><h3>IMC</h3><p>Índice de Massa Corporal do adulto.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

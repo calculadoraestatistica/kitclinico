@@ -156,27 +156,64 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A <strong>Taxa Metabólica Basal (TMB)</strong> é a quantidade mínima de energia que o corpo consome em repouso absoluto para manter as funções vitais — respiração, circulação, temperatura e atividade celular. Ela é o ponto de partida para estimar as necessidades calóricas diárias e planejar dietas de manutenção, ganho ou perda de peso. A <strong>equação de Mifflin-St Jeor</strong> é hoje a mais recomendada para adultos saudáveis.</p>
+      <p>A <strong>Taxa Metabólica Basal (TMB)</strong> é a quantidade mínima de energia que o corpo consome em repouso absoluto para manter as funções vitais — respiração, circulação, temperatura e atividade celular. A literatura descreve essa estimativa como ponto de partida para o cálculo das necessidades calóricas diárias em dietas de manutenção, ganho ou perda de peso. A <strong>equação de Mifflin-St Jeor</strong> foi publicada como alternativa mais acurada para adultos saudáveis em comparação às equações anteriores.</p>
+
+      <h2>População validada</h2>
+      <p>O estudo original de Mifflin e colaboradores (1990) derivou a equação a partir de calorimetria indireta em <strong>498 adultos saudáveis</strong> (251 homens e 247 mulheres) com idade entre <strong>19 e 78 anos</strong>, abrangendo indivíduos eutróficos e com obesidade (IMC 17–42 kg/m²). A amostra era predominantemente caucasiana, recrutada em Reno, Nevada. A literatura descreve aplicação validada em adultos saudáveis ambulatoriais. Publica-se que a equação apresenta menor precisão em extremos etários (crianças, adolescentes em crescimento, idosos &gt;80 anos), em pacientes críticos, em obesidade mórbida (IMC &gt;40) e em populações não-caucasianas, onde estudos comparativos identificaram vieses sistemáticos.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora utiliza quatro entradas: <strong>peso</strong> em quilogramas (kg; sanity 30–250); <strong>altura</strong> em centímetros (cm; sanity 120–220); <strong>idade</strong> em anos completos (sanity 5–100); e <strong>sexo biológico</strong> (M/F), categórico. Para conversões: 1 libra = 0,4536 kg; 1 pé = 30,48 cm; 1 polegada = 2,54 cm. A fórmula original utiliza altura em centímetros, não em metros, conforme publicado em Mifflin et al. (1990).</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">TMB (kcal/dia) = 10 × peso(kg) + 6,25 × altura(cm) − 5 × idade(anos) + s<br>onde s = +5 (homens) ou s = −161 (mulheres)</div>
+      <p>Cada variável tem o seguinte significado: <em>peso</em> corresponde à massa corporal atual; <em>altura</em> à estatura em pé; <em>idade</em> em anos completos; e <em>s</em> é o termo de ajuste por sexo biológico, publicado por Mifflin para corrigir a diferença média de composição corporal. A sequência de cálculo é: (1) multiplicar peso por 10; (2) multiplicar altura por 6,25; (3) multiplicar idade por 5; (4) somar os dois primeiros termos e subtrair o terceiro; (5) somar o termo de sexo.</p>
+      <p><strong>Exemplo trabalhado:</strong> mulher de 60 kg, 165 cm, 35 anos. TMB = (10 × 60) + (6,25 × 165) − (5 × 35) + (−161) = 600 + 1031,25 − 175 − 161 = <strong>1.295 kcal/dia</strong>.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>O resultado é a TMB em <strong>kcal/dia</strong>: a energia gasta apenas para o corpo funcionar em repouso, sem contar atividade física nem digestão. Para obter o <strong>gasto energético total (GET)</strong>, multiplica-se a TMB por um fator de atividade. A TMB tende a ser maior quanto maior o peso e a altura, e menor com o avançar da idade.</p>
-      <div class="formula">TMB = 10 × peso + 6,25 × altura − 5 × idade + s<br>(s = +5 para homens, −161 para mulheres)</div>
+      <p>O resultado é a TMB em <strong>kcal/dia</strong>: a energia gasta apenas para o corpo funcionar em repouso, sem contar atividade física nem termogênese induzida pela dieta. Para obter o <strong>gasto energético total (GET)</strong>, a literatura descreve a multiplicação da TMB por um fator de atividade física (PAL, geralmente entre 1,2 e 2,4). A TMB tende a ser maior quanto maior o peso e a altura, e menor com o avançar da idade.</p>
 
-      <h2>Exemplo</h2>
-      <p>Um homem de <strong>70 kg</strong>, <strong>175 cm</strong> e <strong>30 anos</strong>: TMB = 10 × 70 + 6,25 × 175 − 5 × 30 + 5 = 700 + 1093,75 − 150 + 5 ≈ <strong>1.649 kcal/dia</strong>.</p>
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura publica que a equação de Mifflin-St Jeor não foi validada para uso em <strong>crianças e adolescentes</strong> (recomenda-se Schofield ou IOM), <strong>gestantes e lactantes</strong>, <strong>pacientes em UTI ou hipermetabólicos</strong> (sepse, queimaduras, trauma), e em <strong>atletas com massa muscular muito acima da média</strong>, onde a equação subestima o gasto. Erros comuns de medida incluem: uso de altura em metros em vez de centímetros (subestima drasticamente); uso de peso ideal ou ajustado em vez de peso atual sem ajuste teórico; arredondamento prematuro. A literatura descreve calorimetria indireta como padrão-ouro quando a estimativa por equação apresenta margem de erro inaceitável (publica-se acurácia ±10% em apenas 70–82% dos casos).</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Estudos comparativos descrevem as seguintes alternativas: <strong>Harris-Benedict (1919, revisada 1984)</strong> — superestima a TMB em 5–15% em populações modernas conforme Frankenfield et al. (2005); <strong>Schofield (1985)</strong> — adotada pela FAO/WHO/UNU, validada para faixas etárias específicas; <strong>Owen (1986/1987)</strong> — derivada em amostra menor, menos generalizável; <strong>IOM/DRI (2005)</strong> — incorpora altura, peso, idade e nível de atividade. A literatura publica que Mifflin-St Jeor apresenta o menor viés sistemático em adultos saudáveis não-obesos e obesos (Frankenfield et al., 2005).</p>
+
+      <h2>Origem e versão</h2>
+      <p>Publicada originalmente por <strong>Mark D. Mifflin, Sachiko T. St Jeor</strong> e colaboradores em <cite>The American Journal of Clinical Nutrition</cite>, volume 51, edição 2, páginas 241–247, em fevereiro de 1990 (<a href="https://doi.org/10.1093/ajcn/51.2.241" target="_blank" rel="noopener">doi:10.1093/ajcn/51.2.241</a>). A versão implementada nesta calculadora é a fórmula publicada para adultos, com termo de sexo +5 (homens) ou −161 (mulheres), idêntica ao artigo original sem modificações posteriores.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra substituição direta na fórmula publicada:</p>
+      <ul>
+        <li><strong>Homem, 70 kg, 175 cm, 30 anos:</strong> TMB esperada ≈ <strong>1.649 kcal/dia</strong>.</li>
+        <li><strong>Mulher, 60 kg, 165 cm, 35 anos:</strong> TMB esperada ≈ <strong>1.295 kcal/dia</strong>.</li>
+        <li><strong>Homem, 90 kg, 180 cm, 50 anos:</strong> TMB esperada ≈ <strong>1.780 kcal/dia</strong>.</li>
+      </ul>
+      <p>Resultados verificados contra exemplos numéricos derivados da fórmula publicada em Mifflin et al. (1990); reporte discrepâncias pelo e-mail editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira as unidades (peso em kg, altura em cm — não em metros), revise idade e sexo, e refaça o cálculo manualmente substituindo na fórmula. Se a discrepância persistir, a literatura descreve calorimetria indireta como método de referência.</p>
+      <p><strong>Posso usar em crianças, gestantes ou idosos &gt;80 anos?</strong> A equação não foi validada nessas populações; a literatura descreve uso de Schofield, IOM/DRI ou equações específicas para gestantes nesses cenários.</p>
+      <p><strong>Por que Mifflin-St Jeor em vez de Harris-Benedict?</strong> Estudos comparativos (Frankenfield et al., 2005) publicaram que Mifflin-St Jeor apresenta menor viés e maior porcentagem de estimativas dentro de ±10% do valor real medido por calorimetria indireta em adultos saudáveis e obesos.</p>
+      <p><strong>A TMB calculada equivale ao quanto a pessoa deve comer?</strong> Não. A TMB representa apenas o gasto em repouso; o gasto energético total inclui atividade física e termogênese, calculado pela multiplicação da TMB por um fator de atividade.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           Limitações
         </div>
-        <p>A equação foi validada em adultos saudáveis e é uma estimativa: não considera a composição corporal individual (massa muscular versus gordura) nem condições clínicas que alteram o metabolismo. Use o resultado como referência e ajuste conforme a evolução e a avaliação nutricional.</p>
+        <p>A equação foi validada em adultos saudáveis e fornece estimativa: publica-se que ela não considera a composição corporal individual (massa muscular versus gordura) nem condições clínicas que alteram o metabolismo. A literatura descreve uso como referência educacional.</p>
       </div>
 
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Mifflin MD, St Jeor ST, Hill LA, Scott BJ, Daugherty SA, Koh YO. A new predictive equation for resting energy expenditure in healthy individuals. <cite>The American Journal of Clinical Nutrition</cite>. 1990;51(2):241-247. <a href="https://doi.org/10.1093/ajcn/51.2.241" target="_blank" rel="noopener">doi:10.1093/ajcn/51.2.241</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/2305711/" target="_blank" rel="noopener">PMID&nbsp;2305711</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

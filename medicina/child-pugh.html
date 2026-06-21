@@ -181,8 +181,50 @@
       <h2>Como interpretar o resultado</h2>
       <p>Cada parâmetro recebe de 1 a 3 pontos, totalizando de 5 a 15. O total define a classe: <strong>A (5 a 6)</strong>, cirrose bem compensada; <strong>B (7 a 9)</strong>, comprometimento significativo; e <strong>C (10 a 15)</strong>, doença descompensada, com a pior sobrevida.</p>
 
-      <h2>Exemplo</h2>
-      <p>Um paciente com bilirrubina 2,5 mg/dL (2), albumina 3,0 g/dL (2), INR 2,0 (2), ascite leve (2) e sem encefalopatia (1) soma <strong>9 pontos</strong> — classe B.</p>
+      <h2>População validada</h2>
+      <p>A versão original publicada por Pugh e colaboradores (1973) foi descrita em uma série de 38 pacientes com varizes esofágicas sangrantes submetidos à transecção esofágica, em sua maioria cirróticos por etiologia alcoólica e pós-hepatítica. A literatura subsequente estendeu seu uso para cirrose de diversas etiologias (viral, alcoólica, autoimune, biliar) em adultos de ambos os sexos, descrita predominantemente em populações europeias e norte-americanas. Publica-se que a graduação tem desempenho limitado em hepatopatia colestática crônica avançada (CBP/CEP), nos quais a hiperbilirrubinemia é parte da fisiopatologia de base, e que o critério não foi validado para uso pediátrico.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A pontuação combina três variáveis laboratoriais — <strong>bilirrubina total</strong> (mg/dL; 1 mg/dL ≈ 17,1 µmol/L), <strong>albumina sérica</strong> (g/dL; 1 g/dL = 10 g/L) e <strong>INR</strong> (adimensional, derivado do TP) — e duas variáveis clínicas categóricas — <strong>ascite</strong> (ausente / leve / moderada a tensa) e <strong>encefalopatia hepática</strong> (ausente / graus I-II / graus III-IV). Faixas plausíveis: bilirrubina 0,2-40 mg/dL; albumina 1,0-5,5 g/dL; INR 0,8-10. Valores fora destes intervalos costumam indicar erro de digitação ou unidade trocada.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula original atribui pontos por faixa em cada um dos cinco parâmetros e soma o total:</p>
+      <div class="formula">
+        <p><strong>Pontuação por parâmetro (1, 2 ou 3 pontos):</strong></p>
+        <ul>
+          <li>Bilirrubina (mg/dL): &lt;2 = 1 · 2-3 = 2 · &gt;3 = 3</li>
+          <li>Albumina (g/dL): &gt;3,5 = 1 · 2,8-3,5 = 2 · &lt;2,8 = 3</li>
+          <li>INR: &lt;1,7 = 1 · 1,7-2,3 = 2 · &gt;2,3 = 3</li>
+          <li>Ascite: ausente = 1 · leve = 2 · moderada/tensa = 3</li>
+          <li>Encefalopatia: ausente = 1 · graus I-II = 2 · graus III-IV = 3</li>
+        </ul>
+        <p><strong>Total</strong> = soma dos cinco pontos (faixa 5-15) → Classe A: 5-6 · Classe B: 7-9 · Classe C: 10-15.</p>
+      </div>
+      <p>Exemplo trabalhado: paciente com bilirrubina 2,5 mg/dL (2 pts), albumina 3,0 g/dL (2 pts), INR 2,0 (2 pts), ascite leve (2 pts) e encefalopatia ausente (1 pt) → 2+2+2+2+1 = <strong>9 pontos = Classe B</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve várias limitações: (1) os pontos de corte são fixos, de modo que dois pacientes com bilirrubinas muito diferentes (p.ex. 4 e 30 mg/dL) recebem a mesma pontuação máxima; (2) ascite e encefalopatia são variáveis subjetivas, com concordância interobservador limitada; (3) o uso de diuréticos pode mascarar a gravidade real da ascite; (4) a hipoalbuminemia pode refletir desnutrição ou perda renal/entérica não-hepática; (5) o INR sofre variação interlaboratorial em pacientes cirróticos, e a anticoagulação oral invalida o parâmetro. Publica-se que, para alocação de transplante hepático, o MELD-Na suplantou o Child-Pugh por usar apenas variáveis objetivas e contínuas.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Os principais escores concorrentes são o <strong>MELD</strong> (Kamath, 2000) e sua variante <strong>MELD-Na</strong> (Kim, 2008), que combinam bilirrubina, INR, creatinina e sódio em equação logarítmica contínua. A literatura descreve o MELD-Na como superior ao Child-Pugh para predição de mortalidade em 3 meses em lista de transplante. Estudos validaram o <strong>ALBI</strong> (Albumin-Bilirubin, Johnson 2015) como alternativa objetiva no hepatocarcinoma. O Child-Pugh permanece descrito como referência para estratificação de risco cirúrgico não-hepático e ajuste de fármacos.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A pontuação foi proposta por <strong>Pugh, Murray-Lyon, Dawson, Pietroni e Williams</strong> no <cite>British Journal of Surgery</cite> em 1973 (DOI 10.1002/bjs.1800600817), como modificação do critério original de Child e Turcotte (1964), que usava estado nutricional em vez de tempo de protrombina. Esta página implementa a versão de Pugh com INR substituindo o tempo de protrombina em segundos, conforme uso publicado contemporâneo.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra a tabela publicada:</p>
+      <ul>
+        <li><strong>Caso 1</strong>: bilirrubina 1,5 · albumina 4,0 · INR 1,2 · sem ascite · sem encefalopatia → 1+1+1+1+1 = <strong>5 pts, Classe A</strong>.</li>
+        <li><strong>Caso 2</strong>: bilirrubina 2,5 · albumina 3,0 · INR 2,0 · ascite leve · sem encefalopatia → <strong>9 pts, Classe B</strong>.</li>
+        <li><strong>Caso 3</strong>: bilirrubina 4,0 · albumina 2,5 · INR 2,5 · ascite moderada · encefalopatia III-IV → 3+3+3+3+3 = <strong>15 pts, Classe C</strong>.</li>
+      </ul>
+      <p>Verificada contra exemplos em Pugh et al. (1973); reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>FAQ</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira unidades (bilirrubina em mg/dL, não µmol/L; albumina em g/dL, não g/L), revise a categoria escolhida para ascite/encefalopatia e confirme se o INR foi digitado com a vírgula correta. Use o botão "Preencher com exemplo" para comparar.</p>
+      <p><strong>Posso usar em paciente com colestase crônica (CBP/CEP)?</strong> A literatura descreve desempenho reduzido do escore nessas etiologias, pois a hiperbilirrubinemia compõe a doença de base e infla o componente bilirrubina.</p>
+      <p><strong>Por que esta fórmula em vez do MELD-Na?</strong> Publica-se que o Child-Pugh permanece útil para risco cirúrgico não-hepático, ajuste de dose de fármacos e estratificação clínica geral, enquanto o MELD-Na é descrito como padrão para alocação de transplante.</p>
+      <p><strong>O escore se aplica a pacientes anticoagulados?</strong> Não. A literatura descreve que warfarina/DOACs alteram o INR independentemente da função hepática, invalidando o componente.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
@@ -196,6 +238,12 @@
       <ol class="ref-list">
         <li>Pugh RNH, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R. Transection of the oesophagus for bleeding oesophageal varices. <cite>British Journal of Surgery</cite>. 1973;60(8):646-649. <a href="https://doi.org/10.1002/bjs.1800600817" target="_blank" rel="noopener">doi:10.1002/bjs.1800600817</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/4541913/" target="_blank" rel="noopener">PMID&nbsp;4541913</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>

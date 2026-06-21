@@ -175,6 +175,41 @@
         <p>A pontuação pode ser limitada por sedação, intubação, afasia ou trauma de face. Anote essas situações e use a Escala como apoio, nunca como substituto da avaliação neurológica completa.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A literatura descreve que a Escala foi originalmente construída por Teasdale e Jennett (1974) a partir de uma coorte de pacientes adultos com traumatismo cranioencefálico avaliados na Unidade de Cirurgia Neurológica de Glasgow, Escócia<sup>[1]</sup>. Publica-se que a escala foi posteriormente validada em populações ampliadas — emergências adultas, terapia intensiva neurológica, vítimas de trauma multissistêmico e contextos pré-hospitalares — em revisão dos 40 anos de uso<sup>[2]</sup>. A literatura aponta limitações conhecidas em pacientes pediátricos pequenos (existem adaptações específicas), em pacientes intubados (componente verbal não testável), sob sedação profunda, com afasia, surdez ou trauma facial extenso que impeça a abertura ocular.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>A calculadora recebe três entradas categóricas, sem unidades físicas: <strong>abertura ocular</strong> (escala ordinal de 1 a 4), <strong>resposta verbal</strong> (1 a 5) e <strong>resposta motora</strong> (1 a 6). Cada item corresponde à melhor resposta observada. Não há conversões de unidade aplicáveis. O intervalo válido do somatório é de 3 (sem resposta em todas as categorias) a 15 (melhor resposta em todas). Valores fora desse intervalo indicam erro de preenchimento.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <p>A fórmula original publicada calcula:</p>
+      <div class="formula">ECG = O + V + M</div>
+      <p>Onde <strong>O</strong> é a pontuação da abertura ocular (1–4), <strong>V</strong> é a pontuação da melhor resposta verbal (1–5) e <strong>M</strong> é a pontuação da melhor resposta motora (1–6)<sup>[1]</sup>. A sequência descrita pelos autores envolve: (1) observar a abertura ocular antes de qualquer estímulo; (2) se necessário, aplicar estímulo verbal e depois doloroso; (3) registrar a melhor resposta verbal obtida por comando ou estímulo; (4) registrar a melhor resposta motora, priorizando comando verbal e, na ausência, estímulo doloroso padronizado<sup>[2]</sup>. <strong>Exemplo trabalhado:</strong> paciente que abre olhos ao chamado (O = 3), apresenta fala confusa (V = 4) e localiza estímulo doloroso (M = 5). Substituindo na fórmula: ECG = 3 + 4 + 5 = <strong>12</strong>. Registra-se O3 V4 M5 = 12.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve não-aplicabilidade direta em recém-nascidos e lactentes (publicou-se a Pediatric Glasgow Coma Scale para essa faixa)<sup>[2]</sup>. Erros comuns de medida incluem: confundir flexão normal de retirada (M = 4) com flexão anormal/decorticação (M = 3); pontuar a resposta verbal em paciente intubado como 1 sem anotar o sufixo "T" ou "NT" (não-testável); aplicar estímulo doloroso de forma não padronizada, alterando a melhor resposta motora; e somar valores sem registrar os três componentes separadamente — publica-se que a desagregação por componente tem valor prognóstico próprio<sup>[2]</sup>. A literatura recomenda alternativas como a FOUR Score (Full Outline of UnResponsiveness) em pacientes intubados ou com lesão de tronco, onde os componentes verbal e ocular padrão são limitados.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>A literatura descreve a <strong>FOUR Score</strong> como alternativa publicada para terapia intensiva neurológica e pacientes intubados, substituindo o componente verbal por reflexos de tronco encefálico. A <strong>Pediatric Glasgow Coma Scale</strong> adapta o componente verbal a faixas etárias pré-verbais. A <strong>Simplified Motor Score</strong> (apenas o componente motor, de 0 a 2) foi proposta na literatura pré-hospitalar como triagem rápida. O contexto descrito como superior para o ECG original é o trauma cranioencefálico adulto, ambiente para o qual foi validado e onde possui maior base normativa publicada<sup>[2]</sup>.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A versão original foi publicada por <strong>Graham Teasdale e Bryan Jennett</strong> em <cite>The Lancet</cite>, 1974, vol. 2, número 7872, páginas 81–84, sob o título "Assessment of coma and impaired consciousness: a practical scale" (DOI: 10.1016/s0140-6736(74)91639-0)<sup>[1]</sup>. Esta calculadora implementa a versão clássica de três componentes (ocular 1–4, verbal 1–5, motora 1–6), com somatório de 3 a 15, conforme descrita na publicação original e revisada na atualização de 40 anos publicada em <cite>The Lancet Neurology</cite> (2014)<sup>[2]</sup>.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários numéricos verificados contra a definição publicada:</p>
+      <ul>
+        <li><strong>Caso 1:</strong> O = 4, V = 5, M = 6 → total = <strong>15</strong> (paciente alerta e orientado).</li>
+        <li><strong>Caso 2:</strong> O = 3, V = 4, M = 5 → total = <strong>12</strong> (exemplo trabalhado acima).</li>
+        <li><strong>Caso 3:</strong> O = 1, V = 1, M = 1 → total = <strong>3</strong> (pontuação mínima possível).</li>
+      </ul>
+      <p>Verificada contra os exemplos descritos na publicação original e na revisão de 40 anos<sup>[1][2]</sup>; reporte discrepâncias pelo e-mail listado no rodapé editorial.</p>
+
+      <h2>Perguntas frequentes</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve que discrepâncias frequentes derivam de confusão entre flexão de retirada (M = 4) e flexão anormal (M = 3), ou de pontuação verbal em paciente intubado<sup>[2]</sup>. Conferir cada componente individualmente costuma esclarecer.</p>
+      <p><strong>Posso usar em crianças pequenas?</strong> Publica-se que o componente verbal padrão não se aplica a pré-verbais; a literatura descreve a Pediatric Glasgow Coma Scale como adaptação validada para essa população<sup>[2]</sup>.</p>
+      <p><strong>Por que esta fórmula e não outra?</strong> A Escala original possui a maior base de validação publicada para trauma cranioencefálico adulto e é parte integrante de critérios como TRISS e classificação inicial de gravidade<sup>[2]</sup>. Em terapia intensiva neurológica ou intubação, a literatura descreve a FOUR Score como complemento.</p>
+      <p><strong>Como registrar quando um componente não pode ser avaliado?</strong> A literatura descreve a notação dos três componentes separadamente (por exemplo, O3 V<sub>NT</sub> M5), anotando "NT" para itens não-testáveis em vez de somar 1 arbitrariamente<sup>[2]</sup>.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>Teasdale G, Jennett B. Assessment of coma and impaired consciousness: a practical scale. <cite>The Lancet</cite>. 1974;2(7872):81-84. <a href="https://doi.org/10.1016/s0140-6736(74)91639-0" target="_blank" rel="noopener">doi:10.1016/s0140-6736(74)91639-0</a>. <a href="https://pubmed.ncbi.nlm.nih.gov/4136544/" target="_blank" rel="noopener">PMID&nbsp;4136544</a>.</li>
@@ -188,6 +223,12 @@
           <a class="calc-card" href="/medicina/indice-choque.html"><h3>Índice de choque</h3><p>Relação entre FC e pressão arterial.</p></a>
           <a class="calc-card" href="/medicina/curb-65.html"><h3>CURB-65</h3><p>Gravidade da pneumonia.</p></a>
         </div>
+      </div>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
       </div>
 
     </article>

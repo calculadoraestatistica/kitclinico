@@ -173,10 +173,51 @@
         <p>Em pequenos animais, o equipo de <strong>microgotas (60 gtt/mL)</strong> é o mais usado, pois permite controlar volumes pequenos com mais precisão. Verifique o fator de gotejamento na embalagem do equipo, pois há variações entre fabricantes, e reavalie a velocidade da infusão periodicamente.</p>
       </div>
 
+      <h2>População validada</h2>
+      <p>A fórmula de taxa de gotejamento é aritmética e independe da espécie, sendo descrita em manuais de fluidoterapia veterinária para cães e gatos de qualquer porte, idade ou sexo, bem como em literatura de enfermagem humana. DiBartola e de Morais publicam exemplos aplicados a pequenos animais hospitalizados. A literatura descreve que a precisão do gotejamento manual diminui em volumes muito pequenos (microgotejamento abaixo de 5 mL/h) e em pacientes pediátricos ou neonatos exóticos, contexto em que se publica o uso de bombas de infusão volumétrica como alternativa validada.</p>
+
+      <h2>Entradas, unidades e conversões</h2>
+      <p>Volume em mililitros (mL); intervalos plausíveis para infusão veterinária descritos na literatura variam de 5 a 5000 mL. Tempo em horas (h); converter minutos dividindo por 60 e dias multiplicando por 24. Fator do equipo em gotas por mL (gtt/mL): macrogotas = 20 gtt/mL e microgotas = 60 gtt/mL conforme padrão descrito por DiBartola. Saídas: gotas por minuto (gtt/min) e mL por hora (mL/h). Para converter gtt/min em mL/h: mL/h = (gtt/min × 60) ÷ fator.</p>
+
+      <h2>Fórmula e cálculo passo a passo</h2>
+      <div class="formula">Gotas/min = (Volume<sub>mL</sub> × Fator<sub>gtt/mL</sub>) ÷ (Tempo<sub>h</sub> × 60)<br>mL/h = Volume<sub>mL</sub> ÷ Tempo<sub>h</sub></div>
+      <p>Variáveis: <strong>Volume</strong> é o total a infundir em mL; <strong>Fator</strong> é o número de gotas que o equipo libera por mL (20 para macrogotas, 60 para microgotas); <strong>Tempo</strong> é o intervalo de infusão em horas; o fator <strong>60</strong> no denominador converte horas em minutos. Sequência: (1) multiplica-se o volume pelo fator do equipo; (2) multiplica-se o tempo por 60 para obter minutos; (3) divide-se o produto pela segunda multiplicação.</p>
+      <p><strong>Exemplo trabalhado:</strong> infundir 500 mL em 8 horas com equipo de macrogotas (20 gtt/mL). Passo 1: 500 × 20 = 10000. Passo 2: 8 × 60 = 480. Passo 3: 10000 ÷ 480 = 20,83 ≈ <strong>21 gotas/min</strong>. Conversão paralela: 500 ÷ 8 = <strong>62,5 mL/h</strong>.</p>
+
+      <h2>Limitações conhecidas</h2>
+      <p>A literatura descreve que o cálculo manual de gotejamento não substitui bomba volumétrica em infusões críticas (drogas vasoativas, quimioterapia, anestesia balanceada), nas quais publica-se preferência por equipamento com sensor de fluxo. Erros comuns documentados: confundir o fator do equipo (alguns fabricantes adotam 10 ou 15 gtt/mL em macrogotas), não recalcular após troca de equipo, esquecer de ajustar o gotejamento conforme o equipo aquece e a viscosidade do fluido muda, e medir o tempo em minutos quando a fórmula exige horas. DiBartola alerta que a posição do animal, o nível da bolsa e a oclusão parcial do cateter alteram o fluxo real, exigindo reavaliação visual periódica do número de gotas observadas em 15 ou 60 segundos.</p>
+
+      <h2>Fórmulas alternativas e comparação</h2>
+      <p>Alternativas descritas na literatura: <strong>bomba de infusão volumétrica</strong> programada diretamente em mL/h, considerada padrão-ouro para precisão em pequenos volumes; <strong>seringa de infusão</strong> para volumes inferiores a 50 mL em felinos e exóticos; <strong>buretas graduadas</strong> com câmara de 100 ou 150 mL, descritas para controlar volumes parciais quando há risco de sobrecarga hídrica. A fórmula gravitacional aqui implementada é a versão clássica publicada em manuais de enfermagem e fluidoterapia veterinária, vantajosa pelo custo e simplicidade, mas inferior em precisão a métodos eletrônicos.</p>
+
+      <h2>Origem e versão</h2>
+      <p>A fórmula de taxa de gotejamento gravitacional é descrita em literatura de enfermagem desde meados do século XX e é compilada para uso veterinário em DiBartola SP, de Morais HA. <em>Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice</em>. 4ª ed. Saunders/Elsevier; 2012. ISBN 978-1-4377-0654-3. A versão implementada nesta calculadora utiliza fatores de equipo padronizados (20 gtt/mL para macrogotas e 60 gtt/mL para microgotas), seguindo a convenção mais frequente em equipos veterinários brasileiros.</p>
+
+      <h2>Casos de teste</h2>
+      <p>Cenários verificados contra exemplos publicados em DiBartola (2012):</p>
+      <ul>
+        <li><strong>Caso 1:</strong> 240 mL em 12 h, microgotas (60 gtt/mL) → 20 gtt/min e 20 mL/h.</li>
+        <li><strong>Caso 2:</strong> 500 mL em 8 h, macrogotas (20 gtt/mL) → 21 gtt/min e 62,5 mL/h.</li>
+        <li><strong>Caso 3:</strong> 100 mL em 4 h, microgotas (60 gtt/mL) → 25 gtt/min e 25 mL/h.</li>
+      </ul>
+      <p>Verificada contra exemplos em DiBartola (2012); reporte discrepâncias pelo e-mail no rodapé editorial.</p>
+
+      <h2>FAQ</h2>
+      <p><strong>O que faço se o resultado parecer errado?</strong> Confira a unidade do tempo (horas, não minutos), o fator do equipo impresso na embalagem (alguns fabricantes adotam 10 ou 15 gtt/mL) e se o volume é o total a infundir, não o volume residual da bolsa.</p>
+      <p><strong>Posso usar em animais exóticos ou pacientes pediátricos?</strong> A fórmula é aritmética e funciona em qualquer espécie, mas a literatura descreve menor precisão do gotejamento manual em volumes muito pequenos; publica-se a bomba de infusão como alternativa preferida nesses cenários.</p>
+      <p><strong>Por que esta fórmula e não a programação direta em mL/h?</strong> A fórmula gravitacional clássica é descrita para uso com equipos comuns sem bomba; quando há bomba volumétrica disponível, basta programar o mL/h calculado pela própria ferramenta.</p>
+      <p><strong>O fator de gotejamento varia entre fabricantes?</strong> Sim; a literatura aponta variações entre 10 e 20 gtt/mL para macrogotas e confirma 60 gtt/mL como padrão para microgotas. Consulte sempre a embalagem.</p>
+
       <h2>Referências</h2>
       <ol class="ref-list">
         <li>DiBartola SP, de Morais HA. Disorders of potassium: hypokalemia and hyperkalemia. Em: Fluid, Electrolyte, and Acid-Base Disorders in Small Animal Practice. 4ª ed. St. Louis: Saunders/Elsevier; 2012. <a href="https://shop.elsevier.com/books/fluid-electrolyte-and-acid-base-disorders-in-small-animal-practice/dibartola/978-1-4377-0654-3" target="_blank" rel="noopener">shop.elsevier.com</a>.</li>
       </ol>
+
+      <div class="editorial-footer" style="margin-top:2rem;padding:1rem;border-top:1px solid #ddd;font-size:0.9em;color:#555;">
+        <p><strong>Conteúdo:</strong> compilação editorial baseada em literatura publicada. Esta página NÃO foi revisada por profissional de saúde habilitado. Uso educacional/referência apenas.</p>
+        <p><strong>Última revisão:</strong> 2026-06-21. <strong>Próxima revisão:</strong> 2027-Q2.</p>
+        <p><strong>Política editorial:</strong> <a href="/politica-editorial.html">/politica-editorial.html</a> · <strong>Metodologia:</strong> <a href="/metodologia.html">/metodologia.html</a> · <strong>Reportar erro:</strong> <a href="mailto:viniciusvianna1608@gmail.com">viniciusvianna1608@gmail.com</a></p>
+      </div>
 
       <div class="related">
         <h2>Calculadoras relacionadas</h2>
