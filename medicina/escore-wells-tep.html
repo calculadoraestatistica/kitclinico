@@ -92,7 +92,7 @@
         </ol>
       </nav>
       <h1>Escore de Wells para TEP</h1>
-      <p class="lead">Estima a probabilidade clínica de tromboembolismo pulmonar e orienta o uso do D-dímero e da angiotomografia de tórax.</p>
+      <p class="lead">Apresenta os critérios publicados do escore de Wells para estimar a probabilidade clínica de tromboembolismo pulmonar. A conduta diagnóstica é exclusiva do médico assistente.</p>
     </div>
   </div>
 
@@ -142,20 +142,20 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>escore de Wells para TEP</strong> transforma achados clínicos em uma estimativa de <strong>probabilidade de tromboembolismo pulmonar</strong>. Ele evita tanto a imagem desnecessária quanto a alta indevida, definindo quem precisa de D-dímero e quem deve ir direto à angiotomografia.</p>
+      <p>O <strong>escore de Wells para TEP</strong> apresenta uma forma publicada de organizar achados clínicos em uma estimativa de <strong>probabilidade de tromboembolismo pulmonar</strong>. Esta página apresenta os critérios e o cálculo da pontuação descritos na literatura, sem orientar conduta diagnóstica ou terapêutica.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>Os itens têm pesos diferentes (1 a 3 pontos). Na versão de dois níveis, escore <strong>4 ou menos</strong> torna a TEP improvável (D-dímero costuma resolver) e <strong>acima de 4</strong> torna a TEP provável (indica-se imagem). Na versão de três níveis, &lt; 2 é baixa, 2 a 6 intermediária e &gt; 6 alta probabilidade.</p>
+      <p>Os itens têm pesos diferentes (1 a 3 pontos). Na versão de dois níveis publicada por Wells, escore <strong>4 ou menos</strong> corresponde a um padrão de probabilidade descrito como TEP improvável e <strong>acima de 4</strong> a um padrão de probabilidade descrito como TEP provável. Na versão de três níveis, &lt; 2 é classificado como baixa, 2 a 6 como intermediária e &gt; 6 como alta probabilidade. A interpretação dos números na rotina assistencial é exclusiva do médico responsável.</p>
 
       <h2>Exemplo</h2>
-      <p>Um paciente em que a TEP é o diagnóstico mais provável (3), com frequência cardíaca acima de 100 bpm (1,5) e hemoptise (1) soma <strong>5,5 pontos</strong> — TEP provável.</p>
+      <p>Um paciente em que a TEP é o diagnóstico mais provável (3), com frequência cardíaca acima de 100 bpm (1,5) e hemoptise (1) soma <strong>5,5 pontos</strong> — padrão de risco classificado pelos autores como TEP provável.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Combine com o D-dímero e a imagem
+          Apresentação de critérios publicados
         </div>
-        <p>O escore estima probabilidade antes dos exames. A confirmação ou a exclusão da TEP depende do D-dímero e da angiotomografia, interpretados sempre no contexto clínico e hemodinâmico.</p>
+        <p>O escore apresenta uma estimativa de probabilidade baseada em critérios publicados. A conduta diagnóstica e terapêutica é exclusiva do médico assistente, que avalia o quadro clínico, hemodinâmico e os exames complementares pertinentes.</p>
       </div>
 
       <h2>Referências</h2>
@@ -294,7 +294,7 @@
       '<div class="result__sub">Probabilidade clínica de TEP</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.num(r.total, 1) + ' <small>pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.probabilidade + '.</strong> ' + (r.total > 4 ? 'TEP provável: a angiotomografia de tórax costuma ser o próximo passo.' : 'TEP improvável: um D-dímero negativo costuma afastar o diagnóstico sem necessidade de imagem.')) + '</p></div>';
+    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.probabilidade + '.</strong> ' + (r.total > 4 ? 'Padrão de pontuação classificado por Wells como TEP provável.' : 'Padrão de pontuação classificado por Wells como TEP improvável.') + ' A conduta diagnóstica é exclusiva do médico assistente.') + '</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

@@ -150,7 +150,8 @@
       <p>A <strong>calculadora de gotejamento</strong> converte volume, tempo e fator do equipo em <strong>gotas por minuto</strong> e <strong>mL por hora</strong>. O resultado é aritmético e depende dos valores informados.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>O cálculo depende do tipo de equipo usado, pois cada um libera um número diferente de gotas por mililitro (fator de gotejamento):</p>
+      <p>O resultado é apenas aritmético: depende do tipo de equipo informado, pois cada modelo libera um número diferente de gotas por mililitro (fator de gotejamento). A prescrição da velocidade de infusão é exclusiva do médico assistente, que considera o quadro clínico, o tipo de fluido e o acesso venoso.</p>
+      <p>Fatores de gotejamento de referência:</p>
       <div class="table-wrap">
         <table class="data">
           <thead><tr><th>Equipo</th><th>Fator de gotejamento</th></tr></thead>
@@ -168,9 +169,9 @@
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Confira o equipo
+          Apresentação de fórmula
         </div>
-        <p>Verifique sempre o fator de gotejamento informado na embalagem do equipo, pois há variações entre fabricantes. Reavalie a velocidade da infusão periodicamente, já que mudanças de posição do paciente e do acesso venoso alteram o gotejamento.</p>
+        <p>O cálculo apresenta a aplicação da fórmula publicada; o fator de gotejamento varia entre fabricantes e deve ser verificado na embalagem do equipo. A prescrição e o ajuste da velocidade da infusão são exclusivos do médico assistente.</p>
       </div>
 
       <h2>Referências</h2>
@@ -309,9 +310,9 @@
           '<div class="metric"><span class="metric__label">Velocidade em mL/hora</span>' +
           '<span class="metric__value">' + Fmt.num(r.mlPorHora, 0) + ' mL/h</span></div>' +
         '</div>' +
-        '<div class="result__interpretation"><p>Ajuste o equipo de ' + tipo + ' para <strong>' +
-        Fmt.num(r.gotasPorMin, 0) + ' gotas por minuto</strong>, o que corresponde a <strong>' +
-        Fmt.num(r.mlPorHora, 0) + ' mL/hora</strong>. Reavalie o gotejamento periodicamente.</p></div>' +
+        '<div class="result__interpretation"><p>Aplicação da fórmula publicada para equipo de ' + tipo + ': <strong>' +
+        Fmt.num(r.gotasPorMin, 0) + ' gotas por minuto</strong>, equivalente a <strong>' +
+        Fmt.num(r.mlPorHora, 0) + ' mL/hora</strong>. A prescrição e o ajuste da velocidade da infusão são exclusivos do médico assistente.</p></div>' +
       '</div>';
     result.hidden = false;
     result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });

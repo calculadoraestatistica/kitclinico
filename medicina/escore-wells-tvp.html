@@ -92,7 +92,7 @@
         </ol>
       </nav>
       <h1>Escore de Wells para TVP</h1>
-      <p class="lead">Estima a probabilidade clínica de trombose venosa profunda antes dos exames, orientando o uso do D-dímero e da ultrassonografia.</p>
+      <p class="lead">Apresenta os critérios publicados do escore de Wells para estimar a probabilidade clínica de trombose venosa profunda. A conduta diagnóstica é exclusiva do médico assistente.</p>
     </div>
   </div>
 
@@ -145,20 +145,20 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>O <strong>escore de Wells para TVP</strong> organiza os achados da história e do exame físico em uma estimativa de <strong>probabilidade clínica</strong> de trombose venosa profunda. Ele orienta a sequência de investigação — D-dímero e ultrassonografia com Doppler — antes que os exames sejam pedidos sem critério.</p>
+      <p>O <strong>escore de Wells para TVP</strong> apresenta uma forma publicada de organizar achados da história e do exame físico em uma estimativa de <strong>probabilidade clínica</strong> de trombose venosa profunda. Esta página apresenta os critérios e o cálculo da pontuação descritos na literatura, sem orientar conduta diagnóstica ou terapêutica.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>Cada achado soma 1 ponto e o diagnóstico alternativo subtrai 2. Na versão de três níveis, <strong>0 ou menos</strong> indica probabilidade baixa, <strong>1 a 2</strong> moderada e <strong>3 ou mais</strong> alta. Na versão de dois níveis, escore <strong>2 ou mais</strong> torna a TVP provável.</p>
+      <p>Cada achado soma 1 ponto e o diagnóstico alternativo subtrai 2. Na versão de três níveis publicada por Wells, <strong>0 ou menos</strong> corresponde ao padrão classificado como baixa probabilidade, <strong>1 a 2</strong> como moderada e <strong>3 ou mais</strong> como alta. Na versão de dois níveis, escore <strong>2 ou mais</strong> é classificado pelos autores como TVP provável. A interpretação dos números na rotina assistencial é exclusiva do médico responsável.</p>
 
       <h2>Exemplo</h2>
-      <p>Um paciente com edema de toda a perna (1), dor no trajeto venoso (1) e panturrilha mais de 3 cm maior que o outro lado (1) soma <strong>3 pontos</strong> — probabilidade alta de TVP.</p>
+      <p>Um paciente com edema de toda a perna (1), dor no trajeto venoso (1) e panturrilha mais de 3 cm maior que o outro lado (1) soma <strong>3 pontos</strong> — padrão de risco classificado pelos autores como alta probabilidade de TVP.</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          O escore não fecha o diagnóstico
+          Apresentação de critérios publicados
         </div>
-        <p>Wells estima probabilidade, não confirma nem exclui a TVP. A aplicação prática depende da combinação com o D-dímero e a ultrassonografia, sempre interpretados no contexto clínico.</p>
+        <p>O escore apresenta uma estimativa de probabilidade baseada em critérios publicados; não confirma nem exclui a TVP. A conduta diagnóstica e terapêutica é exclusiva do médico assistente, que avalia o quadro clínico e os exames complementares pertinentes.</p>
       </div>
 
       <h2>Referências</h2>
@@ -300,7 +300,7 @@
       '<div class="result__sub">Probabilidade clínica de TVP</div></div></div>';
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (Fmt.int(r.total) + ' <small>pontos</small>') + '</div>';
-    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.probabilidade + '.</strong> ' + (r.total >= 3 ? 'Probabilidade alta: a ultrassonografia com Doppler costuma ser indicada — o D-dímero isolado não afasta o diagnóstico.' : (r.total >= 1 ? 'Probabilidade moderada: combine com o D-dímero e, se necessário, ultrassonografia.' : 'Probabilidade baixa: um D-dímero negativo costuma ser suficiente para afastar a TVP.'))) + '</p></div>';
+    html += '<div class="result__interpretation"><p>' + ('<strong>' + r.probabilidade + '.</strong> ' + (r.total >= 3 ? 'Padrão de pontuação classificado por Wells como alta probabilidade de TVP.' : (r.total >= 1 ? 'Padrão de pontuação classificado por Wells como probabilidade moderada de TVP.' : 'Padrão de pontuação classificado por Wells como baixa probabilidade de TVP.')) + ' A conduta diagnóstica é exclusiva do médico assistente.') + '</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;

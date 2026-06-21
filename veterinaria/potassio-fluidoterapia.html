@@ -92,7 +92,7 @@
         </ol>
       </nav>
       <h1>Potássio na Fluidoterapia Veterinária</h1>
-      <p class="lead">Estima a quantidade de cloreto de potássio a adicionar ao fluido de cães e gatos, pela escala deslizante, e a taxa de infusão máxima segura.</p>
+      <p class="lead">Apresenta a escala deslizante publicada de cloreto de potássio por litro de fluido para cães e gatos e a taxa-limite descrita na literatura. A prescrição é exclusiva do médico-veterinário assistente.</p>
     </div>
   </div>
 
@@ -140,20 +140,20 @@
     <article class="prose">
 
       <h2>Para que serve</h2>
-      <p>A <strong>hipocalemia</strong> é comum em cães e gatos hospitalizados, sobretudo com anorexia, vômitos ou poliúria. Esta calculadora aplica a <strong>escala deslizante</strong> clássica para estimar quanto <strong>cloreto de potássio</strong> adicionar a cada litro de fluido conforme o potássio sérico.</p>
+      <p>Esta página apresenta a <strong>escala deslizante</strong> publicada para suplementação de <strong>cloreto de potássio</strong> em fluidoterapia veterinária, conforme o potássio sérico. O conteúdo tem fim educacional; não é prescrição nem orientação terapêutica.</p>
 
       <h2>Como interpretar o resultado</h2>
-      <p>Quanto menor o potássio sérico, maior a quantidade de KCl por litro: de 20 mEq/L (potássio entre 3,5 e 5,0) até 80 mEq/L (potássio abaixo de 2,0). A regra de segurança mais importante é a <strong>taxa de infusão</strong>: o potássio não deve correr acima de <strong>0,5 mEq/kg/h</strong>, sob risco de arritmias graves.</p>
+      <p>Na escala publicada, quanto menor o potássio sérico, maior a quantidade de KCl por litro descrita pelos autores: de 20 mEq/L (potássio entre 3,5 e 5,0) até 80 mEq/L (potássio abaixo de 2,0). A literatura também descreve uma <strong>taxa-limite</strong> de infusão de <strong>0,5 mEq/kg/h</strong>. A indicação terapêutica e a definição da velocidade real de infusão são exclusivas do médico-veterinário assistente.</p>
 
       <h2>Exemplo</h2>
-      <p>Um cão de 10 kg com potássio sérico de 3,2 mEq/L deve receber <strong>30 mEq de KCl por litro</strong> de fluido. A 30 mEq/L, a taxa máxima segura é de cerca de 167 mL/h (5 mEq/h ÷ 30 mEq/L).</p>
+      <p>Para um cão de 10 kg com potássio sérico de 3,2 mEq/L, a escala publicada associa <strong>30 mEq de KCl por litro</strong> de fluido. A 30 mEq/L, a taxa-limite descrita corresponde a cerca de 167 mL/h (5 mEq/h ÷ 30 mEq/L).</p>
 
       <div class="callout callout--warning">
         <div class="callout__title">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-          Cuidado com a velocidade de infusão
+          Apresentação de critérios publicados
         </div>
-        <p>Nunca considere administrar potássio em bólus. Confirme a função renal e a diurese antes de suplementar, monitore o ritmo cardíaco e use bomba de infusão sempre que possível. A fosfatemia, quando alterada, exige correção própria.</p>
+        <p>A página apresenta valores descritos na literatura veterinária. A decisão de suplementar potássio, a confirmação da função renal e da diurese, o monitoramento e a definição da via e da velocidade de infusão são exclusivos do médico-veterinário assistente.</p>
       </div>
 
       <h2>Referências</h2>
@@ -288,7 +288,7 @@
     html += '<div class="result__body">';
     html += '<div class="result__main">' + (r.alerta ? '— <small>sem suplementação</small>' : Fmt.int(r.mEqPorLitro) + ' <small>mEq de KCl por litro</small>') + '</div>';
       html += '<div class="result__metrics">' + ((!r.alerta) ? ('<div class="metric"><div class="metric__label">Taxa de infusão máxima segura</div>' + '<div class="metric__value">' + (r.taxaMaxMlh ? Fmt.int(r.taxaMaxMlh) + ' mL/h (limite de 0,5 mEq/kg/h)' : 'Informe o peso para calcular') + '</div>'  + '</div>') : '') + '</div>';
-    html += '<div class="result__interpretation"><p>' + (r.alerta ? '<strong>' + r.mensagem + '</strong>' : 'Para repor o potássio, adicione <strong>' + Fmt.int(r.mEqPorLitro) + ' mEq de cloreto de potássio por litro</strong> de fluido. A velocidade de infusão de potássio não deve ultrapassar 0,5 mEq/kg/h.') + '</p></div>';
+    html += '<div class="result__interpretation"><p>' + (r.alerta ? '<strong>' + r.mensagem + '</strong>' : 'A escala deslizante publicada associa <strong>' + Fmt.int(r.mEqPorLitro) + ' mEq de cloreto de potássio por litro</strong> de fluido a esse valor de potássio sérico. A taxa-limite descrita na literatura é de 0,5 mEq/kg/h. A prescrição é exclusiva do médico-veterinário assistente.') + '</p></div>';
     html += '</div>';
     result.innerHTML = html;
     result.hidden = false;
