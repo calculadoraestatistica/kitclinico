@@ -1,1 +1,13 @@
 gen_panels.js
+__pycache__/
+*.pyc
+.venv/
+venv/
+node_modules/
+*.local.txt
+*.env
+.env
+*.key
+logs/
+.DS_Store
+Thumbs.db
