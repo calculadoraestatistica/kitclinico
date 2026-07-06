@@ -2,50 +2,51 @@
    Kit Clínico — style.css
    Cluster: site_kit_clinico
    Date: 2026-06-10
-   Personality: Clinical-clean com calor humano. Precisão MDCalc + respiração
-   tipográfica Stripe Docs. Teal médico como âncora de confiança, Inter Tight
-   nos títulos, números tabulares grandes — instrument-grade feel.
+   Personality: Prontuário / protocolo clínico. Superfícies brancas sobre
+   papel frio, azul-marinho institucional (#16324f) como única cor de marca,
+   grotesca de sistema, números de protocolo, carimbos de laudo.
+   Radius 2px no máximo, sem sombras (exceto filete sob o header fixo).
    ========================================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
 
 /* ==========================================================================
    Design Tokens
    ========================================================================== */
 :root {
-  /* Color tokens */
-  --c-primary:        #0d9488;
-  --c-primary-dark:   #0b6b62;
-  --c-primary-darker: #0b6b62;
-  --c-primary-soft:   #e6faf7;
-  --c-primary-soft2:  #c4f1ea;
-  --c-secondary:      #155e75;
-  --c-accent:         #d97706;
-  --c-accent-soft:    #fef3c7;
+  /* Color tokens — prontuário: navy #16324f é a única cor de marca;
+     verde/âmbar/vermelho reservados estritamente a significado clínico */
+  --c-primary:        #16324f;
+  --c-primary-dark:   #0f2439;
+  --c-primary-darker: #0f2439;
+  --c-primary-soft:   #eef2f6;
+  --c-primary-soft2:  #c9d5e0;
+  --c-secondary:      #16324f;
+  --c-accent:         #92400e;
+  --c-accent-soft:    #fbf1e5;
 
-  --c-ink:    #0b1220;
-  --c-text:   #2b3645;
-  --c-muted:  #5b6b7d;
-  --c-bg:     #fdfdfb;
-  --c-paper:  #fdfdfb;
-  --c-paper-alt: #f4f6f5;
-  --c-soft:   #f4f6f5;
-  --c-softer: #ecefee;
-  --c-line:   #dde4e2;
-  --c-border: #dde4e2;
+  --c-ink:    #131e2b;
+  --c-text:   #2e3a47;
+  --c-muted:  #55636f;
+  --c-bg:     #f4f6f8;
+  --c-paper:  #ffffff;
+  --c-paper-alt: #f4f6f8;
+  --c-soft:   #f4f6f8;
+  --c-softer: #e9edf1;
+  --c-line:   #c3ccd6;
+  --c-border: #c3ccd6;
+  --c-hairline: #dde3ea;
 
-  --c-success:        #15803d;
+  --c-success:        #1a7f37;
   --c-success-strong: #14532d;
-  --c-success-bg:     #ecfdf5;
-  --c-success-border: #bbf7d0;
+  --c-success-bg:     #f0f7f1;
+  --c-success-border: #bcd9c4;
 
   --c-warning:        #b45309;
-  --c-warning-bg:     #fef3c7;
-  --c-warning-border: #fcd34d;
+  --c-warning-bg:     #fdf4e7;
+  --c-warning-border: #eac793;
 
   --c-danger:         #b91c1c;
-  --c-danger-bg:      #fef2f2;
-  --c-danger-border:  #fecaca;
+  --c-danger-bg:      #fbf0f0;
+  --c-danger-border:  #ecbdbd;
 
   /* Spacing scale (4px base) */
   --sp-1: 4px;
@@ -58,24 +59,25 @@
   --sp-8: 64px;
   --sp-9: 96px;
 
-  /* Radii */
-  --r-xs: 4px;
-  --r-sm: 8px;
-  --r-md: 12px;
-  --r-lg: 16px;
-  --r-xl: 24px;
-  --r-pill: 999px;
+  /* Radii — prontuário: 2px no máximo, tudo esquadrado */
+  --r-xs: 2px;
+  --r-sm: 2px;
+  --r-md: 2px;
+  --r-lg: 2px;
+  --r-xl: 2px;
+  --r-pill: 2px;
   /* Legacy aliases */
   --radius-sm: var(--r-sm);
   --radius:    var(--r-md);
   --radius-lg: var(--r-lg);
 
-  /* Shadows (cool ink tones, never pure black) */
-  --sh-1: 0 1px 2px rgba(11, 18, 32, .06), 0 1px 1px rgba(11, 18, 32, .04);
-  --sh-2: 0 4px 12px -2px rgba(11, 18, 32, .08), 0 2px 4px -1px rgba(11, 18, 32, .05);
-  --sh-3: 0 16px 40px -8px rgba(11, 18, 32, .14), 0 6px 14px -4px rgba(11, 18, 32, .08);
-  --sh-teal: 0 8px 28px -6px rgba(13, 148, 136, .28);
-  --sh-inset-focus: 0 0 0 3px rgba(13, 148, 136, .22);
+  /* Shadows — removidas; único filete permitido sob o header fixo */
+  --sh-1: none;
+  --sh-2: none;
+  --sh-3: none;
+  --sh-teal: none;
+  --sh-inset-focus: 0 0 0 1px var(--c-primary);
+  --sh-header: 0 1px 0 rgba(22, 50, 79, 0.14);
   /* Legacy */
   --shadow-sm: var(--sh-1);
   --shadow:    var(--sh-2);
@@ -86,10 +88,10 @@
   --container-narrow: 720px;
   --container-wide:   1280px;
 
-  /* Typography */
-  --font-heading: 'Inter Tight', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
-  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-mono:    'JetBrains Mono', 'SF Mono', ui-monospace, Menlo, Consolas, monospace;
+  /* Typography — grotesca neutra de sistema (sem webfonts) */
+  --font-heading: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    ui-monospace, 'SF Mono', 'Cascadia Mono', 'Segoe UI Mono', Menlo, Consolas, monospace;
   --font: var(--font-body);
 
   /* Motion */
@@ -113,7 +115,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.6;
   color: var(--c-text);
-  background: var(--c-paper);
+  background: var(--c-bg);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -215,7 +217,7 @@ sub, sup { font-size: 0.72em; }
 
 .section { padding-block: var(--sp-7); }
 .section--soft  { background: var(--c-paper-alt); }
-.section--ink   { background: var(--c-ink); color: #cbd5e1; }
+.section--ink   { background: var(--c-primary); color: #c9d5e0; }
 .section--tight { padding-block: var(--sp-5); }
 
 .stack > * + * { margin-top: var(--sp-4); }
@@ -240,7 +242,7 @@ sub, sup { font-size: 0.72em; }
    Focus ring (universal)
    ========================================================================== */
 :focus-visible {
-  outline: 3px solid var(--c-primary-darker);
+  outline: 2px solid var(--c-primary);
   outline-offset: 2px;
   border-radius: inherit;
 }
@@ -250,10 +252,9 @@ sub, sup { font-size: 0.72em; }
    ========================================================================== */
 .site-header {
   position: sticky; top: 0; z-index: 100;
-  background: color-mix(in srgb, var(--c-paper) 92%, transparent);
-  backdrop-filter: saturate(180%) blur(10px);
-  -webkit-backdrop-filter: saturate(180%) blur(10px);
-  border-bottom: 1px solid var(--c-border);
+  background: var(--c-paper);
+  border-bottom: 3px solid var(--c-primary);
+  box-shadow: var(--sh-header);
 }
 .site-header__inner {
   display: flex; align-items: center; justify-content: space-between;
@@ -306,7 +307,10 @@ sub, sup { font-size: 0.72em; }
   padding: var(--sp-3) var(--sp-3);
   border-radius: var(--r-sm);
   color: var(--c-ink);
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
   transition: background var(--t-fast), color var(--t-fast);
 }
 .main-nav a:hover {
@@ -608,21 +612,26 @@ sub, sup { font-size: 0.72em; }
   margin-bottom: var(--sp-5);
 }
 
+/* Paper-form box: fieldset com legenda em aba sobre a borda superior */
 .field-group {
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-md);
+  border: 1px solid var(--c-line);
+  border-radius: 2px;
   padding: var(--sp-4);
   margin-bottom: var(--sp-4);
-  background: var(--c-paper-alt);
+  background: var(--c-paper);
 }
 .field-group > legend,
 .field-group__title {
-  font-family: var(--font-heading);
-  font-weight: 700;
-  color: var(--c-ink);
-  font-size: 0.9375rem;
-  padding-inline: var(--sp-2);
-  letter-spacing: -0.01em;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--c-primary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  padding: 3px var(--sp-3);
+  background: var(--c-paper);
+  border: 1px solid var(--c-line);
+  border-radius: 2px;
 }
 .field-row {
   display: grid; gap: var(--sp-4);
@@ -660,6 +669,7 @@ textarea.input {
   font-variant-numeric: tabular-nums;
 }
 .input:hover { border-color: color-mix(in srgb, var(--c-primary) 50%, var(--c-border)); }
+/* Foco = anel navy de 2px (borda navy + 1px de reforço) */
 .input:focus {
   outline: none;
   border-color: var(--c-primary);
@@ -713,7 +723,7 @@ textarea.input {
   color: #fff;
 }
 .segmented input:focus-visible + span {
-  outline: 3px solid var(--c-primary-darker);
+  outline: 2px solid var(--c-primary);
   outline-offset: 2px;
 }
 .field-group > .segmented { margin-top: var(--sp-3); }
@@ -740,10 +750,11 @@ textarea.input {
 /* ==========================================================================
    Result card (instrument-grade)
    ========================================================================== */
+/* Laudo: branco, borda navy 1px, faixa de cabeçalho navy */
 .result {
   margin-top: var(--sp-5);
-  border-radius: var(--r-lg);
-  border: 1.5px solid var(--c-border);
+  border-radius: 2px;
+  border: 1px solid var(--c-primary);
   overflow: hidden;
   background: var(--c-paper);
 }
@@ -757,65 +768,76 @@ textarea.input {
 .result:not([hidden]) { animation: kc-result-in 240ms var(--ease) both; }
 
 .result__banner {
-  padding: var(--sp-4) var(--sp-5);
+  padding: var(--sp-3) var(--sp-5);
   display: flex; gap: var(--sp-3);
-  align-items: flex-start;
-  border-bottom: 1px solid var(--c-border);
+  align-items: center;
+  border-bottom: 1px solid var(--c-primary);
+  background: var(--c-primary);
+  color: #fff;
 }
 .result__banner svg {
-  width: 24px; height: 24px;
+  width: 20px; height: 20px;
   flex: none;
-  margin-top: 2px;
-  stroke-width: 1.75;
+  margin-top: 0;
+  stroke-width: 2;
 }
 .result__headline {
   font-family: var(--font-heading);
-  font-size: 1.125rem;
+  font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #fff;
 }
 .result__sub {
-  font-size: 0.9375rem;
-  margin-top: 4px;
-  color: var(--c-muted);
+  font-size: 0.8125rem;
+  margin-top: 2px;
+  color: #c9d5e0;
 }
 
-/* Risk variants — border-left 4px + super-soft bg (Epic/Cerner) */
-.result--ok {
-  border-left: 4px solid var(--c-success);
-}
-.result--ok .result__banner {
-  background: color-mix(in srgb, var(--c-success) 8%, var(--c-paper));
-}
+/* Severidade — carimbo delineado na faixa do laudo (sem fundos coloridos).
+   O carimbo é gerado em CSS; o texto clínico do laudo continua sendo a
+   fonte semântica da informação. */
+.result--ok { border-color: var(--c-primary); }
+.result--ok .result__banner { background: var(--c-primary); }
 .result--ok .result__headline,
-.result--ok .result__banner svg { color: var(--c-success-strong); }
+.result--ok .result__banner svg { color: #fff; }
 
-.result--alert {
-  border-left: 4px solid var(--c-danger);
-}
-.result--alert .result__banner {
-  background: color-mix(in srgb, var(--c-danger) 8%, var(--c-paper));
-}
+.result--alert { border-color: var(--c-primary); }
+.result--alert .result__banner { background: var(--c-primary); }
 .result--alert .result__headline,
-.result--alert .result__banner svg { color: var(--c-danger); }
+.result--alert .result__banner svg { color: #fff; }
 
-.result--warn {
-  border-left: 4px solid var(--c-warning);
-}
-.result--warn .result__banner {
-  background: color-mix(in srgb, var(--c-warning) 10%, var(--c-paper));
-}
+.result--warn { border-color: var(--c-primary); }
+.result--warn .result__banner { background: var(--c-primary); }
 .result--warn .result__headline,
-.result--warn .result__banner svg { color: var(--c-warning); }
+.result--warn .result__banner svg { color: #fff; }
 
-.result--neutral {
-  border-left: 4px solid var(--c-primary);
-}
-.result--neutral .result__banner {
-  background: var(--c-primary-soft);
-}
+.result--neutral { border-color: var(--c-primary); }
+.result--neutral .result__banner { background: var(--c-primary); }
 .result--neutral .result__headline,
-.result--neutral .result__banner svg { color: var(--c-primary-darker); }
+.result--neutral .result__banner svg { color: #fff; }
+
+.result--ok .result__banner::after,
+.result--warn .result__banner::after,
+.result--alert .result__banner::after {
+  margin-left: auto;
+  flex: none;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  padding: 3px 10px;
+  background: var(--c-paper);
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  transform: rotate(-1deg);
+}
+.result--ok    .result__banner::after { content: "OK";      color: var(--c-success); }
+.result--warn  .result__banner::after { content: "ATENÇÃO"; color: var(--c-warning); }
+.result--alert .result__banner::after { content: "ALERTA";  color: var(--c-danger); }
 
 .result__body {
   padding: var(--sp-5);
@@ -1147,24 +1169,26 @@ a.card:hover {
   text-underline-offset: 3px;
 }
 
-/* Editorial footer (revision/methodology note under calculators).
-   The markup carries a legacy inline style; !important brings it
-   into the design system without touching the HTML. */
+/* Editorial footer = rodapé de gráfico clínico: filete superior + linha
+   mono pequena ("Última revisão"). The markup carries a legacy inline
+   style; !important brings it into the design system without touching
+   the HTML. */
 .editorial-footer {
   margin-top: var(--sp-6) !important;
-  padding: var(--sp-4) var(--sp-5) !important;
-  background: var(--c-paper-alt);
-  border: 1px solid var(--c-border) !important;
-  border-top: 1px solid var(--c-border) !important;
-  border-radius: var(--r-md);
-  font-size: 0.875rem !important;
-  line-height: 1.55;
+  padding: var(--sp-4) 0 0 !important;
+  background: transparent;
+  border: 0 !important;
+  border-top: 1px solid var(--c-hairline) !important;
+  border-radius: 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem !important;
+  line-height: 1.6;
   color: var(--c-muted) !important;
 }
 .editorial-footer p + p { margin-top: var(--sp-2); }
 .editorial-footer strong { color: var(--c-text); font-weight: 600; }
 .editorial-footer a {
-  color: var(--c-primary-darker);
+  color: var(--c-primary);
   text-decoration: underline;
   text-underline-offset: 3px;
   overflow-wrap: anywhere;
@@ -1534,13 +1558,29 @@ a.card:hover {
 /* ==========================================================================
    Prose (longform content)
    ========================================================================== */
-.prose { font-size: 1.0625rem; line-height: 1.65; color: var(--c-text); }
+.prose { font-size: 1.0625rem; line-height: 1.65; color: var(--c-text); counter-reset: kc-protocol; }
 .prose h2 {
   font-size: clamp(1.4rem, 3.2vw, 1.75rem);
   margin-top: var(--sp-7);
   scroll-margin-top: var(--sp-8);
   color: var(--c-ink);
+  counter-increment: kc-protocol;
 }
+/* Número de protocolo antes de cada seção do prontuário: "01 —" */
+.prose h2::before {
+  content: counter(kc-protocol, decimal-leading-zero) " —";
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  line-height: 1;
+  color: var(--c-primary);
+  margin-bottom: 8px;
+}
+/* Blocos utilitários dentro de .prose (relacionadas) ficam fora da numeração */
+.prose .related h2 { counter-increment: none; }
+.prose .related h2::before { content: none; }
 .prose h3 {
   font-size: 1.1875rem;
   margin-top: var(--sp-5);
@@ -1643,26 +1683,28 @@ table.data {
   font-size: 0.9375rem;
   min-width: 360px;
 }
+/* Pauta de gráfico clínico: régua navy 2px no cabeçalho, filetes nas linhas */
 table.data th, table.data td {
-  border-bottom: 1px solid var(--c-border);
+  border-bottom: 1px solid var(--c-hairline);
   padding: var(--sp-3) var(--sp-4);
   text-align: left;
   vertical-align: top;
   line-height: 1.5;
 }
 table.data thead th {
-  background: var(--c-paper-alt);
-  color: var(--c-ink);
+  background: var(--c-paper);
+  color: var(--c-primary);
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.8125rem;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  border-bottom: 2px solid var(--c-primary);
   position: sticky; top: 0;
   z-index: 2;
 }
 table.data tbody tr:nth-child(even) {
-  background: color-mix(in srgb, var(--c-paper-alt) 50%, var(--c-paper));
+  background: transparent;
 }
 table.data tbody tr:hover {
   background: var(--c-primary-soft);
@@ -1715,7 +1757,7 @@ table.data tr.risk-very-high td:first-child { border-left: 4px solid var(--c-dan
 .faq summary::after {
   content: "";
   width: 18px; height: 18px;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230b6b62' stroke-width='2.2' stroke-linecap='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316324f' stroke-width='2.2' stroke-linecap='round'><line x1='12' y1='5' x2='12' y2='19'/><line x1='5' y1='12' x2='19' y2='12'/></svg>");
   background-size: contain;
   background-repeat: no-repeat;
   transition: transform var(--t-med);
@@ -1796,25 +1838,29 @@ table.data tr.risk-very-high td:first-child { border-left: 4px solid var(--c-dan
 /* ==========================================================================
    Criteria (escores sim/nao)
    ========================================================================== */
+/* Linhas de formulário em papel: filetes entre itens, alvo de toque amplo */
 .criteria-list {
   list-style: none;
   padding: 0;
   margin: var(--sp-3) 0 0;
   display: grid;
-  gap: 6px;
+  gap: 0;
+  border: 1px solid var(--c-line);
+  border-radius: 2px;
+  background: var(--c-paper);
 }
 .criteria {
   display: flex; align-items: flex-start;
   gap: var(--sp-3);
   cursor: pointer;
-  padding: var(--sp-3) var(--sp-4);
-  border: 1px solid var(--c-border);
-  border-radius: var(--r-sm);
+  padding: 14px var(--sp-4);
+  border: 0;
+  border-radius: 0;
   background: var(--c-paper);
-  transition: border-color var(--t-fast), background var(--t-fast);
+  transition: background var(--t-fast);
 }
+.criteria-list li + li .criteria { border-top: 1px solid var(--c-hairline); }
 .criteria:hover {
-  border-color: var(--c-primary);
   background: var(--c-primary-soft);
 }
 .criteria input {
@@ -1836,18 +1882,18 @@ table.data tr.risk-very-high td:first-child { border-left: 4px solid var(--c-dan
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   font-weight: 700;
-  color: var(--c-primary-darker);
-  background: var(--c-primary-soft);
+  color: var(--c-primary);
+  background: var(--c-paper);
   padding: 2px 8px;
-  border-radius: var(--r-xs);
+  border-radius: 2px;
   font-variant-numeric: tabular-nums;
   border: 1px solid var(--c-primary-soft2);
 }
-/* Selected criteria row: whole card highlights (progressive, :has-capable) */
+/* Selected criteria row: faint navy tint + navy rule (progressive, :has-capable) */
 .criteria:has(input:checked) {
-  border-color: var(--c-primary);
+  border-color: var(--c-hairline);
   background: var(--c-primary-soft);
-  box-shadow: inset 0 0 0 1px var(--c-primary);
+  box-shadow: inset 2px 0 0 var(--c-primary);
 }
 .criteria:has(input:checked) .criteria__pts {
   background: var(--c-primary);
@@ -1855,8 +1901,8 @@ table.data tr.risk-very-high td:first-child { border-left: 4px solid var(--c-dan
   border-color: var(--c-primary);
 }
 .criteria:has(input:focus-visible) {
-  outline: 3px solid var(--c-primary-darker);
-  outline-offset: 2px;
+  outline: 2px solid var(--c-primary);
+  outline-offset: -2px;
 }
 
 /* ==========================================================================
@@ -2045,9 +2091,10 @@ body.kc-gate-open { overflow: hidden; }
 /* ==========================================================================
    Site footer (dark / ink)
    ========================================================================== */
+/* Rodapé navy com texto branco */
 .site-footer {
-  background: var(--c-ink);
-  color: #94a3b8;
+  background: var(--c-primary);
+  color: #c9d5e0;
   padding-block: var(--sp-6) var(--sp-5);
   margin-top: var(--sp-5);
   font-size: 0.9375rem;
@@ -2073,7 +2120,7 @@ body.kc-gate-open { overflow: hidden; }
   gap: var(--sp-2);
 }
 .site-footer a {
-  color: #cbd5e1;
+  color: #ffffff;
   font-size: 0.9375rem;
   transition: color var(--t-fast);
 }
@@ -2089,7 +2136,7 @@ body.kc-gate-open { overflow: hidden; }
 }
 .footer-brand p {
   margin-top: var(--sp-3);
-  color: #94a3b8;
+  color: #c9d5e0;
   font-size: 0.9375rem;
   line-height: 1.55;
   max-width: 320px;
@@ -2097,8 +2144,8 @@ body.kc-gate-open { overflow: hidden; }
 .footer-bottom {
   margin-top: var(--sp-6);
   padding-top: var(--sp-4);
-  border-top: 1px solid color-mix(in srgb, #94a3b8 25%, var(--c-ink));
-  color: #94a3b8;
+  border-top: 1px solid color-mix(in srgb, #ffffff 22%, var(--c-primary));
+  color: #c9d5e0;
   font-size: 0.8125rem;
   font-family: var(--font-body);
   line-height: 1.55;
@@ -2202,7 +2249,7 @@ body.kc-gate-open { overflow: hidden; }
   }
   .main-nav a {
     padding: 8px 14px;
-    font-size: 0.9375rem;
+    font-size: 0.8125rem;
   }
 }
 
