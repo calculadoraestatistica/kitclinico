@@ -2391,3 +2391,126 @@ body.kc-gate-open { overflow: hidden; }
 .hero h1, .page-head h1 { text-wrap: balance; }
 .hero p.lead, .hero .lead,
 .page-head p.lead, .page-head .lead { text-wrap: pretty; }
+
+/* === Polimento 2026-08-13: resultado em destaque, ergonomia mobile, hierarquia dos hubs === */
+
+/* --------------------------------------------------------------------------
+   Resultado: número principal maior e classificação com cor semântica sóbria.
+   Mesma linguagem de filete lateral usada na matriz KDIGO, nas linhas de
+   risco das tabelas e nos callouts — sem fundos coloridos, laudo continua
+   branco com faixa navy.
+   -------------------------------------------------------------------------- */
+.result__main { font-size: clamp(2.5rem, 6vw, 3.25rem); }
+.result--ok      { border-left: 4px solid var(--c-success); }
+.result--warn    { border-left: 4px solid var(--c-warning); }
+.result--alert   { border-left: 4px solid var(--c-danger); }
+.result--neutral { border-left: 4px solid var(--c-primary); }
+
+/* --------------------------------------------------------------------------
+   Ergonomia mobile: campos e alvos de toque maiores em telas pequenas.
+   Fonte ≥16px nos inputs evita o zoom automático do iOS.
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  .input,
+  select.input,
+  textarea.input {
+    min-height: 48px;
+    padding: 12px 14px;
+    font-size: 1.0625rem;
+  }
+  .segmented span { min-height: 44px; }
+  .btn--sm { min-height: 44px; }
+  .calculator__actions .btn { flex: 1 1 auto; }
+}
+
+/* Foco visível reforçado nos botões sólidos (anel afastado da superfície navy). */
+.btn--primary:focus-visible,
+.btn--secondary:focus-visible,
+.btn--accent:focus-visible {
+  outline: 2px solid var(--c-primary);
+  outline-offset: 3px;
+}
+
+/* --------------------------------------------------------------------------
+   Hubs de área (medicina/nutrição/veterinária): ritmo vertical consistente,
+   títulos com régua como nas categorias, largura de leitura confortável.
+   -------------------------------------------------------------------------- */
+.calc-category { margin-top: var(--sp-6); }
+.calc-category > p { max-width: 72ch; }
+.calc-category > p + p { margin-top: var(--sp-3); }
+.calc-category > p + .calc-grid { margin-top: var(--sp-4); }
+
+section[class^="hub-"] { margin-block: var(--sp-6); }
+section[class^="hub-"] > h2 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  letter-spacing: -0.015em;
+  padding-bottom: var(--sp-2);
+  margin-bottom: var(--sp-3);
+  border-bottom: 1px solid var(--c-border);
+}
+section[class^="hub-"] p,
+section[class^="hub-"] ul { max-width: 72ch; }
+section[class^="hub-"] p + p,
+section[class^="hub-"] p + ul,
+section[class^="hub-"] ul + p { margin-top: var(--sp-3); }
+section[class^="hub-"] li + li { margin-top: 6px; }
+
+/* FAQ dos hubs: mesmo padrão de acordeão do restante do site. */
+.hub-faq details {
+  border: 1px solid var(--c-border);
+  border-radius: var(--r-sm);
+  background: var(--c-paper);
+}
+.hub-faq details + details { margin-top: var(--sp-2); }
+.hub-faq summary {
+  cursor: pointer;
+  padding: var(--sp-3) var(--sp-4);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: var(--c-ink);
+  letter-spacing: -0.01em;
+}
+.hub-faq summary:hover {
+  color: var(--c-primary-darker);
+  background: var(--c-primary-soft);
+}
+.hub-faq details[open] summary { border-bottom: 1px solid var(--c-hairline); }
+.hub-faq details > p {
+  padding: var(--sp-3) var(--sp-4) var(--sp-4);
+  margin: 0;
+}
+
+/* FAQ em formato pergunta/resposta (h3 + p, sem <details>): mesma hierarquia
+   visual das demais perguntas, sem simular acordeão. */
+.hub-faq h3 {
+  font-size: 1.0625rem;
+  margin-top: var(--sp-5);
+  letter-spacing: -0.01em;
+}
+.hub-faq h3 + p { margin-top: var(--sp-2); }
+
+/* Alvo de toque ≥44px nos links do menu móvel. */
+@media (max-width: 959px) {
+  .main-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Aviso final dos hubs: mesmo tratamento sóbrio do disclaimer jurídico. */
+.hub-disclaimer,
+.hub-final-disclaimer {
+  background: color-mix(in srgb, var(--c-accent) 6%, var(--c-paper));
+  border: 1px solid color-mix(in srgb, var(--c-accent) 18%, var(--c-border));
+  border-left: 4px solid var(--c-accent);
+  border-radius: var(--r-md);
+  padding: var(--sp-4) var(--sp-5);
+}
+.hub-disclaimer > h2,
+.hub-final-disclaimer > h2 {
+  font-size: 1.0625rem;
+  border-bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: var(--sp-2);
+}
