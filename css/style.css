@@ -2507,8 +2507,10 @@ section[class^="hub-"] li + li { margin-top: 6px; }
   border-radius: var(--r-md);
   padding: var(--sp-4) var(--sp-5);
 }
-.hub-disclaimer > h2,
-.hub-final-disclaimer > h2 {
+/* section.* garante especificidade igual à régua genérica dos hubs
+   (section[class^="hub-"] > h2), permitindo remover a régua aqui. */
+section.hub-disclaimer > h2,
+section.hub-final-disclaimer > h2 {
   font-size: 1.0625rem;
   border-bottom: 0;
   padding-bottom: 0;
