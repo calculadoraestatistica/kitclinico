@@ -2516,3 +2516,41 @@ section.hub-final-disclaimer > h2 {
   padding-bottom: 0;
   margin-bottom: var(--sp-2);
 }
+
+
+/* ── Polimento de interação ───────────────────────────────────────────────
+   As curvas embutidas do CSS são fracas demais para parecerem intencionais;
+   estas são as fortes. Nada aqui anima layout (só transform e opacity, que
+   rodam na GPU), e tudo some para quem pede menos movimento. */
+:root{
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+
+/* Botão tem de responder ao toque na hora: sem isso a interface parece surda. */
+button,.btn,[role="button"],input[type="submit"],input[type="button"],.button{
+  transition:transform 160ms var(--ease-out),background-color 160ms var(--ease-out),
+             border-color 160ms var(--ease-out),box-shadow 160ms var(--ease-out);
+}
+button:active,.btn:active,[role="button"]:active,
+input[type="submit"]:active,input[type="button"]:active,.button:active{
+  transform:scale(.97);
+}
+
+/* Hover só onde existe ponteiro de verdade: no toque ele "gruda" depois do tap. */
+@media (hover:hover) and (pointer:fine){
+  a.card:hover,.card a:hover,.calculator-card:hover{transform:translateY(-2px);}
+  a.card,.card a,.calculator-card{transition:transform 180ms var(--ease-out),box-shadow 180ms var(--ease-out);}
+}
+
+/* Foco visível para quem navega no teclado, sem poluir o clique do mouse. */
+:focus-visible{outline:2px solid currentColor;outline-offset:2px;border-radius:3px;}
+
+/* Campos: transição curta e previsível em vez de transition:all. */
+input,select,textarea{transition:border-color 140ms var(--ease-out),box-shadow 140ms var(--ease-out);}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;
+    transition-duration:.01ms!important;scroll-behavior:auto!important;}
+  button:active,.btn:active,.button:active{transform:none;}
+}

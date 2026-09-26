@@ -80,7 +80,7 @@
         <ol>
           <li><a href="/">Início</a></li>
           <li><a href="/medicina.html">Calculadoras médicas</a></li>
-          <li>Gasometria — tabela interpretativa</li>
+          <li>Gasometria: tabela interpretativa</li>
         </ol>
       </nav>
       <h1>Gasometria: tabela interpretativa publicada</h1>
@@ -95,7 +95,7 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         Valores laboratoriais informados
       </h2>
-      <p class="calculator__hint">Preencha o que tiver disponível — a tabela apresenta o padrão correspondente aos valores informados.</p>
+      <p class="calculator__hint">Preencha o que tiver disponível: a tabela apresenta o padrão correspondente aos valores informados.</p>
 
       <fieldset class="field-group">
         <legend>Eletrólitos e gasometria</legend>
@@ -201,16 +201,16 @@
       <p>Variáveis: Na, Cl, HCO₃ em mEq/L; albumina em g/dL; glicemia e ureia em mg/dL. A sequência aplicada na página: primeiro calcula o ânion gap, em seguida corrige pela albumina quando informada, depois calcula o sódio corrigido e por fim a osmolaridade. Exemplo trabalhado com Na 133, Cl 95, HCO₃ 12, albumina 3,8, glicemia 420, ureia 38: AG = 133 − (95 + 12) = 26 mEq/L; AG corrigido = 26 + 2,5 × (4,0 − 3,8) = 26,5 mEq/L; Na corrigido = 133 + 1,6 × ((420 − 100)/100) = 133 + 5,12 = 138,1 mEq/L; Osm calculada = 2 × 133 + 420/18 + 38/6 = 266 + 23,3 + 6,3 = 295,6 mOsm/kg.</p>
 
       <h2>Limitações conhecidas</h2>
-      <p>Publica-se que a tabela interpretativa pressupõe estado estável; em distúrbios mistos rápidos (ex.: parada cardiorrespiratória recente) o padrão laboratorial pode não refletir o estado fisiopatológico. Erros pré-analíticos descritos: hemólise eleva K e altera HCO₃; demora no transporte da seringa de gasometria altera pH/pCO₂; pseudo-hiponatremia em hiperlipidemia ou hiperproteinemia distorce Na sérico (descrita com métodos indiretos). O ânion gap não corrigido subestima acidose em hipoalbuminemia (descrito em UTI). Em insuficiência renal crônica avançada, a literatura descreve que ureia eleva a osmolaridade calculada sem necessariamente indicar tóxico exógeno. O fator 1,6 para Na corrigido é discutido — Hillier et al. (1999) publicaram fator 2,4.</p>
+      <p>Publica-se que a tabela interpretativa pressupõe estado estável; em distúrbios mistos rápidos (ex.: parada cardiorrespiratória recente) o padrão laboratorial pode não refletir o estado fisiopatológico. Erros pré-analíticos descritos: hemólise eleva K e altera HCO₃; demora no transporte da seringa de gasometria altera pH/pCO₂; pseudo-hiponatremia em hiperlipidemia ou hiperproteinemia distorce Na sérico (descrita com métodos indiretos). O ânion gap não corrigido subestima acidose em hipoalbuminemia (descrito em UTI). Em insuficiência renal crônica avançada, a literatura descreve que ureia eleva a osmolaridade calculada sem necessariamente indicar tóxico exógeno. O fator 1,6 para Na corrigido é discutido. Hillier et al. (1999) publicaram fator 2,4.</p>
 
       <h2>Fórmulas alternativas e comparação</h2>
-      <p>Para ânion gap: a fórmula clássica (Na − Cl − HCO₃) compete com a versão estendida (Na + K − Cl − HCO₃); a literatura descreve a clássica como padrão por menor variabilidade do K. Para sódio corrigido em hiperglicemia: fator de Katz (1,6 mEq/L por 100 mg/dL) versus fator de Hillier (2,4) — o Hillier foi derivado em voluntários submetidos a infusão de glicose hipertônica e é descrito como melhor para glicemias &gt; 400. Para osmolaridade: fórmula de Smithline-Gardner versus Worthley; a página utiliza a de uso clínico mais amplo (Smithline).</p>
+      <p>Para ânion gap: a fórmula clássica (Na − Cl − HCO₃) compete com a versão estendida (Na + K − Cl − HCO₃); a literatura descreve a clássica como padrão por menor variabilidade do K. Para sódio corrigido em hiperglicemia: fator de Katz (1,6 mEq/L por 100 mg/dL) versus fator de Hillier (2,4): o Hillier foi derivado em voluntários submetidos a infusão de glicose hipertônica e é descrito como melhor para glicemias &gt; 400. Para osmolaridade: fórmula de Smithline-Gardner versus Worthley; a página utiliza a de uso clínico mais amplo (Smithline).</p>
 
       <h2>Origem e versão</h2>
       <p>A equação de Henderson-Hasselbalch foi publicada por Karl Albert Hasselbalch em <cite>Biochemische Zeitschrift</cite> (1916), a partir da equação de Lawrence Henderson (1908). O ânion gap clínico foi popularizado por Emmett &amp; Narins, <cite>Medicine (Baltimore)</cite>, 1977. A correção pela albumina é de Figge et al., <cite>J Lab Clin Med</cite>, 1992. A correção do sódio pela glicemia atribuída a Katz, <cite>NEJM</cite>, 1973. A página implementa a versão consolidada na revisão de Berend et al. (NEJM 2014).</p>
 
       <h2>Casos de teste</h2>
-      <p>Caso 1: Na 140, Cl 104, HCO₃ 24, albumina 4,0 — AG esperado 12 mEq/L, AG corrigido 12 mEq/L (referência publicada). Caso 2: Na 133, Cl 95, HCO₃ 12, albumina 3,8, glicemia 420 — AG 26, AG corrigido 26,5, Na corrigido 138,1 (padrão compatível com acidose de gap elevado por cetoacidose, descrito por Berend 2014). Caso 3: Na 145, Cl 110, HCO₃ 18, albumina 2,0 — AG 17, AG corrigido 22 (publica-se que a correção pela hipoalbuminemia desmascara gap elevado). Verificada contra exemplos em Berend et al. (NEJM 2014); reporte discrepâncias para o e-mail do rodapé.</p>
+      <p>Caso 1: Na 140, Cl 104, HCO₃ 24, albumina 4,0. AG esperado 12 mEq/L, AG corrigido 12 mEq/L (referência publicada). Caso 2: Na 133, Cl 95, HCO₃ 12, albumina 3,8, glicemia 420. AG 26, AG corrigido 26,5, Na corrigido 138,1 (padrão compatível com acidose de gap elevado por cetoacidose, descrito por Berend 2014). Caso 3: Na 145, Cl 110, HCO₃ 18, albumina 2,0. AG 17, AG corrigido 22 (publica-se que a correção pela hipoalbuminemia desmascara gap elevado). Verificada contra exemplos em Berend et al. (NEJM 2014); reporte discrepâncias para o e-mail do rodapé.</p>
 
       <h2>FAQ</h2>
       <p><strong>O que faço se o resultado parecer errado?</strong> A literatura descreve verificar unidades (mEq/L vs mmol/L) e estado pré-analítico da amostra (hemólise, tempo de transporte). Discrepâncias persistentes podem indicar pseudo-hiponatremia ou interferência laboratorial descrita.</p>

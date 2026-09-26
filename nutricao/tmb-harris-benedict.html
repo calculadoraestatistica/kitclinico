@@ -93,7 +93,7 @@
         </ol>
       </nav>
       <h1>Calculadora de TMB (Harris-Benedict)</h1>
-      <p class="lead">Estima a Taxa Metabólica Basal — a energia gasta em repouso — pela equação de Harris-Benedict revisada.</p>
+      <p class="lead">Estima a Taxa Metabólica Basal, a energia gasta em repouso, pela equação de Harris-Benedict revisada.</p>
     </div>
   </div>
 
@@ -169,13 +169,13 @@
       <p>A versão implementada nesta página corresponde à <strong>revisão de Roza e Shizgal (1984)</strong> da equação original de Harris-Benedict:</p>
       <div class="formula">Homens: TMB = 88,362 + 13,397 × peso + 4,799 × altura − 5,677 × idade<br>Mulheres: TMB = 447,593 + 9,247 × peso + 3,098 × altura − 4,330 × idade</div>
       <p>Onde <em>peso</em> está em kg, <em>altura</em> em cm e <em>idade</em> em anos; o resultado sai em kcal/dia. A sequência de cálculo é: (1) multiplicar cada variável pelo seu coeficiente, (2) somar os três produtos à constante específica do sexo, (3) o sinal negativo do termo de idade reflete a queda da taxa metabólica com o envelhecimento.</p>
-      <p><strong>Exemplo trabalhado</strong> — homem, 70 kg, 175 cm, 30 anos:<br>TMB = 88,362 + (13,397 × 70) + (4,799 × 175) − (5,677 × 30)<br>TMB = 88,362 + 937,79 + 839,825 − 170,31<br>TMB ≈ <strong>1.696 kcal/dia</strong>.</p>
+      <p><strong>Exemplo trabalhado</strong>: homem, 70 kg, 175 cm, 30 anos:<br>TMB = 88,362 + (13,397 × 70) + (4,799 × 175) − (5,677 × 30)<br>TMB = 88,362 + 937,79 + 839,825 − 170,31<br>TMB ≈ <strong>1.696 kcal/dia</strong>.</p>
 
       <h2>Limitações conhecidas</h2>
       <p>A literatura descreve que a equação de Harris-Benedict <strong>superestima a TMB</strong> em cerca de 5% a 15% quando confrontada com calorimetria indireta, particularmente em indivíduos com sobrepeso e obesidade [2]. Erros comuns de medida que distorcem o resultado incluem: peso vestido (sobrestima), altura autorrelatada, idade aproximada e troca de unidades (libras por kg, polegadas por cm). A fórmula não foi validada para crianças, adolescentes em estirão puberal, gestantes, lactantes, pacientes críticos com sepse ou queimados, atletas de alta performance com massa magra atípica e indivíduos com amputações. Em populações asiáticas e afrodescendentes, publicações apontam viés sistemático. A literatura mais recente descreve a equação de Mifflin-St Jeor como mais acurada em adultos saudáveis modernos.</p>
 
       <h2>Fórmulas alternativas e comparação</h2>
-      <p>As principais concorrentes em adultos são: <strong>Mifflin-St Jeor (1990)</strong> — descrita como mais acurada em adultos saudáveis e em sobrepeso, com erro médio menor; <strong>FAO/OMS/UNU (1985, 2004)</strong> — equações por faixa etária e sexo, validadas em populações internacionais; <strong>Cunningham (1980)</strong> — baseada em massa magra, descrita como superior em atletas; <strong>Owen (1986)</strong> — derivada em obesos e com bom desempenho neste grupo; e <strong>Schofield (1985)</strong> — adotada por organismos internacionais. A escolha entre fórmulas depende da população avaliada.</p>
+      <p>As principais concorrentes em adultos são: <strong>Mifflin-St Jeor (1990)</strong> (descrita como mais acurada em adultos saudáveis e em sobrepeso, com erro médio menor; <strong>FAO/OMS/UNU (1985, 2004)</strong> — equações por faixa etária e sexo, validadas em populações internacionais; <strong>Cunningham (1980)</strong> — baseada em massa magra, descrita como superior em atletas; <strong>Owen (1986)</strong> — derivada em obesos e com bom desempenho neste grupo; e <strong>Schofield (1985)</strong>) adotada por organismos internacionais. A escolha entre fórmulas depende da população avaliada.</p>
 
       <h2>Origem e versão</h2>
       <p>A equação original foi publicada por <strong>James Arthur Harris e Francis Gano Benedict</strong> em 1918 nas <cite>Proceedings of the National Academy of Sciences</cite> (DOI 10.1073/pnas.4.12.370) [1]. A revisão de coeficientes implementada nesta página é a de <strong>Roza AM e Shizgal HM</strong>, publicada em 1984 no <cite>American Journal of Clinical Nutrition</cite> (DOI 10.1093/ajcn/40.1.168) [2]. Esta revisão recalculou as constantes a partir de medições adicionais de calorimetria indireta e mantém a estrutura linear original.</p>
